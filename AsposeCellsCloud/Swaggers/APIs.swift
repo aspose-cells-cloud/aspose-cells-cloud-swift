@@ -7,13 +7,12 @@
 import Foundation
 
 open class AsposeCellsCloudAPI {
-    open static var basePath = "https://api.aspose.cloud/v1.1"
-    open static var credential: URLCredential?
-    //open static var customHeaders: [String:String] = [:]
-    open static var customHeaders: [String:String] = ["Authorization":""]
-    open static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
-    open static var accessToken: String?
-    open static var refreshToken: String?
+    public static var basePath = "https://api.aspose.cloud/v1.1"
+    public static var credential: URLCredential?
+    public static var customHeaders: [String:String] = ["Authorization":""]
+    public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
+    public static var accessToken: String?
+    public static var refreshToken: String?
 }
 
 open class RequestBuilder<T> {
@@ -34,24 +33,8 @@ open class RequestBuilder<T> {
         self.isBody = isBody
         self.headers = headers
 
-        //addHeaders(AsposeCellsCloudAPI.customHeaders)
         let str = "Bearer " + AsposeCellsCloudAPI.accessToken!
-        //_ = addHeader(name: "Authorization", value: str)
-        //_ = addHeader(name: "Accept", value: "application/json")
-        
-        //addHeaders(["Authorization":str])
-        //addHeaders(["Accept":"application/json"])
-        
-        self.headers = ["Authorization": str
-          //"Accept":"application/json"
-          //  "Content-Type": "application/x-www-form-urlencoded"
-        ]
-        /*
-        let headers0: [String: String] = [
-            "Authorization": str
-        ]
-        self.headers = headers0
-        */
+        self.headers = ["Authorization": str]
     }
 
     open func addHeaders(_ aHeaders:[String:String]) {

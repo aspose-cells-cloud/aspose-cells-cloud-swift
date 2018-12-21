@@ -1701,13 +1701,7 @@ open class CellsWorksheetsAPI {
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let URLString = AsposeCellsCloudAPI.basePath + path
-        //let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: png)
-        do {
-            let parameters = try? JSONSerialization.jsonObject(with: png as Data, options: .mutableContainers)
-            let s1 = ""
-        } catch {
-            print(error)
-        }
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: png)
         
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
@@ -1717,7 +1711,7 @@ open class CellsWorksheetsAPI {
 
         let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: nil, isBody: true)
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
 
     /**

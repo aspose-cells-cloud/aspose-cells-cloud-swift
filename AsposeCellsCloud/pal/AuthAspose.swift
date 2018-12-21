@@ -35,7 +35,7 @@ public class AuthAspose {
             let path = "/oauth2/token"
             let urlString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v1.1", with: "") + path
             let parameters: [String: Any] = [
-                "grant_type": "client_credentials",
+                "grant_type": grantType,
                 "client_id": clientId,
                 "client_secret": clientSecret]
             

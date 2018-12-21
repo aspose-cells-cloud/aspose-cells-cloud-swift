@@ -58,21 +58,7 @@ open class CellsAPI {
         path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
 
         let URLString = AsposeCellsCloudAPI.basePath + path
-        
-        //let parameters: [String:Any]? = nil
-        let str = "Bearer " + AsposeCellsCloudAPI.accessToken!
-        let parameters: [String:Any]? = nil/*[
-            "name": name,
-            "sheetName": sheetName,
-            "columnIndex": columnIndex
-                                         //"Authorization": str,
-                                         //"Accept":"application/json",
-                                         //"columns": columns,
-                                         //"updateReference": updateReference,
-                                         //"folder": folder,
-                                         //"storage": storage
-                                         ]
-        */
+        let parameters: [String:Any]? = nil
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "columns": columns.encodeToJSON(), 
