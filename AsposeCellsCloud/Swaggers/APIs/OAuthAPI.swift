@@ -48,8 +48,7 @@ open class OAuthAPI {
      */
     open class func oAuthPostWithRequestBuilder(grantType: String, clientId: String, clientSecret: String) -> RequestBuilder<AccessTokenResponse> {
         let path = "/oauth2/token"
-        //let URLString = AsposeCellsCloudAPI.basePath + path
-        let URLString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v1.1/", with: "") + path
+        let URLString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v1.1", with: "") + path
         let formParams: [String:Any?] = [
             "grant_type": grantType,
             "client_id": clientId,

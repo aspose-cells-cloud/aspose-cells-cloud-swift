@@ -8,6 +8,8 @@ import Foundation
 
 open class AsposeCellsCloudAPI {
     public static var basePath = "https://api.aspose.cloud/v1.1"
+    public static var appSid: String?
+    public static var appKey: String?
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = ["Authorization":""]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
@@ -33,8 +35,11 @@ open class RequestBuilder<T> {
         self.isBody = isBody
         self.headers = headers
 
-        let str = "Bearer " + AsposeCellsCloudAPI.accessToken!
-        self.headers = ["Authorization": str]
+        if (AsposeCellsCloudAPI.accessToken != nil)
+        {
+            let str = "Bearer " + AsposeCellsCloudAPI.accessToken!
+            self.addHeaders(["Authorization": str])
+        }
     }
 
     open func addHeaders(_ aHeaders:[String:String]) {
@@ -61,5 +66,4 @@ open class RequestBuilder<T> {
 public protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type
-    //func getBuilder<T>() -> RequestBuilder<T>.Type
 }

@@ -399,7 +399,7 @@ open class CellsWorksheetsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorksheetsGetWorksheet(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: String?,_ error: Error?) -> Void)) {
+    open class func cellsWorksheetsGetWorksheet(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: Data?,_ error: Error?) -> Void)) {
         cellsWorksheetsGetWorksheetWithRequestBuilder(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -421,7 +421,7 @@ open class CellsWorksheetsAPI {
 
      - returns: RequestBuilder<String> 
      */
-    open class func cellsWorksheetsGetWorksheetWithRequestBuilder(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<String> {
+    open class func cellsWorksheetsGetWorksheetWithRequestBuilder(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<Data> {
         var path = "/cells/{name}/worksheets/{sheetName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -441,7 +441,7 @@ open class CellsWorksheetsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<String>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Data>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1669,7 +1669,7 @@ open class CellsWorksheetsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorksheetsPutWorksheetBackground(name: String, sheetName: String, png: NSData, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsWorksheetsPutWorksheetBackground(name: String, sheetName: String, png: Data, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
         cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: name, sheetName: sheetName, png: png, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1692,7 +1692,7 @@ open class CellsWorksheetsAPI {
 
      - returns: RequestBuilder<SaaSposeResponse> 
      */
-    open class func cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, png: NSData, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, png: Data, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/background"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""

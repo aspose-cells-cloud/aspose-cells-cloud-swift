@@ -13,7 +13,6 @@ class AlamofireRequestBuilderFactory: RequestBuilderFactory {
     }
 
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type {
-    //func getBuilder<T>() -> RequestBuilder<T>.Type {
         return AlamofireDecodableRequestBuilder<T>.self
     }
 }
@@ -322,7 +321,6 @@ public enum AlamofireDecodableRequestBuilderError: Error {
 }
 
 open class AlamofireDecodableRequestBuilder<T:Decodable>: AlamofireRequestBuilder<T> {
-//open class AlamofireDecodableRequestBuilder<T>: AlamofireRequestBuilder<T> {
 
     override fileprivate func processRequest(request: DataRequest, _ managerId: String, _ completion: @escaping (_ response: Response<T>?, _ error: Error?) -> Void) {
         if let credential = self.credential {

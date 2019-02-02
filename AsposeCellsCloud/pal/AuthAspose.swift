@@ -28,16 +28,17 @@ public class AuthAspose {
         
         if (AsposeCellsCloudAPI.accessToken == nil) {
             
-            let grantType = "client_credentials"
-            let clientId = "66164C51-693E-4904-A121-545961673EC1"
-            let clientSecret = "536e76768419db9585afdd37bb5f7533"
-            
+            guard let appSid = AsposeCellsCloudAPI.appSid, let appKey = AsposeCellsCloudAPI.appKey else {
+                completion(AuthError.credentialsNotSetError)
+                return
+            }
+
             let path = "/oauth2/token"
             let urlString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v1.1", with: "") + path
             let parameters: [String: Any] = [
-                "grant_type": grantType,
-                "client_id": clientId,
-                "client_secret": clientSecret]
+                "grant_type": "client_credentials",
+                "client_id": appSid,
+                "client_secret": appKey]
             
             let headers: [String: String] = [
                 "Content-Type": "application/x-www-form-urlencoded"

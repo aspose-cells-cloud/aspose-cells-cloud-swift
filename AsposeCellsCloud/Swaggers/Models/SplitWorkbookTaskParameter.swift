@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SplitWorkbookTaskParameter: Codable {
+public class SplitWorkbookTaskParameter: TaskParameter {
 
     public var destinationFileFormat: String?
     public var destinationFilePosition: FileSource?
@@ -28,6 +28,7 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(destinationFileFormat: String?, destinationFilePosition: FileSource?, verticalResolution: Int32?, horizontalResolution: Int32?, splitNameRule: String?, workbook: FileSource?) {
+        super.init()
         self.destinationFileFormat = destinationFileFormat
         self.destinationFilePosition = destinationFilePosition
         self.verticalResolution = verticalResolution
@@ -36,6 +37,34 @@ public enum CodingKeys: String, CodingKey {
         self.workbook = workbook
     }
 
-
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(destinationFileFormat, forKey: "DestinationFileFormat")
+        try container.encodeIfPresent(destinationFilePosition, forKey: "DestinationFilePosition")
+        try container.encodeIfPresent(verticalResolution, forKey: "VerticalResolution")
+        try container.encodeIfPresent(horizontalResolution, forKey: "HorizontalResolution")
+        try container.encodeIfPresent(splitNameRule, forKey: "SplitNameRule")
+        try container.encodeIfPresent(workbook, forKey: "Workbook")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        destinationFileFormat = try container.decodeIfPresent(String.self, forKey: "DestinationFileFormat")
+        destinationFilePosition = try container.decodeIfPresent(FileSource.self, forKey: "DestinationFilePosition")
+        verticalResolution = try container.decodeIfPresent(Int32.self, forKey: "VerticalResolution")
+        horizontalResolution = try container.decodeIfPresent(Int32.self, forKey: "HorizontalResolution")
+        splitNameRule = try container.decodeIfPresent(String.self, forKey: "SplitNameRule")
+        workbook = try container.decodeIfPresent(FileSource.self, forKey: "Workbook")
+        try super.init(from: decoder)
+    }
+    
 }
 

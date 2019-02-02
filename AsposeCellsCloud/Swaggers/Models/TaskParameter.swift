@@ -9,10 +9,24 @@ import Foundation
 
 
 
-public struct TaskParameter: Codable {
+public class TaskParameter: Codable {
+    
+    public init()
+    {
+        
+    }
+    
+    // Encodable protocol methods
+    
+    public func encode(to encoder: Encoder) throws {
 
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
 
-
+    }
 
 
 }

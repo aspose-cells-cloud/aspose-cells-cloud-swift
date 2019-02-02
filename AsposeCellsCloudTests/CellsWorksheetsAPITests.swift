@@ -14,6 +14,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 
 	override func setUp() 
 	{
+        super.setUp()
 		// Put setup code here. This method is called before the invocation of each test method in the class.
 		let expectation = self.expectation(description: "CellsWorksheetsAPITestsSetUp")
 		AuthAspose.checkAuth()
@@ -31,6 +32,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 	override func tearDown() 
 	{
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
 	}
 
 	func testcellsWorksheetsDeleteUnprotectWorksheet() 
@@ -241,7 +243,16 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 				}
 	
 				if let response = response {
-					XCTAssertTrue(response is String)
+					//XCTAssertTrue(response is Data)
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorksheetsGetWorksheet.txt"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response)
+
 					expectation.fulfill()
 				}
 			}
@@ -845,6 +856,38 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 				(response, error) in
 				guard error == nil else {
 					XCTFail("error testcellsWorksheetsPutProtectWorksheet")
+					return
+				}
+	
+				if let response = response {
+					XCTAssertEqual(response.code, 200)
+					expectation.fulfill()
+				}
+			}
+		}
+		self.waitForExpectations(timeout: testTimeout, handler: nil)		
+	}
+
+	func testcellsWorksheetsPutWorksheetBackground() 
+	{
+		let expectation = self.expectation(description: "testcellsWorksheetsPutWorksheetBackground")
+		let name:String = BOOK1
+		let sheetName:String = SHEET1
+
+        let url1: URL? = getURL("WaterMark.png")
+        let newImage = UIImage(contentsOfFile: url1!.path)
+        let imageData = newImage!.pngData()
+        //let png = NSData(contentsOfFile: url!.path)
+        
+		let folder:String = TEMPFOLDER
+		let storage:String? = nil
+		
+		uploadFile(name: name) {
+            CellsWorksheetsAPI.cellsWorksheetsPutWorksheetBackground(name: name, sheetName: sheetName, png: imageData!, folder: folder, storage: storage)
+			{
+				(response, error) in
+				guard error == nil else {
+					XCTFail("error testcellsWorksheetsPutWorksheetBackground")
 					return
 				}
 	

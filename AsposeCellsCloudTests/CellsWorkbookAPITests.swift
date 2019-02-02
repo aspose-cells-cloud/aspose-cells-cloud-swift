@@ -13,6 +13,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 
 	override func setUp() 
 	{
+        super.setUp()
 		// Put setup code here. This method is called before the invocation of each test method in the class.
 		let expectation = self.expectation(description: "CellsWorkbookAPITestsSetUp")
 		AuthAspose.checkAuth()
@@ -30,6 +31,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	override func tearDown() 
 	{
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
 	}
 
 	func testcellsWorkbookDeleteDecryptDocument() 
@@ -183,6 +185,14 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	
 				if let response = response {
 					XCTAssertTrue(response is NSData)
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorkbookGetWorkbook.txt"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
 					expectation.fulfill()
 				}
 			}
@@ -497,6 +507,14 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	
 				if let response = response {
 					XCTAssertTrue(response is NSData)
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorkbookPostWorkbookGetSmartMarkerResult.txt"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
 					expectation.fulfill()
 				}
 			}
@@ -657,6 +675,14 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	
 				if let response = response {
 					XCTAssertTrue(response is NSData)
+                    //response is a Data of file, we may write it down and check it.
+                    let fileName = "testcellsWorkbookPutConvertWorkbook.xlsx"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
 					expectation.fulfill()
 				}
 			}
