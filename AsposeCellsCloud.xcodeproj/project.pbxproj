@@ -9,11 +9,27 @@
 /* Begin PBXBuildFile section */
 		2925BBCA997D0DCF7F1E4657 /* Pods_AsposeCellsCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606BEF85E937E13832D711B3 /* Pods_AsposeCellsCloud.framework */; };
 		4AA8B1D93700459F4D241AAF /* Pods_AsposeCellsCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9496162334CFE14D3E0ECF3B /* Pods_AsposeCellsCloudTests.framework */; };
+		6B21C63922165C7900D13B4B /* CellsPropertiesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C63822165C7900D13B4B /* CellsPropertiesAPITests.swift */; };
+		6B21C63B2216600200D13B4B /* CellsRangesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C63A2216600200D13B4B /* CellsRangesAPITests.swift */; };
+		6B21C63D22169C8A00D13B4B /* CellsSaveAsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C63C22169C8A00D13B4B /* CellsSaveAsAPITests.swift */; };
+		6B21C63F22169D1200D13B4B /* CellsShapesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C63E22169D1200D13B4B /* CellsShapesAPITests.swift */; };
+		6B21C6412216A23100D13B4B /* CellsWorksheetValidationsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B21C6402216A23100D13B4B /* CellsWorksheetValidationsAPITests.swift */; };
 		6B2F7FE721B66A7F00CC8734 /* Book1.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B2F7FE621B66A7F00CC8734 /* Book1.xlsx */; };
 		6B45F77221C38EFE0058560A /* ReportData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B45F77121C38EFE0058560A /* ReportData.xml */; };
 		6B45F77421C3911B0058560A /* CellsWorksheetsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45F77321C3911B0058560A /* CellsWorksheetsAPITests.swift */; };
 		6B45F77621C398950058560A /* NewCopy.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B45F77521C398950058560A /* NewCopy.xlsx */; };
 		6B45F77A21C3AE880058560A /* WaterMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B45F77921C3AE880058560A /* WaterMark.png */; };
+		6B463E682213FAB200F45F6F /* CellsAutoFilterAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E672213FAB200F45F6F /* CellsAutoFilterAPITests.swift */; };
+		6B463E6A2214005100F45F6F /* CellsAutoshapesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E692214005100F45F6F /* CellsAutoshapesAPITests.swift */; };
+		6B463E6F2214014200F45F6F /* OLEDoc.docx in Resources */ = {isa = PBXBuildFile; fileRef = 6B463E6B2214014200F45F6F /* OLEDoc.docx */; };
+		6B463E702214014200F45F6F /* word.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B463E6C2214014200F45F6F /* word.jpg */; };
+		6B463E712214014200F45F6F /* TestCase.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B463E6D2214014200F45F6F /* TestCase.xlsx */; };
+		6B463E722214014200F45F6F /* myDocument.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B463E6E2214014200F45F6F /* myDocument.xlsx */; };
+		6B463E742214039800F45F6F /* CellsChartAreaAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E732214039800F45F6F /* CellsChartAreaAPITests.swift */; };
+		6B463E762214083D00F45F6F /* CellsChartsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E752214083C00F45F6F /* CellsChartsAPITests.swift */; };
+		6B463E7822140F5800F45F6F /* CellsConditionalFormattingsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E7722140F5800F45F6F /* CellsConditionalFormattingsAPITests.swift */; };
+		6B463E7A2214142500F45F6F /* CellsHypelinksAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E792214142400F45F6F /* CellsHypelinksAPITests.swift */; };
+		6B463E7C221416E100F45F6F /* CellsListObjectsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B463E7B221416E100F45F6F /* CellsListObjectsAPITests.swift */; };
 		6B48156B21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B48156A21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift */; };
 		6B4A3D7C21A538CB00F53D6B /* AsposeCellsCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B4A3D7221A538CB00F53D6B /* AsposeCellsCloud.framework */; };
 		6B4A3D8121A538CB00F53D6B /* AsposeCellsCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A3D8021A538CB00F53D6B /* AsposeCellsCloudTests.swift */; };
@@ -280,6 +296,11 @@
 		6B4A3F9721A541E800F53D6B /* CellsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A3F9621A541E800F53D6B /* CellsAPITests.swift */; };
 		6B4FF3132204301400D967DE /* OAuthAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FF3122204301400D967DE /* OAuthAPITests.swift */; };
 		6B4FF3152204360A00D967DE /* CellsTaskAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4FF3142204360A00D967DE /* CellsTaskAPITests.swift */; };
+		6B5622662215121E00E00C1B /* CellsOleObjectsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5622652215121E00E00C1B /* CellsOleObjectsAPITests.swift */; };
+		6B562268221540B200E00C1B /* CellsPageBreaksAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B562267221540B200E00C1B /* CellsPageBreaksAPITests.swift */; };
+		6B56226A22154C5100E00C1B /* CellsPageSetupAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226922154C5100E00C1B /* CellsPageSetupAPITests.swift */; };
+		6B56226C22154EAE00E00C1B /* CellsPicturesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226B22154EAE00E00C1B /* CellsPicturesAPITests.swift */; };
+		6B56226E221554AD00E00C1B /* CellsPivotTablesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226D221554AD00E00C1B /* CellsPivotTablesAPITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -296,11 +317,27 @@
 		138304C295CBA2E608F5313D /* Pods-AsposeCellsCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.release.xcconfig"; sourceTree = "<group>"; };
 		145A77DD6CA0E1846FF1685F /* Pods-AsposeCellsCloudTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.debug.xcconfig"; sourceTree = "<group>"; };
 		606BEF85E937E13832D711B3 /* Pods_AsposeCellsCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B21C63822165C7900D13B4B /* CellsPropertiesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPropertiesAPITests.swift; sourceTree = "<group>"; };
+		6B21C63A2216600200D13B4B /* CellsRangesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsRangesAPITests.swift; sourceTree = "<group>"; };
+		6B21C63C22169C8A00D13B4B /* CellsSaveAsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsSaveAsAPITests.swift; sourceTree = "<group>"; };
+		6B21C63E22169D1200D13B4B /* CellsShapesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsShapesAPITests.swift; sourceTree = "<group>"; };
+		6B21C6402216A23100D13B4B /* CellsWorksheetValidationsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetValidationsAPITests.swift; sourceTree = "<group>"; };
 		6B2F7FE621B66A7F00CC8734 /* Book1.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Book1.xlsx; sourceTree = "<group>"; };
 		6B45F77121C38EFE0058560A /* ReportData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ReportData.xml; sourceTree = "<group>"; };
 		6B45F77321C3911B0058560A /* CellsWorksheetsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetsAPITests.swift; sourceTree = "<group>"; };
 		6B45F77521C398950058560A /* NewCopy.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewCopy.xlsx; sourceTree = "<group>"; };
 		6B45F77921C3AE880058560A /* WaterMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WaterMark.png; sourceTree = "<group>"; };
+		6B463E672213FAB200F45F6F /* CellsAutoFilterAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoFilterAPITests.swift; sourceTree = "<group>"; };
+		6B463E692214005100F45F6F /* CellsAutoshapesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoshapesAPITests.swift; sourceTree = "<group>"; };
+		6B463E6B2214014200F45F6F /* OLEDoc.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = OLEDoc.docx; sourceTree = "<group>"; };
+		6B463E6C2214014200F45F6F /* word.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = word.jpg; sourceTree = "<group>"; };
+		6B463E6D2214014200F45F6F /* TestCase.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestCase.xlsx; sourceTree = "<group>"; };
+		6B463E6E2214014200F45F6F /* myDocument.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = myDocument.xlsx; sourceTree = "<group>"; };
+		6B463E732214039800F45F6F /* CellsChartAreaAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsChartAreaAPITests.swift; sourceTree = "<group>"; };
+		6B463E752214083C00F45F6F /* CellsChartsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsChartsAPITests.swift; sourceTree = "<group>"; };
+		6B463E7722140F5800F45F6F /* CellsConditionalFormattingsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsConditionalFormattingsAPITests.swift; sourceTree = "<group>"; };
+		6B463E792214142400F45F6F /* CellsHypelinksAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsHypelinksAPITests.swift; sourceTree = "<group>"; };
+		6B463E7B221416E100F45F6F /* CellsListObjectsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsListObjectsAPITests.swift; sourceTree = "<group>"; };
 		6B48156A21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorkbookAPITests.swift; sourceTree = "<group>"; };
 		6B4A3D7221A538CB00F53D6B /* AsposeCellsCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsposeCellsCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4A3D7521A538CB00F53D6B /* AsposeCellsCloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsposeCellsCloud.h; sourceTree = "<group>"; };
@@ -570,6 +607,11 @@
 		6B4A3F9621A541E800F53D6B /* CellsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAPITests.swift; sourceTree = "<group>"; };
 		6B4FF3122204301400D967DE /* OAuthAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPITests.swift; sourceTree = "<group>"; };
 		6B4FF3142204360A00D967DE /* CellsTaskAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsTaskAPITests.swift; sourceTree = "<group>"; };
+		6B5622652215121E00E00C1B /* CellsOleObjectsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsOleObjectsAPITests.swift; sourceTree = "<group>"; };
+		6B562267221540B200E00C1B /* CellsPageBreaksAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPageBreaksAPITests.swift; sourceTree = "<group>"; };
+		6B56226922154C5100E00C1B /* CellsPageSetupAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPageSetupAPITests.swift; sourceTree = "<group>"; };
+		6B56226B22154EAE00E00C1B /* CellsPicturesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPicturesAPITests.swift; sourceTree = "<group>"; };
+		6B56226D221554AD00E00C1B /* CellsPivotTablesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPivotTablesAPITests.swift; sourceTree = "<group>"; };
 		9496162334CFE14D3E0ECF3B /* Pods_AsposeCellsCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F0B682B802BC849878C767 /* Pods-AsposeCellsCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.debug.xcconfig"; sourceTree = "<group>"; };
 		E50CE6B10045730787B52920 /* Pods-AsposeCellsCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -608,6 +650,10 @@
 		6B2F7FE521B66A7F00CC8734 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				6B463E6E2214014200F45F6F /* myDocument.xlsx */,
+				6B463E6B2214014200F45F6F /* OLEDoc.docx */,
+				6B463E6D2214014200F45F6F /* TestCase.xlsx */,
+				6B463E6C2214014200F45F6F /* word.jpg */,
 				6B45F77921C3AE880058560A /* WaterMark.png */,
 				6B45F77521C398950058560A /* NewCopy.xlsx */,
 				6B45F77121C38EFE0058560A /* ReportData.xml */,
@@ -651,13 +697,30 @@
 		6B4A3D7F21A538CB00F53D6B /* AsposeCellsCloudTests */ = {
 			isa = PBXGroup;
 			children = (
-				6B4FF3142204360A00D967DE /* CellsTaskAPITests.swift */,
-				6B4FF3122204301400D967DE /* OAuthAPITests.swift */,
-				6B45F77321C3911B0058560A /* CellsWorksheetsAPITests.swift */,
-				6B48156A21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift */,
-				6B4A3F9621A541E800F53D6B /* CellsAPITests.swift */,
-				6B4A3D8021A538CB00F53D6B /* AsposeCellsCloudTests.swift */,
+				6B21C6402216A23100D13B4B /* CellsWorksheetValidationsAPITests.swift */,
+				6B21C63E22169D1200D13B4B /* CellsShapesAPITests.swift */,
+				6B21C63C22169C8A00D13B4B /* CellsSaveAsAPITests.swift */,
 				6B4A3D8221A538CB00F53D6B /* Info.plist */,
+				6B4A3D8021A538CB00F53D6B /* AsposeCellsCloudTests.swift */,
+				6B4A3F9621A541E800F53D6B /* CellsAPITests.swift */,
+				6B463E672213FAB200F45F6F /* CellsAutoFilterAPITests.swift */,
+				6B463E692214005100F45F6F /* CellsAutoshapesAPITests.swift */,
+				6B463E732214039800F45F6F /* CellsChartAreaAPITests.swift */,
+				6B463E752214083C00F45F6F /* CellsChartsAPITests.swift */,
+				6B463E7722140F5800F45F6F /* CellsConditionalFormattingsAPITests.swift */,
+				6B463E792214142400F45F6F /* CellsHypelinksAPITests.swift */,
+				6B463E7B221416E100F45F6F /* CellsListObjectsAPITests.swift */,
+				6B5622652215121E00E00C1B /* CellsOleObjectsAPITests.swift */,
+				6B562267221540B200E00C1B /* CellsPageBreaksAPITests.swift */,
+				6B56226922154C5100E00C1B /* CellsPageSetupAPITests.swift */,
+				6B56226B22154EAE00E00C1B /* CellsPicturesAPITests.swift */,
+				6B56226D221554AD00E00C1B /* CellsPivotTablesAPITests.swift */,
+				6B21C63822165C7900D13B4B /* CellsPropertiesAPITests.swift */,
+				6B21C63A2216600200D13B4B /* CellsRangesAPITests.swift */,
+				6B4FF3142204360A00D967DE /* CellsTaskAPITests.swift */,
+				6B48156A21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift */,
+				6B45F77321C3911B0058560A /* CellsWorksheetsAPITests.swift */,
+				6B4FF3122204301400D967DE /* OAuthAPITests.swift */,
 			);
 			path = AsposeCellsCloudTests;
 			sourceTree = "<group>";
@@ -1063,7 +1126,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B463E6F2214014200F45F6F /* OLEDoc.docx in Resources */,
+				6B463E722214014200F45F6F /* myDocument.xlsx in Resources */,
+				6B463E702214014200F45F6F /* word.jpg in Resources */,
 				6B45F77621C398950058560A /* NewCopy.xlsx in Resources */,
+				6B463E712214014200F45F6F /* TestCase.xlsx in Resources */,
 				6B2F7FE721B66A7F00CC8734 /* Book1.xlsx in Resources */,
 				6B45F77A21C3AE880058560A /* WaterMark.png in Resources */,
 				6B45F77221C38EFE0058560A /* ReportData.xml in Resources */,
@@ -1412,11 +1479,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B21C63F22169D1200D13B4B /* CellsShapesAPITests.swift in Sources */,
+				6B463E7C221416E100F45F6F /* CellsListObjectsAPITests.swift in Sources */,
+				6B463E742214039800F45F6F /* CellsChartAreaAPITests.swift in Sources */,
 				6B4A3F9721A541E800F53D6B /* CellsAPITests.swift in Sources */,
 				6B4FF3152204360A00D967DE /* CellsTaskAPITests.swift in Sources */,
 				6B4A3D8121A538CB00F53D6B /* AsposeCellsCloudTests.swift in Sources */,
+				6B56226A22154C5100E00C1B /* CellsPageSetupAPITests.swift in Sources */,
 				6B48156B21C0DCB200B2D9FE /* CellsWorkbookAPITests.swift in Sources */,
 				6B4FF3132204301400D967DE /* OAuthAPITests.swift in Sources */,
+				6B463E7A2214142500F45F6F /* CellsHypelinksAPITests.swift in Sources */,
+				6B463E6A2214005100F45F6F /* CellsAutoshapesAPITests.swift in Sources */,
+				6B463E762214083D00F45F6F /* CellsChartsAPITests.swift in Sources */,
+				6B56226C22154EAE00E00C1B /* CellsPicturesAPITests.swift in Sources */,
+				6B56226E221554AD00E00C1B /* CellsPivotTablesAPITests.swift in Sources */,
+				6B21C63D22169C8A00D13B4B /* CellsSaveAsAPITests.swift in Sources */,
+				6B5622662215121E00E00C1B /* CellsOleObjectsAPITests.swift in Sources */,
+				6B21C63922165C7900D13B4B /* CellsPropertiesAPITests.swift in Sources */,
+				6B463E682213FAB200F45F6F /* CellsAutoFilterAPITests.swift in Sources */,
+				6B21C63B2216600200D13B4B /* CellsRangesAPITests.swift in Sources */,
+				6B562268221540B200E00C1B /* CellsPageBreaksAPITests.swift in Sources */,
+				6B21C6412216A23100D13B4B /* CellsWorksheetValidationsAPITests.swift in Sources */,
+				6B463E7822140F5800F45F6F /* CellsConditionalFormattingsAPITests.swift in Sources */,
 				6B45F77421C3911B0058560A /* CellsWorksheetsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,10 +11,10 @@ import Foundation
 
 public struct Color: Codable {
 
-    public var A: Int32
-    public var B: Int32
-    public var R: Int32
-    public var G: Int32
+    public var A: Int32?
+    public var B: Int32?
+    public var R: Int32?
+    public var G: Int32?
 
 public enum CodingKeys: String, CodingKey { 
         case A = "A"
@@ -23,7 +23,7 @@ public enum CodingKeys: String, CodingKey {
         case G = "G"
     }
 
-    public init(A: Int32, B: Int32, R: Int32, G: Int32) {
+    public init(A: Int32?, B: Int32?, R: Int32?, G: Int32?) {
         self.A = A
         self.B = B
         self.R = R

@@ -14,7 +14,7 @@ public struct Range: Codable {
     /** Gets the count of columns in the range. */
     public var columnCount: Int32
     /** Sets or gets the height of rows in this range */
-    public var rowHeight: Double
+    public var rowHeight: Double?
     /** Gets or sets the name of the range. */
     public var name: String?
     /** Gets the index of the first column of the range. */
@@ -42,7 +42,7 @@ public enum CodingKeys: String, CodingKey {
         case worksheet = "Worksheet"
     }
 
-    public init(columnCount: Int32, rowHeight: Double, name: String?, firstColumn: Int32, columnWidth: Double, refersTo: String?, rowCount: Int32, firstRow: Int32, worksheet: String?) {
+    public init(columnCount: Int32, rowHeight: Double?, name: String?, firstColumn: Int32, columnWidth: Double, refersTo: String?, rowCount: Int32, firstRow: Int32, worksheet: String?) {
         self.columnCount = columnCount
         self.rowHeight = rowHeight
         self.name = name

@@ -133,7 +133,7 @@ open class CellsOleObjectsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsOleObjectsGetWorksheetOleObject(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSURL?,_ error: Error?) -> Void)) {
+    open class func cellsOleObjectsGetWorksheetOleObject(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: Data?,_ error: Error?) -> Void)) {
         cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: name, sheetName: sheetName, objectNumber: objectNumber, format: format, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -154,7 +154,7 @@ open class CellsOleObjectsAPI {
 
      - returns: RequestBuilder<NSURL> 
      */
-    open class func cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSURL> {
+    open class func cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<Data> {
         var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -175,7 +175,7 @@ open class CellsOleObjectsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<NSURL>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let requestBuilder: RequestBuilder<Data>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
