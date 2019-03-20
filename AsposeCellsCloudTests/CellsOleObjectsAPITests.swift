@@ -186,14 +186,14 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let upperLeftColumn:Int32? = 1
 		let height:Int32? = 100
 		let width:Int32? = 80
-		let oleFile:String? = "OLEDoc.docx"
-		let imageFile:String? = "word.jpg"
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
-		
+        let oleFile:String? = "\(folder)/OLEDoc.docx"
+        let imageFile:String? = "\(folder)/word.jpg"
+        
         uploadFile(name: name) {
-            self.uploadFile(name: oleFile!) {
-                self.uploadFile(name: imageFile!) {
+            self.uploadFile(name: "OLEDoc.docx") {
+                self.uploadFile(name: "word.jpg") {
                     CellsOleObjectsAPI.cellsOleObjectsPutWorksheetOleObject(name: name, sheetName: sheetName, oleObject: oleObject, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, height: height, width: width, oleFile: oleFile, imageFile: imageFile, folder: folder, storage: storage)
                     {
                         (response, error) in

@@ -16,6 +16,7 @@ class AsposeCellsCloudTests: XCTestCase {
     internal let BOOK1 = "Book1.xlsx"
     internal let MYDOC = "myDocument.xlsx"
     internal let PivTestFile = "TestCase.xlsx"
+    internal let PivTestFile2 = "PivTestFile2.xlsx"
     internal let SHEET1 = "Sheet1"
     internal let SHEET2 = "Sheet2"
     internal let SHEET3 = "Sheet3"

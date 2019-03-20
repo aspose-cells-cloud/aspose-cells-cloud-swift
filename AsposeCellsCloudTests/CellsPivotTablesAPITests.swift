@@ -229,38 +229,38 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
-
-	func testcellsPivotTablesGetWorksheetPivotTableFilter()
-	{
-		let expectation = self.expectation(description: "testcellsPivotTablesGetWorksheetPivotTableFilter")
-		let name:String = PivTestFile
-		let sheetName:String = SHEET4
-		let pivotTableIndex:Int32 = 0
+    
+    func testcellsPivotTablesGetWorksheetPivotTableFilter()
+    {
+        let expectation = self.expectation(description: "testcellsPivotTablesGetWorksheetPivotTableFilter")
+        let name:String = PivTestFile
+        let sheetName:String = SHEET4
+        let pivotTableIndex:Int32 = 0
         
         let top10Filter:Top10Filter = Top10Filter(items: 1, isPercent: false, isTop: true, criteria: nil)
         let filterColumn:FilterColumn = FilterColumn(filterType: "Top10", multipleFilters: nil, customFilters: nil, dynamicFilter: nil, colorFilter: nil, fieldIndex: 0, top10Filter: top10Filter, iconFilter: nil, visibledropdown: nil)
         let filterColumns: [FilterColumn] = [filterColumn]
         let autoFilter: AutoFilter = AutoFilter(link: nil, range: nil, filterColumns: filterColumns, sorter: nil)
         let filter:PivotFilter? = PivotFilter(evaluationOrder: nil, name: nil, filterType: "Count", autoFilter: autoFilter, fieldIndex: 1, measureFldIndex: nil, value1: nil, memberPropertyFieldIndex: nil, value2: nil)
-    
+        
         let needReCalculate:Bool? = true
-		let filterIndex:Int32 = 0
-		let folder:String = TEMPFOLDER
-		let storage:String? = nil
-    
-		uploadFile(name: name) {
-
+        let filterIndex:Int32 = 0
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            
             CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage)
             {
                 (response, error) in
                 guard error == nil else {
-                XCTFail("error testcellsPivotTablesPutWorksheetPivotTableFilter")
-                return
+                    XCTFail("error testcellsPivotTablesPutWorksheetPivotTableFilter")
+                    return
                 }
-    
+                
                 if let response = response {
                     XCTAssertEqual(response.code, 200)
-    
+                    
                     CellsPivotTablesAPI.cellsPivotTablesGetWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filterIndex: filterIndex, folder: folder, storage: storage)
                     {
                         (response, error) in
@@ -268,10 +268,9 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
                             XCTFail("error testcellsPivotTablesGetWorksheetPivotTableFilter")
                             return
                         }
-    
+                        
                         if let response = response {
                             XCTAssertEqual(response.code, 200)
-                            expectation.fulfill()
                         }
                     }
                     
@@ -280,7 +279,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
             }
         }
         self.waitForExpectations(timeout: testTimeout, handler: nil)
-	}
+    }
 
 	func testcellsPivotTablesGetWorksheetPivotTableFilters()
 	{
@@ -557,7 +556,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let name:String = PivTestFile
 		let sheetName:String = SHEET4
         
-		let request:CreatePivotTableRequest? = CreatePivotTableRequest(pivotFieldColumns: nil, name: "TestPivot", useSameSource: true, pivotFieldData: nil, pivotFieldRows: nil, destCellName: "C1", sourceData: "Sheet1!C6:E13")
+        let _:CreatePivotTableRequest? = CreatePivotTableRequest(pivotFieldColumns: nil, name: "TestPivot", useSameSource: true, pivotFieldData: nil, pivotFieldRows: nil, destCellName: "C1", sourceData: "Sheet1!C6:E13")
         
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
@@ -583,6 +582,38 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)
 	}
+    
+    func testcellsPivotTablesPutWorksheetPivotTable_2()
+    {
+        let expectation = self.expectation(description: "testcellsPivotTablesPutWorksheetPivotTable")
+        let name:String = PivTestFile2
+        let sheetName:String = SHEET3
+        
+        let FieldColumns:[Int32]? = [0,1]
+        let FieldRows:[Int32]? = [2,3]
+        let FieldData:[Int32]? = [4]
+        let request:CreatePivotTableRequest? = CreatePivotTableRequest(pivotFieldColumns: FieldColumns, name: "Test", useSameSource: false, pivotFieldData: FieldData, pivotFieldRows: FieldRows, destCellName: "C1", sourceData: "Sheet2!$A$1:$E$8")
+        
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTable(name: name, sheetName: sheetName, request: request, folder: folder, storage: storage, sourceData: nil, destCellName: nil, tableName: nil, useSameSource: nil)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsPivotTablesPutWorksheetPivotTable")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsPivotTablesPutWorksheetPivotTableFilter() 
 	{
@@ -618,6 +649,8 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    
 
 }
 

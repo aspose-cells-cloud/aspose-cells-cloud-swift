@@ -118,6 +118,41 @@ class CellsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsGetCellHtmlString()
+    {
+        let expectation = self.expectation(description: "testcellsGetCellHtmlString")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let cellName:String = CellName
+        let folder:String? = nil
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsGetCellHtmlString(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsGetCellHtmlString")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertTrue(response is NSData)
+                    //response is a Data of file, we may write it down and check it.
+                    let fileName = "testcellsGetCellHtmlString.txt"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
     func testcellsGetWorksheetCell()
 	{

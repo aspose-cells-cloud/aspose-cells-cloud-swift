@@ -186,12 +186,13 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let upperLeftColumn:Int32? = 1
 		let lowerRightRow:Int32? = 10
 		let lowerRightColumn:Int32? = 10
-		let picturePath:String? = "WaterMark.png"
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
+        let picturePath:String? = "\(folder)/WaterMark.png"
+        
 		
         uploadFile(name: name) {
-		self.uploadFile(name: picturePath!) {
+		self.uploadFile(name: "WaterMark.png") {
 			CellsPicturesAPI.cellsPicturesPutWorksheetAddPicture(name: name, sheetName: sheetName, picture: picture, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, picturePath: picturePath, folder: folder, storage: storage)
 			{
 				(response, error) in

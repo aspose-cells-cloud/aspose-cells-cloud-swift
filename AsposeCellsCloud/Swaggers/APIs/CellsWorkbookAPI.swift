@@ -1171,13 +1171,14 @@ open class CellsWorkbookAPI {
     /**
      Convert workbook from request content to some format.
      
+     - parameter workbook: (body)  
      - parameter format: (query) The format to convert. (optional)
      - parameter password: (query) The workbook password. (optional)
      - parameter outPath: (query) Path to save result (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorkbookPutConvertWorkbook(format: String? = nil, password: String? = nil, outPath: String? = nil, completion: @escaping ((_ data: AnyObject?,_ error: Error?) -> Void)) {
-        cellsWorkbookPutConvertWorkbookWithRequestBuilder(format: format, password: password, outPath: outPath).execute { (response, error) -> Void in
+    open class func cellsWorkbookPutConvertWorkbook(workbook: Data, format: String? = nil, password: String? = nil, outPath: String? = nil, completion: @escaping ((_ data: AnyObject?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutConvertWorkbookWithRequestBuilder(workbook: workbook, format: format, password: password, outPath: outPath).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -1188,17 +1189,18 @@ open class CellsWorkbookAPI {
      - PUT /cells/convert
      - examples: [{contentType=application/json, example=""}]
      
+     - parameter workbook: (body)  
      - parameter format: (query) The format to convert. (optional)
      - parameter password: (query) The workbook password. (optional)
      - parameter outPath: (query) Path to save result (optional)
 
      - returns: RequestBuilder<NSURL> 
      */
-    open class func cellsWorkbookPutConvertWorkbookWithRequestBuilder(format: String? = nil, password: String? = nil, outPath: String? = nil) -> RequestBuilder<AnyObject> {
+    open class func cellsWorkbookPutConvertWorkbookWithRequestBuilder(workbook: Data, format: String? = nil, password: String? = nil, outPath: String? = nil) -> RequestBuilder<AnyObject> {
         let path = "/cells/convert"
         let URLString = AsposeCellsCloudAPI.basePath + path
-        let parameters: [String:Any]? = nil
-        
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: workbook)
+
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "format": format, 
@@ -1208,7 +1210,7 @@ open class CellsWorkbookAPI {
 
         let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
 
-        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
 
     /**

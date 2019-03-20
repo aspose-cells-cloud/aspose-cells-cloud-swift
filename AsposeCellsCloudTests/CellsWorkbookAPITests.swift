@@ -660,12 +660,19 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	func testcellsWorkbookPutConvertWorkbook() 
 	{
 		let expectation = self.expectation(description: "testcellsWorkbookPutConvertWorkbook")
-		let format:String? = "xlsx"
+        let workbook:String = BOOK1
+		let format:String? = "pdf"
+        
+        let url1: URL? = getURL(workbook)
+        //let newImage = UIImage(contentsOfFile: url1!.path)
+        //let imageData = newImage!.pngData()
+        let filedata = NSData(contentsOfFile: url1!.path)
+        
 		let password:String? = nil
 		let outPath:String? = nil
 		
-		uploadFile(name: BOOK1) {
-			CellsWorkbookAPI.cellsWorkbookPutConvertWorkbook(format: format, password: password, outPath: outPath)
+		uploadFile(name: workbook) {
+            CellsWorkbookAPI.cellsWorkbookPutConvertWorkbook(workbook: filedata! as Data, format: format, password: password, outPath: outPath)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -676,7 +683,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 				if let response = response {
 					XCTAssertTrue(response is NSData)
                     //response is a Data of file, we may write it down and check it.
-                    let fileName = "testcellsWorkbookPutConvertWorkbook.xlsx"
+                    let fileName = "testcellsWorkbookPutConvertWorkbook.pdf"
                     let filePath = NSHomeDirectory()
                     let fileManager = FileManager.default
                     let path = "\(filePath)/tmp/\(fileName)"
