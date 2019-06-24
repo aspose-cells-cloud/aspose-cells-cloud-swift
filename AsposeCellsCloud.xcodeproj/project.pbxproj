@@ -304,6 +304,7 @@
 		6B56226A22154C5100E00C1B /* CellsPageSetupAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226922154C5100E00C1B /* CellsPageSetupAPITests.swift */; };
 		6B56226C22154EAE00E00C1B /* CellsPicturesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226B22154EAE00E00C1B /* CellsPicturesAPITests.swift */; };
 		6B56226E221554AD00E00C1B /* CellsPivotTablesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B56226D221554AD00E00C1B /* CellsPivotTablesAPITests.swift */; };
+		6B9C8E8B22B9DDDC00673E14 /* MarkdownSaveOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C8E8A22B9DDDC00673E14 /* MarkdownSaveOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -618,6 +619,7 @@
 		6B56226922154C5100E00C1B /* CellsPageSetupAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPageSetupAPITests.swift; sourceTree = "<group>"; };
 		6B56226B22154EAE00E00C1B /* CellsPicturesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPicturesAPITests.swift; sourceTree = "<group>"; };
 		6B56226D221554AD00E00C1B /* CellsPivotTablesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsPivotTablesAPITests.swift; sourceTree = "<group>"; };
+		6B9C8E8A22B9DDDC00673E14 /* MarkdownSaveOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownSaveOptions.swift; sourceTree = "<group>"; };
 		9496162334CFE14D3E0ECF3B /* Pods_AsposeCellsCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F0B682B802BC849878C767 /* Pods-AsposeCellsCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.debug.xcconfig"; sourceTree = "<group>"; };
 		E50CE6B10045730787B52920 /* Pods-AsposeCellsCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -891,6 +893,7 @@
 				6B4A3DC921A5416900F53D6B /* ListObjectResponse.swift */,
 				6B4A3DFE21A5416900F53D6B /* ListObjects.swift */,
 				6B4A3E2D21A5416900F53D6B /* ListObjectsResponse.swift */,
+				6B9C8E8A22B9DDDC00673E14 /* MarkdownSaveOptions.swift */,
 				6B4A3DE321A5416900F53D6B /* MergedCell.swift */,
 				6B4A3DF321A5416900F53D6B /* MergedCellResponse.swift */,
 				6B4A3E0F21A5416900F53D6B /* MergedCells.swift */,
@@ -1257,6 +1260,7 @@
 				6B4A3EA521A5416900F53D6B /* CellsSaveAsAPI.swift in Sources */,
 				6B4A3F2C21A5416900F53D6B /* ImportStringArrayOption.swift in Sources */,
 				6B4A3F2D21A5416900F53D6B /* PivotTables.swift in Sources */,
+				6B9C8E8B22B9DDDC00673E14 /* MarkdownSaveOptions.swift in Sources */,
 				6B4A3ED821A5416900F53D6B /* SaveResponse.swift in Sources */,
 				6B4A3EFE21A5416900F53D6B /* Link.swift in Sources */,
 				6B4A3EDC21A5416900F53D6B /* PasteOptions.swift in Sources */,

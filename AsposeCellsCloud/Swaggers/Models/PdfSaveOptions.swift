@@ -9,20 +9,20 @@ import Foundation
 
 
 
-public struct PdfSaveOptions: Codable {
+public class PdfSaveOptions: SaveOptions {
 
-    public var enableHTTPCompression: Bool?
-    public var saveFormat: String?
+    //public var enableHTTPCompression: Bool?
+    //public var saveFormat: String?
     /** Make the workbook empty after saving the file. */
-    public var clearData: Bool?
+    //public var clearData: Bool?
     /** The cached file folder is used to store some large data. */
-    public var cachedFileFolder: String?
+    //public var cachedFileFolder: String?
     /** Indicates whether validate merged areas before saving the file. The default value is false.              */
-    public var validateMergedAreas: Bool?
-    public var refreshChartCache: Bool?
+    //public var validateMergedAreas: Bool?
+    //public var refreshChartCache: Bool?
     /** If true and the directory does not exist, the directory will be automatically created before saving the file.              */
-    public var createDirectory: Bool?
-    public var sortNames: Bool?
+    //public var createDirectory: Bool?
+    //public var sortNames: Bool?
     public var calculateFormula: Bool?
     public var checkFontCompatibility: Bool?
     public var onePagePerSheet: Bool?
@@ -35,14 +35,14 @@ public struct PdfSaveOptions: Codable {
     public var securityOptions: PdfSecurityOptions?
 
 public enum CodingKeys: String, CodingKey { 
-        case enableHTTPCompression = "EnableHTTPCompression"
-        case saveFormat = "SaveFormat"
-        case clearData = "ClearData"
-        case cachedFileFolder = "CachedFileFolder"
-        case validateMergedAreas = "ValidateMergedAreas"
-        case refreshChartCache = "RefreshChartCache"
-        case createDirectory = "CreateDirectory"
-        case sortNames = "SortNames"
+        //case enableHTTPCompression = "EnableHTTPCompression"
+        //case saveFormat = "SaveFormat"
+        //case clearData = "ClearData"
+        //case cachedFileFolder = "CachedFileFolder"
+        //case validateMergedAreas = "ValidateMergedAreas"
+        //case refreshChartCache = "RefreshChartCache"
+        //case createDirectory = "CreateDirectory"
+        //case sortNames = "SortNames"
         case calculateFormula = "CalculateFormula"
         case checkFontCompatibility = "CheckFontCompatibility"
         case onePagePerSheet = "OnePagePerSheet"
@@ -56,14 +56,15 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(enableHTTPCompression: Bool?, saveFormat: String?, clearData: Bool?, cachedFileFolder: String?, validateMergedAreas: Bool?, refreshChartCache: Bool?, createDirectory: Bool?, sortNames: Bool?, calculateFormula: Bool?, checkFontCompatibility: Bool?, onePagePerSheet: Bool?, compliance: String?, defaultFont: String?, printingPageType: String?, imageType: String?, desiredPPI: Int32?, jpegQuality: Int32?, securityOptions: PdfSecurityOptions?) {
-        self.enableHTTPCompression = enableHTTPCompression
-        self.saveFormat = saveFormat
-        self.clearData = clearData
-        self.cachedFileFolder = cachedFileFolder
-        self.validateMergedAreas = validateMergedAreas
-        self.refreshChartCache = refreshChartCache
-        self.createDirectory = createDirectory
-        self.sortNames = sortNames
+        super.init(enableHTTPCompression: enableHTTPCompression, saveFormat: saveFormat, clearData: clearData, cachedFileFolder: cachedFileFolder, validateMergedAreas: validateMergedAreas, refreshChartCache: refreshChartCache, createDirectory: createDirectory, sortNames: sortNames)
+        //self.enableHTTPCompression = enableHTTPCompression
+        //self.saveFormat = saveFormat
+        //self.clearData = clearData
+        //self.cachedFileFolder = cachedFileFolder
+        //self.validateMergedAreas = validateMergedAreas
+        //self.refreshChartCache = refreshChartCache
+        //self.createDirectory = createDirectory
+        //self.sortNames = sortNames
         self.calculateFormula = calculateFormula
         self.checkFontCompatibility = checkFontCompatibility
         self.onePagePerSheet = onePagePerSheet
@@ -76,6 +77,42 @@ public enum CodingKeys: String, CodingKey {
         self.securityOptions = securityOptions
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(calculateFormula, forKey: "CalculateFormula")
+        try container.encodeIfPresent(checkFontCompatibility, forKey: "CheckFontCompatibility")
+        try container.encodeIfPresent(onePagePerSheet, forKey: "OnePagePerSheet")
+        try container.encodeIfPresent(compliance, forKey: "Compliance")
+        try container.encodeIfPresent(defaultFont, forKey: "DefaultFont")
+        try container.encodeIfPresent(printingPageType, forKey: "PrintingPageType")
+        try container.encodeIfPresent(imageType, forKey: "ImageType")
+        try container.encodeIfPresent(desiredPPI, forKey: "desiredPPI")
+        try container.encodeIfPresent(jpegQuality, forKey: "jpegQuality")
+        try container.encodeIfPresent(securityOptions, forKey: "SecurityOptions")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        calculateFormula = try container.decodeIfPresent(Bool.self, forKey: "CalculateFormula")
+        checkFontCompatibility = try container.decodeIfPresent(Bool.self, forKey: "CheckFontCompatibility")
+        onePagePerSheet = try container.decodeIfPresent(Bool.self, forKey: "OnePagePerSheet")
+        compliance = try container.decodeIfPresent(String.self, forKey: "Compliance")
+        defaultFont = try container.decodeIfPresent(String.self, forKey: "DefaultFont")
+        printingPageType = try container.decodeIfPresent(String.self, forKey: "PrintingPageType")
+        imageType = try container.decodeIfPresent(String.self, forKey: "ImageType")
+        desiredPPI = try container.decodeIfPresent(Int32.self, forKey: "desiredPPI")
+        jpegQuality = try container.decodeIfPresent(Int32.self, forKey: "jpegQuality")
+        securityOptions = try container.decodeIfPresent(PdfSecurityOptions.self, forKey: "SecurityOptions")
+        try super.init(from: decoder)
+    }
 
 }
 

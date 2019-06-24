@@ -41,7 +41,7 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
 		let saveOptions:SaveOptions? = nil
 		let newfilename:String = "newbook.xlsx"
 		let isAutoFitRows:Bool? = true
-		let isAutoFitColumns:Bool? = nil
+		let isAutoFitColumns:Bool? = true
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		
@@ -62,6 +62,64 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsSaveAsPostDocumentSaveAsPDF()
+    {
+        let expectation = self.expectation(description: "testcellsSaveAsPostDocumentSaveAsPDF")
+        let name:String = BOOK1
+        let saveOptions:PdfSaveOptions? = PdfSaveOptions(enableHTTPCompression: nil, saveFormat: "pdf", clearData: nil, cachedFileFolder: nil, validateMergedAreas: nil, refreshChartCache: nil, createDirectory: nil, sortNames: nil, calculateFormula: nil, checkFontCompatibility: nil, onePagePerSheet: true, compliance: nil, defaultFont: nil, printingPageType: nil, imageType: nil, desiredPPI: nil, jpegQuality: nil, securityOptions: nil)
+        let newfilename:String = "newbook.pdf"
+        let isAutoFitRows:Bool? = true
+        let isAutoFitColumns:Bool? = true
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsSaveAsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsSaveAsPostDocumentSaveAsPDF")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsSaveAsPostDocumentSaveAsMD()
+    {
+        let expectation = self.expectation(description: "testcellsSaveAsPostDocumentSaveAsMD")
+        let name:String = BOOK1
+        let saveOptions:PdfSaveOptions? = PdfSaveOptions(enableHTTPCompression: nil, saveFormat: "markdown", clearData: nil, cachedFileFolder: nil, validateMergedAreas: nil, refreshChartCache: nil, createDirectory: nil, sortNames: nil, calculateFormula: nil, checkFontCompatibility: nil, onePagePerSheet: true, compliance: nil, defaultFont: nil, printingPageType: nil, imageType: nil, desiredPPI: nil, jpegQuality: nil, securityOptions: nil)
+        let newfilename:String = "newbook.md"
+        let isAutoFitRows:Bool? = true
+        let isAutoFitColumns:Bool? = nil
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsSaveAsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsSaveAsPostDocumentSaveAsMD")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 }
 

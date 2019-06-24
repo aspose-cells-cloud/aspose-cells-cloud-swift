@@ -79,6 +79,32 @@ class AsposeCellsCloudTests: XCTestCase {
         
     }
     
+    internal func UpdateDataFileForDropBox(name: String, folder: String = "Temp", storage: String? = nil,  completion: @escaping ()->Void) {
+        let path = "\(folder)/\(name)"
+        
+        let url: URL? = getURL(name)
+        if (nil == url) {
+            XCTFail("no file found \(name)")
+            return
+        }
+        
+        self.putCreate(path: path, file: url!, versionId: nil, storage: storage) {
+            (response, error) in
+            guard error == nil else {
+                XCTFail("error uploading file \(name)")
+                return
+            }
+            if let response = response, response.code == HttpStatusCode.ok.rawValue {
+                completion()
+            } else {
+                XCTFail("error uploading file \(name)")
+            }
+            
+        }
+        
+    }
+    
+    
     internal func uploadFiles(names: [String], completion: @escaping ()->Void) {
         
         var _names = names

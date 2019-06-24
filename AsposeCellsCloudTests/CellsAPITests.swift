@@ -62,7 +62,7 @@ class CellsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
-
+    
 	func testcellsDeleteWorksheetRow() 
 	{
 		let expectation = self.expectation(description: "testcellsDeleteWorksheetRow")
@@ -732,33 +732,33 @@ class CellsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
-
-	func testcellsPostSetCellHtmlString() 
-	{
-		let expectation = self.expectation(description: "testcellsPostSetCellHtmlString")
-		let name:String = BOOK1
-		let sheetName:String = SHEET1
-		let cellName:String = CellName
-		let folder:String = TEMPFOLDER
-		let storage:String? = nil
-		
-		uploadFile(name: name) {
-			CellsAPI.cellsPostSetCellHtmlString(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
-			{
-				(response, error) in
-				guard error == nil else {
-					XCTFail("error testcellsPostSetCellHtmlString")
-					return
-				}
-	
-				if let response = response {
-					XCTAssertEqual(response.code, 200)
-					expectation.fulfill()
-				}
-			}
-		}
-		self.waitForExpectations(timeout: testTimeout, handler: nil)		
-	}
+    
+    func testcellsPostSetCellHtmlString()
+    {
+        let expectation = self.expectation(description: "testcellsPostSetCellHtmlString")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let cellName:String = CellName
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsPostSetCellHtmlString(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsPostSetCellHtmlString")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsPostSetCellRangeValue() 
 	{
@@ -1024,9 +1024,9 @@ class CellsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let cellName:String = CellName
-		let value:String = "1"
-        let type:String = "String"
-		let formula:String? = nil
+		let value:String = "2018/10/09" //"1"
+        let type:String = "DateTime"    //"String"
+		let formula:String? = "=Now()"  //nil
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		

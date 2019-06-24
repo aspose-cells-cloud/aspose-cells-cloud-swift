@@ -167,9 +167,9 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsWorkbookGetWorkbook")
 		let name:String = BOOK1
 		let password:String? = nil
-		let format:String? = nil
+		let format:String? = "XPS"
 		let isAutoFit:Bool? = true
-		let onlySaveTable:Bool? = nil
+		let onlySaveTable:Bool? = true
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		let outPath:String? = nil
@@ -199,6 +199,44 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+
+    func testcellsWorkbookGetMarkdownFormat()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookGetMarkdownFormat")
+        let name:String = BOOK1
+        let password:String? = nil
+        let format:String? = "md"
+        let isAutoFit:Bool? = true
+        let onlySaveTable:Bool? = true
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        let outPath:String? = nil
+        
+        uploadFile(name: name) {
+            CellsWorkbookAPI.cellsWorkbookGetWorkbook(name: name, password: password, format: format, isAutoFit: isAutoFit, onlySaveTable: onlySaveTable, folder: folder, storage: storage, outPath: outPath)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookGetMarkdownFormat")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertTrue(response is NSData)
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "markdowntest.md"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsWorkbookGetWorkbookDefaultStyle() 
 	{
@@ -497,6 +535,8 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let outPath:String? = nil
 		
 		uploadFile(name: name) {
+        self.uploadFile(name: xmlFile!, folder: "") {
+            
 			CellsWorkbookAPI.cellsWorkbookPostWorkbookGetSmartMarkerResult(name: name, xmlFile: xmlFile, folder: folder, storage: storage, outPath: outPath)
 			{
 				(response, error) in
@@ -519,6 +559,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 				}
 			}
 		}
+        }
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
@@ -587,6 +628,8 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
+        self.uploadFile(name: mergeWith, folder: "") {
+                
 			CellsWorkbookAPI.cellsWorkbookPostWorkbooksMerge(name: name, mergeWith: mergeWith, folder: folder, storage: storage)
 			{
 				(response, error) in
@@ -601,6 +644,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 				}
 			}
 		}
+        }
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
@@ -696,7 +740,45 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
-
+    
+    func testcellsWorkbookPutConvertMD()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookPutConvertMD")
+        let workbook:String = BOOK1
+        let format:String? = "md"
+        
+        let url1: URL? = getURL(workbook)
+        let filedata = NSData(contentsOfFile: url1!.path)
+        
+        let password:String? = nil
+        let outPath:String? = nil
+        
+        uploadFile(name: workbook) {
+            CellsWorkbookAPI.cellsWorkbookPutConvertWorkbook(workbook: filedata! as Data, format: format, password: password, outPath: outPath)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookPutConvertMD")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertTrue(response is NSData)
+                    //response is a Data of file, we may write it down and check it.
+                    let fileName = "testcellsWorkbookPutConvertMD.md"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as! Data)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
 	func testcellsWorkbookPutDocumentProtectFromChanges() 
 	{
 		let expectation = self.expectation(description: "testcellsWorkbookPutDocumentProtectFromChanges")
@@ -758,5 +840,31 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
+    func testcellsWorkbookPostWorkbooksTextSearchTestForDropBox()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookPostWorkbooksTextSearchTestForDropBox")
+        let name:String = BOOK1
+        let text:String = "test"
+        let folder:String = TEMPFOLDER
+        let storage:String? = "DropBox"
+        
+        UpdateDataFileForDropBox(name: name, folder: folder, storage: storage) {
+            CellsWorkbookAPI.cellsWorkbookPostWorkbooksTextSearch(name: name, text: text, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookPostWorkbooksTextSearchTestForDropBox")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
 }
 

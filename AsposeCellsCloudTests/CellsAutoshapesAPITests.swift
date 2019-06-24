@@ -40,7 +40,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		let name:String = MYDOC
 		let sheetName:String = SHEET2
 		let autoshapeNumber:Int32 = 4
-		let format:String? = nil
+		let format:String? = "PNG"
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		
@@ -69,6 +69,41 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
+    func testcellsAutoshapesGetWorksheetAutoshapeDTO()
+    {
+        let expectation = self.expectation(description: "testcellsAutoshapesGetWorksheetAutoshapeDTO")
+        let name:String = MYDOC
+        let sheetName:String = SHEET2
+        let autoshapeNumber:Int32 = 4
+        let format:String? = nil
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAutoshapesAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsAutoshapesGetWorksheetAutoshapeDTO")
+                    return
+                }
+                
+                if let response = response {
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsAutoshapesGetWorksheetAutoshapeDTO.txt"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
 	func testcellsAutoshapesGetWorksheetAutoshapes() 
 	{
 		let expectation = self.expectation(description: "testcellsAutoshapesGetWorksheetAutoshapes")

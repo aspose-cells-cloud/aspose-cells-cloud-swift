@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SaveOptions: Codable {
+public class SaveOptions: Codable {
 
     public var enableHTTPCompression: Bool?
     public var saveFormat: String?
@@ -46,6 +46,36 @@ public enum CodingKeys: String, CodingKey {
         self.sortNames = sortNames
     }
 
+    // Encodable protocol methods
+    
+    public func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(enableHTTPCompression, forKey: "EnableHTTPCompression")
+        try container.encodeIfPresent(saveFormat, forKey: "SaveFormat")
+        try container.encodeIfPresent(clearData, forKey: "ClearData")
+        try container.encodeIfPresent(cachedFileFolder, forKey: "CachedFileFolder")
+        try container.encodeIfPresent(validateMergedAreas, forKey: "ValidateMergedAreas")
+        try container.encodeIfPresent(refreshChartCache, forKey: "RefreshChartCache")
+        try container.encodeIfPresent(createDirectory, forKey: "CreateDirectory")
+        try container.encodeIfPresent(sortNames, forKey: "SortNames")
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        enableHTTPCompression = try container.decodeIfPresent(Bool.self, forKey: "EnableHTTPCompression")
+        saveFormat = try container.decodeIfPresent(String.self, forKey: "SaveFormat")
+        clearData = try container.decodeIfPresent(Bool.self, forKey: "ClearData")
+        cachedFileFolder = try container.decodeIfPresent(String.self, forKey: "CachedFileFolder")
+        validateMergedAreas = try container.decodeIfPresent(Bool.self, forKey: "ValidateMergedAreas")
+        refreshChartCache = try container.decodeIfPresent(Bool.self, forKey: "RefreshChartCache")
+        createDirectory = try container.decodeIfPresent(Bool.self, forKey: "CreateDirectory")
+        sortNames = try container.decodeIfPresent(Bool.self, forKey: "SortNames")
+    }
 
 }
 

@@ -227,7 +227,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsWorksheetsGetWorksheet")
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
-		let format:String? = nil
+		let format:String? = "png"
 		let verticalResolution:Int32? = 100
 		let horizontalResolution:Int32? = 90
 		let folder:String = TEMPFOLDER
