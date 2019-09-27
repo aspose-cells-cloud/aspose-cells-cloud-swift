@@ -45,7 +45,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteUnprotectWorksheet(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteUnprotectWorksheet(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -71,7 +71,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteWorksheet(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteWorksheet(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,7 +97,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteWorksheetBackground(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteWorksheetBackground(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -124,7 +124,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -150,7 +150,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteWorksheetComments(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteWorksheetComments(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -180,7 +180,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsDeleteWorksheetFreezePanes(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsDeleteWorksheetFreezePanes(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -205,7 +205,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetNamedRanges(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetNamedRanges(name: name, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -234,7 +234,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -243,7 +243,6 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 				}
 	
 				if let response = response {
-					//XCTAssertTrue(response is Data)
                     //response is a Data of json, we may write it down and check it.
                     let fileName = "testcellsWorksheetsGetWorksheet.txt"
                     let filePath = NSHomeDirectory()
@@ -251,7 +250,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
                     let path = "\(filePath)/tmp/\(fileName)"
                     fileManager.createFile(atPath: path, contents:nil, attributes:nil)
                     let handle = FileHandle(forWritingAtPath:path)
-                    handle?.write(response)
+                    handle?.write(response as Data)
 
 					expectation.fulfill()
 				}
@@ -270,7 +269,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetCalculateFormula(name: name, sheetName: sheetName, formula: formula, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetCalculateFormula(name: name, sheetName: sheetName, formula: formula, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -297,7 +296,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -323,7 +322,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetComments(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetComments(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -350,7 +349,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetMergedCell(name: name, sheetName: sheetName, mergedCellIndex: mergedCellIndex, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetMergedCell(name: name, sheetName: sheetName, mergedCellIndex: mergedCellIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -376,7 +375,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetMergedCells(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetMergedCells(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -402,7 +401,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheetTextItems(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheetTextItems(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -427,7 +426,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsGetWorksheets(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheets(name: name, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -451,14 +450,14 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let firstColumn:Int32 = 1
 		let lastColumn:Int32 = 10
-		let autoFitterOptions:AutoFitterOptions? = nil
+		let autoFitterOptions:AutoFitterOptions? = AutoFitterOptions(ignoreHidden: false, onlyAuto: false, autoFitMergedCells: false)
 		let firstRow:Int32? = 1
 		let lastRow:Int32? = 19
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostAutofitWorksheetColumns(name: name, sheetName: sheetName, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, firstRow: firstRow, lastRow: lastRow, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostAutofitWorksheetColumns(name: name, sheetName: sheetName, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, firstRow: firstRow, lastRow: lastRow, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -488,7 +487,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostAutofitWorksheetRow(name: name, sheetName: sheetName, rowIndex: rowIndex, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostAutofitWorksheetRow(name: name, sheetName: sheetName, rowIndex: rowIndex, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -518,7 +517,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostAutofitWorksheetRows(name: name, sheetName: sheetName, autoFitterOptions: autoFitterOptions, startRow: startRow, endRow: endRow, onlyAuto: onlyAuto, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostAutofitWorksheetRows(name: name, sheetName: sheetName, autoFitterOptions: autoFitterOptions, startRow: startRow, endRow: endRow, onlyAuto: onlyAuto, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -549,7 +548,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		
         uploadFile(name: name) {
 		self.uploadFile(name: sourceWorkbook!) {
-			CellsWorksheetsAPI.cellsWorksheetsPostCopyWorksheet(name: name, sheetName: sheetName, sourceSheet: sourceSheet, options: options, sourceWorkbook: sourceWorkbook, sourceFolder: sourceFolder, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostCopyWorksheet(name: name, sheetName: sheetName, sourceSheet: sourceSheet, options: options, sourceWorkbook: sourceWorkbook, sourceFolder: sourceFolder, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -577,7 +576,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostMoveWorksheet(name: name, sheetName: sheetName, moving: moving, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostMoveWorksheet(name: name, sheetName: sheetName, moving: moving, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -604,7 +603,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostRenameWorksheet(name: name, sheetName: sheetName, newname: newname, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostRenameWorksheet(name: name, sheetName: sheetName, newname: newname, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -631,7 +630,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostUpdateWorksheetProperty(name: name, sheetName: sheetName, sheet: sheet, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostUpdateWorksheetProperty(name: name, sheetName: sheetName, sheet: sheet, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -658,7 +657,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostUpdateWorksheetZoom(name: name, sheetName: sheetName, value: value, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostUpdateWorksheetZoom(name: name, sheetName: sheetName, value: value, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -686,7 +685,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -714,7 +713,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostWorksheetRangeSort(name: name, sheetName: sheetName, cellArea: cellArea, dataSorter: dataSorter, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostWorksheetRangeSort(name: name, sheetName: sheetName, cellArea: cellArea, dataSorter: dataSorter, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -741,7 +740,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostWorksheetTextSearch(name: name, sheetName: sheetName, text: text, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostWorksheetTextSearch(name: name, sheetName: sheetName, text: text, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -769,7 +768,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPostWorsheetTextReplace(name: name, sheetName: sheetName, oldValue: oldValue, newValue: newValue, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPostWorsheetTextReplace(name: name, sheetName: sheetName, oldValue: oldValue, newValue: newValue, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -797,7 +796,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPutAddNewWorksheet(name: name, sheetName: sheetName, position: position, sheettype: sheettype, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPutAddNewWorksheet(name: name, sheetName: sheetName, position: position, sheettype: sheettype, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -824,7 +823,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPutChangeVisibilityWorksheet(name: name, sheetName: sheetName, isVisible: isVisible, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPutChangeVisibilityWorksheet(name: name, sheetName: sheetName, isVisible: isVisible, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -851,7 +850,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPutProtectWorksheet(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPutProtectWorksheet(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -883,7 +882,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-            CellsWorksheetsAPI.cellsWorksheetsPutWorksheetBackground(name: name, sheetName: sheetName, png: imageData!, folder: folder, storage: storage)
+            CellsAPI.cellsWorksheetsPutWorksheetBackground(name: name, sheetName: sheetName, png: imageData! as NSData, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -911,7 +910,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPutWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPutWorksheetComment(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -941,7 +940,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsWorksheetsAPI.cellsWorksheetsPutWorksheetFreezePanes(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsPutWorksheetFreezePanes(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

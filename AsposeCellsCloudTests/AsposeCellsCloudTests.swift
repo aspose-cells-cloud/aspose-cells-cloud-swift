@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import AsposeCellsCloud
+import Alamofire
 
 class AsposeCellsCloudTests: XCTestCase {
     
@@ -54,8 +55,17 @@ class AsposeCellsCloudTests: XCTestCase {
                     
     }
     
-    internal func uploadFile(name: String, folder: String = "Temp", completion: @escaping ()->Void) {
-        let path = "\(folder)/\(name)"
+    internal func uploadFile(name: String, folder: String = "Temp", storage: String? = nil, completion: @escaping ()->Void) {
+        
+        var path = ""
+        if (folder != "")
+        {
+            path = "\(folder)/\(name)"
+        }
+        else
+        {
+            path = name
+        }
         
         let url: URL? = getURL(name)
         if (nil == url) {
@@ -63,13 +73,13 @@ class AsposeCellsCloudTests: XCTestCase {
             return
         }
 
-        self.putCreate(path: path, file: url!) {
+        self.putCreate(path: path, file: url!, versionId: nil, storage: storage) {
             (response, error) in
             guard error == nil else {
-                XCTFail("error uploading file \(name)")
+                XCTFail("error uploading file \(path)")
                 return
             }
-            if let response = response, response.code == HttpStatusCode.ok.rawValue {
+            if let response = response, response.uploaded!.count > 0 {
                 completion()
             } else {
                 XCTFail("error uploading file \(name)")
@@ -79,8 +89,18 @@ class AsposeCellsCloudTests: XCTestCase {
         
     }
     
+    /*
     internal func UpdateDataFileForDropBox(name: String, folder: String = "Temp", storage: String? = nil,  completion: @escaping ()->Void) {
-        let path = "\(folder)/\(name)"
+        
+        var path = ""
+        if (folder != "")
+        {
+            path = "\(folder)/\(name)"
+        }
+        else
+        {
+            path = name
+        }
         
         let url: URL? = getURL(name)
         if (nil == url) {
@@ -94,7 +114,7 @@ class AsposeCellsCloudTests: XCTestCase {
                 XCTFail("error uploading file \(name)")
                 return
             }
-            if let response = response, response.code == HttpStatusCode.ok.rawValue {
+            if let response = response, response.errors == nil {
                 completion()
             } else {
                 XCTFail("error uploading file \(name)")
@@ -103,7 +123,7 @@ class AsposeCellsCloudTests: XCTestCase {
         }
         
     }
-    
+    */
     
     internal func uploadFiles(names: [String], completion: @escaping ()->Void) {
         
@@ -126,13 +146,53 @@ class AsposeCellsCloudTests: XCTestCase {
         return bundle.url(forResource: name, withExtension: nil)
     }
     
-    internal func putCreate(path: String, file: URL, versionId: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    internal func putCreate(path: String, file: URL, versionId: String? = nil, storage: String? = nil, completion: @escaping ((_ data: FilesUploadResult?,_ error: Error?) -> Void)) {
+        
+        //let filedata = NSData(contentsOfFile: file.path)
+        /*
+        Alamofire.upload(.POST, URL, multipartFormData: { (FormData) in
+            FormData.appendBodyPart(data: String(userInfo["id"] as! Int).dataUsingEncoding(NSUTF8StringEncoding)!, name: "userId")
+            FormData.appendBodyPart(data: nsData, name: "file", fileName: "fileName", mimeType: "image/png")
+        }, encodingCompletion: { (encodingResult) in
+            switch encodingResult {
+            case .Success(let upload, _, _):
+                upload.responseJSON(completionHandler: { (response) in
+                    print("\(response)")  //上传成功通过response返回json值
+                })
+            case .Failure(let error):
+                print(error)
+            }
+        })
+        */
+        
+        CellsAPI.uploadFileWithRequestBuilder(path: path, file: file, storageName: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+ 
+        /*
+        {
+            (response, error) in
+            guard error == nil else {
+                XCTFail("error uploading file \(path)")
+                return
+            }
+            if let response = response, response.errors == nil {
+                completion(response)
+            } else {
+                XCTFail("error uploading file \(path)")
+            }
+            
+        }
+        */
+        
+        /*
             self.putCreateWithRequestBuilder(path: path, file: file, versionId: versionId, storage: storage).execute { (response, error) -> Void in
                 completion(response?.body, error);
             }
+ */
     }
-    
-    internal func putCreateWithRequestBuilder(path: String, file: URL, versionId: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    /*
+    internal func putCreateWithRequestBuilder(path: String, file: URL, versionId: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         let pathUrl = "/storage/file/\(self.TEMPFOLDER)"
         let URLString = AsposeCellsCloudAPI.basePath + pathUrl
         let formParams: [String:Any?] = [
@@ -150,10 +210,10 @@ class AsposeCellsCloudTests: XCTestCase {
             ])
         
         
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
         
         return requestBuilder.init(method: "PUT", URLString: (urlObj?.string ?? URLString), parameters: parameters, isBody: false)
     }
-    
+    */
     
 }

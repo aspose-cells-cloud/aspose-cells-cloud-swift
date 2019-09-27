@@ -12,6 +12,2492 @@ import Alamofire
 
 open class CellsAPI {
     /**
+     Removes a date filter.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter dateTimeGroupingType: (query)  
+     - parameter year: (query)  (optional, default to 0)
+     - parameter month: (query)  (optional, default to 0)
+     - parameter day: (query)  (optional, default to 0)
+     - parameter hour: (query)  (optional, default to 0)
+     - parameter minute: (query)  (optional, default to 0)
+     - parameter second: (query)  (optional, default to 0)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterDeleteWorksheetDateFilter(name: String, sheetName: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterDeleteWorksheetDateFilterWithRequestBuilder(name: name, sheetName: sheetName, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Removes a date filter.             
+     - DELETE /cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter dateTimeGroupingType: (query)  
+     - parameter year: (query)  (optional, default to 0)
+     - parameter month: (query)  (optional, default to 0)
+     - parameter day: (query)  (optional, default to 0)
+     - parameter hour: (query)  (optional, default to 0)
+     - parameter minute: (query)  (optional, default to 0)
+     - parameter second: (query)  (optional, default to 0)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterDeleteWorksheetDateFilterWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "dateTimeGroupingType": dateTimeGroupingType, 
+            "year": year?.encodeToJSON(), 
+            "month": month?.encodeToJSON(), 
+            "day": day?.encodeToJSON(), 
+            "hour": hour?.encodeToJSON(), 
+            "minute": minute?.encodeToJSON(), 
+            "second": second?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete a filter for a filter column.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter criteria: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterDeleteWorksheetFilter(name: String, sheetName: String, fieldIndex: Int32, criteria: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterDeleteWorksheetFilterWithRequestBuilder(name: name, sheetName: sheetName, fieldIndex: fieldIndex, criteria: criteria, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete a filter for a filter column.             
+     - DELETE /cells/{name}/worksheets/{sheetName}/autoFilter/filter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter criteria: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterDeleteWorksheetFilterWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, criteria: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "criteria": criteria, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get Auto filter Description
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterGetWorksheetAutoFilter(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: AutoFilterResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterGetWorksheetAutoFilterWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get Auto filter Description
+     - GET /cells/{name}/worksheets/{sheetName}/autoFilter
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<AutoFilterResponse> 
+     */
+    open class func cellsAutoFilterGetWorksheetAutoFilterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AutoFilterResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<AutoFilterResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPostWorksheetAutoFilterRefresh(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPostWorksheetAutoFilterRefreshWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/autoFilter/refresh
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPostWorksheetAutoFilterRefreshWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/refresh"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Match all blank cell in the list.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPostWorksheetMatchBlanks(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPostWorksheetMatchBlanksWithRequestBuilder(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Match all blank cell in the list.
+     - POST /cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPostWorksheetMatchBlanksWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Match all not blank cell in the list.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPostWorksheetMatchNonBlanks(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPostWorksheetMatchNonBlanksWithRequestBuilder(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Match all not blank cell in the list.             
+     - POST /cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPostWorksheetMatchNonBlanksWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter colorFilter: (body)  (optional)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetColorFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, colorFilter: ColorFilterRequest? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetColorFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, colorFilter: colorFilter, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter colorFilter: (body)  (optional)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetColorFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, colorFilter: ColorFilterRequest? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: colorFilter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Filters a list with a custom criteria.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter operatorType1: (query)  
+     - parameter criteria1: (query)  
+     - parameter isAnd: (query)  (optional)
+     - parameter operatorType2: (query)  (optional)
+     - parameter criteria2: (query)  (optional)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetCustomFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, operatorType1: String, criteria1: String, isAnd: Bool? = nil, operatorType2: String? = nil, criteria2: String? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetCustomFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, operatorType1: operatorType1, criteria1: criteria1, isAnd: isAnd, operatorType2: operatorType2, criteria2: criteria2, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Filters a list with a custom criteria.             
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/custom
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter operatorType1: (query)  
+     - parameter criteria1: (query)  
+     - parameter isAnd: (query)  (optional)
+     - parameter operatorType2: (query)  (optional)
+     - parameter criteria2: (query)  (optional)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetCustomFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, operatorType1: String, criteria1: String, isAnd: Bool? = nil, operatorType2: String? = nil, criteria2: String? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "operatorType1": operatorType1, 
+            "criteria1": criteria1, 
+            "isAnd": isAnd, 
+            "operatorType2": operatorType2, 
+            "criteria2": criteria2, 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     add date filter in worksheet 
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter dateTimeGroupingType: (query)  
+     - parameter year: (query)  (optional, default to 0)
+     - parameter month: (query)  (optional, default to 0)
+     - parameter day: (query)  (optional, default to 0)
+     - parameter hour: (query)  (optional, default to 0)
+     - parameter minute: (query)  (optional, default to 0)
+     - parameter second: (query)  (optional, default to 0)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetDateFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetDateFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     add date filter in worksheet 
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter dateTimeGroupingType: (query)  
+     - parameter year: (query)  (optional, default to 0)
+     - parameter month: (query)  (optional, default to 0)
+     - parameter day: (query)  (optional, default to 0)
+     - parameter hour: (query)  (optional, default to 0)
+     - parameter minute: (query)  (optional, default to 0)
+     - parameter second: (query)  (optional, default to 0)
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetDateFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "dateTimeGroupingType": dateTimeGroupingType, 
+            "year": year?.encodeToJSON(), 
+            "month": month?.encodeToJSON(), 
+            "day": day?.encodeToJSON(), 
+            "hour": hour?.encodeToJSON(), 
+            "minute": minute?.encodeToJSON(), 
+            "second": second?.encodeToJSON(), 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter dynamicFilterType: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetDynamicFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, dynamicFilterType: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetDynamicFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dynamicFilterType: dynamicFilterType, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter dynamicFilterType: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetDynamicFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, dynamicFilterType: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "dynamicFilterType": dynamicFilterType, 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Adds a filter for a filter column.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter criteria: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, criteria: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, criteria: criteria, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Adds a filter for a filter column.             
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/filter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter criteria: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, criteria: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "criteria": criteria, 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Filter the top 10 item in the list
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter isTop: (query)  
+     - parameter isPercent: (query)  
+     - parameter itemCount: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetFilterTop10(name: String, sheetName: String, range: String, fieldIndex: Int32, isTop: Bool, isPercent: Bool, itemCount: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetFilterTop10WithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, isTop: isTop, isPercent: isPercent, itemCount: itemCount, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Filter the top 10 item in the list
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter isTop: (query)  
+     - parameter isPercent: (query)  
+     - parameter itemCount: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetFilterTop10WithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, isTop: Bool, isPercent: Bool, itemCount: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "isTop": isTop, 
+            "isPercent": isPercent, 
+            "itemCount": itemCount.encodeToJSON(), 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Adds an icon filter.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter iconSetType: (query)  
+     - parameter iconId: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoFilterPutWorksheetIconFilter(name: String, sheetName: String, range: String, fieldIndex: Int32, iconSetType: String, iconId: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsAutoFilterPutWorksheetIconFilterWithRequestBuilder(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, iconSetType: iconSetType, iconId: iconId, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Adds an icon filter.
+     - PUT /cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter range: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter iconSetType: (query)  
+     - parameter iconId: (query)  
+     - parameter matchBlanks: (query)  (optional)
+     - parameter refresh: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsAutoFilterPutWorksheetIconFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, iconSetType: String, iconId: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "iconSetType": iconSetType, 
+            "iconId": iconId.encodeToJSON(), 
+            "matchBlanks": matchBlanks, 
+            "refresh": refresh, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get autoshape info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter autoshapeNumber: (path) The autoshape number. 
+     - parameter format: (query) Exported format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoshapesGetWorksheetAutoshape(name: String, sheetName: String, autoshapeNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsAutoshapesGetWorksheetAutoshapeWithRequestBuilder(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get autoshape info.
+     - GET /cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter autoshapeNumber: (path) The autoshape number. 
+     - parameter format: (query) Exported format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsAutoshapesGetWorksheetAutoshapeWithRequestBuilder(name: String, sheetName: String, autoshapeNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let autoshapeNumberPreEscape = "\(autoshapeNumber)"
+        let autoshapeNumberPostEscape = autoshapeNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{autoshapeNumber}", with: autoshapeNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet autoshapes info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsAutoshapesGetWorksheetAutoshapes(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: AutoShapesResponse?,_ error: Error?) -> Void)) {
+        cellsAutoshapesGetWorksheetAutoshapesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet autoshapes info.
+     - GET /cells/{name}/worksheets/{sheetName}/autoshapes
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<AutoShapesResponse> 
+     */
+    open class func cellsAutoshapesGetWorksheetAutoshapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AutoShapesResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autoshapes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<AutoShapesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart area info.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartAreaGetChartArea(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ChartAreaResponse?,_ error: Error?) -> Void)) {
+        cellsChartAreaGetChartAreaWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart area info.
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ChartAreaResponse> 
+     */
+    open class func cellsChartAreaGetChartAreaWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartAreaResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ChartAreaResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart area border info.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartAreaGetChartAreaBorder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: LineResponse?,_ error: Error?) -> Void)) {
+        cellsChartAreaGetChartAreaBorderWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart area border info.
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<LineResponse> 
+     */
+    open class func cellsChartAreaGetChartAreaBorderWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LineResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<LineResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart area fill format info.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartAreaGetChartAreaFillFormat(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: FillFormatResponse?,_ error: Error?) -> Void)) {
+        cellsChartAreaGetChartAreaFillFormatWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart area fill format info.
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<FillFormatResponse> 
+     */
+    open class func cellsChartAreaGetChartAreaFillFormatWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<FillFormatResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<FillFormatResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Hide legend in chart
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsDeleteWorksheetChartLegend(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsChartsDeleteWorksheetChartLegendWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Hide legend in chart
+     - DELETE /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsChartsDeleteWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Hide title in chart
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsDeleteWorksheetChartTitle(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsChartsDeleteWorksheetChartTitleWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Hide title in chart
+     - DELETE /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsChartsDeleteWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Clear the charts.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsDeleteWorksheetClearCharts(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsChartsDeleteWorksheetClearChartsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Clear the charts.
+     - DELETE /cells/{name}/worksheets/{sheetName}/charts
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsChartsDeleteWorksheetClearChartsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet chart by index.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsDeleteWorksheetDeleteChart(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ChartsResponse?,_ error: Error?) -> Void)) {
+        cellsChartsDeleteWorksheetDeleteChartWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet chart by index.
+     - DELETE /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ChartsResponse> 
+     */
+    open class func cellsChartsDeleteWorksheetDeleteChartWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ChartsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartNumber: (path) The chart number. 
+     - parameter format: (query) The exported file format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsGetWorksheetChart(name: String, sheetName: String, chartNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsChartsGetWorksheetChartWithRequestBuilder(name: name, sheetName: sheetName, chartNumber: chartNumber, format: format, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart info.
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartNumber}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartNumber: (path) The chart number. 
+     - parameter format: (query) The exported file format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsChartsGetWorksheetChartWithRequestBuilder(name: String, sheetName: String, chartNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartNumberPreEscape = "\(chartNumber)"
+        let chartNumberPostEscape = chartNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartNumber}", with: chartNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart legend
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsGetWorksheetChartLegend(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: LegendResponse?,_ error: Error?) -> Void)) {
+        cellsChartsGetWorksheetChartLegendWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart legend
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<LegendResponse> 
+     */
+    open class func cellsChartsGetWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LegendResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<LegendResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get chart title
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsGetWorksheetChartTitle(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TitleResponse?,_ error: Error?) -> Void)) {
+        cellsChartsGetWorksheetChartTitleWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get chart title
+     - GET /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TitleResponse> 
+     */
+    open class func cellsChartsGetWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TitleResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet charts info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsGetWorksheetCharts(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ChartsResponse?,_ error: Error?) -> Void)) {
+        cellsChartsGetWorksheetChartsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet charts info.
+     - GET /cells/{name}/worksheets/{sheetName}/charts
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ChartsResponse> 
+     */
+    open class func cellsChartsGetWorksheetChartsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ChartsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update chart propreties
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter chartIndex: (path)  
+     - parameter chart: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPostWorksheetChart(name: String, sheetName: String, chartIndex: Int32, chart: Chart? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPostWorksheetChartWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, chart: chart, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update chart propreties
+     - POST /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter chartIndex: (path)  
+     - parameter chart: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsChartsPostWorksheetChartWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, chart: Chart? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: chart)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Update chart legend
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter legend: (body)  (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPostWorksheetChartLegend(name: String, sheetName: String, chartIndex: Int32, legend: Legend? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: LegendResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPostWorksheetChartLegendWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, legend: legend, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update chart legend
+     - POST /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter legend: (body)  (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<LegendResponse> 
+     */
+    open class func cellsChartsPostWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, legend: Legend? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LegendResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: legend)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<LegendResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Update chart title
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter title: (body) Chart title (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPostWorksheetChartTitle(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TitleResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPostWorksheetChartTitleWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update chart title
+     - POST /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter title: (body) Chart title (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TitleResponse> 
+     */
+    open class func cellsChartsPostWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: title)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TitleResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add new chart to worksheet.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter chartType: (query) Chart type, please refer property Type in chart resource. 
+     - parameter upperLeftRow: (query) New chart upper left row. (optional, default to 0)
+     - parameter upperLeftColumn: (query) New chart upperleft column. (optional, default to 0)
+     - parameter lowerRightRow: (query) New chart lower right row. (optional, default to 0)
+     - parameter lowerRightColumn: (query) New chart lower right column. (optional, default to 0)
+     - parameter area: (query) Specifies values from which to plot the data series.  (optional)
+     - parameter isVertical: (query) Specifies whether to plot the series from a range of cell values by row or by column.  (optional, default to true)
+     - parameter categoryData: (query) Gets or sets the range of category Axis values. It can be a range of cells (such as, \&quot;d1:e10\&quot;).  (optional)
+     - parameter isAutoGetSerialName: (query) Specifies whether auto update serial name.  (optional, default to true)
+     - parameter title: (query) Specifies chart title name. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPutWorksheetAddChart(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ChartsResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPutWorksheetAddChartWithRequestBuilder(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add new chart to worksheet.
+     - PUT /cells/{name}/worksheets/{sheetName}/charts
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter chartType: (query) Chart type, please refer property Type in chart resource. 
+     - parameter upperLeftRow: (query) New chart upper left row. (optional, default to 0)
+     - parameter upperLeftColumn: (query) New chart upperleft column. (optional, default to 0)
+     - parameter lowerRightRow: (query) New chart lower right row. (optional, default to 0)
+     - parameter lowerRightColumn: (query) New chart lower right column. (optional, default to 0)
+     - parameter area: (query) Specifies values from which to plot the data series.  (optional)
+     - parameter isVertical: (query) Specifies whether to plot the series from a range of cell values by row or by column.  (optional, default to true)
+     - parameter categoryData: (query) Gets or sets the range of category Axis values. It can be a range of cells (such as, \&quot;d1:e10\&quot;).  (optional)
+     - parameter isAutoGetSerialName: (query) Specifies whether auto update serial name.  (optional, default to true)
+     - parameter title: (query) Specifies chart title name. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ChartsResponse> 
+     */
+    open class func cellsChartsPutWorksheetAddChartWithRequestBuilder(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "chartType": chartType, 
+            "upperLeftRow": upperLeftRow?.encodeToJSON(), 
+            "upperLeftColumn": upperLeftColumn?.encodeToJSON(), 
+            "lowerRightRow": lowerRightRow?.encodeToJSON(), 
+            "lowerRightColumn": lowerRightColumn?.encodeToJSON(), 
+            "area": area, 
+            "isVertical": isVertical, 
+            "categoryData": categoryData, 
+            "isAutoGetSerialName": isAutoGetSerialName, 
+            "title": title, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ChartsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Show legend in chart
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPutWorksheetChartLegend(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPutWorksheetChartLegendWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Show legend in chart
+     - PUT /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsChartsPutWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Add chart title / Set chart title visible
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter title: (body) Chart title. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsChartsPutWorksheetChartTitle(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TitleResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPutWorksheetChartTitleWithRequestBuilder(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add chart title / Set chart title visible
+     - PUT /cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter chartIndex: (path) The chart index. 
+     - parameter title: (body) Chart title. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TitleResponse> 
+     */
+    open class func cellsChartsPutWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let chartIndexPreEscape = "\(chartIndex)"
+        let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: title)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TitleResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Remove conditional formatting
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Remove conditional formatting
+     - DELETE /cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Remove cell area from conditional formatting.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter startRow: (query)  
+     - parameter startColumn: (query)  
+     - parameter totalRows: (query)  
+     - parameter totalColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithRequestBuilder(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Remove cell area from conditional formatting.
+     - DELETE /cells/{name}/worksheets/{sheetName}/conditionalFormattings/area
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter startRow: (query)  
+     - parameter startColumn: (query)  
+     - parameter totalRows: (query)  
+     - parameter totalColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/area"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "startRow": startRow.encodeToJSON(), 
+            "startColumn": startColumn.encodeToJSON(), 
+            "totalRows": totalRows.encodeToJSON(), 
+            "totalColumns": totalColumns.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Clear all condition formattings
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Clear all condition formattings
+     - DELETE /cells/{name}/worksheets/{sheetName}/conditionalFormattings
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get conditional formatting
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsGetWorksheetConditionalFormatting(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ConditionalFormattingResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsGetWorksheetConditionalFormattingWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get conditional formatting
+     - GET /cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ConditionalFormattingResponse> 
+     */
+    open class func cellsConditionalFormattingsGetWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ConditionalFormattingResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ConditionalFormattingResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get conditional formattings 
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsGetWorksheetConditionalFormattings(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ConditionalFormattingsResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get conditional formattings 
+     - GET /cells/{name}/worksheets/{sheetName}/conditionalFormattings
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ConditionalFormattingsResponse> 
+     */
+    open class func cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ConditionalFormattingsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ConditionalFormattingsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Add a condition formatting.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellArea: (query)  
+     - parameter formatcondition: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: String, sheetName: String, cellArea: String, formatcondition: FormatCondition? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsPutWorksheetConditionalFormattingWithRequestBuilder(name: name, sheetName: sheetName, cellArea: cellArea, formatcondition: formatcondition, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a condition formatting.
+     - PUT /cells/{name}/worksheets/{sheetName}/conditionalFormattings
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellArea: (query)  
+     - parameter formatcondition: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsPutWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, cellArea: String, formatcondition: FormatCondition? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: formatcondition)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellArea": cellArea, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add a format condition.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter cellArea: (query)  
+     - parameter type: (query)  
+     - parameter operatorType: (query)  
+     - parameter formula1: (query)  
+     - parameter formula2: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatCondition(name: String, sheetName: String, index: Int32, cellArea: String, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsPutWorksheetFormatConditionWithRequestBuilder(name: name, sheetName: sheetName, index: index, cellArea: cellArea, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a format condition.
+     - PUT /cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter cellArea: (query)  
+     - parameter type: (query)  
+     - parameter operatorType: (query)  
+     - parameter formula1: (query)  
+     - parameter formula2: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatConditionWithRequestBuilder(name: String, sheetName: String, index: Int32, cellArea: String, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellArea": cellArea, 
+            "type": type, 
+            "operatorType": operatorType, 
+            "formula1": formula1, 
+            "formula2": formula2, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     add a cell area for format condition             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter cellArea: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatConditionArea(name: String, sheetName: String, index: Int32, cellArea: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithRequestBuilder(name: name, sheetName: sheetName, index: index, cellArea: cellArea, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     add a cell area for format condition             
+     - PUT /cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter cellArea: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithRequestBuilder(name: String, sheetName: String, index: Int32, cellArea: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellArea": cellArea, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Add a condition for format condition.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter type: (query)  
+     - parameter operatorType: (query)  
+     - parameter formula1: (query)  
+     - parameter formula2: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name: String, sheetName: String, index: Int32, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithRequestBuilder(name: name, sheetName: sheetName, index: index, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a condition for format condition.
+     - PUT /cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter type: (query)  
+     - parameter operatorType: (query)  
+     - parameter formula1: (query)  
+     - parameter formula2: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithRequestBuilder(name: String, sheetName: String, index: Int32, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "type": type, 
+            "operatorType": operatorType, 
+            "formula1": formula1, 
+            "formula2": formula2, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
      Delete worksheet columns.
      
      - parameter name: (path) The workbook name. 
@@ -82,7 +2568,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsDeleteWorksheetRow(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsDeleteWorksheetRow(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsDeleteWorksheetRowWithRequestBuilder(name: name, sheetName: sheetName, rowIndex: rowIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -103,9 +2589,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsDeleteWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsDeleteWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -125,7 +2611,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -142,7 +2628,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsDeleteWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsDeleteWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsDeleteWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, startrow: startrow, totalRows: totalRows, updateReference: updateReference, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -165,9 +2651,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsDeleteWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsDeleteWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -187,7 +2673,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -242,7 +2728,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -297,7 +2783,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -624,6 +3110,3652 @@ open class CellsAPI {
     }
 
     /**
+     Delete worksheet hyperlink by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksDeleteWorksheetHyperlink(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksDeleteWorksheetHyperlinkWithRequestBuilder(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet hyperlink by index.
+     - DELETE /cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsHypelinksDeleteWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
+        let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete all hyperlinks in worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksDeleteWorksheetHyperlinks(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksDeleteWorksheetHyperlinksWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete all hyperlinks in worksheet.
+     - DELETE /cells/{name}/worksheets/{sheetName}/hyperlinks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsHypelinksDeleteWorksheetHyperlinksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet hyperlink by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksGetWorksheetHyperlink(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HyperlinkResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksGetWorksheetHyperlinkWithRequestBuilder(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet hyperlink by index.
+     - GET /cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HyperlinkResponse> 
+     */
+    open class func cellsHypelinksGetWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
+        let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HyperlinkResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet hyperlinks.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksGetWorksheetHyperlinks(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HyperlinksResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksGetWorksheetHyperlinksWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet hyperlinks.
+     - GET /cells/{name}/worksheets/{sheetName}/hyperlinks
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HyperlinksResponse> 
+     */
+    open class func cellsHypelinksGetWorksheetHyperlinksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinksResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HyperlinksResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update worksheet hyperlink by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter hyperlink: (body) Hyperlink object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksPostWorksheetHyperlink(name: String, sheetName: String, hyperlinkIndex: Int32, hyperlink: Hyperlink? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HyperlinkResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksPostWorksheetHyperlinkWithRequestBuilder(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, hyperlink: hyperlink, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update worksheet hyperlink by index.
+     - POST /cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter hyperlinkIndex: (path) The hyperlink&#39;s index. 
+     - parameter hyperlink: (body) Hyperlink object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HyperlinkResponse> 
+     */
+    open class func cellsHypelinksPostWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, hyperlink: Hyperlink? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
+        let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: hyperlink)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HyperlinkResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add worksheet hyperlink.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter firstRow: (query)  
+     - parameter firstColumn: (query)  
+     - parameter totalRows: (query)  
+     - parameter totalColumns: (query)  
+     - parameter address: (query)  
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsHypelinksPutWorksheetHyperlink(name: String, sheetName: String, firstRow: Int32, firstColumn: Int32, totalRows: Int32, totalColumns: Int32, address: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HyperlinkResponse?,_ error: Error?) -> Void)) {
+        cellsHypelinksPutWorksheetHyperlinkWithRequestBuilder(name: name, sheetName: sheetName, firstRow: firstRow, firstColumn: firstColumn, totalRows: totalRows, totalColumns: totalColumns, address: address, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add worksheet hyperlink.
+     - PUT /cells/{name}/worksheets/{sheetName}/hyperlinks
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter firstRow: (query)  
+     - parameter firstColumn: (query)  
+     - parameter totalRows: (query)  
+     - parameter totalColumns: (query)  
+     - parameter address: (query)  
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HyperlinkResponse> 
+     */
+    open class func cellsHypelinksPutWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, firstRow: Int32, firstColumn: Int32, totalRows: Int32, totalColumns: Int32, address: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "firstRow": firstRow.encodeToJSON(), 
+            "firstColumn": firstColumn.encodeToJSON(), 
+            "totalRows": totalRows.encodeToJSON(), 
+            "totalColumns": totalColumns.encodeToJSON(), 
+            "address": address, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HyperlinkResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet list object by index
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listObjectIndex: (path) List object index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsDeleteWorksheetListObject(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsDeleteWorksheetListObjectWithRequestBuilder(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet list object by index
+     - DELETE /cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listObjectIndex: (path) List object index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsDeleteWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listObjectIndexPreEscape = "\(listObjectIndex)"
+        let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet list objects
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsDeleteWorksheetListObjects(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsDeleteWorksheetListObjectsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet list objects
+     - DELETE /cells/{name}/worksheets/{sheetName}/listobjects
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsDeleteWorksheetListObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet list object info by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listobjectindex: (path) list object index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsGetWorksheetListObject(name: String, sheetName: String, listobjectindex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ListObjectResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsGetWorksheetListObjectWithRequestBuilder(name: name, sheetName: sheetName, listobjectindex: listobjectindex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet list object info by index.
+     - GET /cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listobjectindex: (path) list object index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ListObjectResponse> 
+     */
+    open class func cellsListObjectsGetWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listobjectindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listobjectindexPreEscape = "\(listobjectindex)"
+        let listobjectindexPostEscape = listobjectindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listobjectindex}", with: listobjectindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ListObjectResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet listobjects info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsGetWorksheetListObjects(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ListObjectsResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsGetWorksheetListObjectsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet listobjects info.
+     - GET /cells/{name}/worksheets/{sheetName}/listobjects
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ListObjectsResponse> 
+     */
+    open class func cellsListObjectsGetWorksheetListObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ListObjectsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update  list object 
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listObjectIndex: (path) list Object index 
+     - parameter listObject: (body) listObject dto in request body. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsPostWorksheetListObject(name: String, sheetName: String, listObjectIndex: Int32, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsPostWorksheetListObjectWithRequestBuilder(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, listObject: listObject, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update  list object 
+     - POST /cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter listObjectIndex: (path) list Object index 
+     - parameter listObject: (body) listObject dto in request body. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsPostWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listObjectIndexPreEscape = "\(listObjectIndex)"
+        let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: listObject)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsPostWorksheetListObjectConvertToRange(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsPostWorksheetListObjectConvertToRangeWithRequestBuilder(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsPostWorksheetListObjectConvertToRangeWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listObjectIndexPreEscape = "\(listObjectIndex)"
+        let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter dataSorter: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsPostWorksheetListObjectSortTable(name: String, sheetName: String, listObjectIndex: Int32, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsPostWorksheetListObjectSortTableWithRequestBuilder(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, dataSorter: dataSorter, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter dataSorter: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsPostWorksheetListObjectSortTableWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listObjectIndexPreEscape = "\(listObjectIndex)"
+        let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataSorter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter destsheetName: (query)  
+     - parameter request: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name: String, sheetName: String, listObjectIndex: Int32, destsheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableWithRequestBuilder(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, destsheetName: destsheetName, request: request, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter listObjectIndex: (path)  
+     - parameter destsheetName: (query)  
+     - parameter request: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, destsheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let listObjectIndexPreEscape = "\(listObjectIndex)"
+        let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destsheetName": destsheetName, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add a list object into worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter startRow: (query) The start row of the list range. 
+     - parameter startColumn: (query) The start row of the list range. 
+     - parameter endRow: (query) The start row of the list range. 
+     - parameter endColumn: (query) The start row of the list range. 
+     - parameter hasHeaders: (query) Whether the range has headers. (optional, default to true)
+     - parameter listObject: (body) List Object (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsListObjectsPutWorksheetListObject(name: String, sheetName: String, startRow: Int32, startColumn: Int32, endRow: Int32, endColumn: Int32, hasHeaders: Bool? = nil, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ListObjectResponse?,_ error: Error?) -> Void)) {
+        cellsListObjectsPutWorksheetListObjectWithRequestBuilder(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, hasHeaders: hasHeaders, listObject: listObject, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a list object into worksheet.
+     - PUT /cells/{name}/worksheets/{sheetName}/listobjects
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter startRow: (query) The start row of the list range. 
+     - parameter startColumn: (query) The start row of the list range. 
+     - parameter endRow: (query) The start row of the list range. 
+     - parameter endColumn: (query) The start row of the list range. 
+     - parameter hasHeaders: (query) Whether the range has headers. (optional, default to true)
+     - parameter listObject: (body) List Object (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ListObjectResponse> 
+     */
+    open class func cellsListObjectsPutWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, endRow: Int32, endColumn: Int32, hasHeaders: Bool? = nil, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: listObject)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "startRow": startRow.encodeToJSON(), 
+            "startColumn": startColumn.encodeToJSON(), 
+            "endRow": endRow.encodeToJSON(), 
+            "endColumn": endColumn.encodeToJSON(), 
+            "hasHeaders": hasHeaders, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ListObjectResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete OLE object.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObjectIndex: (path) Ole object index 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsDeleteWorksheetOleObject(name: String, sheetName: String, oleObjectIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsOleObjectsDeleteWorksheetOleObjectWithRequestBuilder(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete OLE object.
+     - DELETE /cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObjectIndex: (path) Ole object index 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsOleObjectsDeleteWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let oleObjectIndexPreEscape = "\(oleObjectIndex)"
+        let oleObjectIndexPostEscape = oleObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete all OLE objects.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsDeleteWorksheetOleObjects(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsOleObjectsDeleteWorksheetOleObjectsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete all OLE objects.
+     - DELETE /cells/{name}/worksheets/{sheetName}/oleobjects
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsOleObjectsDeleteWorksheetOleObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get OLE object info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter objectNumber: (path) The object number. 
+     - parameter format: (query) The exported object format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsGetWorksheetOleObject(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: name, sheetName: sheetName, objectNumber: objectNumber, format: format, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get OLE object info.
+     - GET /cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter objectNumber: (path) The object number. 
+     - parameter format: (query) The exported object format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let objectNumberPreEscape = "\(objectNumber)"
+        let objectNumberPostEscape = objectNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{objectNumber}", with: objectNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet OLE objects info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsGetWorksheetOleObjects(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: OleObjectsResponse?,_ error: Error?) -> Void)) {
+        cellsOleObjectsGetWorksheetOleObjectsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet OLE objects info.
+     - GET /cells/{name}/worksheets/{sheetName}/oleobjects
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<OleObjectsResponse> 
+     */
+    open class func cellsOleObjectsGetWorksheetOleObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<OleObjectsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<OleObjectsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update OLE object.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObjectIndex: (path) Ole object index 
+     - parameter ole: (body) Ole Object (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsPostUpdateWorksheetOleObject(name: String, sheetName: String, oleObjectIndex: Int32, ole: OleObject? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsOleObjectsPostUpdateWorksheetOleObjectWithRequestBuilder(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, ole: ole, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update OLE object.
+     - POST /cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObjectIndex: (path) Ole object index 
+     - parameter ole: (body) Ole Object (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsOleObjectsPostUpdateWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObjectIndex: Int32, ole: OleObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let oleObjectIndexPreEscape = "\(oleObjectIndex)"
+        let oleObjectIndexPostEscape = oleObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: ole)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add OLE object
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObject: (body) Ole Object (optional)
+     - parameter upperLeftRow: (query) Upper left row index (optional, default to 0)
+     - parameter upperLeftColumn: (query) Upper left column index (optional, default to 0)
+     - parameter height: (query) Height of oleObject, in unit of pixel (optional, default to 0)
+     - parameter width: (query) Width of oleObject, in unit of pixel (optional, default to 0)
+     - parameter oleFile: (query) OLE filename (optional)
+     - parameter imageFile: (query) Image filename (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsOleObjectsPutWorksheetOleObject(name: String, sheetName: String, oleObject: OleObject? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, height: Int32? = nil, width: Int32? = nil, oleFile: String? = nil, imageFile: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: OleObjectResponse?,_ error: Error?) -> Void)) {
+        cellsOleObjectsPutWorksheetOleObjectWithRequestBuilder(name: name, sheetName: sheetName, oleObject: oleObject, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, height: height, width: width, oleFile: oleFile, imageFile: imageFile, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add OLE object
+     - PUT /cells/{name}/worksheets/{sheetName}/oleobjects
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter oleObject: (body) Ole Object (optional)
+     - parameter upperLeftRow: (query) Upper left row index (optional, default to 0)
+     - parameter upperLeftColumn: (query) Upper left column index (optional, default to 0)
+     - parameter height: (query) Height of oleObject, in unit of pixel (optional, default to 0)
+     - parameter width: (query) Width of oleObject, in unit of pixel (optional, default to 0)
+     - parameter oleFile: (query) OLE filename (optional)
+     - parameter imageFile: (query) Image filename (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<OleObjectResponse> 
+     */
+    open class func cellsOleObjectsPutWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObject: OleObject? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, height: Int32? = nil, width: Int32? = nil, oleFile: String? = nil, imageFile: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<OleObjectResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oleObject)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "upperLeftRow": upperLeftRow?.encodeToJSON(), 
+            "upperLeftColumn": upperLeftColumn?.encodeToJSON(), 
+            "height": height?.encodeToJSON(), 
+            "width": width?.encodeToJSON(), 
+            "oleFile": oleFile, 
+            "imageFile": imageFile, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<OleObjectResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksDeleteHorizontalPageBreak(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksDeleteHorizontalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksDeleteHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksDeleteHorizontalPageBreaks(name: String, sheetName: String, row: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksDeleteHorizontalPageBreaksWithRequestBuilder(name: name, sheetName: sheetName, row: row, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/horizontalpagebreaks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksDeleteHorizontalPageBreaksWithRequestBuilder(name: String, sheetName: String, row: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "row": row?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksDeleteVerticalPageBreak(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksDeleteVerticalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksDeleteVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter column: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksDeleteVerticalPageBreaks(name: String, sheetName: String, column: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksDeleteVerticalPageBreaksWithRequestBuilder(name: name, sheetName: sheetName, column: column, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/verticalpagebreaks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter column: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksDeleteVerticalPageBreaksWithRequestBuilder(name: String, sheetName: String, column: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "column": column?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksGetHorizontalPageBreak(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HorizontalPageBreakResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksGetHorizontalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HorizontalPageBreakResponse> 
+     */
+    open class func cellsPageBreaksGetHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HorizontalPageBreakResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HorizontalPageBreakResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksGetHorizontalPageBreaks(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: HorizontalPageBreaksResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksGetHorizontalPageBreaksWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/horizontalpagebreaks
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<HorizontalPageBreaksResponse> 
+     */
+    open class func cellsPageBreaksGetHorizontalPageBreaksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HorizontalPageBreaksResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<HorizontalPageBreaksResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksGetVerticalPageBreak(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: VerticalPageBreakResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksGetVerticalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter index: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<VerticalPageBreakResponse> 
+     */
+    open class func cellsPageBreaksGetVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<VerticalPageBreakResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let indexPreEscape = "\(index)"
+        let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<VerticalPageBreakResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksGetVerticalPageBreaks(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: VerticalPageBreaksResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksGetVerticalPageBreaksWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/verticalpagebreaks
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<VerticalPageBreaksResponse> 
+     */
+    open class func cellsPageBreaksGetVerticalPageBreaksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<VerticalPageBreaksResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<VerticalPageBreaksResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellname: (query)  (optional)
+     - parameter row: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter startColumn: (query)  (optional)
+     - parameter endColumn: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksPutHorizontalPageBreak(name: String, sheetName: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, startColumn: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksPutHorizontalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, cellname: cellname, row: row, column: column, startColumn: startColumn, endColumn: endColumn, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /cells/{name}/worksheets/{sheetName}/horizontalpagebreaks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellname: (query)  (optional)
+     - parameter row: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter startColumn: (query)  (optional)
+     - parameter endColumn: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksPutHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, startColumn: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellname": cellname, 
+            "row": row?.encodeToJSON(), 
+            "column": column?.encodeToJSON(), 
+            "startColumn": startColumn?.encodeToJSON(), 
+            "endColumn": endColumn?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellname: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter row: (query)  (optional)
+     - parameter startRow: (query)  (optional)
+     - parameter endRow: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageBreaksPutVerticalPageBreak(name: String, sheetName: String, cellname: String? = nil, column: Int32? = nil, row: Int32? = nil, startRow: Int32? = nil, endRow: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageBreaksPutVerticalPageBreakWithRequestBuilder(name: name, sheetName: sheetName, cellname: cellname, column: column, row: row, startRow: startRow, endRow: endRow, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /cells/{name}/worksheets/{sheetName}/verticalpagebreaks
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter cellname: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter row: (query)  (optional)
+     - parameter startRow: (query)  (optional)
+     - parameter endRow: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageBreaksPutVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, cellname: String? = nil, column: Int32? = nil, row: Int32? = nil, startRow: Int32? = nil, endRow: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellname": cellname, 
+            "column": column?.encodeToJSON(), 
+            "row": row?.encodeToJSON(), 
+            "startRow": startRow?.encodeToJSON(), 
+            "endRow": endRow?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     clear header footer
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupDeleteHeaderFooter(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupDeleteHeaderFooterWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     clear header footer
+     - DELETE /cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageSetupDeleteHeaderFooterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     get page footer information
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupGetFooter(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PageSectionsResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupGetFooterWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     get page footer information
+     - GET /cells/{name}/worksheets/{sheetName}/pagesetup/footer
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PageSectionsResponse> 
+     */
+    open class func cellsPageSetupGetFooterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSectionsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PageSectionsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     get page header information
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupGetHeader(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PageSectionsResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupGetHeaderWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     get page header information
+     - GET /cells/{name}/worksheets/{sheetName}/pagesetup/header
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PageSectionsResponse> 
+     */
+    open class func cellsPageSetupGetHeaderWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSectionsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PageSectionsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get Page Setup information.             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupGetPageSetup(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PageSetupResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupGetPageSetupWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get Page Setup information.             
+     - GET /cells/{name}/worksheets/{sheetName}/pagesetup
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PageSetupResponse> 
+     */
+    open class func cellsPageSetupGetPageSetupWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSetupResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PageSetupResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     update  page footer information 
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter section: (query)  
+     - parameter script: (query)  
+     - parameter isFirstPage: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupPostFooter(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupPostFooterWithRequestBuilder(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     update  page footer information 
+     - POST /cells/{name}/worksheets/{sheetName}/pagesetup/footer
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter section: (query)  
+     - parameter script: (query)  
+     - parameter isFirstPage: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageSetupPostFooterWithRequestBuilder(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "section": section.encodeToJSON(), 
+            "script": script, 
+            "isFirstPage": isFirstPage, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     update  page header information 
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter section: (query)  
+     - parameter script: (query)  
+     - parameter isFirstPage: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupPostHeader(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupPostHeaderWithRequestBuilder(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     update  page header information 
+     - POST /cells/{name}/worksheets/{sheetName}/pagesetup/header
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter section: (query)  
+     - parameter script: (query)  
+     - parameter isFirstPage: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageSetupPostHeaderWithRequestBuilder(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "section": section.encodeToJSON(), 
+            "script": script, 
+            "isFirstPage": isFirstPage, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update Page Setup information.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pageSetup: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPageSetupPostPageSetup(name: String, sheetName: String, pageSetup: PageSetup? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPageSetupPostPageSetupWithRequestBuilder(name: name, sheetName: sheetName, pageSetup: pageSetup, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update Page Setup information.
+     - POST /cells/{name}/worksheets/{sheetName}/pagesetup
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pageSetup: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPageSetupPostPageSetupWithRequestBuilder(name: String, sheetName: String, pageSetup: PageSetup? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: pageSetup)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete a picture object in worksheet
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter pictureIndex: (path) Picture index 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesDeleteWorksheetPicture(name: String, sheetName: String, pictureIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPicturesDeleteWorksheetPictureWithRequestBuilder(name: name, sheetName: sheetName, pictureIndex: pictureIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete a picture object in worksheet
+     - DELETE /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter pictureIndex: (path) Picture index 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPicturesDeleteWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pictureIndexPreEscape = "\(pictureIndex)"
+        let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete all pictures in worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesDeleteWorksheetPictures(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPicturesDeleteWorksheetPicturesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete all pictures in worksheet.
+     - DELETE /cells/{name}/worksheets/{sheetName}/pictures
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPicturesDeleteWorksheetPicturesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     GRead worksheet picture by number.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter pictureIndex: (path) The picture index. 
+     - parameter format: (query) The exported object format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesGetWorksheetPicture(name: String, sheetName: String, pictureIndex: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsPicturesGetWorksheetPictureWithRequestBuilder(name: name, sheetName: sheetName, pictureIndex: pictureIndex, format: format, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     GRead worksheet picture by number.
+     - GET /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter pictureIndex: (path) The picture index. 
+     - parameter format: (query) The exported object format. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsPicturesGetWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pictureIndexPreEscape = "\(pictureIndex)"
+        let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read worksheet pictures.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesGetWorksheetPictures(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PicturesResponse?,_ error: Error?) -> Void)) {
+        cellsPicturesGetWorksheetPicturesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read worksheet pictures.
+     - GET /cells/{name}/worksheets/{sheetName}/pictures
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PicturesResponse> 
+     */
+    open class func cellsPicturesGetWorksheetPicturesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PicturesResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PicturesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update worksheet picture by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter pictureIndex: (path) The picture&#39;s index. 
+     - parameter picture: (body) Picture object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesPostWorksheetPicture(name: String, sheetName: String, pictureIndex: Int32, picture: Picture? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PictureResponse?,_ error: Error?) -> Void)) {
+        cellsPicturesPostWorksheetPictureWithRequestBuilder(name: name, sheetName: sheetName, pictureIndex: pictureIndex, picture: picture, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update worksheet picture by index.
+     - POST /cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter pictureIndex: (path) The picture&#39;s index. 
+     - parameter picture: (body) Picture object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PictureResponse> 
+     */
+    open class func cellsPicturesPostWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, picture: Picture? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PictureResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pictureIndexPreEscape = "\(pictureIndex)"
+        let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: picture)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PictureResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add a new worksheet picture.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter picture: (body) Pictute object (optional)
+     - parameter upperLeftRow: (query) The image upper left row. (optional, default to 0)
+     - parameter upperLeftColumn: (query) The image upper left column. (optional, default to 0)
+     - parameter lowerRightRow: (query) The image low right row. (optional, default to 0)
+     - parameter lowerRightColumn: (query) The image low right column. (optional, default to 0)
+     - parameter picturePath: (query) The picture path, if not provided the picture data is inspected in the request body. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPicturesPutWorksheetAddPicture(name: String, sheetName: String, picture: Picture? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, picturePath: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PicturesResponse?,_ error: Error?) -> Void)) {
+        cellsPicturesPutWorksheetAddPictureWithRequestBuilder(name: name, sheetName: sheetName, picture: picture, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, picturePath: picturePath, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a new worksheet picture.
+     - PUT /cells/{name}/worksheets/{sheetName}/pictures
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worsheet name. 
+     - parameter picture: (body) Pictute object (optional)
+     - parameter upperLeftRow: (query) The image upper left row. (optional, default to 0)
+     - parameter upperLeftColumn: (query) The image upper left column. (optional, default to 0)
+     - parameter lowerRightRow: (query) The image low right row. (optional, default to 0)
+     - parameter lowerRightColumn: (query) The image low right column. (optional, default to 0)
+     - parameter picturePath: (query) The picture path, if not provided the picture data is inspected in the request body. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PicturesResponse> 
+     */
+    open class func cellsPicturesPutWorksheetAddPictureWithRequestBuilder(name: String, sheetName: String, picture: Picture? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, picturePath: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PicturesResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: picture)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "upperLeftRow": upperLeftRow?.encodeToJSON(), 
+            "upperLeftColumn": upperLeftColumn?.encodeToJSON(), 
+            "lowerRightRow": lowerRightRow?.encodeToJSON(), 
+            "lowerRightColumn": lowerRightColumn?.encodeToJSON(), 
+            "picturePath": picturePath, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PicturesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete pivot field into into pivot table
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter request: (body) Dto that conrains field indexes (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesDeletePivotTableField(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesDeletePivotTableFieldWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete pivot field into into pivot table
+     - DELETE /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter request: (body) Dto that conrains field indexes (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesDeletePivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldType": pivotFieldType, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete worksheet pivot table by index
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTable(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesDeleteWorksheetPivotTableWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet pivot table by index
+     - DELETE /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     delete  pivot filter for piovt table             
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter fieldIndex: (path)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTableFilter(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesDeleteWorksheetPivotTableFilterWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     delete  pivot filter for piovt table             
+     - DELETE /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter fieldIndex: (path)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let fieldIndexPreEscape = "\(fieldIndex)"
+        let fieldIndexPostEscape = fieldIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{fieldIndex}", with: fieldIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     delete all pivot filters for piovt table
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTableFilters(name: String, sheetName: String, pivotTableIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesDeleteWorksheetPivotTableFiltersWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     delete all pivot filters for piovt table
+     - DELETE /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTableFiltersWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet pivot tables
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTables(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesDeleteWorksheetPivotTablesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet pivot tables
+     - DELETE /cells/{name}/worksheets/{sheetName}/pivottables
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesDeleteWorksheetPivotTablesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get pivot field into into pivot table
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldIndex: (query) The field index in the base fields. 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesGetPivotTableField(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldIndex: Int32, pivotFieldType: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PivotFieldResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesGetPivotTableFieldWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldIndex: pivotFieldIndex, pivotFieldType: pivotFieldType, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get pivot field into into pivot table
+     - GET /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldIndex: (query) The field index in the base fields. 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PivotFieldResponse> 
+     */
+    open class func cellsPivotTablesGetPivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldIndex: Int32, pivotFieldType: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFieldResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldIndex": pivotFieldIndex.encodeToJSON(), 
+            "pivotFieldType": pivotFieldType, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PivotFieldResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet pivottable info by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivottableIndex: (path)  
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTable(name: String, sheetName: String, pivottableIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PivotTableResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesGetWorksheetPivotTableWithRequestBuilder(name: name, sheetName: sheetName, pivottableIndex: pivottableIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet pivottable info by index.
+     - GET /cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivottableIndex: (path)  
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PivotTableResponse> 
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, pivottableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotTableResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivottableIndexPreEscape = "\(pivottableIndex)"
+        let pivottableIndexPostEscape = pivottableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivottableIndex}", with: pivottableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PivotTableResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter filterIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTableFilter(name: String, sheetName: String, pivotTableIndex: Int32, filterIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PivotFilterResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesGetWorksheetPivotTableFilterWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filterIndex: filterIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter filterIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PivotFilterResponse> 
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, filterIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFilterResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let filterIndexPreEscape = "\(filterIndex)"
+        let filterIndexPostEscape = filterIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{filterIndex}", with: filterIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PivotFilterResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTableFilters(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PivotFiltersResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesGetWorksheetPivotTableFiltersWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PivotFiltersResponse> 
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTableFiltersWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFiltersResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PivotFiltersResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet pivottables info.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTables(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: PivotTablesResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesGetWorksheetPivotTablesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet pivottables info.
+     - GET /cells/{name}/worksheets/{sheetName}/pivottables
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<PivotTablesResponse> 
+     */
+    open class func cellsPivotTablesGetWorksheetPivotTablesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotTablesResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<PivotTablesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update cell style for pivot table
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter column: (query)  
+     - parameter row: (query)  
+     - parameter style: (body) Style dto in request body. (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableCellStyle(name: String, sheetName: String, pivotTableIndex: Int32, column: Int32, row: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableCellStyleWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, column: column, row: row, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update cell style for pivot table
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter column: (query)  
+     - parameter row: (query)  
+     - parameter style: (body) Style dto in request body. (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableCellStyleWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, column: Int32, row: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "column": column.encodeToJSON(), 
+            "row": row.encodeToJSON(), 
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter itemIndex: (query)  
+     - parameter isHide: (query)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableFieldHideItem(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, fieldIndex: Int32, itemIndex: Int32, isHide: Bool, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableFieldHideItemWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, fieldIndex: fieldIndex, itemIndex: itemIndex, isHide: isHide, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter fieldIndex: (query)  
+     - parameter itemIndex: (query)  
+     - parameter isHide: (query)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableFieldHideItemWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, fieldIndex: Int32, itemIndex: Int32, isHide: Bool, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldType": pivotFieldType, 
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "itemIndex": itemIndex.encodeToJSON(), 
+            "isHide": isHide, 
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter from: (query)  
+     - parameter to: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableFieldMoveTo(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, from: String, to: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableFieldMoveToWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, from: from, to: to, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter fieldIndex: (query)  
+     - parameter from: (query)  
+     - parameter to: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableFieldMoveToWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, from: String, to: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "fieldIndex": fieldIndex.encodeToJSON(), 
+            "from": from, 
+            "to": to, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update style for pivot table
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter style: (body) Style dto in request body. (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableStyle(name: String, sheetName: String, pivotTableIndex: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableStyleWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update style for pivot table
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter style: (body) Style dto in request body. (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableStyleWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Calculates pivottable's data to cells.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostWorksheetPivotTableCalculate(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostWorksheetPivotTableCalculateWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Calculates pivottable's data to cells.
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostWorksheetPivotTableCalculateWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter row: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter destCellName: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostWorksheetPivotTableMove(name: String, sheetName: String, pivotTableIndex: Int32, row: Int32? = nil, column: Int32? = nil, destCellName: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostWorksheetPivotTableMoveWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, row: row, column: column, destCellName: destCellName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter row: (query)  (optional)
+     - parameter column: (query)  (optional)
+     - parameter destCellName: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostWorksheetPivotTableMoveWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, row: Int32? = nil, column: Int32? = nil, destCellName: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "row": row?.encodeToJSON(), 
+            "column": column?.encodeToJSON(), 
+            "destCellName": destCellName, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Add pivot field into into pivot table
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter request: (body) Dto that conrains field indexes (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPutPivotTableField(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPutPivotTableFieldWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add pivot field into into pivot table
+     - PUT /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter pivotTableIndex: (path) Pivot table index 
+     - parameter pivotFieldType: (query) The fields area type. 
+     - parameter request: (body) Dto that conrains field indexes (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPutPivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldType": pivotFieldType, 
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add a pivot table into worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter request: (body) CreatePivotTableRequest dto in request body. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter sourceData: (query) The data for the new PivotTable cache. (optional)
+     - parameter destCellName: (query) The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
+     - parameter tableName: (query) The name of the new PivotTable report. (optional)
+     - parameter useSameSource: (query) Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPutWorksheetPivotTable(name: String, sheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil, sourceData: String? = nil, destCellName: String? = nil, tableName: String? = nil, useSameSource: Bool? = nil, completion: @escaping ((_ data: PivotTableResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPutWorksheetPivotTableWithRequestBuilder(name: name, sheetName: sheetName, request: request, folder: folder, storage: storage, sourceData: sourceData, destCellName: destCellName, tableName: tableName, useSameSource: useSameSource).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add a pivot table into worksheet.
+     - PUT /cells/{name}/worksheets/{sheetName}/pivottables
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter request: (body) CreatePivotTableRequest dto in request body. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter sourceData: (query) The data for the new PivotTable cache. (optional)
+     - parameter destCellName: (query) The cell in the upper-left corner of the PivotTable report&#39;s destination range. (optional)
+     - parameter tableName: (query) The name of the new PivotTable report. (optional)
+     - parameter useSameSource: (query) Indicates whether using same data source when another existing pivot table has used this data source. If the property is true, it will save memory. (optional)
+
+     - returns: RequestBuilder<PivotTableResponse> 
+     */
+    open class func cellsPivotTablesPutWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil, sourceData: String? = nil, destCellName: String? = nil, tableName: String? = nil, useSameSource: Bool? = nil) -> RequestBuilder<PivotTableResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage, 
+            "sourceData": sourceData, 
+            "destCellName": destCellName, 
+            "tableName": tableName, 
+            "useSameSource": useSameSource
+        ])
+
+        let requestBuilder: RequestBuilder<PivotTableResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add pivot filter for piovt table index
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter filter: (body)  (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPutWorksheetPivotTableFilter(name: String, sheetName: String, pivotTableIndex: Int32, filter: PivotFilter? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPutWorksheetPivotTableFilterWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add pivot filter for piovt table index
+     - PUT /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter filter: (body)  (optional)
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPutWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, filter: PivotFilter? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: filter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "needReCalculate": needReCalculate, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
      Cell calculate formula
      
      - parameter name: (path)  
@@ -634,7 +6766,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostCellCalculate(name: String, sheetName: String, cellName: String, options: CalculationOptions? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostCellCalculate(name: String, sheetName: String, cellName: String, options: CalculationOptions? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostCellCalculateWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, options: options, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -656,9 +6788,9 @@ open class CellsAPI {
      - parameter folder: (query)  (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostCellCalculateWithRequestBuilder(name: String, sheetName: String, cellName: String, options: CalculationOptions? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostCellCalculateWithRequestBuilder(name: String, sheetName: String, cellName: String, options: CalculationOptions? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -678,7 +6810,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -694,7 +6826,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostCellCharacters(name: String, sheetName: String, cellName: String, options: [FontSetting]? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostCellCharacters(name: String, sheetName: String, cellName: String, options: [FontSetting]? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostCellCharactersWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, options: options, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -716,9 +6848,9 @@ open class CellsAPI {
      - parameter folder: (query)  (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostCellCharactersWithRequestBuilder(name: String, sheetName: String, cellName: String, options: [FontSetting]? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostCellCharactersWithRequestBuilder(name: String, sheetName: String, cellName: String, options: [FontSetting]? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -738,7 +6870,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -757,7 +6889,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostClearContents(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostClearContents(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostClearContentsWithRequestBuilder(name: name, sheetName: sheetName, range: range, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -782,9 +6914,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostClearContentsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostClearContentsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/clearcontents"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -806,7 +6938,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -825,7 +6957,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostClearFormats(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostClearFormats(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostClearFormatsWithRequestBuilder(name: name, sheetName: sheetName, range: range, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -850,9 +6982,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostClearFormatsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostClearFormatsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/clearformats"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -874,7 +7006,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -890,7 +7022,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostColumnStyle(name: String, sheetName: String, columnIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostColumnStyle(name: String, sheetName: String, columnIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostColumnStyleWithRequestBuilder(name: name, sheetName: sheetName, columnIndex: columnIndex, style: style, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -912,9 +7044,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostColumnStyleWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostColumnStyleWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -934,7 +7066,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -953,7 +7085,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostCopyCellIntoCell(name: String, destCellName: String, sheetName: String, worksheet: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostCopyCellIntoCell(name: String, destCellName: String, sheetName: String, worksheet: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostCopyCellIntoCellWithRequestBuilder(name: name, destCellName: destCellName, sheetName: sheetName, worksheet: worksheet, cellname: cellname, row: row, column: column, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -978,9 +7110,9 @@ open class CellsAPI {
      - parameter folder: (query) Folder name (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostCopyCellIntoCellWithRequestBuilder(name: String, destCellName: String, sheetName: String, worksheet: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostCopyCellIntoCellWithRequestBuilder(name: String, destCellName: String, sheetName: String, worksheet: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1004,7 +7136,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1022,7 +7154,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostCopyWorksheetColumns(name: String, sheetName: String, sourceColumnIndex: Int32, destinationColumnIndex: Int32, columnNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostCopyWorksheetColumns(name: String, sheetName: String, sourceColumnIndex: Int32, destinationColumnIndex: Int32, columnNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostCopyWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, sourceColumnIndex: sourceColumnIndex, destinationColumnIndex: destinationColumnIndex, columnNumber: columnNumber, worksheet: worksheet, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1046,9 +7178,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostCopyWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, sourceColumnIndex: Int32, destinationColumnIndex: Int32, columnNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostCopyWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, sourceColumnIndex: Int32, destinationColumnIndex: Int32, columnNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1069,7 +7201,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1087,7 +7219,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostCopyWorksheetRows(name: String, sheetName: String, sourceRowIndex: Int32, destinationRowIndex: Int32, rowNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostCopyWorksheetRows(name: String, sheetName: String, sourceRowIndex: Int32, destinationRowIndex: Int32, rowNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostCopyWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, sourceRowIndex: sourceRowIndex, destinationRowIndex: destinationRowIndex, rowNumber: rowNumber, worksheet: worksheet, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1111,9 +7243,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostCopyWorksheetRowsWithRequestBuilder(name: String, sheetName: String, sourceRowIndex: Int32, destinationRowIndex: Int32, rowNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostCopyWorksheetRowsWithRequestBuilder(name: String, sheetName: String, sourceRowIndex: Int32, destinationRowIndex: Int32, rowNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1134,7 +7266,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1151,7 +7283,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostGroupWorksheetColumns(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostGroupWorksheetColumns(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostGroupWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, firstIndex: firstIndex, lastIndex: lastIndex, hide: hide, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1174,9 +7306,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostGroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostGroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/group"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1196,7 +7328,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1213,7 +7345,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostGroupWorksheetRows(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostGroupWorksheetRows(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostGroupWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, firstIndex: firstIndex, lastIndex: lastIndex, hide: hide, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1236,9 +7368,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostGroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostGroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/group"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1258,7 +7390,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1274,7 +7406,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostHideWorksheetColumns(name: String, sheetName: String, startColumn: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostHideWorksheetColumns(name: String, sheetName: String, startColumn: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostHideWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, startColumn: startColumn, totalColumns: totalColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1296,9 +7428,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostHideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startColumn: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostHideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startColumn: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/hide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1317,7 +7449,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1333,7 +7465,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostHideWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostHideWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostHideWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, startrow: startrow, totalRows: totalRows, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1355,9 +7487,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostHideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostHideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/hide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1376,7 +7508,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1392,7 +7524,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostRowStyle(name: String, sheetName: String, rowIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostRowStyle(name: String, sheetName: String, rowIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostRowStyleWithRequestBuilder(name: name, sheetName: sheetName, rowIndex: rowIndex, style: style, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1414,9 +7546,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostRowStyleWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostRowStyleWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1436,7 +7568,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -1508,7 +7640,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostSetCellRangeValue(name: String, sheetName: String, cellarea: String, value: String, type: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostSetCellRangeValue(name: String, sheetName: String, cellarea: String, value: String, type: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostSetCellRangeValueWithRequestBuilder(name: name, sheetName: sheetName, cellarea: cellarea, value: value, type: type, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1531,9 +7663,9 @@ open class CellsAPI {
      - parameter folder: (query) Folder name (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostSetCellRangeValueWithRequestBuilder(name: String, sheetName: String, cellarea: String, value: String, type: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostSetCellRangeValueWithRequestBuilder(name: String, sheetName: String, cellarea: String, value: String, type: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1553,7 +7685,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1627,7 +7759,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostUngroupWorksheetColumns(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostUngroupWorksheetColumns(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostUngroupWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, firstIndex: firstIndex, lastIndex: lastIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1649,9 +7781,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostUngroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostUngroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1670,7 +7802,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1687,7 +7819,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostUngroupWorksheetRows(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, isAll: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostUngroupWorksheetRows(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, isAll: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostUngroupWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, firstIndex: firstIndex, lastIndex: lastIndex, isAll: isAll, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1710,9 +7842,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostUngroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, isAll: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostUngroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, isAll: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1732,7 +7864,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1749,7 +7881,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostUnhideWorksheetColumns(name: String, sheetName: String, startcolumn: Int32, totalColumns: Int32, width: Double? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostUnhideWorksheetColumns(name: String, sheetName: String, startcolumn: Int32, totalColumns: Int32, width: Double? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostUnhideWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, startcolumn: startcolumn, totalColumns: totalColumns, width: width, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1772,9 +7904,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostUnhideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startcolumn: Int32, totalColumns: Int32, width: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostUnhideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startcolumn: Int32, totalColumns: Int32, width: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1794,7 +7926,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1811,7 +7943,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostUnhideWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostUnhideWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostUnhideWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, startrow: startrow, totalRows: totalRows, height: height, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1834,9 +7966,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostUnhideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostUnhideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1856,7 +7988,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -1929,7 +8061,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostUpdateWorksheetRangeStyle(name: String, sheetName: String, range: String, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostUpdateWorksheetRangeStyle(name: String, sheetName: String, range: String, style: Style? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostUpdateWorksheetRangeStyleWithRequestBuilder(name: name, sheetName: sheetName, range: range, style: style, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -1951,9 +8083,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostUpdateWorksheetRangeStyleWithRequestBuilder(name: String, sheetName: String, range: String, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostUpdateWorksheetRangeStyleWithRequestBuilder(name: String, sheetName: String, range: String, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1971,7 +8103,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
@@ -2111,7 +8243,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostWorksheetMerge(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostWorksheetMerge(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostWorksheetMergeWithRequestBuilder(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -2135,9 +8267,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostWorksheetMergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostWorksheetMergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/merge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -2158,7 +8290,7 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
@@ -2176,7 +8308,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPostWorksheetUnmerge(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPostWorksheetUnmerge(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPostWorksheetUnmergeWithRequestBuilder(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -2200,9 +8332,9 @@ open class CellsAPI {
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPostWorksheetUnmergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPostWorksheetUnmergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/unmerge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -2223,9 +8355,251 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete all custom document properties and clean built-in ones.
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPropertiesDeleteDocumentProperties(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsDocumentPropertiesResponse?,_ error: Error?) -> Void)) {
+        cellsPropertiesDeleteDocumentPropertiesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete all custom document properties and clean built-in ones.
+     - DELETE /cells/{name}/documentproperties
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
+     */
+    open class func cellsPropertiesDeleteDocumentPropertiesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
+        var path = "/cells/{name}/documentproperties"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsDocumentPropertiesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete document property.
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPropertiesDeleteDocumentProperty(name: String, propertyName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsDocumentPropertiesResponse?,_ error: Error?) -> Void)) {
+        cellsPropertiesDeleteDocumentPropertyWithRequestBuilder(name: name, propertyName: propertyName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete document property.
+     - DELETE /cells/{name}/documentproperties/{propertyName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
+     */
+    open class func cellsPropertiesDeleteDocumentPropertyWithRequestBuilder(name: String, propertyName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
+        var path = "/cells/{name}/documentproperties/{propertyName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let propertyNamePreEscape = "\(propertyName)"
+        let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsDocumentPropertiesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read document properties.
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPropertiesGetDocumentProperties(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsDocumentPropertiesResponse?,_ error: Error?) -> Void)) {
+        cellsPropertiesGetDocumentPropertiesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read document properties.
+     - GET /cells/{name}/documentproperties
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
+     */
+    open class func cellsPropertiesGetDocumentPropertiesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
+        var path = "/cells/{name}/documentproperties"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsDocumentPropertiesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read document property by name.
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPropertiesGetDocumentProperty(name: String, propertyName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsDocumentPropertyResponse?,_ error: Error?) -> Void)) {
+        cellsPropertiesGetDocumentPropertyWithRequestBuilder(name: name, propertyName: propertyName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read document property by name.
+     - GET /cells/{name}/documentproperties/{propertyName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsDocumentPropertyResponse> 
+     */
+    open class func cellsPropertiesGetDocumentPropertyWithRequestBuilder(name: String, propertyName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertyResponse> {
+        var path = "/cells/{name}/documentproperties/{propertyName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let propertyNamePreEscape = "\(propertyName)"
+        let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsDocumentPropertyResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Set/create document property.
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter property: (body) with new property value. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPropertiesPutDocumentProperty(name: String, propertyName: String, property: CellsDocumentProperty? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsDocumentPropertyResponse?,_ error: Error?) -> Void)) {
+        cellsPropertiesPutDocumentPropertyWithRequestBuilder(name: name, propertyName: propertyName, property: property, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set/create document property.
+     - PUT /cells/{name}/documentproperties/{propertyName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter propertyName: (path) The property name. 
+     - parameter property: (body) with new property value. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsDocumentPropertyResponse> 
+     */
+    open class func cellsPropertiesPutDocumentPropertyWithRequestBuilder(name: String, propertyName: String, property: CellsDocumentProperty? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertyResponse> {
+        var path = "/cells/{name}/documentproperties/{propertyName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let propertyNamePreEscape = "\(propertyName)"
+        let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: property)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsDocumentPropertyResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
     }
 
     /**
@@ -2356,7 +8730,7 @@ open class CellsAPI {
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsPutInsertWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaaSposeResponse?,_ error: Error?) -> Void)) {
+    open class func cellsPutInsertWorksheetRows(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
         cellsPutInsertWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, startrow: startrow, totalRows: totalRows, updateReference: updateReference, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
@@ -2379,9 +8753,9 @@ open class CellsAPI {
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
-     - returns: RequestBuilder<SaaSposeResponse> 
+     - returns: RequestBuilder<CellsCloudResponse> 
      */
-    open class func cellsPutInsertWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaaSposeResponse> {
+    open class func cellsPutInsertWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
         var path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -2401,9 +8775,5187 @@ open class CellsAPI {
             "storage": storage
         ])
 
-        let requestBuilder: RequestBuilder<SaaSposeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get cells list in a range by range name or row column indexes  
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter namerange: (query) range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     - parameter firstRow: (query) the first row of the range (optional)
+     - parameter firstColumn: (query) the first column of the range (optional)
+     - parameter rowCount: (query) the count of rows in the range (optional)
+     - parameter columnCount: (query) the count of columns in the range (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesGetWorksheetCellsRangeValue(name: String, sheetName: String, namerange: String? = nil, firstRow: Int32? = nil, firstColumn: Int32? = nil, rowCount: Int32? = nil, columnCount: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: RangeValueResponse?,_ error: Error?) -> Void)) {
+        cellsRangesGetWorksheetCellsRangeValueWithRequestBuilder(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get cells list in a range by range name or row column indexes  
+     - GET /cells/{name}/worksheets/{sheetName}/ranges/value
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter namerange: (query) range name, for example: &#39;A1:B2&#39; or &#39;range_name1&#39; (optional)
+     - parameter firstRow: (query) the first row of the range (optional)
+     - parameter firstColumn: (query) the first column of the range (optional)
+     - parameter rowCount: (query) the count of rows in the range (optional)
+     - parameter columnCount: (query) the count of columns in the range (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<RangeValueResponse> 
+     */
+    open class func cellsRangesGetWorksheetCellsRangeValueWithRequestBuilder(name: String, sheetName: String, namerange: String? = nil, firstRow: Int32? = nil, firstColumn: Int32? = nil, rowCount: Int32? = nil, columnCount: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangeValueResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "namerange": namerange, 
+            "firstRow": firstRow?.encodeToJSON(), 
+            "firstColumn": firstColumn?.encodeToJSON(), 
+            "rowCount": rowCount?.encodeToJSON(), 
+            "columnCount": columnCount?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<RangeValueResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Set column width of range
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter range: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeColumnWidth(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeColumnWidthWithRequestBuilder(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set column width of range
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/columnWidth
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter range: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeColumnWidthWithRequestBuilder(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "value": value, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Combines a range of cells into a single cell.              
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeMerge(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeMergeWithRequestBuilder(name: name, sheetName: sheetName, range: range, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Combines a range of cells into a single cell.              
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/merge
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeMergeWithRequestBuilder(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/merge"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Move the current range to the dest range.             
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter destRow: (query) The start row of the dest range. 
+     - parameter destColumn: (query) The start column of the dest range. 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeMoveTo(name: String, sheetName: String, destRow: Int32, destColumn: Int32, range: Range? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeMoveToWithRequestBuilder(name: name, sheetName: sheetName, destRow: destRow, destColumn: destColumn, range: range, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Move the current range to the dest range.             
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/moveto
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter destRow: (query) The start row of the dest range. 
+     - parameter destColumn: (query) The start column of the dest range. 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeMoveToWithRequestBuilder(name: String, sheetName: String, destRow: Int32, destColumn: Int32, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/moveto"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destRow": destRow.encodeToJSON(), 
+            "destColumn": destColumn.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Sets outline border around a range of cells.
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) Range Set OutlineBorder Request  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeOutlineBorder(name: String, sheetName: String, rangeOperate: RangeSetOutlineBorderRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeOutlineBorderWithRequestBuilder(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Sets outline border around a range of cells.
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/outlineBorder
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) Range Set OutlineBorder Request  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeOutlineBorderWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeSetOutlineBorderRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     set row height of range
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter range: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeRowHeight(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeRowHeightWithRequestBuilder(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     set row height of range
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/rowHeight
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter range: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeRowHeightWithRequestBuilder(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/rowHeight"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "value": value, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Sets the style of the range.             
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) Range Set Style Request  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeStyle(name: String, sheetName: String, rangeOperate: RangeSetStyleRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeStyleWithRequestBuilder(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Sets the style of the range.             
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/style
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) Range Set Style Request  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeStyleWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeSetStyleRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/style"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Unmerges merged cells of this range.             
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeUnmerge(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeUnmergeWithRequestBuilder(name: name, sheetName: sheetName, range: range, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Unmerges merged cells of this range.             
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/unmerge
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeUnmergeWithRequestBuilder(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/unmerge"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.             
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter value: (query) Input value 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter isConverted: (query) True: converted to other data type if appropriate. (optional, default to false)
+     - parameter setStyle: (query) True: set the number format to cell&#39;s style when converting to other data type (optional, default to false)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRangeValue(name: String, sheetName: String, value: String, range: Range? = nil, isConverted: Bool? = nil, setStyle: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangeValueWithRequestBuilder(name: name, sheetName: sheetName, value: value, range: range, isConverted: isConverted, setStyle: setStyle, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Puts a value into the range, if appropriate the value will be converted to other data type and cell's number format will be reset.             
+     - POST /cells/{name}/worksheets/{sheetName}/ranges/value
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter value: (query) Input value 
+     - parameter range: (body) range in worksheet  (optional)
+     - parameter isConverted: (query) True: converted to other data type if appropriate. (optional, default to false)
+     - parameter setStyle: (query) True: set the number format to cell&#39;s style when converting to other data type (optional, default to false)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangeValueWithRequestBuilder(name: String, sheetName: String, value: String, range: Range? = nil, isConverted: Bool? = nil, setStyle: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "Value": value, 
+            "isConverted": isConverted, 
+            "setStyle": setStyle, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     copy range in the worksheet
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) copydata,copystyle,copyto,copyvalue (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsRangesPostWorksheetCellsRanges(name: String, sheetName: String, rangeOperate: RangeCopyRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsRangesPostWorksheetCellsRangesWithRequestBuilder(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     copy range in the worksheet
+     - POST /cells/{name}/worksheets/{sheetName}/ranges
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) workbook name 
+     - parameter sheetName: (path) worksheet name 
+     - parameter rangeOperate: (body) copydata,copystyle,copyto,copyvalue (optional)
+     - parameter folder: (query) Workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsRangesPostWorksheetCellsRangesWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeCopyRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/ranges"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Convert document and save result to storage.
+     
+     - parameter name: (path) The document name. 
+     - parameter saveOptions: (body) Save options. (optional)
+     - parameter newfilename: (query) The new file name. (optional)
+     - parameter isAutoFitRows: (query) Autofit rows. (optional, default to false)
+     - parameter isAutoFitColumns: (query) Autofit columns. (optional, default to false)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSaveAsPostDocumentSaveAs(name: String, saveOptions: SaveOptions? = nil, newfilename: String? = nil, isAutoFitRows: Bool? = nil, isAutoFitColumns: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SaveResponse?,_ error: Error?) -> Void)) {
+        cellsSaveAsPostDocumentSaveAsWithRequestBuilder(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Convert document and save result to storage.
+     - POST /cells/{name}/SaveAs
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter saveOptions: (body) Save options. (optional)
+     - parameter newfilename: (query) The new file name. (optional)
+     - parameter isAutoFitRows: (query) Autofit rows. (optional, default to false)
+     - parameter isAutoFitColumns: (query) Autofit columns. (optional, default to false)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<SaveResponse> 
+     */
+    open class func cellsSaveAsPostDocumentSaveAsWithRequestBuilder(name: String, saveOptions: SaveOptions? = nil, newfilename: String? = nil, isAutoFitRows: Bool? = nil, isAutoFitColumns: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaveResponse> {
+        var path = "/cells/{name}/SaveAs"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: saveOptions)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "newfilename": newfilename, 
+            "isAutoFitRows": isAutoFitRows, 
+            "isAutoFitColumns": isAutoFitColumns, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<SaveResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete a shape in worksheet
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesDeleteWorksheetShape(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsShapesDeleteWorksheetShapeWithRequestBuilder(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete a shape in worksheet
+     - DELETE /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsShapesDeleteWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let shapeindexPreEscape = "\(shapeindex)"
+        let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     delete all shapes in worksheet
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesDeleteWorksheetShapes(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsShapesDeleteWorksheetShapesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     delete all shapes in worksheet
+     - DELETE /cells/{name}/worksheets/{sheetName}/shapes
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsShapesDeleteWorksheetShapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet shape
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesGetWorksheetShape(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ShapeResponse?,_ error: Error?) -> Void)) {
+        cellsShapesGetWorksheetShapeWithRequestBuilder(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet shape
+     - GET /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ShapeResponse> 
+     */
+    open class func cellsShapesGetWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapeResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let shapeindexPreEscape = "\(shapeindex)"
+        let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ShapeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet shapes 
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesGetWorksheetShapes(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ShapesResponse?,_ error: Error?) -> Void)) {
+        cellsShapesGetWorksheetShapesWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet shapes 
+     - GET /cells/{name}/worksheets/{sheetName}/shapes
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ShapesResponse> 
+     */
+    open class func cellsShapesGetWorksheetShapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapesResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ShapesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update a shape in worksheet
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter dto: (body)  (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesPostWorksheetShape(name: String, sheetName: String, shapeindex: Int32, dto: Shape? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsShapesPostWorksheetShapeWithRequestBuilder(name: name, sheetName: sheetName, shapeindex: shapeindex, dto: dto, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update a shape in worksheet
+     - POST /cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter shapeindex: (path) shape index in worksheet shapes. 
+     - parameter dto: (body)  (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsShapesPostWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, dto: Shape? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let shapeindexPreEscape = "\(shapeindex)"
+        let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dto)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add shape in worksheet
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter drawingType: (query) shape object type 
+     - parameter upperLeftRow: (query) Upper left row index. 
+     - parameter upperLeftColumn: (query) Upper left column index. 
+     - parameter top: (query) Represents the vertical offset of Spinner from its left row, in unit of pixel. 
+     - parameter _left: (query) Represents the horizontal offset of Spinner from its left column, in unit of pixel. 
+     - parameter width: (query) Represents the height of Spinner, in unit of pixel. 
+     - parameter height: (query) Represents the width of Spinner, in unit of pixel. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsShapesPutWorksheetShape(name: String, sheetName: String, drawingType: String, upperLeftRow: Int32, upperLeftColumn: Int32, top: Int32, _left: Int32, width: Int32, height: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ShapeResponse?,_ error: Error?) -> Void)) {
+        cellsShapesPutWorksheetShapeWithRequestBuilder(name: name, sheetName: sheetName, drawingType: drawingType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, top: top, _left: _left, width: width, height: height, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add shape in worksheet
+     - PUT /cells/{name}/worksheets/{sheetName}/shapes
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) document name. 
+     - parameter sheetName: (path) worksheet name. 
+     - parameter drawingType: (query) shape object type 
+     - parameter upperLeftRow: (query) Upper left row index. 
+     - parameter upperLeftColumn: (query) Upper left column index. 
+     - parameter top: (query) Represents the vertical offset of Spinner from its left row, in unit of pixel. 
+     - parameter _left: (query) Represents the horizontal offset of Spinner from its left column, in unit of pixel. 
+     - parameter width: (query) Represents the height of Spinner, in unit of pixel. 
+     - parameter height: (query) Represents the width of Spinner, in unit of pixel. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ShapeResponse> 
+     */
+    open class func cellsShapesPutWorksheetShapeWithRequestBuilder(name: String, sheetName: String, drawingType: String, upperLeftRow: Int32, upperLeftColumn: Int32, top: Int32, _left: Int32, width: Int32, height: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapeResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "DrawingType": drawingType, 
+            "upperLeftRow": upperLeftRow.encodeToJSON(), 
+            "upperLeftColumn": upperLeftColumn.encodeToJSON(), 
+            "top": top.encodeToJSON(), 
+            "left": _left.encodeToJSON(), 
+            "width": width.encodeToJSON(), 
+            "height": height.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ShapeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Run tasks  
+     
+     - parameter taskData: (body)  
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsTaskPostRunTask(taskData: TaskData, completion: @escaping ((_ data: AnyObject?,_ error: Error?) -> Void)) {
+        cellsTaskPostRunTaskWithRequestBuilder(taskData: taskData).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Run tasks  
+     - POST /cells/task/runtask
+     - examples: [{contentType=application/json, example="{}"}]
+     
+     - parameter taskData: (body)  
+
+     - returns: RequestBuilder<AnyObject> 
+     */
+    open class func cellsTaskPostRunTaskWithRequestBuilder(taskData: TaskData) -> RequestBuilder<AnyObject> {
+        let path = "/cells/task/runtask"
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: taskData)
+
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<AnyObject>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Decrypt document.
+     
+     - parameter name: (path) The document name. 
+     - parameter encryption: (body) Encryption settings, only password can be specified. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteDecryptDocument(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteDecryptDocumentWithRequestBuilder(name: name, encryption: encryption, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Decrypt document.
+     - DELETE /cells/{name}/encryption
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter encryption: (body) Encryption settings, only password can be specified. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteDecryptDocumentWithRequestBuilder(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/encryption"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: encryption)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Unprotect document from changes.
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteDocumentUnprotectFromChanges(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteDocumentUnprotectFromChangesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Unprotect document from changes.
+     - DELETE /cells/{name}/writeProtection
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteDocumentUnprotectFromChangesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/writeProtection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Unprotect document.
+     
+     - parameter name: (path) The document name. 
+     - parameter protection: (body) Protection settings, only password can be specified. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteUnprotectDocument(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteUnprotectDocumentWithRequestBuilder(name: name, protection: protection, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Unprotect document.
+     - DELETE /cells/{name}/protection
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter protection: (body) Protection settings, only password can be specified. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteUnprotectDocumentWithRequestBuilder(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/protection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protection)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Clean workbook's names.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteWorkbookName(name: String, nameName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteWorkbookNameWithRequestBuilder(name: name, nameName: nameName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Clean workbook's names.
+     - DELETE /cells/{name}/names/{nameName}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteWorkbookNameWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/names/{nameName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let nameNamePreEscape = "\(nameName)"
+        let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Clean workbook's names.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteWorkbookNames(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteWorkbookNamesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Clean workbook's names.
+     - DELETE /cells/{name}/names
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteWorkbookNamesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/names"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read workbook info or export.
+     
+     - parameter name: (path) The document name. 
+     - parameter password: (query) The document password. (optional)
+     - parameter format: (query) The exported file format. (optional)
+     - parameter isAutoFit: (query) Set document rows to be autofit. (optional, default to false)
+     - parameter onlySaveTable: (query) Only save table data. (optional, default to false)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter outPath: (query) The document output folder. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbook(name: String, password: String? = nil, format: String? = nil, isAutoFit: Bool? = nil, onlySaveTable: Bool? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookWithRequestBuilder(name: name, password: password, format: format, isAutoFit: isAutoFit, onlySaveTable: onlySaveTable, folder: folder, storage: storage, outPath: outPath).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read workbook info or export.
+     - GET /cells/{name}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter password: (query) The document password. (optional)
+     - parameter format: (query) The exported file format. (optional)
+     - parameter isAutoFit: (query) Set document rows to be autofit. (optional, default to false)
+     - parameter onlySaveTable: (query) Only save table data. (optional, default to false)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter outPath: (query) The document output folder. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsWorkbookGetWorkbookWithRequestBuilder(name: String, password: String? = nil, format: String? = nil, isAutoFit: Bool? = nil, onlySaveTable: Bool? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "password": password, 
+            "format": format, 
+            "isAutoFit": isAutoFit, 
+            "onlySaveTable": onlySaveTable, 
+            "folder": folder, 
+            "storage": storage, 
+            "outPath": outPath
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read workbook default style info.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookDefaultStyle(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: StyleResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookDefaultStyleWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read workbook default style info.
+     - GET /cells/{name}/defaultstyle
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<StyleResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookDefaultStyleWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<StyleResponse> {
+        var path = "/cells/{name}/defaultstyle"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<StyleResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read workbook's name.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookName(name: String, nameName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NameResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookNameWithRequestBuilder(name: name, nameName: nameName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read workbook's name.
+     - GET /cells/{name}/names/{nameName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NameResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookNameWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NameResponse> {
+        var path = "/cells/{name}/names/{nameName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let nameNamePreEscape = "\(nameName)"
+        let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NameResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get workbook's name value.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookNameValue(name: String, nameName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: RangeValueResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookNameValueWithRequestBuilder(name: name, nameName: nameName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get workbook's name value.
+     - GET /cells/{name}/names/{nameName}/value
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter nameName: (path) The name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<RangeValueResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookNameValueWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangeValueResponse> {
+        var path = "/cells/{name}/names/{nameName}/value"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let nameNamePreEscape = "\(nameName)"
+        let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<RangeValueResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read workbook's names.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookNames(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NamesResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookNamesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read workbook's names.
+     - GET /cells/{name}/names
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NamesResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookNamesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NamesResponse> {
+        var path = "/cells/{name}/names"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NamesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get Workbook Settings DTO
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookSettings(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookSettingsResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookSettingsWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get Workbook Settings DTO
+     - GET /cells/{name}/settings
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorkbookSettingsResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookSettingsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookSettingsResponse> {
+        var path = "/cells/{name}/settings"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorkbookSettingsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read workbook's text items.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookGetWorkbookTextItems(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TextItemsResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookGetWorkbookTextItemsWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read workbook's text items.
+     - GET /cells/{name}/textItems
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TextItemsResponse> 
+     */
+    open class func cellsWorkbookGetWorkbookTextItemsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
+        var path = "/cells/{name}/textItems"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TextItemsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Autofit workbook rows.
+     
+     - parameter name: (path) Document name. 
+     - parameter autoFitterOptions: (body) Auto Fitter Options. (optional)
+     - parameter startRow: (query) Start row. (optional)
+     - parameter endRow: (query) End row. (optional)
+     - parameter onlyAuto: (query) Only auto. (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostAutofitWorkbookRows(name: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostAutofitWorkbookRowsWithRequestBuilder(name: name, autoFitterOptions: autoFitterOptions, startRow: startRow, endRow: endRow, onlyAuto: onlyAuto, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Autofit workbook rows.
+     - POST /cells/{name}/autofitrows
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter autoFitterOptions: (body) Auto Fitter Options. (optional)
+     - parameter startRow: (query) Start row. (optional)
+     - parameter endRow: (query) End row. (optional)
+     - parameter onlyAuto: (query) Only auto. (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostAutofitWorkbookRowsWithRequestBuilder(name: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/autofitrows"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "startRow": startRow?.encodeToJSON(), 
+            "endRow": endRow?.encodeToJSON(), 
+            "onlyAuto": onlyAuto, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Encript document.
+     
+     - parameter name: (path) The document name. 
+     - parameter encryption: (body) Encryption parameters. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostEncryptDocument(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostEncryptDocumentWithRequestBuilder(name: name, encryption: encryption, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Encript document.
+     - POST /cells/{name}/encryption
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter encryption: (body) Encryption parameters. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostEncryptDocumentWithRequestBuilder(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/encryption"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: encryption)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter importdata: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostImportData(name: String, importdata: ImportOption, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostImportDataWithRequestBuilder(name: name, importdata: importdata, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/importdata
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter importdata: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostImportDataWithRequestBuilder(name: String, importdata: ImportOption, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/importdata"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: importdata)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Protect document.
+     
+     - parameter name: (path) The document name. 
+     - parameter protection: (body) The protection settings. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostProtectDocument(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostProtectDocumentWithRequestBuilder(name: name, protection: protection, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Protect document.
+     - POST /cells/{name}/protection
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter protection: (body) The protection settings. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostProtectDocumentWithRequestBuilder(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/protection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protection)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Calculate all formulas in workbook.
+     
+     - parameter name: (path) Document name. 
+     - parameter options: (body) Calculation Options. (optional)
+     - parameter ignoreError: (query) ignore Error. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbookCalculateFormula(name: String, options: CalculationOptions? = nil, ignoreError: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbookCalculateFormulaWithRequestBuilder(name: name, options: options, ignoreError: ignoreError, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Calculate all formulas in workbook.
+     - POST /cells/{name}/calculateformula
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter options: (body) Calculation Options. (optional)
+     - parameter ignoreError: (query) ignore Error. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostWorkbookCalculateFormulaWithRequestBuilder(name: String, options: CalculationOptions? = nil, ignoreError: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/calculateformula"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "ignoreError": ignoreError, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Smart marker processing result.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter xmlFile: (query) The xml file full path, if empty the data is read from request body. (optional)
+     - parameter folder: (query) The workbook folder full path. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter outPath: (query) Path to save result (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbookGetSmartMarkerResult(name: String, xmlFile: String? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbookGetSmartMarkerResultWithRequestBuilder(name: name, xmlFile: xmlFile, folder: folder, storage: storage, outPath: outPath).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Smart marker processing result.
+     - POST /cells/{name}/smartmarker
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter xmlFile: (query) The xml file full path, if empty the data is read from request body. (optional)
+     - parameter folder: (query) The workbook folder full path. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter outPath: (query) Path to save result (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsWorkbookPostWorkbookGetSmartMarkerResultWithRequestBuilder(name: String, xmlFile: String? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/smartmarker"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "xmlFile": xmlFile, 
+            "folder": folder, 
+            "storage": storage, 
+            "outPath": outPath
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update Workbook setting 
+     
+     - parameter name: (path) Document name. 
+     - parameter settings: (body) Workbook Setting DTO (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbookSettings(name: String, settings: WorkbookSettings? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbookSettingsWithRequestBuilder(name: name, settings: settings, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update Workbook setting 
+     - POST /cells/{name}/settings
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter settings: (body) Workbook Setting DTO (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPostWorkbookSettingsWithRequestBuilder(name: String, settings: WorkbookSettings? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/settings"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: settings)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Split workbook.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter format: (query) Split format. (optional)
+     - parameter from: (query) Start worksheet index. (optional, default to 0)
+     - parameter to: (query) End worksheet index. (optional, default to 0)
+     - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbookSplit(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SplitResultResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: name, format: format, from: from, to: to, horizontalResolution: horizontalResolution, verticalResolution: verticalResolution, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Split workbook.
+     - POST /cells/{name}/split
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter format: (query) Split format. (optional)
+     - parameter from: (query) Start worksheet index. (optional, default to 0)
+     - parameter to: (query) End worksheet index. (optional, default to 0)
+     - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<SplitResultResponse> 
+     */
+    open class func cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SplitResultResponse> {
+        var path = "/cells/{name}/split"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "from": from?.encodeToJSON(), 
+            "to": to?.encodeToJSON(), 
+            "horizontalResolution": horizontalResolution?.encodeToJSON(), 
+            "verticalResolution": verticalResolution?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<SplitResultResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Merge workbooks.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter mergeWith: (query) The workbook to merge with. 
+     - parameter folder: (query) Source workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbooksMerge(name: String, mergeWith: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbooksMergeWithRequestBuilder(name: name, mergeWith: mergeWith, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Merge workbooks.
+     - POST /cells/{name}/merge
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter mergeWith: (query) The workbook to merge with. 
+     - parameter folder: (query) Source workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorkbookResponse> 
+     */
+    open class func cellsWorkbookPostWorkbooksMergeWithRequestBuilder(name: String, mergeWith: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookResponse> {
+        var path = "/cells/{name}/merge"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "mergeWith": mergeWith, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorkbookResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Replace text.
+     
+     - parameter name: (path) Document name. 
+     - parameter oldValue: (query) The old value. 
+     - parameter newValue: (query) The new value. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbooksTextReplace(name: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookReplaceResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbooksTextReplaceWithRequestBuilder(name: name, oldValue: oldValue, newValue: newValue, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Replace text.
+     - POST /cells/{name}/replaceText
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter oldValue: (query) The old value. 
+     - parameter newValue: (query) The new value. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorkbookReplaceResponse> 
+     */
+    open class func cellsWorkbookPostWorkbooksTextReplaceWithRequestBuilder(name: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookReplaceResponse> {
+        var path = "/cells/{name}/replaceText"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "oldValue": oldValue, 
+            "newValue": newValue, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorkbookReplaceResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Search text.
+     
+     - parameter name: (path) Document name. 
+     - parameter text: (query) Text sample. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPostWorkbooksTextSearch(name: String, text: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TextItemsResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbooksTextSearchWithRequestBuilder(name: name, text: text, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Search text.
+     - POST /cells/{name}/findText
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter text: (query) Text sample. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TextItemsResponse> 
+     */
+    open class func cellsWorkbookPostWorkbooksTextSearchWithRequestBuilder(name: String, text: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
+        var path = "/cells/{name}/findText"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "text": text, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TextItemsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Convert workbook from request content to some format.
+     
+     - parameter workbook: (body)  
+     - parameter format: (query) The format to convert. (optional)
+     - parameter password: (query) The workbook password. (optional)
+     - parameter outPath: (query) Path to save result (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPutConvertWorkbook(workbook: NSData, format: String? = nil, password: String? = nil, outPath: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutConvertWorkbookWithRequestBuilder(workbook: workbook, format: format, password: password, outPath: outPath).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Convert workbook from request content to some format.
+     - PUT /cells/convert
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter workbook: (body)  
+     - parameter format: (query) The format to convert. (optional)
+     - parameter password: (query) The workbook password. (optional)
+     - parameter outPath: (query) Path to save result (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsWorkbookPutConvertWorkbookWithRequestBuilder(workbook: NSData, format: String? = nil, password: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
+        let path = "/cells/convert"
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: workbook)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "password": password, 
+            "outPath": outPath
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Protect document from changes.
+     
+     - parameter name: (path) Document name. 
+     - parameter password: (body) Modification password. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPutDocumentProtectFromChanges(name: String, password: PasswordRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutDocumentProtectFromChangesWithRequestBuilder(name: name, password: password, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Protect document from changes.
+     - PUT /cells/{name}/writeProtection
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter password: (body) Modification password. (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPutDocumentProtectFromChangesWithRequestBuilder(name: String, password: PasswordRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/writeProtection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: password)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Create new workbook using deferent methods.
+     
+     - parameter name: (path) The new document name. 
+     - parameter templateFile: (query) The template file, if the data not provided default workbook is created. (optional)
+     - parameter dataFile: (query) Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     - parameter folder: (query) The new document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPutWorkbookCreate(name: String, templateFile: String? = nil, dataFile: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: name, templateFile: templateFile, dataFile: dataFile, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Create new workbook using deferent methods.
+     - PUT /cells/{name}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The new document name. 
+     - parameter templateFile: (query) The template file, if the data not provided default workbook is created. (optional)
+     - parameter dataFile: (query) Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     - parameter folder: (query) The new document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorkbookResponse> 
+     */
+    open class func cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: String, templateFile: String? = nil, dataFile: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookResponse> {
+        var path = "/cells/{name}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "templateFile": templateFile, 
+            "dataFile": dataFile, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorkbookResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet validation by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetValidationsDeleteWorksheetValidation(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ValidationResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetValidationsDeleteWorksheetValidationWithRequestBuilder(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet validation by index.
+     - DELETE /cells/{name}/worksheets/{sheetName}/validations/{validationIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ValidationResponse> 
+     */
+    open class func cellsWorksheetValidationsDeleteWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let validationIndexPreEscape = "\(validationIndex)"
+        let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ValidationResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet validation by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetValidationsGetWorksheetValidation(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ValidationResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetValidationsGetWorksheetValidationWithRequestBuilder(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet validation by index.
+     - GET /cells/{name}/worksheets/{sheetName}/validations/{validationIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ValidationResponse> 
+     */
+    open class func cellsWorksheetValidationsGetWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let validationIndexPreEscape = "\(validationIndex)"
+        let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ValidationResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet validations.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetValidationsGetWorksheetValidations(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ValidationsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetValidationsGetWorksheetValidationsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet validations.
+     - GET /cells/{name}/worksheets/{sheetName}/validations
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ValidationsResponse> 
+     */
+    open class func cellsWorksheetValidationsGetWorksheetValidationsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/validations"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ValidationsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update worksheet validation by index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter validation: (body)  (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetValidationsPostWorksheetValidation(name: String, sheetName: String, validationIndex: Int32, validation: Validation? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ValidationResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetValidationsPostWorksheetValidationWithRequestBuilder(name: name, sheetName: sheetName, validationIndex: validationIndex, validation: validation, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update worksheet validation by index.
+     - POST /cells/{name}/worksheets/{sheetName}/validations/{validationIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter validationIndex: (path) The validation index. 
+     - parameter validation: (body)  (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ValidationResponse> 
+     */
+    open class func cellsWorksheetValidationsPostWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, validation: Validation? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let validationIndexPreEscape = "\(validationIndex)"
+        let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: validation)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ValidationResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add worksheet validation at index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter range: (query) Specified cells area (optional)
+     - parameter validation: (body) validation (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetValidationsPutWorksheetValidation(name: String, sheetName: String, range: String? = nil, validation: Validation? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: ValidationResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetValidationsPutWorksheetValidationWithRequestBuilder(name: name, sheetName: sheetName, range: range, validation: validation, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add worksheet validation at index.
+     - PUT /cells/{name}/worksheets/{sheetName}/validations
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter range: (query) Specified cells area (optional)
+     - parameter validation: (body) validation (optional)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<ValidationResponse> 
+     */
+    open class func cellsWorksheetValidationsPutWorksheetValidationWithRequestBuilder(name: String, sheetName: String, range: String? = nil, validation: Validation? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/validations"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: validation)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "range": range, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<ValidationResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Unprotect worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter protectParameter: (body) with protection settings. Only password is used here. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteUnprotectWorksheet(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteUnprotectWorksheetWithRequestBuilder(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Unprotect worksheet.
+     - DELETE /cells/{name}/worksheets/{sheetName}/protection
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter protectParameter: (body) with protection settings. Only password is used here. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetResponse> 
+     */
+    open class func cellsWorksheetsDeleteUnprotectWorksheetWithRequestBuilder(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/protection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protectParameter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Delete worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteWorksheet(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteWorksheetWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet.
+     - DELETE /cells/{name}/worksheets/{sheetName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetsResponse> 
+     */
+    open class func cellsWorksheetsDeleteWorksheetWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Set worksheet background image.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteWorksheetBackground(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteWorksheetBackgroundWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set worksheet background image.
+     - DELETE /cells/{name}/worksheets/{sheetName}/background
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsDeleteWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/background"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete worksheet's cell comment.
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteWorksheetComment(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteWorksheetCommentWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete worksheet's cell comment.
+     - DELETE /cells/{name}/worksheets/{sheetName}/comments/{cellName}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsDeleteWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let cellNamePreEscape = "\(cellName)"
+        let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete all comments for worksheet.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteWorksheetComments(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteWorksheetCommentsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Delete all comments for worksheet.
+     - DELETE /cells/{name}/worksheets/{sheetName}/comments
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsDeleteWorksheetCommentsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Unfreeze panes
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  
+     - parameter column: (query)  
+     - parameter freezedRows: (query)  
+     - parameter freezedColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsDeleteWorksheetFreezePanes(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsDeleteWorksheetFreezePanesWithRequestBuilder(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Unfreeze panes
+     - DELETE /cells/{name}/worksheets/{sheetName}/freezepanes
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  
+     - parameter column: (query)  
+     - parameter freezedRows: (query)  
+     - parameter freezedColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsDeleteWorksheetFreezePanesWithRequestBuilder(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "row": row.encodeToJSON(), 
+            "column": column.encodeToJSON(), 
+            "freezedRows": freezedRows.encodeToJSON(), 
+            "freezedColumns": freezedColumns.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read worksheets ranges info.
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetNamedRanges(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: RangesResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetNamedRangesWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read worksheets ranges info.
+     - GET /cells/{name}/worksheets/ranges
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<RangesResponse> 
+     */
+    open class func cellsWorksheetsGetNamedRangesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangesResponse> {
+        var path = "/cells/{name}/worksheets/ranges"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<RangesResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read worksheet info or export.
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter format: (query) The exported file format. (optional)
+     - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
+     - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheet(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetWithRequestBuilder(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read worksheet info or export.
+     - GET /cells/{name}/worksheets/{sheetName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter format: (query) The exported file format. (optional)
+     - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
+     - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func cellsWorksheetsGetWorksheetWithRequestBuilder(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var path = "/cells/{name}/worksheets/{sheetName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "format": format, 
+            "verticalResolution": verticalResolution?.encodeToJSON(), 
+            "horizontalResolution": horizontalResolution?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Calculate formula value.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter formula: (query) The formula. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetCalculateFormula(name: String, sheetName: String, formula: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SingleValueResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetCalculateFormulaWithRequestBuilder(name: name, sheetName: sheetName, formula: formula, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Calculate formula value.
+     - GET /cells/{name}/worksheets/{sheetName}/formulaResult
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter formula: (query) The formula. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<SingleValueResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetCalculateFormulaWithRequestBuilder(name: String, sheetName: String, formula: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SingleValueResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/formulaResult"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "formula": formula, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<SingleValueResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet comment by cell name.
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetComment(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CommentResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetCommentWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet comment by cell name.
+     - GET /cells/{name}/worksheets/{sheetName}/comments/{cellName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CommentResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let cellNamePreEscape = "\(cellName)"
+        let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CommentResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet comments.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetComments(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CommentsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetCommentsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet comments.
+     - GET /cells/{name}/worksheets/{sheetName}/comments
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CommentsResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetCommentsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CommentsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet merged cell by its index.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter mergedCellIndex: (path) Merged cell index. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetMergedCell(name: String, sheetName: String, mergedCellIndex: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: MergedCellResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetMergedCellWithRequestBuilder(name: name, sheetName: sheetName, mergedCellIndex: mergedCellIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet merged cell by its index.
+     - GET /cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter mergedCellIndex: (path) Merged cell index. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<MergedCellResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetMergedCellWithRequestBuilder(name: String, sheetName: String, mergedCellIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<MergedCellResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let mergedCellIndexPreEscape = "\(mergedCellIndex)"
+        let mergedCellIndexPostEscape = mergedCellIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{mergedCellIndex}", with: mergedCellIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<MergedCellResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet merged cells.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The workseet name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetMergedCells(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: MergedCellsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetMergedCellsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet merged cells.
+     - GET /cells/{name}/worksheets/{sheetName}/mergedCells
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The workseet name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<MergedCellsResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetMergedCellsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<MergedCellsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/mergedCells"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<MergedCellsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet text items.
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The workbook&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheetTextItems(name: String, sheetName: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TextItemsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetTextItemsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet text items.
+     - GET /cells/{name}/worksheets/{sheetName}/textItems
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) The workbook&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TextItemsResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetTextItemsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/textItems"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TextItemsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Read worksheets info.
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsGetWorksheets(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetsWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Read worksheets info.
+     - GET /cells/{name}/worksheets
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetsResponse> 
+     */
+    open class func cellsWorksheetsGetWorksheetsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
+        var path = "/cells/{name}/worksheets"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter firstColumn: (query)  
+     - parameter lastColumn: (query)  
+     - parameter autoFitterOptions: (body)  (optional)
+     - parameter firstRow: (query)  (optional)
+     - parameter lastRow: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetColumns(name: String, sheetName: String, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, firstRow: Int32? = nil, lastRow: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostAutofitWorksheetColumnsWithRequestBuilder(name: name, sheetName: sheetName, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, firstRow: firstRow, lastRow: lastRow, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/autofitcolumns
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter firstColumn: (query)  
+     - parameter lastColumn: (query)  
+     - parameter autoFitterOptions: (body)  (optional)
+     - parameter firstRow: (query)  (optional)
+     - parameter lastRow: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, firstRow: Int32? = nil, lastRow: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autofitcolumns"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "firstColumn": firstColumn.encodeToJSON(), 
+            "lastColumn": lastColumn.encodeToJSON(), 
+            "firstRow": firstRow?.encodeToJSON(), 
+            "lastRow": lastRow?.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter rowIndex: (query)  
+     - parameter firstColumn: (query)  
+     - parameter lastColumn: (query)  
+     - parameter autoFitterOptions: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetRow(name: String, sheetName: String, rowIndex: Int32, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostAutofitWorksheetRowWithRequestBuilder(name: name, sheetName: sheetName, rowIndex: rowIndex, firstColumn: firstColumn, lastColumn: lastColumn, autoFitterOptions: autoFitterOptions, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/autofitrow
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter rowIndex: (query)  
+     - parameter firstColumn: (query)  
+     - parameter lastColumn: (query)  
+     - parameter autoFitterOptions: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autofitrow"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "rowIndex": rowIndex.encodeToJSON(), 
+            "firstColumn": firstColumn.encodeToJSON(), 
+            "lastColumn": lastColumn.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Autofit worksheet rows.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter autoFitterOptions: (body) Auto Fitter Options. (optional)
+     - parameter startRow: (query) Start row. (optional)
+     - parameter endRow: (query) End row. (optional)
+     - parameter onlyAuto: (query) Only auto. (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetRows(name: String, sheetName: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostAutofitWorksheetRowsWithRequestBuilder(name: name, sheetName: sheetName, autoFitterOptions: autoFitterOptions, startRow: startRow, endRow: endRow, onlyAuto: onlyAuto, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Autofit worksheet rows.
+     - POST /cells/{name}/worksheets/{sheetName}/autofitrows
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter autoFitterOptions: (body) Auto Fitter Options. (optional)
+     - parameter startRow: (query) Start row. (optional)
+     - parameter endRow: (query) End row. (optional)
+     - parameter onlyAuto: (query) Only auto. (optional, default to false)
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostAutofitWorksheetRowsWithRequestBuilder(name: String, sheetName: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/autofitrows"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "startRow": startRow?.encodeToJSON(), 
+            "endRow": endRow?.encodeToJSON(), 
+            "onlyAuto": onlyAuto, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sourceSheet: (query)  
+     - parameter options: (body)  (optional)
+     - parameter sourceWorkbook: (query)  (optional)
+     - parameter sourceFolder: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostCopyWorksheet(name: String, sheetName: String, sourceSheet: String, options: CopyOptions? = nil, sourceWorkbook: String? = nil, sourceFolder: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostCopyWorksheetWithRequestBuilder(name: name, sheetName: sheetName, sourceSheet: sourceSheet, options: options, sourceWorkbook: sourceWorkbook, sourceFolder: sourceFolder, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/copy
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sourceSheet: (query)  
+     - parameter options: (body)  (optional)
+     - parameter sourceWorkbook: (query)  (optional)
+     - parameter sourceFolder: (query)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostCopyWorksheetWithRequestBuilder(name: String, sheetName: String, sourceSheet: String, options: CopyOptions? = nil, sourceWorkbook: String? = nil, sourceFolder: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/copy"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "sourceSheet": sourceSheet, 
+            "sourceWorkbook": sourceWorkbook, 
+            "sourceFolder": sourceFolder, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Move worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter moving: (body) with moving parameters. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostMoveWorksheet(name: String, sheetName: String, moving: WorksheetMovingRequest? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostMoveWorksheetWithRequestBuilder(name: name, sheetName: sheetName, moving: moving, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Move worksheet.
+     - POST /cells/{name}/worksheets/{sheetName}/position
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter moving: (body) with moving parameters. (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetsResponse> 
+     */
+    open class func cellsWorksheetsPostMoveWorksheetWithRequestBuilder(name: String, sheetName: String, moving: WorksheetMovingRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/position"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: moving)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Rename worksheet
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter newname: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostRenameWorksheet(name: String, sheetName: String, newname: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostRenameWorksheetWithRequestBuilder(name: name, sheetName: sheetName, newname: newname, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Rename worksheet
+     - POST /cells/{name}/worksheets/{sheetName}/rename
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter newname: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostRenameWorksheetWithRequestBuilder(name: String, sheetName: String, newname: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/rename"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "newname": newname, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update worksheet property
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sheet: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostUpdateWorksheetProperty(name: String, sheetName: String, sheet: Worksheet? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostUpdateWorksheetPropertyWithRequestBuilder(name: name, sheetName: sheetName, sheet: sheet, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update worksheet property
+     - POST /cells/{name}/worksheets/{sheetName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sheet: (body)  (optional)
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetResponse> 
+     */
+    open class func cellsWorksheetsPostUpdateWorksheetPropertyWithRequestBuilder(name: String, sheetName: String, sheet: Worksheet? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: sheet)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostUpdateWorksheetZoom(name: String, sheetName: String, value: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostUpdateWorksheetZoomWithRequestBuilder(name: name, sheetName: sheetName, value: value, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/zoom
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter value: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostUpdateWorksheetZoomWithRequestBuilder(name: String, sheetName: String, value: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/zoom"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "value": value.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Update worksheet's cell comment.
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter comment: (body) Comment object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostWorksheetComment(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostWorksheetCommentWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Update worksheet's cell comment.
+     - POST /cells/{name}/worksheets/{sheetName}/comments/{cellName}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter comment: (body) Comment object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let cellNamePreEscape = "\(cellName)"
+        let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: comment)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Sort worksheet range.
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellArea: (query) The range to sort. 
+     - parameter dataSorter: (body) with sorting settings. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostWorksheetRangeSort(name: String, sheetName: String, cellArea: String, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostWorksheetRangeSortWithRequestBuilder(name: name, sheetName: sheetName, cellArea: cellArea, dataSorter: dataSorter, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Sort worksheet range.
+     - POST /cells/{name}/worksheets/{sheetName}/sort
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path) The workbook name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellArea: (query) The range to sort. 
+     - parameter dataSorter: (body) with sorting settings. (optional)
+     - parameter folder: (query) The workbook folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPostWorksheetRangeSortWithRequestBuilder(name: String, sheetName: String, cellArea: String, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/sort"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataSorter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "cellArea": cellArea, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Search text.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter text: (query) Text to search. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostWorksheetTextSearch(name: String, sheetName: String, text: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: TextItemsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostWorksheetTextSearchWithRequestBuilder(name: name, sheetName: sheetName, text: text, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Search text.
+     - POST /cells/{name}/worksheets/{sheetName}/findText
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter text: (query) Text to search. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<TextItemsResponse> 
+     */
+    open class func cellsWorksheetsPostWorksheetTextSearchWithRequestBuilder(name: String, sheetName: String, text: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/findText"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "text": text, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<TextItemsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Replace text.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter oldValue: (query) The old text to replace. 
+     - parameter newValue: (query) The new text to replace by. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPostWorsheetTextReplace(name: String, sheetName: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetReplaceResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPostWorsheetTextReplaceWithRequestBuilder(name: name, sheetName: sheetName, oldValue: oldValue, newValue: newValue, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Replace text.
+     - POST /cells/{name}/worksheets/{sheetName}/replaceText
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter oldValue: (query) The old text to replace. 
+     - parameter newValue: (query) The new text to replace by. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetReplaceResponse> 
+     */
+    open class func cellsWorksheetsPostWorsheetTextReplaceWithRequestBuilder(name: String, sheetName: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetReplaceResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/replaceText"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "oldValue": oldValue, 
+            "newValue": newValue, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetReplaceResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Add new worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The new sheet name. 
+     - parameter position: (query) The new sheet position. (optional)
+     - parameter sheettype: (query) The new sheet type. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutAddNewWorksheet(name: String, sheetName: String, position: Int32? = nil, sheettype: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetsResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutAddNewWorksheetWithRequestBuilder(name: name, sheetName: sheetName, position: position, sheettype: sheettype, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add new worksheet.
+     - PUT /cells/{name}/worksheets/{sheetName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The new sheet name. 
+     - parameter position: (query) The new sheet position. (optional)
+     - parameter sheettype: (query) The new sheet type. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetsResponse> 
+     */
+    open class func cellsWorksheetsPutAddNewWorksheetWithRequestBuilder(name: String, sheetName: String, position: Int32? = nil, sheettype: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "position": position?.encodeToJSON(), 
+            "sheettype": sheettype, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Change worksheet visibility.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter isVisible: (query) New worksheet visibility value. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutChangeVisibilityWorksheet(name: String, sheetName: String, isVisible: Bool, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutChangeVisibilityWorksheetWithRequestBuilder(name: name, sheetName: sheetName, isVisible: isVisible, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Change worksheet visibility.
+     - PUT /cells/{name}/worksheets/{sheetName}/visible
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) Worksheet name. 
+     - parameter isVisible: (query) New worksheet visibility value. 
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetResponse> 
+     */
+    open class func cellsWorksheetsPutChangeVisibilityWorksheetWithRequestBuilder(name: String, sheetName: String, isVisible: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/visible"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "isVisible": isVisible, 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Protect worksheet.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter protectParameter: (body) with protection settings. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutProtectWorksheet(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorksheetResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutProtectWorksheetWithRequestBuilder(name: name, sheetName: sheetName, protectParameter: protectParameter, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Protect worksheet.
+     - PUT /cells/{name}/worksheets/{sheetName}/protection
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter protectParameter: (body) with protection settings. (optional)
+     - parameter folder: (query) Document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<WorksheetResponse> 
+     */
+    open class func cellsWorksheetsPutProtectWorksheetWithRequestBuilder(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/protection"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protectParameter)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<WorksheetResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Set worksheet background image.
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter png: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutWorksheetBackground(name: String, sheetName: String, png: NSData, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: name, sheetName: sheetName, png: png, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set worksheet background image.
+     - PUT /cells/{name}/worksheets/{sheetName}/background
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter png: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, png: NSData, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/background"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: png)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Add worksheet's cell comment.
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter comment: (body) Comment object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutWorksheetComment(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CommentResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutWorksheetCommentWithRequestBuilder(name: name, sheetName: sheetName, cellName: cellName, comment: comment, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Add worksheet's cell comment.
+     - PUT /cells/{name}/worksheets/{sheetName}/comments/{cellName}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) The document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter cellName: (path) The cell name 
+     - parameter comment: (body) Comment object (optional)
+     - parameter folder: (query) The document folder. (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CommentResponse> 
+     */
+    open class func cellsWorksheetsPutWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let cellNamePreEscape = "\(cellName)"
+        let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: comment)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CommentResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Set freeze panes
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  
+     - parameter column: (query)  
+     - parameter freezedRows: (query)  
+     - parameter freezedColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorksheetsPutWorksheetFreezePanes(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorksheetsPutWorksheetFreezePanesWithRequestBuilder(name: name, sheetName: sheetName, row: row, column: column, freezedRows: freezedRows, freezedColumns: freezedColumns, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set freeze panes
+     - PUT /cells/{name}/worksheets/{sheetName}/freezepanes
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter row: (query)  
+     - parameter column: (query)  
+     - parameter freezedRows: (query)  
+     - parameter freezedColumns: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorksheetsPutWorksheetFreezePanesWithRequestBuilder(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "row": row.encodeToJSON(), 
+            "column": column.encodeToJSON(), 
+            "freezedRows": freezedRows.encodeToJSON(), 
+            "freezedColumns": freezedColumns.encodeToJSON(), 
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Copy file
+     
+     - parameter srcPath: (path) Source file path e.g. &#39;/folder/file.ext&#39; 
+     - parameter destPath: (query) Destination file path 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter versionId: (query) File version ID to copy (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func copyFile(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        copyFileWithRequestBuilder(srcPath: srcPath, destPath: destPath, srcStorageName: srcStorageName, destStorageName: destStorageName, versionId: versionId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Copy file
+     - PUT /cells/storage/file/copy/{srcPath}
+     
+     - parameter srcPath: (path) Source file path e.g. &#39;/folder/file.ext&#39; 
+     - parameter destPath: (query) Destination file path 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter versionId: (query) File version ID to copy (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func copyFileWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
+        var path = "/cells/storage/file/copy/{srcPath}"
+        let srcPathPreEscape = "\(srcPath)"
+        let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destPath": destPath, 
+            "srcStorageName": srcStorageName, 
+            "destStorageName": destStorageName, 
+            "versionId": versionId
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Copy folder
+     
+     - parameter srcPath: (path) Source folder path e.g. &#39;/src&#39; 
+     - parameter destPath: (query) Destination folder path e.g. &#39;/dst&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func copyFolder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        copyFolderWithRequestBuilder(srcPath: srcPath, destPath: destPath, srcStorageName: srcStorageName, destStorageName: destStorageName).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Copy folder
+     - PUT /cells/storage/folder/copy/{srcPath}
+     
+     - parameter srcPath: (path) Source folder path e.g. &#39;/src&#39; 
+     - parameter destPath: (query) Destination folder path e.g. &#39;/dst&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func copyFolderWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil) -> RequestBuilder<Void> {
+        var path = "/cells/storage/folder/copy/{srcPath}"
+        let srcPathPreEscape = "\(srcPath)"
+        let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destPath": destPath, 
+            "srcStorageName": srcStorageName, 
+            "destStorageName": destStorageName
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Create the folder
+     
+     - parameter path: (path) Folder path to create e.g. &#39;folder_1/folder_2/&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func createFolder(path: String, storageName: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        createFolderWithRequestBuilder(path: path, storageName: storageName).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Create the folder
+     - PUT /cells/storage/folder/{path}
+     
+     - parameter path: (path) Folder path to create e.g. &#39;folder_1/folder_2/&#39; 
+     - parameter storageName: (query) Storage name (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func createFolderWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<Void> {
+        var path2 = "/cells/storage/folder/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete file
+     
+     - parameter path: (path) File path e.g. &#39;/folder/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID to delete (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func deleteFile(path: String, storageName: String? = nil, versionId: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        deleteFileWithRequestBuilder(path: path, storageName: storageName, versionId: versionId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Delete file
+     - DELETE /cells/storage/file/{path}
+     
+     - parameter path: (path) File path e.g. &#39;/folder/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID to delete (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func deleteFileWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
+        var path2 = "/cells/storage/file/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName, 
+            "versionId": versionId
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Delete folder
+     
+     - parameter path: (path) Folder path e.g. &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter recursive: (query) Enable to delete folders, subfolders and files (optional, default to false)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func deleteFolder(path: String, storageName: String? = nil, recursive: Bool? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        deleteFolderWithRequestBuilder(path: path, storageName: storageName, recursive: recursive).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Delete folder
+     - DELETE /cells/storage/folder/{path}
+     
+     - parameter path: (path) Folder path e.g. &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter recursive: (query) Enable to delete folders, subfolders and files (optional, default to false)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func deleteFolderWithRequestBuilder(path: String, storageName: String? = nil, recursive: Bool? = nil) -> RequestBuilder<Void> {
+        var path2 = "/cells/storage/folder/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName, 
+            "recursive": recursive
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Download file
+     
+     - parameter path: (path) File path e.g. &#39;/folder/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID to download (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func downloadFile(path: String, storageName: String? = nil, versionId: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        downloadFileWithRequestBuilder(path: path, storageName: storageName, versionId: versionId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Download file
+     - GET /cells/storage/file/{path}
+     - examples: [{output=none}]
+     
+     - parameter path: (path) File path e.g. &#39;/folder/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID to download (optional)
+
+     - returns: RequestBuilder<NSData> 
+     */
+    open class func downloadFileWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<NSData> {
+        var path2 = "/cells/storage/file/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName, 
+            "versionId": versionId
+        ])
+
+        let requestBuilder: RequestBuilder<NSData>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get disc usage
+     
+     - parameter storageName: (query) Storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getDiscUsage(storageName: String? = nil, completion: @escaping ((_ data: DiscUsage?,_ error: Error?) -> Void)) {
+        getDiscUsageWithRequestBuilder(storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get disc usage
+     - GET /cells/storage/disc
+     - examples: [{contentType=application/json, example={
+  "UsedSize" : 0,
+  "TotalSize" : 6
+}}]
+     
+     - parameter storageName: (query) Storage name (optional)
+
+     - returns: RequestBuilder<DiscUsage> 
+     */
+    open class func getDiscUsageWithRequestBuilder(storageName: String? = nil) -> RequestBuilder<DiscUsage> {
+        let path = "/cells/storage/disc"
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<DiscUsage>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get file versions
+     
+     - parameter path: (path) File path e.g. &#39;/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getFileVersions(path: String, storageName: String? = nil, completion: @escaping ((_ data: FileVersions?,_ error: Error?) -> Void)) {
+        getFileVersionsWithRequestBuilder(path: path, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get file versions
+     - GET /cells/storage/version/{path}
+     - examples: [{contentType=application/json, example={
+  "Value" : [ "", "" ]
+}}]
+     
+     - parameter path: (path) File path e.g. &#39;/file.ext&#39; 
+     - parameter storageName: (query) Storage name (optional)
+
+     - returns: RequestBuilder<FileVersions> 
+     */
+    open class func getFileVersionsWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<FileVersions> {
+        var path2 = "/cells/storage/version/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<FileVersions>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get all files and folders within a folder
+     
+     - parameter path: (path) Folder path e.g. &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func getFilesList(path: String, storageName: String? = nil, completion: @escaping ((_ data: FilesList?,_ error: Error?) -> Void)) {
+        getFilesListWithRequestBuilder(path: path, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get all files and folders within a folder
+     - GET /cells/storage/folder/{path}
+     - examples: [{contentType=application/json, example={
+  "Value" : [ {
+    "Path" : "Path",
+    "Size" : 0,
+    "IsFolder" : true,
+    "ModifiedDate" : "ModifiedDate",
+    "Name" : "Name"
+  }, {
+    "Path" : "Path",
+    "Size" : 0,
+    "IsFolder" : true,
+    "ModifiedDate" : "ModifiedDate",
+    "Name" : "Name"
+  } ]
+}}]
+     
+     - parameter path: (path) Folder path e.g. &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+
+     - returns: RequestBuilder<FilesList> 
+     */
+    open class func getFilesListWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<FilesList> {
+        var path2 = "/cells/storage/folder/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<FilesList>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Move file
+     
+     - parameter srcPath: (path) Source file path e.g. &#39;/src.ext&#39; 
+     - parameter destPath: (query) Destination file path e.g. &#39;/dest.ext&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter versionId: (query) File version ID to move (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func moveFile(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        moveFileWithRequestBuilder(srcPath: srcPath, destPath: destPath, srcStorageName: srcStorageName, destStorageName: destStorageName, versionId: versionId).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Move file
+     - PUT /cells/storage/file/move/{srcPath}
+     
+     - parameter srcPath: (path) Source file path e.g. &#39;/src.ext&#39; 
+     - parameter destPath: (query) Destination file path e.g. &#39;/dest.ext&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter versionId: (query) File version ID to move (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func moveFileWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
+        var path = "/cells/storage/file/move/{srcPath}"
+        let srcPathPreEscape = "\(srcPath)"
+        let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destPath": destPath, 
+            "srcStorageName": srcStorageName, 
+            "destStorageName": destStorageName, 
+            "versionId": versionId
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Move folder
+     
+     - parameter srcPath: (path) Folder path to move e.g. &#39;/folder&#39; 
+     - parameter destPath: (query) Destination folder path to move to e.g &#39;/dst&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func moveFolder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, completion: @escaping ((_ data: Void?,_ error: Error?) -> Void)) {
+        moveFolderWithRequestBuilder(srcPath: srcPath, destPath: destPath, srcStorageName: srcStorageName, destStorageName: destStorageName).execute { (response, error) -> Void in
+            if error == nil {
+                completion((), error)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+
+
+    /**
+     Move folder
+     - PUT /cells/storage/folder/move/{srcPath}
+     
+     - parameter srcPath: (path) Folder path to move e.g. &#39;/folder&#39; 
+     - parameter destPath: (query) Destination folder path to move to e.g &#39;/dst&#39; 
+     - parameter srcStorageName: (query) Source storage name (optional)
+     - parameter destStorageName: (query) Destination storage name (optional)
+
+     - returns: RequestBuilder<Void> 
+     */
+    open class func moveFolderWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil) -> RequestBuilder<Void> {
+        var path = "/cells/storage/folder/move/{srcPath}"
+        let srcPathPreEscape = "\(srcPath)"
+        let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "destPath": destPath, 
+            "srcStorageName": srcStorageName, 
+            "destStorageName": destStorageName
+        ])
+
+        let requestBuilder: RequestBuilder<Void>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getNonDecodableBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get Access token
+     
+     - parameter grantType: (form) Grant Type 
+     - parameter clientId: (form) App SID 
+     - parameter clientSecret: (form) App Key 
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func oAuthPost(grantType: String, clientId: String, clientSecret: String, completion: @escaping ((_ data: AccessTokenResponse?,_ error: Error?) -> Void)) {
+        oAuthPostWithRequestBuilder(grantType: grantType, clientId: clientId, clientSecret: clientSecret).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get Access token
+     - POST /connect/token
+     - examples: [{contentType=application/json, example={
+  "access_token" : "access_token",
+  "refresh_token" : "refresh_token",
+  ".expires" : ".expires",
+  "token_type" : "token_type",
+  "expires_in" : 0,
+  "clientRefreshTokenLifeTimeInMinutes" : "clientRefreshTokenLifeTimeInMinutes",
+  "client_id" : "client_id",
+  ".issued" : ".issued"
+}}]
+     
+     - parameter grantType: (form) Grant Type 
+     - parameter clientId: (form) App SID 
+     - parameter clientSecret: (form) App Key 
+
+     - returns: RequestBuilder<AccessTokenResponse> 
+     */
+    open class func oAuthPostWithRequestBuilder(grantType: String, clientId: String, clientSecret: String) -> RequestBuilder<AccessTokenResponse> {
+        let path = "/connect/token"
+        let URLString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v3.0", with: "") + path
+        let formParams: [String:Any?] = [
+            "grant_type": grantType,
+            "client_id": clientId,
+            "client_secret": clientSecret
+        ]
+
+        let nonNullParameters = APIHelper.rejectNil(formParams)
+        let parameters = APIHelper.convertBoolToString(nonNullParameters)
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<AccessTokenResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Check if file or folder exists
+     
+     - parameter path: (path) File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func objectExists(path: String, storageName: String? = nil, versionId: String? = nil, completion: @escaping ((_ data: ObjectExist?,_ error: Error?) -> Void)) {
+        objectExistsWithRequestBuilder(path: path, storageName: storageName, versionId: versionId).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Check if file or folder exists
+     - GET /cells/storage/exist/{path}
+     - examples: [{contentType=application/json, example={
+  "Exists" : true,
+  "IsFolder" : true
+}}]
+     
+     - parameter path: (path) File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39; 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter versionId: (query) File version ID (optional)
+
+     - returns: RequestBuilder<ObjectExist> 
+     */
+    open class func objectExistsWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<ObjectExist> {
+        var path2 = "/cells/storage/exist/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName, 
+            "versionId": versionId
+        ])
+
+        let requestBuilder: RequestBuilder<ObjectExist>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Check if storage exists
+     
+     - parameter storageName: (path) Storage name 
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func storageExists(storageName: String, completion: @escaping ((_ data: StorageExist?,_ error: Error?) -> Void)) {
+        storageExistsWithRequestBuilder(storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Check if storage exists
+     - GET /cells/storage/{storageName}/exist
+     - examples: [{contentType=application/json, example={
+  "Exists" : true
+}}]
+     
+     - parameter storageName: (path) Storage name 
+
+     - returns: RequestBuilder<StorageExist> 
+     */
+    open class func storageExistsWithRequestBuilder(storageName: String) -> RequestBuilder<StorageExist> {
+        var path = "/cells/storage/{storageName}/exist"
+        let storageNamePreEscape = "\(storageName)"
+        let storageNamePostEscape = storageNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path = path.replacingOccurrences(of: "{storageName}", with: storageNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path
+        let parameters: [String:Any]? = nil
+        
+        let url = URLComponents(string: URLString)
+
+        let requestBuilder: RequestBuilder<StorageExist>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Upload file
+     
+     - parameter path: (path) Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              
+     - parameter file: (form) File to upload 
+     - parameter storageName: (query) Storage name (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func uploadFile(path: String, file: URL, storageName: String? = nil, completion: @escaping ((_ data: FilesUploadResult?,_ error: Error?) -> Void)) {
+        uploadFileWithRequestBuilder(path: path, file: file, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Upload file
+     - PUT /cells/storage/file/{path}
+     - examples: [{contentType=application/json, example={
+  "Errors" : [ {
+    "Description" : "Description",
+    "Message" : "Message",
+    "InnerError" : {
+      "RequestId" : "RequestId",
+      "Date" : "Date"
+    },
+    "Code" : "Code"
+  }, {
+    "Description" : "Description",
+    "Message" : "Message",
+    "InnerError" : {
+      "RequestId" : "RequestId",
+      "Date" : "Date"
+    },
+    "Code" : "Code"
+  } ],
+  "Uploaded" : [ "Uploaded", "Uploaded" ]
+}}]
+     
+     - parameter path: (path) Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.              
+     - parameter file: (form) File to upload 
+     - parameter storageName: (query) Storage name (optional)
+
+     - returns: RequestBuilder<FilesUploadResult> 
+     */
+    open class func uploadFileWithRequestBuilder(path: String, file: URL, storageName: String? = nil) -> RequestBuilder<FilesUploadResult> {
+        var path2 = "/cells/storage/file/{path}"
+        let pathPreEscape = "\(path)"
+        let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + path2
+        
+        let formParams: [String:Any?] = [
+            "File": file
+        ]
+        let nonNullParameters = APIHelper.rejectNil(formParams)
+        let parameters = APIHelper.convertBoolToString(nonNullParameters)
+        
+        
+        /*
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: file)
+        */
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "storageName": storageName
+        ])
+        
+        //let str = "form-data; filename=\"\(path)\""
+        let headers: [String: String] = [
+            "Accept": "application/json",
+            "Content-Type": "multipart/form-data"
+            //"Content-Disposition": str
+            //"path": path
+        ]
+
+        let requestBuilder: RequestBuilder<FilesUploadResult>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true, headers: headers)
+ 
+        
+        
     }
 
 }

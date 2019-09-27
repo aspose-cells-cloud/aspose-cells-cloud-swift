@@ -24,6 +24,17 @@ open class JSONEncodingHelper {
         return params
     }
 
+    open class func encodingParameters(forEncodableObject encodableObj: NSData?) -> Parameters? {
+        var params: Parameters? = nil
+        
+        // Encode the Encodable object
+        if let encodableObj = encodableObj {
+            params = JSONDataEncoding.encodingParameters(jsonData: encodableObj as Data)
+        }
+        
+        return params
+    }
+    
     open class func encodingParameters(forEncodableObject encodableObj: Data?) -> Parameters? {
         var params: Parameters? = nil
         

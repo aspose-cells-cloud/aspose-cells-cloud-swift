@@ -43,7 +43,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupDeleteHeaderFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupDeleteHeaderFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -69,7 +69,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupGetFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -95,7 +95,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupGetHeader(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetHeader(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -121,7 +121,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupGetPageSetup(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetPageSetup(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -150,7 +150,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupPostFooter(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostFooter(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -179,7 +179,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupPostHeader(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostHeader(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -206,7 +206,7 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPageSetupAPI.cellsPageSetupPostPageSetup(name: name, sheetName: sheetName, pageSetup: pageSetup, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostPageSetup(name: name, sheetName: sheetName, pageSetup: pageSetup, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

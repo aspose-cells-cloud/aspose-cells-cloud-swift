@@ -30,7 +30,7 @@ class OAuthAPITests: AsposeCellsCloudTests {
         let clientId:String = AsposeCellsCloudAPI.appSid!
         let clientSecret:String = AsposeCellsCloudAPI.appKey!
 		
-        OAuthAPI.oAuthPost(grantType: grantType, clientId: clientId, clientSecret: clientSecret)
+        CellsAPI.oAuthPost(grantType: grantType, clientId: clientId, clientSecret: clientSecret)
         {
             (response, error) in
             guard error == nil else {

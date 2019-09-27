@@ -45,7 +45,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoshapesAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -61,7 +61,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
                     let path = "\(filePath)/tmp/\(fileName)"
                     fileManager.createFile(atPath: path, contents:nil, attributes:nil)
                     let handle = FileHandle(forWritingAtPath:path)
-                    handle?.write(response)
+                    handle?.write(response as Data)
 					expectation.fulfill()
 				}
 			}
@@ -80,7 +80,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
         let storage:String? = nil
         
         uploadFile(name: name) {
-            CellsAutoshapesAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
+            CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
             {
                 (response, error) in
                 guard error == nil else {
@@ -96,7 +96,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
                     let path = "\(filePath)/tmp/\(fileName)"
                     fileManager.createFile(atPath: path, contents:nil, attributes:nil)
                     let handle = FileHandle(forWritingAtPath:path)
-                    handle?.write(response)
+                    handle?.write(response as Data)
                     expectation.fulfill()
                 }
             }
@@ -113,7 +113,7 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoshapesAPI.cellsAutoshapesGetWorksheetAutoshapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsAutoshapesGetWorksheetAutoshapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

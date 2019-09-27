@@ -44,7 +44,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesDeleteWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage)
+			CellsAPI.cellsShapesDeleteWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -70,7 +70,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesDeleteWorksheetShapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsShapesDeleteWorksheetShapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,7 +97,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesGetWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage)
+			CellsAPI.cellsShapesGetWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -123,7 +123,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesGetWorksheetShapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsShapesGetWorksheetShapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -151,7 +151,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesPostWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, dto: dto, folder: folder, storage: storage)
+			CellsAPI.cellsShapesPostWorksheetShape(name: name, sheetName: sheetName, shapeindex: shapeindex, dto: dto, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -184,7 +184,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsShapesAPI.cellsShapesPutWorksheetShape(name: name, sheetName: sheetName, drawingType: drawingType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, top: top, _left: _left, width: width, height: height, folder: folder, storage: storage)
+			CellsAPI.cellsShapesPutWorksheetShape(name: name, sheetName: sheetName, drawingType: drawingType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, top: top, _left: _left, width: width, height: height, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

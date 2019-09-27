@@ -44,7 +44,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksDeleteWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksDeleteWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -70,7 +70,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksDeleteWorksheetHyperlinks(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksDeleteWorksheetHyperlinks(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,7 +97,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksGetWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksGetWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -123,7 +123,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksGetWorksheetHyperlinks(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksGetWorksheetHyperlinks(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -151,7 +151,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksPostWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, hyperlink: hyperlink, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksPostWorksheetHyperlink(name: name, sheetName: sheetName, hyperlinkIndex: hyperlinkIndex, hyperlink: hyperlink, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -182,7 +182,7 @@ class CellsHypelinksAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsHypelinksAPI.cellsHypelinksPutWorksheetHyperlink(name: name, sheetName: sheetName, firstRow: firstRow, firstColumn: firstColumn, totalRows: totalRows, totalColumns: totalColumns, address: address, folder: folder, storage: storage)
+			CellsAPI.cellsHypelinksPutWorksheetHyperlink(name: name, sheetName: sheetName, firstRow: firstRow, firstColumn: firstColumn, totalRows: totalRows, totalColumns: totalColumns, address: address, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

@@ -125,7 +125,7 @@ class CellsAPITests: AsposeCellsCloudTests {
         let name:String = BOOK1
         let sheetName:String = SHEET1
         let cellName:String = CellName
-        let folder:String? = nil
+        let folder:String? = TEMPFOLDER
         let storage:String? = nil
         
         uploadFile(name: name) {

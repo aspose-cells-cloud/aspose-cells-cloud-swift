@@ -44,7 +44,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsDeleteWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsDeleteWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -70,7 +70,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsDeleteWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsDeleteWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,7 +97,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsGetWorksheetListObject(name: name, sheetName: sheetName, listobjectindex: listobjectindex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsGetWorksheetListObject(name: name, sheetName: sheetName, listobjectindex: listobjectindex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -123,7 +123,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsGetWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsGetWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -151,7 +151,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsPostWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, listObject: listObject, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, listObject: listObject, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -178,7 +178,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsPostWorksheetListObjectConvertToRange(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectConvertToRange(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -206,7 +206,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsPostWorksheetListObjectSortTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, dataSorter: dataSorter, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectSortTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, dataSorter: dataSorter, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -240,7 +240,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, destsheetName: destsheetName, request: request, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, destsheetName: destsheetName, request: request, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -271,7 +271,7 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let hasHeaders:Bool? = nil
 		
 		uploadFile(name: name) {
-			CellsListObjectsAPI.cellsListObjectsPutWorksheetListObject(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, folder: folder, storage: storage, hasHeaders: hasHeaders)
+            CellsAPI.cellsListObjectsPutWorksheetListObject(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, hasHeaders: hasHeaders, listObject: nil, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

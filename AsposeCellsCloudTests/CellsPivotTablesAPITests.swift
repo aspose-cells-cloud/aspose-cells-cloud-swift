@@ -47,7 +47,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesDeletePivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesDeletePivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -74,7 +74,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesDeleteWorksheetPivotTable(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesDeleteWorksheetPivotTable(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -103,7 +103,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesDeleteWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesDeleteWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -131,7 +131,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesDeleteWorksheetPivotTableFilters(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesDeleteWorksheetPivotTableFilters(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -157,7 +157,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesDeleteWorksheetPivotTables(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesDeleteWorksheetPivotTables(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -186,7 +186,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesGetPivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldIndex: pivotFieldIndex, pivotFieldType: pivotFieldType, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesGetPivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldIndex: pivotFieldIndex, pivotFieldType: pivotFieldType, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -213,7 +213,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesGetWorksheetPivotTable(name: name, sheetName: sheetName, pivottableIndex: pivottableIndex, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesGetWorksheetPivotTable(name: name, sheetName: sheetName, pivottableIndex: pivottableIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -250,7 +250,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
         
         uploadFile(name: name) {
             
-            CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage)
+            CellsAPI.cellsPivotTablesPutWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage)
             {
                 (response, error) in
                 guard error == nil else {
@@ -261,7 +261,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
                 if let response = response {
                     XCTAssertEqual(response.code, 200)
                     
-                    CellsPivotTablesAPI.cellsPivotTablesGetWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filterIndex: filterIndex, folder: folder, storage: storage)
+                    CellsAPI.cellsPivotTablesGetWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filterIndex: filterIndex, folder: folder, storage: storage)
                     {
                         (response, error) in
                         guard error == nil else {
@@ -291,7 +291,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesGetWorksheetPivotTableFilters(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesGetWorksheetPivotTableFilters(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -317,7 +317,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesGetWorksheetPivotTables(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesGetWorksheetPivotTables(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -351,7 +351,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostPivotTableCellStyle(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, column: column, row: row, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostPivotTableCellStyle(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, column: column, row: row, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -383,7 +383,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostPivotTableFieldHideItem(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, fieldIndex: fieldIndex, itemIndex: itemIndex, isHide: isHide, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostPivotTableFieldHideItem(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, fieldIndex: fieldIndex, itemIndex: itemIndex, isHide: isHide, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -413,7 +413,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostPivotTableFieldMoveTo(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, from: from, to: to, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostPivotTableFieldMoveTo(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, fieldIndex: fieldIndex, from: from, to: to, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -445,7 +445,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostPivotTableStyle(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostPivotTableStyle(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, style: style, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -472,7 +472,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostWorksheetPivotTableCalculate(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostWorksheetPivotTableCalculate(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -502,7 +502,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPostWorksheetPivotTableMove(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, row: row, column: column, destCellName: destCellName, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPostWorksheetPivotTableMove(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, row: row, column: column, destCellName: destCellName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -533,7 +533,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPutPivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPutPivotTableField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, request: request, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -566,7 +566,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let useSameSource:Bool? = true
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTable(name: name, sheetName: sheetName, request: nil, folder: folder, storage: storage, sourceData: sourceData, destCellName: destCellName, tableName: tableName, useSameSource: useSameSource)
+			CellsAPI.cellsPivotTablesPutWorksheetPivotTable(name: name, sheetName: sheetName, request: nil, folder: folder, storage: storage, sourceData: sourceData, destCellName: destCellName, tableName: tableName, useSameSource: useSameSource)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -598,7 +598,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
         let storage:String? = nil
         
         uploadFile(name: name) {
-            CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTable(name: name, sheetName: sheetName, request: request, folder: folder, storage: storage, sourceData: nil, destCellName: nil, tableName: nil, useSameSource: nil)
+            CellsAPI.cellsPivotTablesPutWorksheetPivotTable(name: name, sheetName: sheetName, request: request, folder: folder, storage: storage, sourceData: nil, destCellName: nil, tableName: nil, useSameSource: nil)
             {
                 (response, error) in
                 guard error == nil else {
@@ -633,7 +633,7 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPivotTablesAPI.cellsPivotTablesPutWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage)
+			CellsAPI.cellsPivotTablesPutWorksheetPivotTableFilter(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, filter: filter, needReCalculate: needReCalculate, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

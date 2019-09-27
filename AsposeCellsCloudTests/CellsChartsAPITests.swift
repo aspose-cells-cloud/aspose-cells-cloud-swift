@@ -44,7 +44,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsDeleteWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -71,7 +71,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsDeleteWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,7 +97,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsDeleteWorksheetClearCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetClearCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -124,7 +124,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsDeleteWorksheetDeleteChart(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetDeleteChart(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -152,7 +152,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsGetWorksheetChart(name: name, sheetName: sheetName, chartNumber: chartNumber, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChart(name: name, sheetName: sheetName, chartNumber: chartNumber, format: format, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -167,7 +167,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
                     let path = "\(filePath)/tmp/\(fileName)"
                     fileManager.createFile(atPath: path, contents:nil, attributes:nil)
                     let handle = FileHandle(forWritingAtPath:path)
-                    handle?.write(response)
+                    handle?.write(response as Data)
 					expectation.fulfill()
 				}
 			}
@@ -185,7 +185,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsGetWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -212,7 +212,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsGetWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -238,7 +238,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsGetWorksheetCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -266,7 +266,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPostWorksheetChart(name: name, sheetName: sheetName, chartIndex: chartIndex, chart: chart, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChart(name: name, sheetName: sheetName, chartIndex: chartIndex, chart: chart, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -294,7 +294,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPostWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, legend: legend, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, legend: legend, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -322,7 +322,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPostWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -358,7 +358,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -385,7 +385,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPutWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -413,7 +413,7 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartsAPI.cellsChartsPutWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

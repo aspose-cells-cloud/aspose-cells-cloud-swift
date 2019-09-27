@@ -51,7 +51,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterDeleteWorksheetDateFilter(name: name, sheetName: sheetName, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterDeleteWorksheetDateFilter(name: name, sheetName: sheetName, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -79,7 +79,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterDeleteWorksheetFilter(name: name, sheetName: sheetName, fieldIndex: fieldIndex, criteria: criteria, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterDeleteWorksheetFilter(name: name, sheetName: sheetName, fieldIndex: fieldIndex, criteria: criteria, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -105,7 +105,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterGetWorksheetAutoFilter(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterGetWorksheetAutoFilter(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -131,7 +131,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPostWorksheetAutoFilterRefresh(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPostWorksheetAutoFilterRefresh(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -158,7 +158,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPostWorksheetMatchBlanks(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPostWorksheetMatchBlanks(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -185,7 +185,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPostWorksheetMatchNonBlanks(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPostWorksheetMatchNonBlanks(name: name, sheetName: sheetName, fieldIndex: fieldIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -220,7 +220,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetColorFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, colorFilter: colorFilter, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetColorFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, colorFilter: colorFilter, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -255,7 +255,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetCustomFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, operatorType1: operatorType1, criteria1: criteria1, isAnd: isAnd, operatorType2: operatorType2, criteria2: criteria2, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetCustomFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, operatorType1: operatorType1, criteria1: criteria1, isAnd: isAnd, operatorType2: operatorType2, criteria2: criteria2, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -292,7 +292,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetDateFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetDateFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dateTimeGroupingType: dateTimeGroupingType, year: year, month: month, day: day, hour: hour, minute: minute, second: second, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -323,7 +323,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetDynamicFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dynamicFilterType: dynamicFilterType, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetDynamicFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, dynamicFilterType: dynamicFilterType, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -354,7 +354,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, criteria: criteria, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, criteria: criteria, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -387,7 +387,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetFilterTop10(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, isTop: isTop, isPercent: isPercent, itemCount: itemCount, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetFilterTop10(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, isTop: isTop, isPercent: isPercent, itemCount: itemCount, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -419,7 +419,7 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAutoFilterAPI.cellsAutoFilterPutWorksheetIconFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, iconSetType: iconSetType, iconId: iconId, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
+			CellsAPI.cellsAutoFilterPutWorksheetIconFilter(name: name, sheetName: sheetName, range: range, fieldIndex: fieldIndex, iconSetType: iconSetType, iconId: iconId, matchBlanks: matchBlanks, refresh: refresh, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

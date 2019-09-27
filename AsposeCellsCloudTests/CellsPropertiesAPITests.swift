@@ -42,7 +42,7 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPropertiesAPI.cellsPropertiesDeleteDocumentProperties(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesDeleteDocumentProperties(name: name, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -68,7 +68,7 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPropertiesAPI.cellsPropertiesDeleteDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesDeleteDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -93,7 +93,7 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPropertiesAPI.cellsPropertiesGetDocumentProperties(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesGetDocumentProperties(name: name, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -119,7 +119,7 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPropertiesAPI.cellsPropertiesGetDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesGetDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -146,7 +146,7 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPropertiesAPI.cellsPropertiesPutDocumentProperty(name: name, propertyName: propertyName, property: property, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesPutDocumentProperty(name: name, propertyName: propertyName, property: property, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

@@ -44,7 +44,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -74,7 +74,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -100,7 +100,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -127,7 +127,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -153,7 +153,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -181,7 +181,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatcondition: formatcondition, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatcondition: formatcondition, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -213,7 +213,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsPutWorksheetFormatCondition(name: name, sheetName: sheetName, index: index, cellArea: cellArea, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatCondition(name: name, sheetName: sheetName, index: index, cellArea: cellArea, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -241,7 +241,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name: name, sheetName: sheetName, index: index, cellArea: cellArea, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name: name, sheetName: sheetName, index: index, cellArea: cellArea, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -272,7 +272,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsConditionalFormattingsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name: name, sheetName: sheetName, index: index, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name: name, sheetName: sheetName, index: index, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

@@ -44,7 +44,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPicturesAPI.cellsPicturesDeleteWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesDeleteWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -70,7 +70,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPicturesAPI.cellsPicturesDeleteWorksheetPictures(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesDeleteWorksheetPictures(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -98,7 +98,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPicturesAPI.cellsPicturesGetWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesGetWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, format: format, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -114,7 +114,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
                     let path = "\(filePath)/tmp/\(fileName)"
                     fileManager.createFile(atPath: path, contents:nil, attributes:nil)
                     let handle = FileHandle(forWritingAtPath:path)
-                    handle?.write(response)
+                    handle?.write(response as Data)
                     expectation.fulfill()
 				}
 			}
@@ -131,7 +131,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPicturesAPI.cellsPicturesGetWorksheetPictures(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesGetWorksheetPictures(name: name, sheetName: sheetName, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -159,7 +159,7 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsPicturesAPI.cellsPicturesPostWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, picture: picture, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesPostWorksheetPicture(name: name, sheetName: sheetName, pictureIndex: pictureIndex, picture: picture, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -181,7 +181,6 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPicturesPutWorksheetAddPicture")
 		let name:String = BOOK1
 		let sheetName:String = SHEET6
-		let picture:Picture? = nil
 		let upperLeftRow:Int32? = 1
 		let upperLeftColumn:Int32? = 1
 		let lowerRightRow:Int32? = 10
@@ -189,11 +188,12 @@ class CellsPicturesAPITests: AsposeCellsCloudTests {
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
         let picturePath:String? = "\(folder)/WaterMark.png"
+        let picture:Picture? = Picture(alternativeText: nil, bottom: nil, top: nil, width: nil, htmlText: nil, textVerticalAlignment: nil, autoShapeType: nil, isPrintable: nil, upperLeftColumn: 1, isLockAspectRatio: nil, isGroup: nil, rotationAngle: nil, zOrderPosition: nil, textHorizontalOverflow: nil, msoDrawingType: nil, textOrientationType: nil, placement: nil, name: nil, isWordArt: nil, linkedCell: nil, upperLeftRow: 1, isLocked: nil, lowerRightRow: 10, isTextWrapped: nil, Y: nil, X: nil, isHidden: nil, _left: nil, _right: nil, text: nil, lowerRightColumn: 10, height: nil, textHorizontalAlignment: nil, textVerticalOverflow: nil, link: nil, sourceFullName: picturePath, borderLineColor: nil, originalHeight: nil, imageFormat: nil, originalWidth: nil, borderWeight: nil)
         
 		
         uploadFile(name: name) {
 		self.uploadFile(name: "WaterMark.png") {
-			CellsPicturesAPI.cellsPicturesPutWorksheetAddPicture(name: name, sheetName: sheetName, picture: picture, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, picturePath: picturePath, folder: folder, storage: storage)
+			CellsAPI.cellsPicturesPutWorksheetAddPicture(name: name, sheetName: sheetName, picture: picture, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, picturePath: picturePath, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

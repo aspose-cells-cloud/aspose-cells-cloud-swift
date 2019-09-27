@@ -47,7 +47,7 @@ class CellsTaskAPITests: AsposeCellsCloudTests {
 		let taskData:TaskData = TaskData(tasks: td)
 		
 		uploadFile(name: name) {
-			CellsTaskAPI.cellsTaskPostRunTask(taskData: taskData)
+			CellsAPI.cellsTaskPostRunTask(taskData: taskData)
 			{
 				(response, error) in
 				guard error == nil else {

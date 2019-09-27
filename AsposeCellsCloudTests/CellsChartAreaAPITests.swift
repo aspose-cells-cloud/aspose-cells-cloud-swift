@@ -44,7 +44,7 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartAreaAPI.cellsChartAreaGetChartArea(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartArea(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -71,7 +71,7 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartAreaAPI.cellsChartAreaGetChartAreaBorder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartAreaBorder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -98,7 +98,7 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsChartAreaAPI.cellsChartAreaGetChartAreaFillFormat(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartAreaFillFormat(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

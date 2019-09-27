@@ -15,6 +15,10 @@ class AlamofireRequestBuilderFactory: RequestBuilderFactory {
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type {
         return AlamofireDecodableRequestBuilder<T>.self
     }
+    
+    func getBuilder<T:AnyObject>() -> RequestBuilder<T>.Type {
+        return AlamofireRequestBuilder<T>.self
+    }
 }
 
 // Store manager to retain its reference
@@ -139,7 +143,7 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
                 if stringResponse.result.isFailure {
                     completion(
                         nil,
-                        ErrorResponse.error(stringResponse.response?.statusCode ?? 500, stringResponse.data, stringResponse.result.error as Error!)
+                        ErrorResponse.error(stringResponse.response?.statusCode ?? 500, stringResponse.data, stringResponse.result.error!)
                     )
                     return
                 }
@@ -341,7 +345,7 @@ open class AlamofireDecodableRequestBuilder<T:Decodable>: AlamofireRequestBuilde
                 if stringResponse.result.isFailure {
                     completion(
                         nil,
-                        ErrorResponse.error(stringResponse.response?.statusCode ?? 500, stringResponse.data, stringResponse.result.error as Error!)
+                        ErrorResponse.error(stringResponse.response?.statusCode ?? 500, stringResponse.data, stringResponse.result.error!)
                     )
                     return
                 }

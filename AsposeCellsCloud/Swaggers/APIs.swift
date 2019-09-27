@@ -7,7 +7,7 @@
 import Foundation
 
 open class AsposeCellsCloudAPI {
-    public static var basePath = "https://api.aspose.cloud/v1.1"
+    public static var basePath = "https://api.aspose.cloud/v3.0"
     public static var appSid: String?
     public static var appKey: String?
     public static var credential: URLCredential?
@@ -66,4 +66,5 @@ open class RequestBuilder<T> {
 public protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type
+    func getBuilder<T:AnyObject>() -> RequestBuilder<T>.Type
 }
