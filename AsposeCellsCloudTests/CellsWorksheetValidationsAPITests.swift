@@ -60,6 +60,32 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsWorksheetValidationsDeleteWorksheetValidations()
+    {
+        let expectation = self.expectation(description: "testcellsWorksheetValidationsDeleteWorksheetValidations")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let folder:String? = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorksheetValidationsDeleteWorksheetValidations(name: name, sheetName: sheetName, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorksheetValidationsDeleteWorksheetValidations")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsWorksheetValidationsGetWorksheetValidation() 
 	{

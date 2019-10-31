@@ -740,10 +740,12 @@ class CellsAPITests: AsposeCellsCloudTests {
         let sheetName:String = SHEET1
         let cellName:String = CellName
         let folder:String = TEMPFOLDER
+        let htmlString:String = "https://api.aspose.cloud/v3.0/cells";
+        let strData:NSData = htmlString.data(using: String.Encoding.utf8)! as NSData
         let storage:String? = nil
         
         uploadFile(name: name) {
-            CellsAPI.cellsPostSetCellHtmlString(name: name, sheetName: sheetName, cellName: cellName, folder: folder, storage: storage)
+            CellsAPI.cellsPostSetCellHtmlString(name: name, sheetName: sheetName, cellName: cellName, htmlString: strData, folder: folder, storage: storage)
             {
                 (response, error) in
                 guard error == nil else {

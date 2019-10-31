@@ -453,7 +453,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorkbookPostImportData(name: name, importdata: importdata, folder: folder, storage: storage)
+            CellsAPI.cellsWorkbookPostImportData(name: name, importData: importdata, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

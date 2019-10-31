@@ -181,7 +181,7 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatcondition: formatcondition, folder: folder, storage: storage)
+            CellsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatCondition: formatcondition, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {

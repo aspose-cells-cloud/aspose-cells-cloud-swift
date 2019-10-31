@@ -70,7 +70,6 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
 		let srcStorageName:String? = nil
 		let destStorageName:String? = nil
 		
-
         CellsAPI.copyFolder(srcPath: srcPath, destPath: destPath, srcStorageName: srcStorageName, destStorageName: destStorageName)
         {
             (response, error) in
@@ -84,7 +83,6 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
                 expectation.fulfill()
             }
         }
-		
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
@@ -114,7 +112,7 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
     {
         let expectation = self.expectation(description: "testdeleteFile")
         let name:String = BOOK1
-        let path:String = TEMPFOLDER + name
+        let path:String = "\(TEMPFOLDER)/\(name)"
         let storageName:String? = nil
         let versionId:String? = nil
 
@@ -362,7 +360,7 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
 	{
 		let expectation = self.expectation(description: "testuploadFile")
 		let path:String = BOOK1
-		let url: URL? = getURL(path)
+		let url:URL? = getURL(path)
 		let storageName:String? = nil
 		
         CellsAPI.uploadFile(path: path, file: url!, storageName: storageName)

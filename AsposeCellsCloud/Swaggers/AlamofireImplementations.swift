@@ -70,21 +70,7 @@ open class AlamofireRequestBuilder<T>: RequestBuilder<T> {
         let fileKeys = parameters == nil ? [] : parameters!.filter { $1 is NSURL }
                                                            .map { $0.0 }
 
-        //modify by leo.luo, 2018-12
-        //if fileKeys.count > 0 {
-        if fileKeys.count == 1 {
-            
-            var imageData :Data?
-            do{
-                imageData = try Data(contentsOf: parameters![fileKeys[0]] as! URL, options: Data.ReadingOptions.mappedIfSafe)
-            } catch {
-                fatalError(error.localizedDescription)
-            }
-            
-            let upload = manager.upload(imageData!, to: URLString, method: xMethod!, headers: headers)
-            self.processRequest(request: upload, managerId, completion)
-            
-        } else if fileKeys.count > 1 {
+        if fileKeys.count > 0 {
             manager.upload(multipartFormData: { mpForm in
                 for (k, v) in self.parameters! {
                     switch v {

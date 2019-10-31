@@ -147,73 +147,9 @@ class AsposeCellsCloudTests: XCTestCase {
     }
     
     internal func putCreate(path: String, file: URL, versionId: String? = nil, storage: String? = nil, completion: @escaping ((_ data: FilesUploadResult?,_ error: Error?) -> Void)) {
-        
-        //let filedata = NSData(contentsOfFile: file.path)
-        /*
-        Alamofire.upload(.POST, URL, multipartFormData: { (FormData) in
-            FormData.appendBodyPart(data: String(userInfo["id"] as! Int).dataUsingEncoding(NSUTF8StringEncoding)!, name: "userId")
-            FormData.appendBodyPart(data: nsData, name: "file", fileName: "fileName", mimeType: "image/png")
-        }, encodingCompletion: { (encodingResult) in
-            switch encodingResult {
-            case .Success(let upload, _, _):
-                upload.responseJSON(completionHandler: { (response) in
-                    print("\(response)")  //上传成功通过response返回json值
-                })
-            case .Failure(let error):
-                print(error)
-            }
-        })
-        */
-        
         CellsAPI.uploadFileWithRequestBuilder(path: path, file: file, storageName: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
- 
-        /*
-        {
-            (response, error) in
-            guard error == nil else {
-                XCTFail("error uploading file \(path)")
-                return
-            }
-            if let response = response, response.errors == nil {
-                completion(response)
-            } else {
-                XCTFail("error uploading file \(path)")
-            }
-            
-        }
-        */
-        
-        /*
-            self.putCreateWithRequestBuilder(path: path, file: file, versionId: versionId, storage: storage).execute { (response, error) -> Void in
-                completion(response?.body, error);
-            }
- */
     }
-    /*
-    internal func putCreateWithRequestBuilder(path: String, file: URL, versionId: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        let pathUrl = "/storage/file/\(self.TEMPFOLDER)"
-        let URLString = AsposeCellsCloudAPI.basePath + pathUrl
-        let formParams: [String:Any?] = [
-            "File": file
-        ]
-        
-        let nonNullParameters = APIHelper.rejectNil(formParams)
-        let parameters = APIHelper.convertBoolToString(nonNullParameters)
-        
-        let urlObj = NSURLComponents(string: URLString)
-        urlObj?.queryItems = APIHelper.mapValuesToQueryItems([
-            "path": path,
-            "versionId": versionId,
-            "storage": storage
-            ])
-        
-        
-        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
-        
-        return requestBuilder.init(method: "PUT", URLString: (urlObj?.string ?? URLString), parameters: parameters, isBody: false)
-    }
-    */
     
 }
