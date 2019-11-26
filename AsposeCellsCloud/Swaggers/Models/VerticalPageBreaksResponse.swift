@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct VerticalPageBreaksResponse: Codable {
+public class VerticalPageBreaksResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var verticalPageBreaks: VerticalPageBreaks?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case verticalPageBreaks = "VerticalPageBreaks"
     }
 
     public init(status: String?, code: Int32, verticalPageBreaks: VerticalPageBreaks?) {
-        self.status = status
-        self.code = code
         self.verticalPageBreaks = verticalPageBreaks
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(verticalPageBreaks, forKey: "VerticalPageBreaks")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        verticalPageBreaks = try container.decodeIfPresent(VerticalPageBreaks.self, forKey: "VerticalPageBreaks")
+        try super.init(from: decoder)
+    }
 
 }
 

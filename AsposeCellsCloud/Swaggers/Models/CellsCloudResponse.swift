@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CellsCloudResponse: Codable {
+public class CellsCloudResponse: Codable {
 
     public var status: String?
     public var code: Int32
@@ -23,7 +23,25 @@ public enum CodingKeys: String, CodingKey {
         self.status = status
         self.code = code
     }
+    
+    // Encodable protocol methods
+    
+    public func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
 
+        try container.encodeIfPresent(status, forKey: "Status")
+        try container.encodeIfPresent(code, forKey: "Code")
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+
+        status = try container.decodeIfPresent(String.self, forKey: "Status")
+        code = try container.decodeIfPresent(Int32.self, forKey: "Code")!
+    }
 
 }
 

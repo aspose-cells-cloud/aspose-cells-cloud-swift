@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D14E4EA690B0E338912051A /* Pods_AsposeCellsCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8169D4BAD2478B1E2E279F60 /* Pods_AsposeCellsCloud.framework */; };
 		6B133BA622C201A000B51B0D /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B133BA022C201A000B51B0D /* CodableHelper.swift */; };
 		6B133BA722C201A000B51B0D /* JSONEncodableEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B133BA122C201A000B51B0D /* JSONEncodableEncoding.swift */; };
 		6B133BA822C201A000B51B0D /* JSONEncodingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B133BA222C201A000B51B0D /* JSONEncodingHelper.swift */; };
@@ -293,6 +294,7 @@
 		6BCCCF97230143FE00203711 /* CellsWorksheetsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */; };
 		6BCCCF98230143FE00203711 /* CellsWorkbookAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */; };
 		6BCCCF99230143FE00203711 /* CellsWorksheetValidationsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */; };
+		F0EC2893B188F7E629721733 /* Pods_AsposeCellsCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080DDADA072C4B7832441AD /* Pods_AsposeCellsCloudTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -306,7 +308,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6102F96C4AF2828EF618B78F /* Pods-AsposeCellsCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.release.xcconfig"; sourceTree = "<group>"; };
+		3080DDADA072C4B7832441AD /* Pods_AsposeCellsCloudTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloudTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44DD8959F1AB28511295DF07 /* Pods-AsposeCellsCloudTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.debug.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6B133BA022C201A000B51B0D /* CodableHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
 		6B133BA122C201A000B51B0D /* JSONEncodableEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodableEncoding.swift; sourceTree = "<group>"; };
 		6B133BA222C201A000B51B0D /* JSONEncodingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONEncodingHelper.swift; sourceTree = "<group>"; };
@@ -570,7 +573,7 @@
 		6B4A17C1232A395D00C47EAB /* TestCase.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestCase.xlsx; sourceTree = "<group>"; };
 		6B4A17C2232A395D00C47EAB /* word.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = word.jpg; sourceTree = "<group>"; };
 		6B4A17C3232A395D00C47EAB /* ReportData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ReportData.xml; sourceTree = "<group>"; };
-		6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsStorageAPITests.swift; sourceTree = "<group>"; };
+		6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsStorageAPITests.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		6B78DAD622FD1DA300796FC8 /* CellsChartAreaAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsChartAreaAPITests.swift; sourceTree = "<group>"; };
 		6B78DAD722FD1DA300796FC8 /* CellsAutoFilterAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoFilterAPITests.swift; sourceTree = "<group>"; };
 		6B78DAD822FD1DA300796FC8 /* CellsAutoshapesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoshapesAPITests.swift; sourceTree = "<group>"; };
@@ -596,9 +599,10 @@
 		6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetsAPITests.swift; sourceTree = "<group>"; };
 		6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorkbookAPITests.swift; sourceTree = "<group>"; };
 		6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetValidationsAPITests.swift; sourceTree = "<group>"; };
-		83192FD1F7F9DD228B1F4031 /* Pods-AsposeCellsCloudTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.debug.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.debug.xcconfig"; sourceTree = "<group>"; };
-		D301AAABF272F039EED4DED3 /* Pods-AsposeCellsCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.release.xcconfig"; sourceTree = "<group>"; };
-		DDDE4A2B950F7CD502FB9757 /* Pods-AsposeCellsCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.debug.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.debug.xcconfig"; sourceTree = "<group>"; };
+		8169D4BAD2478B1E2E279F60 /* Pods_AsposeCellsCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE02537F036BA0159747D535 /* Pods-AsposeCellsCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.release.xcconfig"; sourceTree = "<group>"; };
+		D3DF103EEDAE6A794F76D64A /* Pods-AsposeCellsCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.release.xcconfig"; sourceTree = "<group>"; };
+		F56592ADA88FAEC62D373588 /* Pods-AsposeCellsCloud.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.debug.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -606,6 +610,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D14E4EA690B0E338912051A /* Pods_AsposeCellsCloud.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,12 +619,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BAF465422C1F93E009FEAFE /* AsposeCellsCloud.framework in Frameworks */,
+				F0EC2893B188F7E629721733 /* Pods_AsposeCellsCloudTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1287F48F4DB1D1CB75314171 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8169D4BAD2478B1E2E279F60 /* Pods_AsposeCellsCloud.framework */,
+				3080DDADA072C4B7832441AD /* Pods_AsposeCellsCloudTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6B133B9F22C201A000B51B0D /* pal */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,7 +940,7 @@
 				6BAF465722C1F93E009FEAFE /* AsposeCellsCloudTests */,
 				6BAF464B22C1F93E009FEAFE /* Products */,
 				D597854E67951189394CA00F /* Pods */,
-				E898D63CEADFB4DE4547EE61 /* Frameworks */,
+				1287F48F4DB1D1CB75314171 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -984,19 +999,12 @@
 		D597854E67951189394CA00F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DDDE4A2B950F7CD502FB9757 /* Pods-AsposeCellsCloud.debug.xcconfig */,
-				D301AAABF272F039EED4DED3 /* Pods-AsposeCellsCloud.release.xcconfig */,
-				83192FD1F7F9DD228B1F4031 /* Pods-AsposeCellsCloudTests.debug.xcconfig */,
-				6102F96C4AF2828EF618B78F /* Pods-AsposeCellsCloudTests.release.xcconfig */,
+				F56592ADA88FAEC62D373588 /* Pods-AsposeCellsCloud.debug.xcconfig */,
+				CE02537F036BA0159747D535 /* Pods-AsposeCellsCloud.release.xcconfig */,
+				44DD8959F1AB28511295DF07 /* Pods-AsposeCellsCloudTests.debug.xcconfig */,
+				D3DF103EEDAE6A794F76D64A /* Pods-AsposeCellsCloudTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		E898D63CEADFB4DE4547EE61 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1017,7 +1025,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BAF465E22C1F93E009FEAFE /* Build configuration list for PBXNativeTarget "AsposeCellsCloud" */;
 			buildPhases = (
-				6CD7EAF447442E26AB72E3EE /* [CP] Check Pods Manifest.lock */,
+				6BF1182C33BC80E43A804B01 /* [CP] Check Pods Manifest.lock */,
 				6BAF464522C1F93E009FEAFE /* Headers */,
 				6BAF464622C1F93E009FEAFE /* Sources */,
 				6BAF464722C1F93E009FEAFE /* Frameworks */,
@@ -1036,11 +1044,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BAF466122C1F93E009FEAFE /* Build configuration list for PBXNativeTarget "AsposeCellsCloudTests" */;
 			buildPhases = (
-				546FEB43FBDD881FFBE50C76 /* [CP] Check Pods Manifest.lock */,
+				88D40B4A7565B51A155500C3 /* [CP] Check Pods Manifest.lock */,
 				6BAF464F22C1F93E009FEAFE /* Sources */,
 				6BAF465022C1F93E009FEAFE /* Frameworks */,
 				6BAF465122C1F93E009FEAFE /* Resources */,
-				EFA3BEE47BE094D4C1831B58 /* [CP] Embed Pods Frameworks */,
+				F53DFC1C093A4B6870E3475B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1116,29 +1124,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		546FEB43FBDD881FFBE50C76 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AsposeCellsCloudTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6CD7EAF447442E26AB72E3EE /* [CP] Check Pods Manifest.lock */ = {
+		6BF1182C33BC80E43A804B01 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1160,7 +1146,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EFA3BEE47BE094D4C1831B58 /* [CP] Embed Pods Frameworks */ = {
+		88D40B4A7565B51A155500C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AsposeCellsCloudTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F53DFC1C093A4B6870E3475B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1604,7 +1612,7 @@
 		};
 		6BAF465F22C1F93E009FEAFE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDDE4A2B950F7CD502FB9757 /* Pods-AsposeCellsCloud.debug.xcconfig */;
+			baseConfigurationReference = F56592ADA88FAEC62D373588 /* Pods-AsposeCellsCloud.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1629,7 +1637,7 @@
 		};
 		6BAF466022C1F93E009FEAFE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D301AAABF272F039EED4DED3 /* Pods-AsposeCellsCloud.release.xcconfig */;
+			baseConfigurationReference = CE02537F036BA0159747D535 /* Pods-AsposeCellsCloud.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1654,7 +1662,7 @@
 		};
 		6BAF466222C1F93E009FEAFE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83192FD1F7F9DD228B1F4031 /* Pods-AsposeCellsCloudTests.debug.xcconfig */;
+			baseConfigurationReference = 44DD8959F1AB28511295DF07 /* Pods-AsposeCellsCloudTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1675,7 +1683,7 @@
 		};
 		6BAF466322C1F93E009FEAFE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6102F96C4AF2828EF618B78F /* Pods-AsposeCellsCloudTests.release.xcconfig */;
+			baseConfigurationReference = D3DF103EEDAE6A794F76D64A /* Pods-AsposeCellsCloudTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;

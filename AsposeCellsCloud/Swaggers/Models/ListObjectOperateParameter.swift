@@ -9,21 +9,37 @@ import Foundation
 
 
 
-public struct ListObjectOperateParameter: Codable {
+public class ListObjectOperateParameter: OperateParameter {
 
-    public var operateType: String?
     public var listObject: ListObject?
 
-public enum CodingKeys: String, CodingKey { 
-        case operateType = "OperateType"
+public enum CodingKeys: String, CodingKey {
         case listObject = "ListObject"
     }
 
     public init(operateType: String?, listObject: ListObject?) {
-        self.operateType = operateType
         self.listObject = listObject
+        super.init(operateType: operateType)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(listObject, forKey: "ListObject")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        listObject = try container.decodeIfPresent(ListObject.self, forKey: "ListObject")
+        try super.init(from: decoder)
+    }
 
 }
 

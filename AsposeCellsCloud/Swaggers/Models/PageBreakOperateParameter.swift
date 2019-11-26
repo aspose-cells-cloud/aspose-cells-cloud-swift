@@ -9,9 +9,8 @@ import Foundation
 
 
 
-public struct PageBreakOperateParameter: Codable {
+public class PageBreakOperateParameter: OperateParameter {
 
-    public var operateType: String?
     public var index: Int32?
     public var endIndex: Int32?
     public var column: Int32?
@@ -19,8 +18,7 @@ public struct PageBreakOperateParameter: Codable {
     public var pageBreakType: String?
     public var row: Int32?
 
-public enum CodingKeys: String, CodingKey { 
-        case operateType = "OperateType"
+public enum CodingKeys: String, CodingKey {
         case index = "Index"
         case endIndex = "EndIndex"
         case column = "Column"
@@ -30,15 +28,45 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(operateType: String?, index: Int32?, endIndex: Int32?, column: Int32?, startIndex: Int32?, pageBreakType: String?, row: Int32?) {
-        self.operateType = operateType
         self.index = index
         self.endIndex = endIndex
         self.column = column
         self.startIndex = startIndex
         self.pageBreakType = pageBreakType
         self.row = row
+        super.init(operateType: operateType)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(index, forKey: "Index")
+        try container.encodeIfPresent(endIndex, forKey: "EndIndex")
+        try container.encodeIfPresent(column, forKey: "Column")
+        try container.encodeIfPresent(startIndex, forKey: "StartIndex")
+        
+        try container.encodeIfPresent(pageBreakType, forKey: "PageBreakType")
+        try container.encodeIfPresent(row, forKey: "Row")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        index = try container.decodeIfPresent(Int32.self, forKey: "Index")
+        endIndex = try container.decodeIfPresent(Int32.self, forKey: "EndIndex")
+        column = try container.decodeIfPresent(Int32.self, forKey: "Column")
+        startIndex = try container.decodeIfPresent(Int32.self, forKey: "StartIndex")
+        
+        pageBreakType = try container.decodeIfPresent(String.self, forKey: "PageBreakType")
+        row = try container.decodeIfPresent(Int32.self, forKey: "Row")
+        try super.init(from: decoder)
+    }
 
 }
 

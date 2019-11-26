@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ConvertTaskParameter: Codable {
+public class ConvertTaskParameter: TaskParameter {
 
     public var workbook: FileSource?
     public var saveOptions: SaveOptions?
@@ -25,8 +25,31 @@ public enum CodingKeys: String, CodingKey {
         self.workbook = workbook
         self.saveOptions = saveOptions
         self.destinationFile = destinationFile
+        super.init()
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(workbook, forKey: "Workbook")
+        try container.encodeIfPresent(saveOptions, forKey: "SaveOptions")
+        try container.encodeIfPresent(destinationFile, forKey: "DestinationFile")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        workbook = try container.decodeIfPresent(FileSource.self, forKey: "Workbook")
+        saveOptions = try container.decodeIfPresent(SaveOptions.self, forKey: "SaveOptions")
+        destinationFile = try container.decodeIfPresent(String.self, forKey: "DestinationFile")
+        try super.init(from: decoder)
+    }
 
 }
 

@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct ConditionalFormattingsResponse: Codable {
+public class ConditionalFormattingsResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var conditionalFormattings: ConditionalFormattings?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case conditionalFormattings = "ConditionalFormattings"
     }
 
     public init(status: String?, code: Int32, conditionalFormattings: ConditionalFormattings?) {
-        self.status = status
-        self.code = code
         self.conditionalFormattings = conditionalFormattings
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(conditionalFormattings, forKey: "ConditionalFormattings")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        conditionalFormattings = try container.decodeIfPresent(ConditionalFormattings.self, forKey: "ConditionalFormattings")
+        try super.init(from: decoder)
+    }
 
 }
 

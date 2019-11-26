@@ -172,7 +172,7 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
 				}
 	
                 if response != nil {
-                    //response is a Data of json, we may write it down and check it.
+                    //response is Data, we may write it down and check it.
                     let fileName = "testdownloadFile.xls"
                     let filePath = NSHomeDirectory()
                     let fileManager = FileManager.default

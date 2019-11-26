@@ -9,27 +9,42 @@ import Foundation
 
 
 
-public struct WorkbookReplaceResponse: Codable {
+public class WorkbookReplaceResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var matches: Int32
     public var workbook: LinkElement?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case matches = "Matches"
         case workbook = "Workbook"
     }
 
     public init(status: String?, code: Int32, matches: Int32, workbook: LinkElement?) {
-        self.status = status
-        self.code = code
         self.matches = matches
         self.workbook = workbook
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(matches, forKey: "Matches")
+        try container.encodeIfPresent(workbook, forKey: "Workbook")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        matches = try container.decodeIfPresent(Int32.self, forKey: "Matches")!
+        workbook = try container.decodeIfPresent(LinkElement.self, forKey: "Workbook")
+        try super.init(from: decoder)
+    }
 
 }
 

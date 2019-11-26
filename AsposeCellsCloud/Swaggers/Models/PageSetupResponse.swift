@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct PageSetupResponse: Codable {
+public class PageSetupResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var pageSetup: PageSetup?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case pageSetup = "PageSetup"
     }
 
     public init(status: String?, code: Int32, pageSetup: PageSetup?) {
-        self.status = status
-        self.code = code
         self.pageSetup = pageSetup
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(pageSetup, forKey: "PageSetup")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        pageSetup = try container.decodeIfPresent(PageSetup.self, forKey: "PageSetup")
+        try super.init(from: decoder)
+    }
 
 }
 

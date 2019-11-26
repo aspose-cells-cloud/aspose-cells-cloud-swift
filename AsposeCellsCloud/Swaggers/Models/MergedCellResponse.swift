@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct MergedCellResponse: Codable {
+public class MergedCellResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var mergedCell: MergedCell?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case mergedCell = "MergedCell"
     }
 
     public init(status: String?, code: Int32, mergedCell: MergedCell?) {
-        self.status = status
-        self.code = code
         self.mergedCell = mergedCell
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(mergedCell, forKey: "MergedCell")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        mergedCell = try container.decodeIfPresent(MergedCell.self, forKey: "MergedCell")
+        try super.init(from: decoder)
+    }
 
 }
 

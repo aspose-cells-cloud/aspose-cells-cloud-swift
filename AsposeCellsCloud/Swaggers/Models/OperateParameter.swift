@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct OperateParameter: Codable {
+public class OperateParameter: Codable {
 
     public var operateType: String?
 
@@ -21,6 +21,22 @@ public enum CodingKeys: String, CodingKey {
         self.operateType = operateType
     }
 
+    // Encodable protocol methods
+    
+    public func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(operateType, forKey: "OperateType")
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        operateType = try container.decodeIfPresent(String.self, forKey: "OperateType")
+    }
 
 }
 

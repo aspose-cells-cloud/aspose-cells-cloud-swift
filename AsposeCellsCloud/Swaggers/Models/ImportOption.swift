@@ -47,10 +47,10 @@ public enum CodingKeys: String, CodingKey {
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: String.self)
         
-        source = try container.decodeIfPresent(FileSource.self, forKey: "Links")
-        importDataType = try container.decodeIfPresent(String.self, forKey: "Links")
-        destinationWorksheet = try container.decodeIfPresent(String.self, forKey: "Links")
-        isInsert = try container.decodeIfPresent(Bool.self, forKey: "Links")
+        source = try container.decodeIfPresent(FileSource.self, forKey: "Source")
+        importDataType = try container.decodeIfPresent(String.self, forKey: "ImportDataType")
+        destinationWorksheet = try container.decodeIfPresent(String.self, forKey: "DestinationWorksheet")
+        isInsert = try container.decodeIfPresent(Bool.self, forKey: "IsInsert")
     }
     
 }

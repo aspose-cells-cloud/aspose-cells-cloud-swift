@@ -10,43 +10,44 @@ import Foundation
 
 /** File Version */
 
-public struct FileVersion: Codable {
+public class FileVersion: StorageFile {
 
-    /** File or folder name. */
-    public var name: String?
-    /** True if it is a folder. */
-    public var isFolder: Bool
-    /** File or folder last modified DateTime. */
-    public var modifiedDate: String?
-    /** File or folder size. */
-    public var size: Int64
-    /** File or folder path. */
-    public var path: String?
     /** File Version ID. */
     public var versionId: String?
     /** Specifies whether the file is (true) or is not (false) the latest version of an file. */
     public var isLatest: Bool
 
-public enum CodingKeys: String, CodingKey { 
-        case name = "Name"
-        case isFolder = "IsFolder"
-        case modifiedDate = "ModifiedDate"
-        case size = "Size"
-        case path = "Path"
+public enum CodingKeys: String, CodingKey {
         case versionId = "VersionId"
         case isLatest = "IsLatest"
     }
 
     public init(name: String?, isFolder: Bool, modifiedDate: String?, size: Int64, path: String?, versionId: String?, isLatest: Bool) {
-        self.name = name
-        self.isFolder = isFolder
-        self.modifiedDate = modifiedDate
-        self.size = size
-        self.path = path
         self.versionId = versionId
         self.isLatest = isLatest
+        super.init(name: name, isFolder: isFolder, modifiedDate: modifiedDate, size: size, path: path)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(versionId, forKey: "VersionId")
+        try container.encodeIfPresent(isLatest, forKey: "IsLatest")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        versionId = try container.decodeIfPresent(String.self, forKey: "VersionId")
+        isLatest = try container.decodeIfPresent(Bool.self, forKey: "IsLatest")!
+        try super.init(from: decoder)
+    }
 
 }
 

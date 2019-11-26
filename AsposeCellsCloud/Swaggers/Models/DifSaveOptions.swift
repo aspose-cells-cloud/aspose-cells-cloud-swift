@@ -9,21 +9,8 @@ import Foundation
 
 
 
-public struct DifSaveOptions: Codable {
-
-    public var enableHTTPCompression: Bool?
-    public var saveFormat: String?
-    /** Make the workbook empty after saving the file. */
-    public var clearData: Bool?
-    /** The cached file folder is used to store some large data. */
-    public var cachedFileFolder: String?
-    /** Indicates whether validate merged areas before saving the file. The default value is false.              */
-    public var validateMergedAreas: Bool?
-    public var refreshChartCache: Bool?
-    /** If true and the directory does not exist, the directory will be automatically created before saving the file.              */
-    public var createDirectory: Bool?
-    public var sortNames: Bool?
-
+public class DifSaveOptions: SaveOptions {
+/*
 public enum CodingKeys: String, CodingKey { 
         case enableHTTPCompression = "EnableHTTPCompression"
         case saveFormat = "SaveFormat"
@@ -34,18 +21,26 @@ public enum CodingKeys: String, CodingKey {
         case createDirectory = "CreateDirectory"
         case sortNames = "SortNames"
     }
-
-    public init(enableHTTPCompression: Bool?, saveFormat: String?, clearData: Bool?, cachedFileFolder: String?, validateMergedAreas: Bool?, refreshChartCache: Bool?, createDirectory: Bool?, sortNames: Bool?) {
-        self.enableHTTPCompression = enableHTTPCompression
-        self.saveFormat = saveFormat
-        self.clearData = clearData
-        self.cachedFileFolder = cachedFileFolder
-        self.validateMergedAreas = validateMergedAreas
-        self.refreshChartCache = refreshChartCache
-        self.createDirectory = createDirectory
-        self.sortNames = sortNames
+*/
+    public override init(enableHTTPCompression: Bool?, saveFormat: String?, clearData: Bool?, cachedFileFolder: String?, validateMergedAreas: Bool?, refreshChartCache: Bool?, createDirectory: Bool?, sortNames: Bool?) {
+        super.init(enableHTTPCompression: enableHTTPCompression, saveFormat: saveFormat, clearData: clearData, cachedFileFolder: cachedFileFolder, validateMergedAreas: validateMergedAreas, refreshChartCache: refreshChartCache, createDirectory: createDirectory, sortNames: sortNames)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        //var container = encoder.container(keyedBy: String.self)
+        
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        //let container = try decoder.container(keyedBy: String.self)
+        
+        try super.init(from: decoder)
+    }
 
 }
 

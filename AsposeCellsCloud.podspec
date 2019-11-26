@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AsposeCellsCloud"
-  s.version      = "19.10"
+  s.version      = "19.11"
   s.summary      = "Aspose.Cells Cloud SDK for Swift."
   s.swift_version = "4.1"
 
@@ -132,6 +132,7 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency "Alamofire", "~> 4.7.3"
+  s.dependency "Alamofire", "~> 4.8.2"
+
 
 end

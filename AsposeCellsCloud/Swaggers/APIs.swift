@@ -11,7 +11,7 @@ open class AsposeCellsCloudAPI {
     public static var appSid: String?
     public static var appKey: String?
     public static var credential: URLCredential?
-    public static var customHeaders: [String:String] = ["Authorization":""]
+    //public static var customHeaders: [String:String] = ["Authorization":""]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
     public static var accessToken: String?
     public static var refreshToken: String?

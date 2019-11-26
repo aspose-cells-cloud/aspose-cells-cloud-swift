@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct CellsObjectOperateTaskParameter: Codable {
+public class CellsObjectOperateTaskParameter: TaskParameter {
 
     public var operateParameter: OperateParameter?
     public var destinationWorkbook: FileSource?
@@ -25,8 +25,31 @@ public enum CodingKeys: String, CodingKey {
         self.operateParameter = operateParameter
         self.destinationWorkbook = destinationWorkbook
         self.operateObject = operateObject
+        super.init()
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(operateParameter, forKey: "OperateParameter")
+        try container.encodeIfPresent(destinationWorkbook, forKey: "DestinationWorkbook")
+        try container.encodeIfPresent(operateObject, forKey: "OperateObject")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        operateParameter = try container.decodeIfPresent(OperateParameter.self, forKey: "OperateParameter")
+        destinationWorkbook = try container.decodeIfPresent(FileSource.self, forKey: "DestinationWorkbook")
+        operateObject = try container.decodeIfPresent(OperateObject.self, forKey: "OperateObject")
+        try super.init(from: decoder)
+    }
 
 }
 

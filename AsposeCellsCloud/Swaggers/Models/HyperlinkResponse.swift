@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct HyperlinkResponse: Codable {
+public class HyperlinkResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var hyperlink: Hyperlink?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case hyperlink = "Hyperlink"
     }
 
     public init(status: String?, code: Int32, hyperlink: Hyperlink?) {
-        self.status = status
-        self.code = code
         self.hyperlink = hyperlink
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(hyperlink, forKey: "Hyperlink")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        hyperlink = try container.decodeIfPresent(Hyperlink.self, forKey: "Hyperlink")
+        try super.init(from: decoder)
+    }
 
 }
 

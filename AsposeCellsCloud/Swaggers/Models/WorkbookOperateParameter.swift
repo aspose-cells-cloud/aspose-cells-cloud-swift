@@ -9,18 +9,35 @@ import Foundation
 
 
 
-public struct WorkbookOperateParameter: Codable {
-
+public class WorkbookOperateParameter: OperateParameter {
+/*
     public var operateType: String?
 
-public enum CodingKeys: String, CodingKey { 
+public enum CodingKeys: String, CodingKey {
         case operateType = "OperateType"
     }
-
-    public init(operateType: String?) {
-        self.operateType = operateType
+*/
+    public override init(operateType: String?) {
+        //self.operateType = operateType
+        super.init(operateType: operateType)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        //var container = encoder.container(keyedBy: String.self)
+
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        //let container = try decoder.container(keyedBy: String.self)
+        
+        try super.init(from: decoder)
+    }
 
 }
 

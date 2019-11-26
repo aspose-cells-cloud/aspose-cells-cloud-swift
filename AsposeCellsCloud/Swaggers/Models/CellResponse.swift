@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct CellResponse: Codable {
+public class CellResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var cell: Cell?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case cell = "Cell"
     }
 
     public init(status: String?, code: Int32, cell: Cell?) {
-        self.status = status
-        self.code = code
         self.cell = cell
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(cell, forKey: "Cell")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        cell = try container.decodeIfPresent(Cell.self, forKey: "Cell")
+        try super.init(from: decoder)
+    }
 
 }
 

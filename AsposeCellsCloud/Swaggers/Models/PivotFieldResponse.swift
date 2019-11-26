@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct PivotFieldResponse: Codable {
+public class PivotFieldResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var pivotField: PivotField?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case pivotField = "PivotField"
     }
 
     public init(status: String?, code: Int32, pivotField: PivotField?) {
-        self.status = status
-        self.code = code
         self.pivotField = pivotField
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(pivotField, forKey: "PivotField")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        pivotField = try container.decodeIfPresent(PivotField.self, forKey: "PivotField")
+        try super.init(from: decoder)
+    }
 
 }
 

@@ -28,13 +28,13 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(destinationFileFormat: String?, destinationFilePosition: FileSource?, verticalResolution: Int32?, horizontalResolution: Int32?, splitNameRule: String?, workbook: FileSource?) {
-        super.init()
         self.destinationFileFormat = destinationFileFormat
         self.destinationFilePosition = destinationFilePosition
         self.verticalResolution = verticalResolution
         self.horizontalResolution = horizontalResolution
         self.splitNameRule = splitNameRule
         self.workbook = workbook
+        super.init()
     }
 
     // Encodable protocol methods

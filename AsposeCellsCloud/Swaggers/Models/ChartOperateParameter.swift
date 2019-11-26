@@ -9,9 +9,8 @@ import Foundation
 
 
 
-public struct ChartOperateParameter: Codable {
+public class ChartOperateParameter: OperateParameter {
 
-    public var operateType: String?
     public var string: String?
     public var area: String?
     public var categoryData: String?
@@ -22,8 +21,7 @@ public struct ChartOperateParameter: Codable {
     public var chartType: String?
     public var isVertical: Bool?
 
-public enum CodingKeys: String, CodingKey { 
-        case operateType = "OperateType"
+public enum CodingKeys: String, CodingKey {
         case string = "string"
         case area = "Area"
         case categoryData = "CategoryData"
@@ -36,7 +34,6 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(operateType: String?, string: String?, area: String?, categoryData: String?, upperLeftRow: Int32?, lowerRightColumn: Int32?, lowerRightRow: Int32?, isAutoGetSerialName: Bool?, chartType: String?, isVertical: Bool?) {
-        self.operateType = operateType
         self.string = string
         self.area = area
         self.categoryData = categoryData
@@ -46,8 +43,46 @@ public enum CodingKeys: String, CodingKey {
         self.isAutoGetSerialName = isAutoGetSerialName
         self.chartType = chartType
         self.isVertical = isVertical
+        super.init(operateType: operateType)
     }
 
+    // Encodable protocol methods
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(string, forKey: "string")
+        try container.encodeIfPresent(area, forKey: "Area")
+        try container.encodeIfPresent(categoryData, forKey: "CategoryData")
+        try container.encodeIfPresent(upperLeftRow, forKey: "UpperLeftRow")
+        
+        try container.encodeIfPresent(lowerRightColumn, forKey: "LowerRightColumn")
+        try container.encodeIfPresent(lowerRightRow, forKey: "LowerRightRow")
+        try container.encodeIfPresent(isAutoGetSerialName, forKey: "IsAutoGetSerialName")
+        try container.encodeIfPresent(chartType, forKey: "ChartType")
+        
+        try container.encodeIfPresent(isVertical, forKey: "IsVertical")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        string = try container.decodeIfPresent(String.self, forKey: "string")
+        area = try container.decodeIfPresent(String.self, forKey: "Area")
+        categoryData = try container.decodeIfPresent(String.self, forKey: "CategoryData")
+        upperLeftRow = try container.decodeIfPresent(Int32.self, forKey: "UpperLeftRow")
+        
+        lowerRightColumn = try container.decodeIfPresent(Int32.self, forKey: "LowerRightColumn")
+        lowerRightRow = try container.decodeIfPresent(Int32.self, forKey: "LowerRightRow")
+        isAutoGetSerialName = try container.decodeIfPresent(Bool.self, forKey: "IsAutoGetSerialName")
+        chartType = try container.decodeIfPresent(String.self, forKey: "ChartType")
+        
+        isVertical = try container.decodeIfPresent(Bool.self, forKey: "IsVertical")
+        try super.init(from: decoder)
+    }
 
 }
 

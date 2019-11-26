@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct ImportDataTaskParameter: Codable {
+public class ImportDataTaskParameter: TaskParameter {
 
     public var workbook: FileSource?
     public var importOption: ImportOption?
@@ -25,8 +25,31 @@ public enum CodingKeys: String, CodingKey {
         self.workbook = workbook
         self.importOption = importOption
         self.destinationWorkbook = destinationWorkbook
+        super.init()
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(workbook, forKey: "Workbook")
+        try container.encodeIfPresent(importOption, forKey: "ImportOption")
+        try container.encodeIfPresent(destinationWorkbook, forKey: "DestinationWorkbook")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        workbook = try container.decodeIfPresent(FileSource.self, forKey: "Workbook")
+        importOption = try container.decodeIfPresent(ImportOption.self, forKey: "ImportOption")
+        destinationWorkbook = try container.decodeIfPresent(FileSource.self, forKey: "DestinationWorkbook")
+        try super.init(from: decoder)
+    }
 
 }
 

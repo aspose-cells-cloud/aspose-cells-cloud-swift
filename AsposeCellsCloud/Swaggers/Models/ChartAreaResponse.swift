@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct ChartAreaResponse: Codable {
+public class ChartAreaResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var chartArea: ChartArea?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case chartArea = "ChartArea"
     }
 
     public init(status: String?, code: Int32, chartArea: ChartArea?) {
-        self.status = status
-        self.code = code
         self.chartArea = chartArea
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(chartArea, forKey: "ChartArea")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        chartArea = try container.decodeIfPresent(ChartArea.self, forKey: "ChartArea")
+        try super.init(from: decoder)
+    }
 
 }
 

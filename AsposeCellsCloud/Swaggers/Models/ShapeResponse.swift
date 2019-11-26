@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct ShapeResponse: Codable {
+public class ShapeResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var shape: Shape?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case shape = "Shape"
     }
 
     public init(status: String?, code: Int32, shape: Shape?) {
-        self.status = status
-        self.code = code
         self.shape = shape
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(shape, forKey: "Shape")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        shape = try container.decodeIfPresent(Shape.self, forKey: "Shape")
+        try super.init(from: decoder)
+    }
 
 }
 

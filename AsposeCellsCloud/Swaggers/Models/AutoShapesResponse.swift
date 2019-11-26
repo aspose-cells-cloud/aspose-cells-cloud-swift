@@ -9,24 +9,37 @@ import Foundation
 
 
 
-public struct AutoShapesResponse: Codable {
+public class AutoShapesResponse: CellsCloudResponse {
 
-    public var status: String?
-    public var code: Int32
     public var autoShapes: AutoShapes?
 
-public enum CodingKeys: String, CodingKey { 
-        case status = "Status"
-        case code = "Code"
+public enum CodingKeys: String, CodingKey {
         case autoShapes = "AutoShapes"
     }
 
     public init(status: String?, code: Int32, autoShapes: AutoShapes?) {
-        self.status = status
-        self.code = code
         self.autoShapes = autoShapes
+        super.init(status: status, code: code)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(autoShapes, forKey: "AutoShapes")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        autoShapes = try container.decodeIfPresent(AutoShapes.self, forKey: "AutoShapes")
+        try super.init(from: decoder)
+    }
 
 }
 

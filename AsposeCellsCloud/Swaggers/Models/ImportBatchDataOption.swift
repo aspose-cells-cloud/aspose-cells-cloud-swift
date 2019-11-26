@@ -9,30 +9,37 @@ import Foundation
 
 
 
-public struct ImportBatchDataOption: Codable {
+public class ImportBatchDataOption: ImportOption {
 
-    public var source: FileSource?
-    public var importDataType: String?
-    public var destinationWorksheet: String?
-    public var isInsert: Bool?
     public var batchData: [CellValue]?
 
-public enum CodingKeys: String, CodingKey { 
-        case source = "Source"
-        case importDataType = "ImportDataType"
-        case destinationWorksheet = "DestinationWorksheet"
-        case isInsert = "IsInsert"
+public enum CodingKeys: String, CodingKey {
         case batchData = "BatchData"
     }
 
     public init(source: FileSource?, importDataType: String?, destinationWorksheet: String?, isInsert: Bool?, batchData: [CellValue]?) {
-        self.source = source
-        self.importDataType = importDataType
-        self.destinationWorksheet = destinationWorksheet
-        self.isInsert = isInsert
         self.batchData = batchData
+        super.init(source: source, importDataType: importDataType, destinationWorksheet: destinationWorksheet, isInsert: isInsert)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(batchData, forKey: "BatchData")
+        try super.encode(to: encoder)
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        batchData = try container.decodeIfPresent([CellValue].self, forKey: "BatchData")
+        try super.init(from: decoder)
+    }
 
 }
 

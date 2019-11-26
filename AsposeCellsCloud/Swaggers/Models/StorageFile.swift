@@ -10,7 +10,7 @@ import Foundation
 
 /** File or folder information */
 
-public struct StorageFile: Codable {
+public class StorageFile: Codable {
 
     /** File or folder name. */
     public var name: String?
@@ -39,6 +39,30 @@ public enum CodingKeys: String, CodingKey {
         self.path = path
     }
 
+    // Encodable protocol methods
+    
+    public func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(name, forKey: "Name")
+        try container.encodeIfPresent(isFolder, forKey: "IsFolder")
+        try container.encodeIfPresent(modifiedDate, forKey: "ModifiedDate")
+        try container.encodeIfPresent(size, forKey: "Size")
+        try container.encodeIfPresent(path, forKey: "Path")
+    }
+    
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        name = try container.decodeIfPresent(String.self, forKey: "Name")
+        isFolder = try container.decodeIfPresent(Bool.self, forKey: "IsFolder")!
+        modifiedDate = try container.decodeIfPresent(String.self, forKey: "ModifiedDate")
+        size = try container.decodeIfPresent(Int64.self, forKey: "Size")!
+        path = try container.decodeIfPresent(String.self, forKey: "Path")
+    }
 
 }
 

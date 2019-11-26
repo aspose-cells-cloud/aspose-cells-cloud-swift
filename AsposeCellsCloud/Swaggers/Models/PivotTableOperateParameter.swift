@@ -9,9 +9,8 @@ import Foundation
 
 
 
-public struct PivotTableOperateParameter: Codable {
+public class PivotTableOperateParameter: OperateParameter {
 
-    public var operateType: String?
     public var pivotFieldColumns: [Int32]?
     public var pivotTableIndex: Int32?
     public var tableName: String?
@@ -21,8 +20,7 @@ public struct PivotTableOperateParameter: Codable {
     public var destCellName: String?
     public var sourceData: String?
 
-public enum CodingKeys: String, CodingKey { 
-        case operateType = "OperateType"
+public enum CodingKeys: String, CodingKey {
         case pivotFieldColumns = "PivotFieldColumns"
         case pivotTableIndex = "PivotTableIndex"
         case tableName = "TableName"
@@ -34,7 +32,6 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(operateType: String?, pivotFieldColumns: [Int32]?, pivotTableIndex: Int32?, tableName: String?, useSameSource: Bool?, pivotFieldData: [Int32]?, pivotFieldRows: [Int32]?, destCellName: String?, sourceData: String?) {
-        self.operateType = operateType
         self.pivotFieldColumns = pivotFieldColumns
         self.pivotTableIndex = pivotTableIndex
         self.tableName = tableName
@@ -43,8 +40,43 @@ public enum CodingKeys: String, CodingKey {
         self.pivotFieldRows = pivotFieldRows
         self.destCellName = destCellName
         self.sourceData = sourceData
+        super.init(operateType: operateType)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(pivotFieldColumns, forKey: "PivotFieldColumns")
+        try container.encodeIfPresent(pivotTableIndex, forKey: "PivotTableIndex")
+        try container.encodeIfPresent(tableName, forKey: "TableName")
+        try container.encodeIfPresent(useSameSource, forKey: "UseSameSource")
+        
+        try container.encodeIfPresent(pivotFieldData, forKey: "PivotFieldData")
+        try container.encodeIfPresent(pivotFieldRows, forKey: "PivotFieldRows")
+        try container.encodeIfPresent(destCellName, forKey: "DestCellName")
+        try container.encodeIfPresent(sourceData, forKey: "SourceData")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        pivotFieldColumns = try container.decodeIfPresent([Int32].self, forKey: "PivotFieldColumns")
+        pivotTableIndex = try container.decodeIfPresent(Int32.self, forKey: "PivotTableIndex")
+        tableName = try container.decodeIfPresent(String.self, forKey: "TableName")
+        useSameSource = try container.decodeIfPresent(Bool.self, forKey: "UseSameSource")
+        
+        pivotFieldData = try container.decodeIfPresent([Int32].self, forKey: "PivotFieldData")
+        pivotFieldRows = try container.decodeIfPresent([Int32].self, forKey: "PivotFieldRows")
+        destCellName = try container.decodeIfPresent(String.self, forKey: "DestCellName")
+        sourceData = try container.decodeIfPresent(String.self, forKey: "SourceData")
+        try super.init(from: decoder)
+    }
 
 }
 

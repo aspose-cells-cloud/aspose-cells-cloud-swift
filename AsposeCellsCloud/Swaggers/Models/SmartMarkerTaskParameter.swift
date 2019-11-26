@@ -9,7 +9,7 @@ import Foundation
 
 
 
-public struct SmartMarkerTaskParameter: Codable {
+public class SmartMarkerTaskParameter: TaskParameter {
 
     public var sourceWorkbook: FileSource?
     public var xmlFile: FileSource?
@@ -25,8 +25,31 @@ public enum CodingKeys: String, CodingKey {
         self.sourceWorkbook = sourceWorkbook
         self.xmlFile = xmlFile
         self.destinationWorkbook = destinationWorkbook
+        super.init()
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(sourceWorkbook, forKey: "SourceWorkbook")
+        try container.encodeIfPresent(xmlFile, forKey: "xmlFile")
+        try container.encodeIfPresent(destinationWorkbook, forKey: "DestinationWorkbook")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        sourceWorkbook = try container.decodeIfPresent(FileSource.self, forKey: "SourceWorkbook")
+        xmlFile = try container.decodeIfPresent(FileSource.self, forKey: "xmlFile")
+        destinationWorkbook = try container.decodeIfPresent(FileSource.self, forKey: "DestinationWorkbook")
+        try super.init(from: decoder)
+    }
 
 }
 

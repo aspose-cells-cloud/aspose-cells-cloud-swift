@@ -9,12 +9,8 @@ import Foundation
 
 
 
-public struct ImportCSVDataOption: Codable {
+public class ImportCSVDataOption: ImportOption {
 
-    public var source: FileSource?
-    public var importDataType: String?
-    public var destinationWorksheet: String?
-    public var isInsert: Bool?
     public var convertNumericData: Bool?
     public var firstColumn: Int32?
     public var sourceFile: String?
@@ -22,11 +18,7 @@ public struct ImportCSVDataOption: Codable {
     public var separatorString: String?
     public var customParsers: [CustomParserConfig]?
 
-public enum CodingKeys: String, CodingKey { 
-        case source = "Source"
-        case importDataType = "ImportDataType"
-        case destinationWorksheet = "DestinationWorksheet"
-        case isInsert = "IsInsert"
+public enum CodingKeys: String, CodingKey {
         case convertNumericData = "ConvertNumericData"
         case firstColumn = "FirstColumn"
         case sourceFile = "SourceFile"
@@ -36,18 +28,45 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(source: FileSource?, importDataType: String?, destinationWorksheet: String?, isInsert: Bool?, convertNumericData: Bool?, firstColumn: Int32?, sourceFile: String?, firstRow: Int32?, separatorString: String?, customParsers: [CustomParserConfig]?) {
-        self.source = source
-        self.importDataType = importDataType
-        self.destinationWorksheet = destinationWorksheet
-        self.isInsert = isInsert
         self.convertNumericData = convertNumericData
         self.firstColumn = firstColumn
         self.sourceFile = sourceFile
         self.firstRow = firstRow
         self.separatorString = separatorString
         self.customParsers = customParsers
+        super.init(source: source, importDataType: importDataType, destinationWorksheet: destinationWorksheet, isInsert: isInsert)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(convertNumericData, forKey: "ConvertNumericData")
+        try container.encodeIfPresent(firstColumn, forKey: "FirstColumn")
+        try container.encodeIfPresent(sourceFile, forKey: "SourceFile")
+        try container.encodeIfPresent(firstRow, forKey: "FirstRow")
+        
+        try container.encodeIfPresent(separatorString, forKey: "SeparatorString")
+        try container.encodeIfPresent(customParsers, forKey: "CustomParsers")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        convertNumericData = try container.decodeIfPresent(Bool.self, forKey: "ConvertNumericData")
+        firstColumn = try container.decodeIfPresent(Int32.self, forKey: "FirstColumn")
+        sourceFile = try container.decodeIfPresent(String.self, forKey: "SourceFile")
+        firstRow = try container.decodeIfPresent(Int32.self, forKey: "FirstRow")
+
+        separatorString = try container.decodeIfPresent(String.self, forKey: "SeparatorString")
+        customParsers = try container.decodeIfPresent([CustomParserConfig].self, forKey: "CustomParsers")
+        try super.init(from: decoder)
+    }
 
 }
 

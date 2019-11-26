@@ -9,20 +9,8 @@ import Foundation
 
 
 
-public struct ImageSaveOptions: Codable {
+public class ImageSaveOptions: SaveOptions {
 
-    public var enableHTTPCompression: Bool?
-    public var saveFormat: String?
-    /** Make the workbook empty after saving the file. */
-    public var clearData: Bool?
-    /** The cached file folder is used to store some large data. */
-    public var cachedFileFolder: String?
-    /** Indicates whether validate merged areas before saving the file. The default value is false.              */
-    public var validateMergedAreas: Bool?
-    public var refreshChartCache: Bool?
-    /** If true and the directory does not exist, the directory will be automatically created before saving the file.              */
-    public var createDirectory: Bool?
-    public var sortNames: Bool?
     public var chartImageType: String?
     public var embededImageNameInSvg: String?
     public var horizontalResolution: Int32?
@@ -36,15 +24,7 @@ public struct ImageSaveOptions: Codable {
     public var tiffCompression: String?
     public var verticalResolution: Int32?
 
-public enum CodingKeys: String, CodingKey { 
-        case enableHTTPCompression = "EnableHTTPCompression"
-        case saveFormat = "SaveFormat"
-        case clearData = "ClearData"
-        case cachedFileFolder = "CachedFileFolder"
-        case validateMergedAreas = "ValidateMergedAreas"
-        case refreshChartCache = "RefreshChartCache"
-        case createDirectory = "CreateDirectory"
-        case sortNames = "SortNames"
+public enum CodingKeys: String, CodingKey {
         case chartImageType = "ChartImageType"
         case embededImageNameInSvg = "EmbededImageNameInSvg"
         case horizontalResolution = "HorizontalResolution"
@@ -60,14 +40,6 @@ public enum CodingKeys: String, CodingKey {
     }
 
     public init(enableHTTPCompression: Bool?, saveFormat: String?, clearData: Bool?, cachedFileFolder: String?, validateMergedAreas: Bool?, refreshChartCache: Bool?, createDirectory: Bool?, sortNames: Bool?, chartImageType: String?, embededImageNameInSvg: String?, horizontalResolution: Int32?, imageFormat: String?, isCellAutoFit: Bool?, onePagePerSheet: Bool?, onlyArea: Bool?, printingPage: String?, printWithStatusDialog: Int32?, quality: Int32?, tiffCompression: String?, verticalResolution: Int32?) {
-        self.enableHTTPCompression = enableHTTPCompression
-        self.saveFormat = saveFormat
-        self.clearData = clearData
-        self.cachedFileFolder = cachedFileFolder
-        self.validateMergedAreas = validateMergedAreas
-        self.refreshChartCache = refreshChartCache
-        self.createDirectory = createDirectory
-        self.sortNames = sortNames
         self.chartImageType = chartImageType
         self.embededImageNameInSvg = embededImageNameInSvg
         self.horizontalResolution = horizontalResolution
@@ -80,8 +52,53 @@ public enum CodingKeys: String, CodingKey {
         self.quality = quality
         self.tiffCompression = tiffCompression
         self.verticalResolution = verticalResolution
+        super.init(enableHTTPCompression: enableHTTPCompression, saveFormat: saveFormat, clearData: clearData, cachedFileFolder: cachedFileFolder, validateMergedAreas: validateMergedAreas, refreshChartCache: refreshChartCache, createDirectory: createDirectory, sortNames: sortNames)
     }
 
+    // Encodable protocol methods
+    
+    public override func encode(to encoder: Encoder) throws {
+        
+        var container = encoder.container(keyedBy: String.self)
+        
+        try container.encodeIfPresent(chartImageType, forKey: "ChartImageType")
+        try container.encodeIfPresent(embededImageNameInSvg, forKey: "EmbededImageNameInSvg")
+        try container.encodeIfPresent(horizontalResolution, forKey: "HorizontalResolution")
+        try container.encodeIfPresent(imageFormat, forKey: "ImageFormat")
+        
+        try container.encodeIfPresent(isCellAutoFit, forKey: "IsCellAutoFit")
+        try container.encodeIfPresent(onePagePerSheet, forKey: "OnePagePerSheet")
+        try container.encodeIfPresent(onlyArea, forKey: "OnlyArea")
+        try container.encodeIfPresent(printingPage, forKey: "PrintingPage")
+        
+        try container.encodeIfPresent(printWithStatusDialog, forKey: "PrintWithStatusDialog")
+        try container.encodeIfPresent(quality, forKey: "Quality")
+        try container.encodeIfPresent(tiffCompression, forKey: "TiffCompression")
+        try container.encodeIfPresent(verticalResolution, forKey: "VerticalResolution")
+        try super.encode(to: encoder)
+    }
+
+    // Decodable protocol methods
+    
+    public required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: String.self)
+        
+        chartImageType = try container.decodeIfPresent(String.self, forKey: "ChartImageType")
+        embededImageNameInSvg = try container.decodeIfPresent(String.self, forKey: "EmbededImageNameInSvg")
+        horizontalResolution = try container.decodeIfPresent(Int32.self, forKey: "HorizontalResolution")
+        imageFormat = try container.decodeIfPresent(String.self, forKey: "ImageFormat")
+        
+        isCellAutoFit = try container.decodeIfPresent(Bool.self, forKey: "IsCellAutoFit")
+        onePagePerSheet = try container.decodeIfPresent(Bool.self, forKey: "OnePagePerSheet")
+        onlyArea = try container.decodeIfPresent(Bool.self, forKey: "OnlyArea")
+        printingPage = try container.decodeIfPresent(String.self, forKey: "PrintingPage")
+        
+        printWithStatusDialog = try container.decodeIfPresent(Int32.self, forKey: "PrintWithStatusDialog")
+        quality = try container.decodeIfPresent(Int32.self, forKey: "Quality")
+        tiffCompression = try container.decodeIfPresent(String.self, forKey: "TiffCompression")
+        verticalResolution = try container.decodeIfPresent(Int32.self, forKey: "VerticalResolution")
+        try super.init(from: decoder)
+    }
 
 }
 
