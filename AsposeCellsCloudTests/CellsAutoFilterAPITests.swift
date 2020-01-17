@@ -210,9 +210,15 @@ class CellsAutoFilterAPITests: AsposeCellsCloudTests {
 		let range:String = RANGE
 		let fieldIndex:Int32 = 0
         
-        let color1:Color = Color(A: 0, B: 0, R: 255, G: 245)
-        let celcol1 = CellsColor(color: color1, type: nil, themeColor: nil, isShapeColor: nil, colorIndex: nil)
-		let colorFilter:ColorFilterRequest? = ColorFilterRequest(pattern: "Solid", foregroundColor: celcol1, backgroundColor: nil)
+        let color1:Color = Color(A: 245, B: 245, R: 255, G: 0)
+        let themeColor1:ThemeColor = ThemeColor(tint: 1, colorType: "Text2")
+        let celcol1:CellsColor = CellsColor(color: color1, type: "Automatic", themeColor: themeColor1, isShapeColor: nil, colorIndex: nil)
+        
+        let color2:Color = Color(A: 255, B: 0, R: 255, G: 0)
+        let themeColor2:ThemeColor = ThemeColor(tint: 1, colorType: "Text2")
+        let backgroundColor1:CellsColor = CellsColor(color: color2, type: "Automatic", themeColor: themeColor2, isShapeColor: nil, colorIndex: nil)
+        
+		let colorFilter:ColorFilterRequest? = ColorFilterRequest(pattern: "Solid", foregroundColor: celcol1, backgroundColor: backgroundColor1)
         
 		let matchBlanks:Bool? = true
 		let refresh:Bool? = true
