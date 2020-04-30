@@ -38,7 +38,7 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
 	{
 		let expectation = self.expectation(description: "testcellsSaveAsPostDocumentSaveAs")
 		let name:String = BOOK1
-		let saveOptions:SaveOptions? = nil
+		let saveOptions:SaveOptions? = PdfSaveOptions(enableHTTPCompression: nil, saveFormat: "xlsx", clearData: nil, cachedFileFolder: nil, validateMergedAreas: nil, refreshChartCache: nil, createDirectory: nil, sortNames: nil, calculateFormula: nil, checkFontCompatibility: nil, onePagePerSheet: true, compliance: nil, defaultFont: nil, printingPageType: nil, imageType: nil, desiredPPI: nil, jpegQuality: nil, securityOptions: nil)
 		let newfilename:String = "newbook.xlsx"
 		let isAutoFitRows:Bool? = true
 		let isAutoFitColumns:Bool? = true
@@ -50,6 +50,8 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsSaveAsPostDocumentSaveAs")
 					return
 				}

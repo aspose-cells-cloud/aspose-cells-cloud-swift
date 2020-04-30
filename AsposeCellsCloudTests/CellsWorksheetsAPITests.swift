@@ -230,11 +230,13 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		let format:String? = "png"
 		let verticalResolution:Int32? = 100
 		let horizontalResolution:Int32? = 90
+        let area:String? = nil
+        let pageIndex:Int32? = nil
 		let folder:String = TEMPFOLDER
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, area: area, pageIndex: pageIndex, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -244,7 +246,7 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 	
 				if let response = response {
                     //response is a Data of json, we may write it down and check it.
-                    let fileName = "testcellsWorksheetsGetWorksheet.txt"
+                    let fileName = "testcellsWorksheetsGetWorksheet.\(format!)"
                     let filePath = NSHomeDirectory()
                     let fileManager = FileManager.default
                     let path = "\(filePath)/tmp/\(fileName)"
@@ -259,6 +261,45 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
 
+    func testcellsWorksheetsGetWorksheetToPDF()
+    {
+        let expectation = self.expectation(description: "testcellsWorksheetsGetWorksheetToPDF")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let format:String? = "pdf"
+        let verticalResolution:Int32? = 100
+        let horizontalResolution:Int32? = 90
+        let area:String? = nil
+        let pageIndex:Int32? = nil
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, area: area, pageIndex: pageIndex, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorksheetsGetWorksheetToPDF")
+                    return
+                }
+                
+                if let response = response {
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorksheetsGetWorksheetToPDF.\(format!)"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as Data)
+                    
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
 	func testcellsWorksheetsGetWorksheetCalculateFormula() 
 	{
 		let expectation = self.expectation(description: "testcellsWorksheetsGetWorksheetCalculateFormula")
@@ -956,6 +997,84 @@ class CellsWorksheetsAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsWorksheetsGetWorksheetForArea()
+    {
+        let expectation = self.expectation(description: "testcellsWorksheetsGetWorksheetForArea")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let format:String? = "png"
+        let verticalResolution:Int32? = 100
+        let horizontalResolution:Int32? = 90
+        let area:String? = "B3:K8"
+        let pageIndex:Int32? = nil
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, area: area, pageIndex: pageIndex, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorksheetsGetWorksheetForArea")
+                    return
+                }
+                
+                if let response = response {
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorksheetsGetWorksheetForArea.\(format!)"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as Data)
+                    
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsWorksheetsGetWorksheetForPageIndex()
+    {
+        let expectation = self.expectation(description: "testcellsWorksheetsGetWorksheetForPageIndex")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let format:String? = "png"
+        let verticalResolution:Int32? = 100
+        let horizontalResolution:Int32? = 90
+        let area:String? = nil
+        let pageIndex:Int32? = 1
+        let folder:String = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorksheetsGetWorksheet(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, area: area, pageIndex: pageIndex, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorksheetsGetWorksheetForPageIndex")
+                    return
+                }
+                
+                if let response = response {
+                    //response is a Data of json, we may write it down and check it.
+                    let fileName = "testcellsWorksheetsGetWorksheetForPageIndex.\(format!)"
+                    let filePath = NSHomeDirectory()
+                    let fileManager = FileManager.default
+                    let path = "\(filePath)/tmp/\(fileName)"
+                    fileManager.createFile(atPath: path, contents:nil, attributes:nil)
+                    let handle = FileHandle(forWritingAtPath:path)
+                    handle?.write(response as Data)
+                    
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 }
 

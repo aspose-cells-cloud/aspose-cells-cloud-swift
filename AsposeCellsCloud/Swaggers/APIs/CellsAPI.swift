@@ -59,14 +59,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterDeleteWorksheetDateFilterWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -124,14 +124,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterDeleteWorksheetFilterWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, criteria: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -176,14 +176,14 @@ open class CellsAPI {
      - returns: RequestBuilder<AutoFilterResponse> 
      */
     open class func cellsAutoFilterGetWorksheetAutoFilterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AutoFilterResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -227,14 +227,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPostWorksheetAutoFilterRefreshWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/refresh"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/refresh"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -282,14 +282,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPostWorksheetMatchBlanksWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchBlanks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -338,14 +338,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPostWorksheetMatchNonBlanksWithRequestBuilder(name: String, sheetName: String, fieldIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/matchNonBlanks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -400,14 +400,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetColorFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, colorFilter: ColorFilterRequest? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/colorFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: colorFilter)
 
         var url = URLComponents(string: URLString)
@@ -475,14 +475,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetCustomFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, operatorType1: String, criteria1: String, isAnd: Bool? = nil, operatorType2: String? = nil, criteria2: String? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/custom"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -559,14 +559,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetDateFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, dateTimeGroupingType: String, year: Int32? = nil, month: Int32? = nil, day: Int32? = nil, hour: Int32? = nil, minute: Int32? = nil, second: Int32? = nil, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dateFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -631,14 +631,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetDynamicFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, dynamicFilterType: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/dynamicFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -699,14 +699,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, criteria: String, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -771,14 +771,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetFilterTop10WithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, isTop: Bool, isPercent: Bool, itemCount: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/filterTop10"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -843,14 +843,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsAutoFilterPutWorksheetIconFilterWithRequestBuilder(name: String, sheetName: String, range: String, fieldIndex: Int32, iconSetType: String, iconId: Int32, matchBlanks: Bool? = nil, refresh: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoFilter/iconFilter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -903,17 +903,17 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsAutoshapesGetWorksheetAutoshapeWithRequestBuilder(name: String, sheetName: String, autoshapeNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoshapes/{autoshapeNumber}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let autoshapeNumberPreEscape = "\(autoshapeNumber)"
         let autoshapeNumberPostEscape = autoshapeNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{autoshapeNumber}", with: autoshapeNumberPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{autoshapeNumber}", with: autoshapeNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -957,14 +957,14 @@ open class CellsAPI {
      - returns: RequestBuilder<AutoShapesResponse> 
      */
     open class func cellsAutoshapesGetWorksheetAutoshapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AutoShapesResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autoshapes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autoshapes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1009,17 +1009,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ChartAreaResponse> 
      */
     open class func cellsChartAreaGetChartAreaWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartAreaResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1064,17 +1064,17 @@ open class CellsAPI {
      - returns: RequestBuilder<LineResponse> 
      */
     open class func cellsChartAreaGetChartAreaBorderWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LineResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/border"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1119,17 +1119,17 @@ open class CellsAPI {
      - returns: RequestBuilder<FillFormatResponse> 
      */
     open class func cellsChartAreaGetChartAreaFillFormatWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<FillFormatResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/chartArea/fillFormat"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1177,17 +1177,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsChartsDeleteWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1235,17 +1235,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsChartsDeleteWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1291,14 +1291,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsChartsDeleteWorksheetClearChartsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1343,17 +1343,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ChartsResponse> 
      */
     open class func cellsChartsDeleteWorksheetDeleteChartWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1400,17 +1400,17 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsChartsGetWorksheetChartWithRequestBuilder(name: String, sheetName: String, chartNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartNumber}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartNumberPreEscape = "\(chartNumber)"
         let chartNumberPostEscape = chartNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartNumber}", with: chartNumberPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartNumber}", with: chartNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1456,17 +1456,17 @@ open class CellsAPI {
      - returns: RequestBuilder<LegendResponse> 
      */
     open class func cellsChartsGetWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LegendResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1511,17 +1511,17 @@ open class CellsAPI {
      - returns: RequestBuilder<TitleResponse> 
      */
     open class func cellsChartsGetWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1564,14 +1564,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ChartsResponse> 
      */
     open class func cellsChartsGetWorksheetChartsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1621,17 +1621,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsChartsPostWorksheetChartWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, chart: Chart? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: chart)
 
         var url = URLComponents(string: URLString)
@@ -1678,17 +1678,17 @@ open class CellsAPI {
      - returns: RequestBuilder<LegendResponse> 
      */
     open class func cellsChartsPostWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, legend: Legend? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<LegendResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: legend)
 
         var url = URLComponents(string: URLString)
@@ -1735,17 +1735,17 @@ open class CellsAPI {
      - returns: RequestBuilder<TitleResponse> 
      */
     open class func cellsChartsPostWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: title)
 
         var url = URLComponents(string: URLString)
@@ -1808,14 +1808,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ChartsResponse> 
      */
     open class func cellsChartsPutWorksheetAddChartWithRequestBuilder(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ChartsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1873,17 +1873,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsChartsPutWorksheetChartLegendWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/legend"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -1930,17 +1930,17 @@ open class CellsAPI {
      - returns: RequestBuilder<TitleResponse> 
      */
     open class func cellsChartsPutWorksheetChartTitleWithRequestBuilder(name: String, sheetName: String, chartIndex: Int32, title: Title? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TitleResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
+        var _path = "/cells/{name}/worksheets/{sheetName}/charts/{chartIndex}/title"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let chartIndexPreEscape = "\(chartIndex)"
         let chartIndexPostEscape = chartIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{chartIndex}", with: chartIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: title)
 
         var url = URLComponents(string: URLString)
@@ -1988,17 +1988,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2052,14 +2052,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingAreaWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/area"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/area"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2109,14 +2109,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsDeleteWorksheetConditionalFormattingsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2161,17 +2161,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ConditionalFormattingResponse> 
      */
     open class func cellsConditionalFormattingsGetWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ConditionalFormattingResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2214,14 +2214,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ConditionalFormattingsResponse> 
      */
     open class func cellsConditionalFormattingsGetWorksheetConditionalFormattingsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ConditionalFormattingsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2271,14 +2271,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsPutWorksheetConditionalFormattingWithRequestBuilder(name: String, sheetName: String, cellArea: String, formatCondition: FormatCondition? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: formatCondition)
 
         var url = URLComponents(string: URLString)
@@ -2337,17 +2337,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsPutWorksheetFormatConditionWithRequestBuilder(name: String, sheetName: String, index: Int32, cellArea: String, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2402,17 +2402,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsPutWorksheetFormatConditionAreaWithRequestBuilder(name: String, sheetName: String, index: Int32, cellArea: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/area"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2469,17 +2469,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsConditionalFormattingsPutWorksheetFormatConditionConditionWithRequestBuilder(name: String, sheetName: String, index: Int32, type: String, operatorType: String, formula1: String, formula2: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition"
+        var _path = "/cells/{name}/worksheets/{sheetName}/conditionalFormattings/{index}/condition"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2532,17 +2532,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ColumnsResponse> 
      */
     open class func cellsDeleteWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, columns: Int32, updateReference: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ColumnsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let columnIndexPreEscape = "\(columnIndex)"
         let columnIndexPostEscape = columnIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2592,17 +2592,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsDeleteWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let rowIndexPreEscape = "\(rowIndex)"
         let rowIndexPostEscape = rowIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2654,14 +2654,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsDeleteWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2709,17 +2709,17 @@ open class CellsAPI {
      - returns: RequestBuilder<AnyObject> 
      */
     open class func cellsGetCellHtmlStringWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AnyObject> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2764,17 +2764,17 @@ open class CellsAPI {
      - returns: RequestBuilder<AnyObject> 
      */
     open class func cellsGetWorksheetCellWithRequestBuilder(name: String, sheetName: String, cellOrMethodName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<AnyObject> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellOrMethodName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellOrMethodNamePreEscape = "\(cellOrMethodName)"
         let cellOrMethodNamePostEscape = cellOrMethodNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellOrMethodName}", with: cellOrMethodNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellOrMethodName}", with: cellOrMethodNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2819,17 +2819,17 @@ open class CellsAPI {
      - returns: RequestBuilder<StyleResponse> 
      */
     open class func cellsGetWorksheetCellStyleWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<StyleResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2876,14 +2876,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsResponse> 
      */
     open class func cellsGetWorksheetCellsWithRequestBuilder(name: String, sheetName: String, offest: Int32? = nil, count: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2930,17 +2930,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ColumnResponse> 
      */
     open class func cellsGetWorksheetColumnWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ColumnResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let columnIndexPreEscape = "\(columnIndex)"
         let columnIndexPostEscape = columnIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -2983,14 +2983,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ColumnsResponse> 
      */
     open class func cellsGetWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ColumnsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3035,17 +3035,17 @@ open class CellsAPI {
      - returns: RequestBuilder<RowResponse> 
      */
     open class func cellsGetWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RowResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let rowIndexPreEscape = "\(rowIndex)"
         let rowIndexPostEscape = rowIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3088,14 +3088,14 @@ open class CellsAPI {
      - returns: RequestBuilder<RowsResponse> 
      */
     open class func cellsGetWorksheetRowsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RowsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3143,17 +3143,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsHypelinksDeleteWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
         let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3199,14 +3199,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsHypelinksDeleteWorksheetHyperlinksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3251,17 +3251,17 @@ open class CellsAPI {
      - returns: RequestBuilder<HyperlinkResponse> 
      */
     open class func cellsHypelinksGetWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
         let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3304,14 +3304,14 @@ open class CellsAPI {
      - returns: RequestBuilder<HyperlinksResponse> 
      */
     open class func cellsHypelinksGetWorksheetHyperlinksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinksResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3358,17 +3358,17 @@ open class CellsAPI {
      - returns: RequestBuilder<HyperlinkResponse> 
      */
     open class func cellsHypelinksPostWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, hyperlinkIndex: Int32, hyperlink: Hyperlink? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks/{hyperlinkIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let hyperlinkIndexPreEscape = "\(hyperlinkIndex)"
         let hyperlinkIndexPostEscape = hyperlinkIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{hyperlinkIndex}", with: hyperlinkIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: hyperlink)
 
         var url = URLComponents(string: URLString)
@@ -3421,14 +3421,14 @@ open class CellsAPI {
      - returns: RequestBuilder<HyperlinkResponse> 
      */
     open class func cellsHypelinksPutWorksheetHyperlinkWithRequestBuilder(name: String, sheetName: String, firstRow: Int32, firstColumn: Int32, totalRows: Int32, totalColumns: Int32, address: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HyperlinkResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/hyperlinks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3481,17 +3481,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsDeleteWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listObjectIndexPreEscape = "\(listObjectIndex)"
         let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3537,14 +3537,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsDeleteWorksheetListObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3589,17 +3589,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ListObjectResponse> 
      */
     open class func cellsListObjectsGetWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listobjectindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listobjectindex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listobjectindexPreEscape = "\(listobjectindex)"
         let listobjectindexPostEscape = listobjectindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listobjectindex}", with: listobjectindexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listobjectindex}", with: listobjectindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3642,14 +3642,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ListObjectsResponse> 
      */
     open class func cellsListObjectsGetWorksheetListObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3699,17 +3699,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsPostWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listObjectIndexPreEscape = "\(listObjectIndex)"
         let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: listObject)
 
         var url = URLComponents(string: URLString)
@@ -3755,17 +3755,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsPostWorksheetListObjectConvertToRangeWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/ConvertToRange"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listObjectIndexPreEscape = "\(listObjectIndex)"
         let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -3813,17 +3813,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsPostWorksheetListObjectSortTableWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/sort"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listObjectIndexPreEscape = "\(listObjectIndex)"
         let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataSorter)
 
         var url = URLComponents(string: URLString)
@@ -3873,17 +3873,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTableWithRequestBuilder(name: String, sheetName: String, listObjectIndex: Int32, destsheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects/{listObjectIndex}/SummarizeWithPivotTable"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let listObjectIndexPreEscape = "\(listObjectIndex)"
         let listObjectIndexPostEscape = listObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{listObjectIndex}", with: listObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
 
         var url = URLComponents(string: URLString)
@@ -3939,14 +3939,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ListObjectResponse> 
      */
     open class func cellsListObjectsPutWorksheetListObjectWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, endRow: Int32, endColumn: Int32, hasHeaders: Bool? = nil, listObject: ListObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ListObjectResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/listobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/listobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: listObject)
 
         var url = URLComponents(string: URLString)
@@ -3999,17 +3999,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsOleObjectsDeleteWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObjectIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let oleObjectIndexPreEscape = "\(oleObjectIndex)"
         let oleObjectIndexPostEscape = oleObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4055,14 +4055,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsOleObjectsDeleteWorksheetOleObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4109,17 +4109,17 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsOleObjectsGetWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, objectNumber: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{objectNumber}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let objectNumberPreEscape = "\(objectNumber)"
         let objectNumberPostEscape = objectNumberPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{objectNumber}", with: objectNumberPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{objectNumber}", with: objectNumberPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4163,14 +4163,14 @@ open class CellsAPI {
      - returns: RequestBuilder<OleObjectsResponse> 
      */
     open class func cellsOleObjectsGetWorksheetOleObjectsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<OleObjectsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4220,17 +4220,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsOleObjectsPostUpdateWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObjectIndex: Int32, ole: OleObject? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects/{oleObjectIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let oleObjectIndexPreEscape = "\(oleObjectIndex)"
         let oleObjectIndexPostEscape = oleObjectIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{oleObjectIndex}", with: oleObjectIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: ole)
 
         var url = URLComponents(string: URLString)
@@ -4287,14 +4287,14 @@ open class CellsAPI {
      - returns: RequestBuilder<OleObjectResponse> 
      */
     open class func cellsOleObjectsPutWorksheetOleObjectWithRequestBuilder(name: String, sheetName: String, oleObject: OleObject? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, height: Int32? = nil, width: Int32? = nil, oleFile: String? = nil, imageFile: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<OleObjectResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
+        var _path = "/cells/{name}/worksheets/{sheetName}/oleobjects"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: oleObject)
 
         var url = URLComponents(string: URLString)
@@ -4346,17 +4346,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksDeleteHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4402,14 +4402,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksDeleteHorizontalPageBreaksWithRequestBuilder(name: String, sheetName: String, row: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4456,17 +4456,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksDeleteVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4512,14 +4512,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksDeleteVerticalPageBreaksWithRequestBuilder(name: String, sheetName: String, column: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4563,17 +4563,17 @@ open class CellsAPI {
      - returns: RequestBuilder<HorizontalPageBreakResponse> 
      */
     open class func cellsPageBreaksGetHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HorizontalPageBreakResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4614,14 +4614,14 @@ open class CellsAPI {
      - returns: RequestBuilder<HorizontalPageBreaksResponse> 
      */
     open class func cellsPageBreaksGetHorizontalPageBreaksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<HorizontalPageBreaksResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4664,17 +4664,17 @@ open class CellsAPI {
      - returns: RequestBuilder<VerticalPageBreakResponse> 
      */
     open class func cellsPageBreaksGetVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, index: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<VerticalPageBreakResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks/{index}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let indexPreEscape = "\(index)"
         let indexPostEscape = indexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{index}", with: indexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4715,14 +4715,14 @@ open class CellsAPI {
      - returns: RequestBuilder<VerticalPageBreaksResponse> 
      */
     open class func cellsPageBreaksGetVerticalPageBreaksWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<VerticalPageBreaksResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4776,14 +4776,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksPutHorizontalPageBreakWithRequestBuilder(name: String, sheetName: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, startColumn: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/horizontalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4842,14 +4842,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageBreaksPutVerticalPageBreakWithRequestBuilder(name: String, sheetName: String, cellname: String? = nil, column: Int32? = nil, row: Int32? = nil, startRow: Int32? = nil, endRow: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
+        var _path = "/cells/{name}/worksheets/{sheetName}/verticalpagebreaks"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4900,14 +4900,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageSetupDeleteHeaderFooterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup/clearheaderfooter"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -4950,14 +4950,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PageSectionsResponse> 
      */
     open class func cellsPageSetupGetFooterWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSectionsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5000,14 +5000,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PageSectionsResponse> 
      */
     open class func cellsPageSetupGetHeaderWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSectionsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5050,14 +5050,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PageSetupResponse> 
      */
     open class func cellsPageSetupGetPageSetupWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PageSetupResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5109,14 +5109,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageSetupPostFooterWithRequestBuilder(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup/footer"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5171,14 +5171,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageSetupPostHeaderWithRequestBuilder(name: String, sheetName: String, section: Int32, script: String, isFirstPage: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup/header"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5229,14 +5229,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPageSetupPostPageSetupWithRequestBuilder(name: String, sheetName: String, pageSetup: PageSetup? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pagesetup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: pageSetup)
 
         var url = URLComponents(string: URLString)
@@ -5284,17 +5284,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPicturesDeleteWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pictureIndexPreEscape = "\(pictureIndex)"
         let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5340,14 +5340,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPicturesDeleteWorksheetPicturesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5394,17 +5394,17 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsPicturesGetWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, format: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pictureIndexPreEscape = "\(pictureIndex)"
         let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5448,14 +5448,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PicturesResponse> 
      */
     open class func cellsPicturesGetWorksheetPicturesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PicturesResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5502,17 +5502,17 @@ open class CellsAPI {
      - returns: RequestBuilder<PictureResponse> 
      */
     open class func cellsPicturesPostWorksheetPictureWithRequestBuilder(name: String, sheetName: String, pictureIndex: Int32, picture: Picture? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PictureResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures/{pictureIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pictureIndexPreEscape = "\(pictureIndex)"
         let pictureIndexPostEscape = pictureIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pictureIndex}", with: pictureIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: picture)
 
         var url = URLComponents(string: URLString)
@@ -5567,14 +5567,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PicturesResponse> 
      */
     open class func cellsPicturesPutWorksheetAddPictureWithRequestBuilder(name: String, sheetName: String, picture: Picture? = nil, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, picturePath: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PicturesResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pictures"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pictures"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: picture)
 
         var url = URLComponents(string: URLString)
@@ -5631,17 +5631,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesDeletePivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
 
         var url = URLComponents(string: URLString)
@@ -5690,17 +5690,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesDeleteWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5752,20 +5752,20 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesDeleteWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{fieldIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
         let fieldIndexPreEscape = "\(fieldIndex)"
         let fieldIndexPostEscape = fieldIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{fieldIndex}", with: fieldIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{fieldIndex}", with: fieldIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5816,17 +5816,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesDeleteWorksheetPivotTableFiltersWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5873,14 +5873,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesDeleteWorksheetPivotTablesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5929,17 +5929,17 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotFieldResponse> 
      */
     open class func cellsPivotTablesGetPivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldIndex: Int32, pivotFieldType: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFieldResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -5986,17 +5986,17 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotTableResponse> 
      */
     open class func cellsPivotTablesGetWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, pivottableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotTableResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivottableIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivottableIndexPreEscape = "\(pivottableIndex)"
         let pivottableIndexPostEscape = pivottableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivottableIndex}", with: pivottableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivottableIndex}", with: pivottableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6041,20 +6041,20 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotFilterResponse> 
      */
     open class func cellsPivotTablesGetWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, filterIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFilterResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters/{filterIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
         let filterIndexPreEscape = "\(filterIndex)"
         let filterIndexPostEscape = filterIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{filterIndex}", with: filterIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{filterIndex}", with: filterIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6097,17 +6097,17 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotFiltersResponse> 
      */
     open class func cellsPivotTablesGetWorksheetPivotTableFiltersWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotFiltersResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6150,14 +6150,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotTablesResponse> 
      */
     open class func cellsPivotTablesGetWorksheetPivotTablesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<PivotTablesResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6213,17 +6213,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostPivotTableCellStyleWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, column: Int32, row: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Format"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -6282,17 +6282,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostPivotTableFieldHideItemWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, fieldIndex: Int32, itemIndex: Int32, isHide: Bool, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Hide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6349,17 +6349,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostPivotTableFieldMoveToWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, fieldIndex: Int32, from: String, to: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField/Move"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6414,17 +6414,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostPivotTableStyleWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, style: Style? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/FormatAll"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -6473,17 +6473,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostWorksheetPivotTableCalculateWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Calculate"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6535,17 +6535,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPostWorksheetPivotTableMoveWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, row: Int32? = nil, column: Int32? = nil, destCellName: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/Move"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6602,17 +6602,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPutPivotTableFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, request: PivotTableFieldRequest? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotField"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
 
         var url = URLComponents(string: URLString)
@@ -6667,14 +6667,14 @@ open class CellsAPI {
      - returns: RequestBuilder<PivotTableResponse> 
      */
     open class func cellsPivotTablesPutWorksheetPivotTableWithRequestBuilder(name: String, sheetName: String, request: CreatePivotTableRequest? = nil, folder: String? = nil, storage: String? = nil, sourceData: String? = nil, destCellName: String? = nil, tableName: String? = nil, useSameSource: Bool? = nil) -> RequestBuilder<PivotTableResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: request)
 
         var url = URLComponents(string: URLString)
@@ -6730,17 +6730,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPivotTablesPutWorksheetPivotTableFilterWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, filter: PivotFilter? = nil, needReCalculate: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFilters"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let pivotTableIndexPreEscape = "\(pivotTableIndex)"
         let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: filter)
 
         var url = URLComponents(string: URLString)
@@ -6791,17 +6791,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostCellCalculateWithRequestBuilder(name: String, sheetName: String, cellName: String, options: CalculationOptions? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/calculate"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
 
         var url = URLComponents(string: URLString)
@@ -6851,17 +6851,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostCellCharactersWithRequestBuilder(name: String, sheetName: String, cellName: String, options: [FontSetting]? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/characters"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
 
         var url = URLComponents(string: URLString)
@@ -6917,14 +6917,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostClearContentsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/clearcontents"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/clearcontents"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -6985,14 +6985,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostClearFormatsWithRequestBuilder(name: String, sheetName: String, range: String? = nil, startRow: Int32? = nil, startColumn: Int32? = nil, endRow: Int32? = nil, endColumn: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/clearformats"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/clearformats"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7047,17 +7047,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostColumnStyleWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let columnIndexPreEscape = "\(columnIndex)"
         let columnIndexPostEscape = columnIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -7113,17 +7113,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostCopyCellIntoCellWithRequestBuilder(name: String, destCellName: String, sheetName: String, worksheet: String, cellname: String? = nil, row: Int32? = nil, column: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{destCellName}/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let destCellNamePreEscape = "\(destCellName)"
         let destCellNamePostEscape = destCellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{destCellName}", with: destCellNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{destCellName}", with: destCellNamePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7181,14 +7181,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostCopyWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, sourceColumnIndex: Int32, destinationColumnIndex: Int32, columnNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/copy"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7246,14 +7246,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostCopyWorksheetRowsWithRequestBuilder(name: String, sheetName: String, sourceRowIndex: Int32, destinationRowIndex: Int32, rowNumber: Int32, worksheet: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7309,14 +7309,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostGroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/group"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/group"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7371,14 +7371,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostGroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, hide: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/group"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/group"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7431,14 +7431,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostHideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startColumn: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/hide"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/hide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7490,14 +7490,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostHideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/hide"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/hide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7549,17 +7549,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostRowStyleWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let rowIndexPreEscape = "\(rowIndex)"
         let rowIndexPostEscape = rowIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -7606,17 +7606,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellResponse> 
      */
     open class func cellsPostSetCellHtmlStringWithRequestBuilder(name: String, sheetName: String, cellName: String, htmlString: NSData, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/htmlstring"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: htmlString)
 
         var url = URLComponents(string: URLString)
@@ -7668,14 +7668,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostSetCellRangeValueWithRequestBuilder(name: String, sheetName: String, cellarea: String, value: String, type: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7725,17 +7725,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ColumnResponse> 
      */
     open class func cellsPostSetWorksheetColumnWidthWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, width: Double, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ColumnResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let columnIndexPreEscape = "\(columnIndex)"
         let columnIndexPostEscape = columnIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7786,14 +7786,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostUngroupWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/ungroup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7847,14 +7847,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostUngroupWorksheetRowsWithRequestBuilder(name: String, sheetName: String, firstIndex: Int32, lastIndex: Int32, isAll: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/ungroup"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7909,14 +7909,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostUnhideWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, startcolumn: Int32, totalColumns: Int32, width: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/unhide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -7971,14 +7971,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostUnhideWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/unhide"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8028,17 +8028,17 @@ open class CellsAPI {
      - returns: RequestBuilder<StyleResponse> 
      */
     open class func cellsPostUpdateWorksheetCellStyleWithRequestBuilder(name: String, sheetName: String, cellName: String, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<StyleResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -8088,14 +8088,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostUpdateWorksheetRangeStyleWithRequestBuilder(name: String, sheetName: String, range: String, style: Style? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: style)
 
         var url = URLComponents(string: URLString)
@@ -8143,17 +8143,17 @@ open class CellsAPI {
      - returns: RequestBuilder<RowResponse> 
      */
     open class func cellsPostUpdateWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, height: Double? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RowResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let rowIndexPreEscape = "\(rowIndex)"
         let rowIndexPostEscape = rowIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8205,17 +8205,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellResponse> 
      */
     open class func cellsPostWorksheetCellSetValueWithRequestBuilder(name: String, sheetName: String, cellName: String, value: String? = nil, type: String? = nil, formula: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/{cellName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8272,14 +8272,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostWorksheetMergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/merge"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/merge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8337,14 +8337,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPostWorksheetUnmergeWithRequestBuilder(name: String, sheetName: String, startRow: Int32, startColumn: Int32, totalRows: Int32, totalColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/unmerge"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/unmerge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8389,11 +8389,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
      */
     open class func cellsPropertiesDeleteDocumentPropertiesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
-        var path = "/cells/{name}/documentproperties"
+        var _path = "/cells/{name}/documentproperties"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8436,14 +8436,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
      */
     open class func cellsPropertiesDeleteDocumentPropertyWithRequestBuilder(name: String, propertyName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
-        var path = "/cells/{name}/documentproperties/{propertyName}"
+        var _path = "/cells/{name}/documentproperties/{propertyName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let propertyNamePreEscape = "\(propertyName)"
         let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8484,11 +8484,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsDocumentPropertiesResponse> 
      */
     open class func cellsPropertiesGetDocumentPropertiesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertiesResponse> {
-        var path = "/cells/{name}/documentproperties"
+        var _path = "/cells/{name}/documentproperties"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8531,14 +8531,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsDocumentPropertyResponse> 
      */
     open class func cellsPropertiesGetDocumentPropertyWithRequestBuilder(name: String, propertyName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertyResponse> {
-        var path = "/cells/{name}/documentproperties/{propertyName}"
+        var _path = "/cells/{name}/documentproperties/{propertyName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let propertyNamePreEscape = "\(propertyName)"
         let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8583,14 +8583,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsDocumentPropertyResponse> 
      */
     open class func cellsPropertiesPutDocumentPropertyWithRequestBuilder(name: String, propertyName: String, property: CellsDocumentProperty? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsDocumentPropertyResponse> {
-        var path = "/cells/{name}/documentproperties/{propertyName}"
+        var _path = "/cells/{name}/documentproperties/{propertyName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let propertyNamePreEscape = "\(propertyName)"
         let propertyNamePostEscape = propertyNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{propertyName}", with: propertyNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: property)
 
         var url = URLComponents(string: URLString)
@@ -8639,17 +8639,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ColumnsResponse> 
      */
     open class func cellsPutInsertWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, columnIndex: Int32, columns: Int32, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ColumnsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/columns/{columnIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let columnIndexPreEscape = "\(columnIndex)"
         let columnIndexPostEscape = columnIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{columnIndex}", with: columnIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8696,17 +8696,17 @@ open class CellsAPI {
      - returns: RequestBuilder<RowResponse> 
      */
     open class func cellsPutInsertWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RowResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows/{rowIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let rowIndexPreEscape = "\(rowIndex)"
         let rowIndexPostEscape = rowIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{rowIndex}", with: rowIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8758,14 +8758,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsPutInsertWorksheetRowsWithRequestBuilder(name: String, sheetName: String, startrow: Int32, totalRows: Int32? = nil, updateReference: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
+        var _path = "/cells/{name}/worksheets/{sheetName}/cells/rows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8821,14 +8821,14 @@ open class CellsAPI {
      - returns: RequestBuilder<RangeValueResponse> 
      */
     open class func cellsRangesGetWorksheetCellsRangeValueWithRequestBuilder(name: String, sheetName: String, namerange: String? = nil, firstRow: Int32? = nil, firstColumn: Int32? = nil, rowCount: Int32? = nil, columnCount: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangeValueResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -8883,14 +8883,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeColumnWidthWithRequestBuilder(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/columnWidth"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -8939,14 +8939,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeMergeWithRequestBuilder(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/merge"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/merge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -8998,14 +8998,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeMoveToWithRequestBuilder(name: String, sheetName: String, destRow: Int32, destColumn: Int32, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/moveto"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/moveto"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -9055,14 +9055,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeOutlineBorderWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeSetOutlineBorderRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/outlineBorder"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
 
         var url = URLComponents(string: URLString)
@@ -9112,14 +9112,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeRowHeightWithRequestBuilder(name: String, sheetName: String, value: Double, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/rowHeight"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/rowHeight"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -9168,14 +9168,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeStyleWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeSetStyleRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/style"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/style"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
 
         var url = URLComponents(string: URLString)
@@ -9223,14 +9223,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeUnmergeWithRequestBuilder(name: String, sheetName: String, range: Range? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/unmerge"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/unmerge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -9284,14 +9284,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangeValueWithRequestBuilder(name: String, sheetName: String, value: String, range: Range? = nil, isConverted: Bool? = nil, setStyle: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges/value"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: range)
 
         var url = URLComponents(string: URLString)
@@ -9342,14 +9342,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsRangesPostWorksheetCellsRangesWithRequestBuilder(name: String, sheetName: String, rangeOperate: RangeCopyRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/ranges"
+        var _path = "/cells/{name}/worksheets/{sheetName}/ranges"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: rangeOperate)
 
         var url = URLComponents(string: URLString)
@@ -9398,11 +9398,11 @@ open class CellsAPI {
      - returns: RequestBuilder<SaveResponse> 
      */
     open class func cellsSaveAsPostDocumentSaveAsWithRequestBuilder(name: String, saveOptions: SaveOptions? = nil, newfilename: String? = nil, isAutoFitRows: Bool? = nil, isAutoFitColumns: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SaveResponse> {
-        var path = "/cells/{name}/SaveAs"
+        var _path = "/cells/{name}/SaveAs"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: saveOptions)
 
         var url = URLComponents(string: URLString)
@@ -9453,17 +9453,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsShapesDeleteWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let shapeindexPreEscape = "\(shapeindex)"
         let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9509,14 +9509,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsShapesDeleteWorksheetShapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9561,17 +9561,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ShapeResponse> 
      */
     open class func cellsShapesGetWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapeResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let shapeindexPreEscape = "\(shapeindex)"
         let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9614,14 +9614,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ShapesResponse> 
      */
     open class func cellsShapesGetWorksheetShapesWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapesResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9671,17 +9671,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsShapesPostWorksheetShapeWithRequestBuilder(name: String, sheetName: String, shapeindex: Int32, dto: Shape? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes/{shapeindex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let shapeindexPreEscape = "\(shapeindex)"
         let shapeindexPostEscape = shapeindexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{shapeindex}", with: shapeindexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dto)
 
         var url = URLComponents(string: URLString)
@@ -9738,14 +9738,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ShapeResponse> 
      */
     open class func cellsShapesPutWorksheetShapeWithRequestBuilder(name: String, sheetName: String, drawingType: String, upperLeftRow: Int32, upperLeftColumn: Int32, top: Int32, _left: Int32, width: Int32, height: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ShapeResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/shapes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/shapes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9789,8 +9789,8 @@ open class CellsAPI {
      - returns: RequestBuilder<AnyObject> 
      */
     open class func cellsTaskPostRunTaskWithRequestBuilder(taskData: TaskData) -> RequestBuilder<AnyObject> {
-        let path = "/cells/task/runtask"
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        let _path = "/cells/task/runtask"
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: taskData)
 
         let url = URLComponents(string: URLString)
@@ -9832,11 +9832,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookDeleteDecryptDocumentWithRequestBuilder(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/encryption"
+        var _path = "/cells/{name}/encryption"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: encryption)
 
         var url = URLComponents(string: URLString)
@@ -9880,11 +9880,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookDeleteDocumentUnprotectFromChangesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/writeProtection"
+        var _path = "/cells/{name}/writeProtection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -9930,11 +9930,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookDeleteUnprotectDocumentWithRequestBuilder(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/protection"
+        var _path = "/cells/{name}/protection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protection)
 
         var url = URLComponents(string: URLString)
@@ -9946,6 +9946,54 @@ open class CellsAPI {
         let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Set worksheet background image.
+     
+     - parameter name: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookDeleteWorkbookBackground(name: String, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookDeleteWorkbookBackgroundWithRequestBuilder(name: name, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set worksheet background image.
+     - DELETE /cells/{name}/background
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookDeleteWorkbookBackgroundWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/background"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
     /**
@@ -9980,14 +10028,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookDeleteWorkbookNameWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/names/{nameName}"
+        var _path = "/cells/{name}/names/{nameName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let nameNamePreEscape = "\(nameName)"
         let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10031,11 +10079,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookDeleteWorkbookNamesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/names"
+        var _path = "/cells/{name}/names"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10086,11 +10134,11 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsWorkbookGetWorkbookWithRequestBuilder(name: String, password: String? = nil, format: String? = nil, isAutoFit: Bool? = nil, onlySaveTable: Bool? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}"
+        var _path = "/cells/{name}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10136,11 +10184,11 @@ open class CellsAPI {
      - returns: RequestBuilder<StyleResponse> 
      */
     open class func cellsWorkbookGetWorkbookDefaultStyleWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<StyleResponse> {
-        var path = "/cells/{name}/defaultstyle"
+        var _path = "/cells/{name}/defaultstyle"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10183,14 +10231,14 @@ open class CellsAPI {
      - returns: RequestBuilder<NameResponse> 
      */
     open class func cellsWorkbookGetWorkbookNameWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NameResponse> {
-        var path = "/cells/{name}/names/{nameName}"
+        var _path = "/cells/{name}/names/{nameName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let nameNamePreEscape = "\(nameName)"
         let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10233,14 +10281,14 @@ open class CellsAPI {
      - returns: RequestBuilder<RangeValueResponse> 
      */
     open class func cellsWorkbookGetWorkbookNameValueWithRequestBuilder(name: String, nameName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangeValueResponse> {
-        var path = "/cells/{name}/names/{nameName}/value"
+        var _path = "/cells/{name}/names/{nameName}/value"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let nameNamePreEscape = "\(nameName)"
         let nameNamePostEscape = nameNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{nameName}", with: nameNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10281,11 +10329,11 @@ open class CellsAPI {
      - returns: RequestBuilder<NamesResponse> 
      */
     open class func cellsWorkbookGetWorkbookNamesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NamesResponse> {
-        var path = "/cells/{name}/names"
+        var _path = "/cells/{name}/names"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10326,11 +10374,11 @@ open class CellsAPI {
      - returns: RequestBuilder<WorkbookSettingsResponse> 
      */
     open class func cellsWorkbookGetWorkbookSettingsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookSettingsResponse> {
-        var path = "/cells/{name}/settings"
+        var _path = "/cells/{name}/settings"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10371,11 +10419,11 @@ open class CellsAPI {
      - returns: RequestBuilder<TextItemsResponse> 
      */
     open class func cellsWorkbookGetWorkbookTextItemsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
-        var path = "/cells/{name}/textItems"
+        var _path = "/cells/{name}/textItems"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10427,11 +10475,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostAutofitWorkbookRowsWithRequestBuilder(name: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/autofitrows"
+        var _path = "/cells/{name}/autofitrows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
 
         var url = URLComponents(string: URLString)
@@ -10480,11 +10528,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostEncryptDocumentWithRequestBuilder(name: String, encryption: WorkbookEncryptionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/encryption"
+        var _path = "/cells/{name}/encryption"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: encryption)
 
         var url = URLComponents(string: URLString)
@@ -10528,11 +10576,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostImportDataWithRequestBuilder(name: String, importData: ImportOption, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/importdata"
+        var _path = "/cells/{name}/importdata"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: importData)
 
         var url = URLComponents(string: URLString)
@@ -10578,11 +10626,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostProtectDocumentWithRequestBuilder(name: String, protection: WorkbookProtectionRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/protection"
+        var _path = "/cells/{name}/protection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protection)
 
         var url = URLComponents(string: URLString)
@@ -10630,11 +10678,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostWorkbookCalculateFormulaWithRequestBuilder(name: String, options: CalculationOptions? = nil, ignoreError: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/calculateformula"
+        var _path = "/cells/{name}/calculateformula"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
 
         var url = URLComponents(string: URLString)
@@ -10680,11 +10728,11 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsWorkbookPostWorkbookGetSmartMarkerResultWithRequestBuilder(name: String, xmlFile: String? = nil, folder: String? = nil, storage: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/smartmarker"
+        var _path = "/cells/{name}/smartmarker"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10732,11 +10780,11 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPostWorkbookSettingsWithRequestBuilder(name: String, settings: WorkbookSettings? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/settings"
+        var _path = "/cells/{name}/settings"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: settings)
 
         var url = URLComponents(string: URLString)
@@ -10760,11 +10808,12 @@ open class CellsAPI {
      - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
      - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
      - parameter folder: (query) The workbook folder. (optional)
+     - parameter outFolder: (query) out Folder. (optional)
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorkbookPostWorkbookSplit(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SplitResultResponse?,_ error: Error?) -> Void)) {
-        cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: name, format: format, from: from, to: to, horizontalResolution: horizontalResolution, verticalResolution: verticalResolution, folder: folder, storage: storage).execute { (response, error) -> Void in
+    open class func cellsWorkbookPostWorkbookSplit(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, outFolder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: SplitResultResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: name, format: format, from: from, to: to, horizontalResolution: horizontalResolution, verticalResolution: verticalResolution, folder: folder, outFolder: outFolder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -10782,16 +10831,17 @@ open class CellsAPI {
      - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
      - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
      - parameter folder: (query) The workbook folder. (optional)
+     - parameter outFolder: (query) out Folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
      - returns: RequestBuilder<SplitResultResponse> 
      */
-    open class func cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SplitResultResponse> {
-        var path = "/cells/{name}/split"
+    open class func cellsWorkbookPostWorkbookSplitWithRequestBuilder(name: String, format: String? = nil, from: Int32? = nil, to: Int32? = nil, horizontalResolution: Int32? = nil, verticalResolution: Int32? = nil, folder: String? = nil, outFolder: String? = nil, storage: String? = nil) -> RequestBuilder<SplitResultResponse> {
+        var _path = "/cells/{name}/split"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10802,6 +10852,7 @@ open class CellsAPI {
             "horizontalResolution": horizontalResolution?.encodeToJSON(), 
             "verticalResolution": verticalResolution?.encodeToJSON(), 
             "folder": folder, 
+            "outFolder": outFolder, 
             "storage": storage
         ])
 
@@ -10839,11 +10890,11 @@ open class CellsAPI {
      - returns: RequestBuilder<WorkbookResponse> 
      */
     open class func cellsWorkbookPostWorkbooksMergeWithRequestBuilder(name: String, mergeWith: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookResponse> {
-        var path = "/cells/{name}/merge"
+        var _path = "/cells/{name}/merge"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10889,11 +10940,11 @@ open class CellsAPI {
      - returns: RequestBuilder<WorkbookReplaceResponse> 
      */
     open class func cellsWorkbookPostWorkbooksTextReplaceWithRequestBuilder(name: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookReplaceResponse> {
-        var path = "/cells/{name}/replaceText"
+        var _path = "/cells/{name}/replaceText"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10938,11 +10989,11 @@ open class CellsAPI {
      - returns: RequestBuilder<TextItemsResponse> 
      */
     open class func cellsWorkbookPostWorkbooksTextSearchWithRequestBuilder(name: String, text: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
-        var path = "/cells/{name}/findText"
+        var _path = "/cells/{name}/findText"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -10986,8 +11037,8 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func cellsWorkbookPutConvertWorkbookWithRequestBuilder(workbook: NSData, format: String? = nil, password: String? = nil, outPath: String? = nil) -> RequestBuilder<NSData> {
-        let path = "/cells/convert"
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        let _path = "/cells/convert"
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: workbook)
 
         var url = URLComponents(string: URLString)
@@ -11034,12 +11085,62 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorkbookPutDocumentProtectFromChangesWithRequestBuilder(name: String, password: PasswordRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/writeProtection"
+        var _path = "/cells/{name}/writeProtection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: password)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storage": storage
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+     Set workbook background image.
+     
+     - parameter name: (path)  
+     - parameter png: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsWorkbookPutWorkbookBackground(name: String, png: NSData, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutWorkbookBackgroundWithRequestBuilder(name: name, png: png, folder: folder, storage: storage).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Set workbook background image.
+     - PUT /cells/{name}/background
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter png: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storage: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsWorkbookPutWorkbookBackgroundWithRequestBuilder(name: String, png: NSData, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/background"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: png)
 
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
@@ -11058,12 +11159,13 @@ open class CellsAPI {
      - parameter name: (path) The new document name. 
      - parameter templateFile: (query) The template file, if the data not provided default workbook is created. (optional)
      - parameter dataFile: (query) Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     - parameter isWriteOver: (query) write over file. (optional)
      - parameter folder: (query) The new document folder. (optional)
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorkbookPutWorkbookCreate(name: String, templateFile: String? = nil, dataFile: String? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookResponse?,_ error: Error?) -> Void)) {
-        cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: name, templateFile: templateFile, dataFile: dataFile, folder: folder, storage: storage).execute { (response, error) -> Void in
+    open class func cellsWorkbookPutWorkbookCreate(name: String, templateFile: String? = nil, dataFile: String? = nil, isWriteOver: Bool? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: WorkbookResponse?,_ error: Error?) -> Void)) {
+        cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: name, templateFile: templateFile, dataFile: dataFile, isWriteOver: isWriteOver, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -11077,23 +11179,25 @@ open class CellsAPI {
      - parameter name: (path) The new document name. 
      - parameter templateFile: (query) The template file, if the data not provided default workbook is created. (optional)
      - parameter dataFile: (query) Smart marker data file, if the data not provided the request content is checked for the data. (optional)
+     - parameter isWriteOver: (query) write over file. (optional)
      - parameter folder: (query) The new document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
      - returns: RequestBuilder<WorkbookResponse> 
      */
-    open class func cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: String, templateFile: String? = nil, dataFile: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookResponse> {
-        var path = "/cells/{name}"
+    open class func cellsWorkbookPutWorkbookCreateWithRequestBuilder(name: String, templateFile: String? = nil, dataFile: String? = nil, isWriteOver: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorkbookResponse> {
+        var _path = "/cells/{name}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "templateFile": templateFile, 
             "dataFile": dataFile, 
+            "isWriteOver": isWriteOver, 
             "folder": folder, 
             "storage": storage
         ])
@@ -11134,17 +11238,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ValidationResponse> 
      */
     open class func cellsWorksheetValidationsDeleteWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let validationIndexPreEscape = "\(validationIndex)"
         let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11190,14 +11294,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetValidationsDeleteWorksheetValidationsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11242,17 +11346,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ValidationResponse> 
      */
     open class func cellsWorksheetValidationsGetWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let validationIndexPreEscape = "\(validationIndex)"
         let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11295,14 +11399,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ValidationsResponse> 
      */
     open class func cellsWorksheetValidationsGetWorksheetValidationsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11349,17 +11453,17 @@ open class CellsAPI {
      - returns: RequestBuilder<ValidationResponse> 
      */
     open class func cellsWorksheetValidationsPostWorksheetValidationWithRequestBuilder(name: String, sheetName: String, validationIndex: Int32, validation: Validation? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations/{validationIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let validationIndexPreEscape = "\(validationIndex)"
         let validationIndexPostEscape = validationIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{validationIndex}", with: validationIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: validation)
 
         var url = URLComponents(string: URLString)
@@ -11406,14 +11510,14 @@ open class CellsAPI {
      - returns: RequestBuilder<ValidationResponse> 
      */
     open class func cellsWorksheetValidationsPutWorksheetValidationWithRequestBuilder(name: String, sheetName: String, range: String? = nil, validation: Validation? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<ValidationResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/validations"
+        var _path = "/cells/{name}/worksheets/{sheetName}/validations"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: validation)
 
         var url = URLComponents(string: URLString)
@@ -11459,14 +11563,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetResponse> 
      */
     open class func cellsWorksheetsDeleteUnprotectWorksheetWithRequestBuilder(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/protection"
+        var _path = "/cells/{name}/worksheets/{sheetName}/protection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protectParameter)
 
         var url = URLComponents(string: URLString)
@@ -11509,14 +11613,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetsResponse> 
      */
     open class func cellsWorksheetsDeleteWorksheetWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11562,14 +11666,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsDeleteWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/background"
+        var _path = "/cells/{name}/worksheets/{sheetName}/background"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11617,17 +11721,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsDeleteWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11673,14 +11777,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsDeleteWorksheetCommentsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11734,14 +11838,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsDeleteWorksheetFreezePanesWithRequestBuilder(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11786,11 +11890,11 @@ open class CellsAPI {
      - returns: RequestBuilder<RangesResponse> 
      */
     open class func cellsWorksheetsGetNamedRangesWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<RangesResponse> {
-        var path = "/cells/{name}/worksheets/ranges"
+        var _path = "/cells/{name}/worksheets/ranges"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11812,12 +11916,14 @@ open class CellsAPI {
      - parameter format: (query) The exported file format. (optional)
      - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
      - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter area: (query) Exported area. (optional)
+     - parameter pageIndex: (query) Exported page index. (optional)
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsWorksheetsGetWorksheet(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
-        cellsWorksheetsGetWorksheetWithRequestBuilder(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, folder: folder, storage: storage).execute { (response, error) -> Void in
+    open class func cellsWorksheetsGetWorksheet(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, area: String? = nil, pageIndex: Int32? = nil, folder: String? = nil, storage: String? = nil, completion: @escaping ((_ data: NSData?,_ error: Error?) -> Void)) {
+        cellsWorksheetsGetWorksheetWithRequestBuilder(name: name, sheetName: sheetName, format: format, verticalResolution: verticalResolution, horizontalResolution: horizontalResolution, area: area, pageIndex: pageIndex, folder: folder, storage: storage).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -11833,20 +11939,22 @@ open class CellsAPI {
      - parameter format: (query) The exported file format. (optional)
      - parameter verticalResolution: (query) Image vertical resolution. (optional, default to 0)
      - parameter horizontalResolution: (query) Image horizontal resolution. (optional, default to 0)
+     - parameter area: (query) Exported area. (optional)
+     - parameter pageIndex: (query) Exported page index. (optional)
      - parameter folder: (query) The document folder. (optional)
      - parameter storage: (query) storage name. (optional)
 
      - returns: RequestBuilder<NSData> 
      */
-    open class func cellsWorksheetsGetWorksheetWithRequestBuilder(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
-        var path = "/cells/{name}/worksheets/{sheetName}"
+    open class func cellsWorksheetsGetWorksheetWithRequestBuilder(name: String, sheetName: String, format: String? = nil, verticalResolution: Int32? = nil, horizontalResolution: Int32? = nil, area: String? = nil, pageIndex: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<NSData> {
+        var _path = "/cells/{name}/worksheets/{sheetName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11854,6 +11962,8 @@ open class CellsAPI {
             "format": format, 
             "verticalResolution": verticalResolution?.encodeToJSON(), 
             "horizontalResolution": horizontalResolution?.encodeToJSON(), 
+            "area": area, 
+            "pageIndex": pageIndex?.encodeToJSON(), 
             "folder": folder, 
             "storage": storage
         ])
@@ -11894,14 +12004,14 @@ open class CellsAPI {
      - returns: RequestBuilder<SingleValueResponse> 
      */
     open class func cellsWorksheetsGetWorksheetCalculateFormulaWithRequestBuilder(name: String, sheetName: String, formula: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<SingleValueResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/formulaResult"
+        var _path = "/cells/{name}/worksheets/{sheetName}/formulaResult"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -11947,17 +12057,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CommentResponse> 
      */
     open class func cellsWorksheetsGetWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12000,14 +12110,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CommentsResponse> 
      */
     open class func cellsWorksheetsGetWorksheetCommentsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12052,17 +12162,17 @@ open class CellsAPI {
      - returns: RequestBuilder<MergedCellResponse> 
      */
     open class func cellsWorksheetsGetWorksheetMergedCellWithRequestBuilder(name: String, sheetName: String, mergedCellIndex: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<MergedCellResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/mergedCells/{mergedCellIndex}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let mergedCellIndexPreEscape = "\(mergedCellIndex)"
         let mergedCellIndexPostEscape = mergedCellIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{mergedCellIndex}", with: mergedCellIndexPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{mergedCellIndex}", with: mergedCellIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12105,14 +12215,14 @@ open class CellsAPI {
      - returns: RequestBuilder<MergedCellsResponse> 
      */
     open class func cellsWorksheetsGetWorksheetMergedCellsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<MergedCellsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/mergedCells"
+        var _path = "/cells/{name}/worksheets/{sheetName}/mergedCells"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12155,14 +12265,14 @@ open class CellsAPI {
      - returns: RequestBuilder<TextItemsResponse> 
      */
     open class func cellsWorksheetsGetWorksheetTextItemsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/textItems"
+        var _path = "/cells/{name}/worksheets/{sheetName}/textItems"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12203,11 +12313,11 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetsResponse> 
      */
     open class func cellsWorksheetsGetWorksheetsWithRequestBuilder(name: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
-        var path = "/cells/{name}/worksheets"
+        var _path = "/cells/{name}/worksheets"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12261,14 +12371,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostAutofitWorksheetColumnsWithRequestBuilder(name: String, sheetName: String, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, firstRow: Int32? = nil, lastRow: Int32? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autofitcolumns"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autofitcolumns"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
 
         var url = URLComponents(string: URLString)
@@ -12324,14 +12434,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostAutofitWorksheetRowWithRequestBuilder(name: String, sheetName: String, rowIndex: Int32, firstColumn: Int32, lastColumn: Int32, autoFitterOptions: AutoFitterOptions? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autofitrow"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autofitrow"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
 
         var url = URLComponents(string: URLString)
@@ -12388,14 +12498,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostAutofitWorksheetRowsWithRequestBuilder(name: String, sheetName: String, autoFitterOptions: AutoFitterOptions? = nil, startRow: Int32? = nil, endRow: Int32? = nil, onlyAuto: Bool? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/autofitrows"
+        var _path = "/cells/{name}/worksheets/{sheetName}/autofitrows"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: autoFitterOptions)
 
         var url = URLComponents(string: URLString)
@@ -12450,14 +12560,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostCopyWorksheetWithRequestBuilder(name: String, sheetName: String, sourceSheet: String, options: CopyOptions? = nil, sourceWorkbook: String? = nil, sourceFolder: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/copy"
+        var _path = "/cells/{name}/worksheets/{sheetName}/copy"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: options)
 
         var url = URLComponents(string: URLString)
@@ -12505,14 +12615,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetsResponse> 
      */
     open class func cellsWorksheetsPostMoveWorksheetWithRequestBuilder(name: String, sheetName: String, moving: WorksheetMovingRequest? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/position"
+        var _path = "/cells/{name}/worksheets/{sheetName}/position"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: moving)
 
         var url = URLComponents(string: URLString)
@@ -12560,14 +12670,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostRenameWorksheetWithRequestBuilder(name: String, sheetName: String, newname: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/rename"
+        var _path = "/cells/{name}/worksheets/{sheetName}/rename"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12613,14 +12723,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetResponse> 
      */
     open class func cellsWorksheetsPostUpdateWorksheetPropertyWithRequestBuilder(name: String, sheetName: String, sheet: Worksheet? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: sheet)
 
         var url = URLComponents(string: URLString)
@@ -12666,14 +12776,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostUpdateWorksheetZoomWithRequestBuilder(name: String, sheetName: String, value: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/zoom"
+        var _path = "/cells/{name}/worksheets/{sheetName}/zoom"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12724,17 +12834,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: comment)
 
         var url = URLComponents(string: URLString)
@@ -12784,14 +12894,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPostWorksheetRangeSortWithRequestBuilder(name: String, sheetName: String, cellArea: String, dataSorter: DataSorter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/sort"
+        var _path = "/cells/{name}/worksheets/{sheetName}/sort"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: dataSorter)
 
         var url = URLComponents(string: URLString)
@@ -12837,14 +12947,14 @@ open class CellsAPI {
      - returns: RequestBuilder<TextItemsResponse> 
      */
     open class func cellsWorksheetsPostWorksheetTextSearchWithRequestBuilder(name: String, sheetName: String, text: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<TextItemsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/findText"
+        var _path = "/cells/{name}/worksheets/{sheetName}/findText"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12892,14 +13002,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetReplaceResponse> 
      */
     open class func cellsWorksheetsPostWorsheetTextReplaceWithRequestBuilder(name: String, sheetName: String, oldValue: String, newValue: String, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetReplaceResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/replaceText"
+        var _path = "/cells/{name}/worksheets/{sheetName}/replaceText"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -12948,14 +13058,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetsResponse> 
      */
     open class func cellsWorksheetsPutAddNewWorksheetWithRequestBuilder(name: String, sheetName: String, position: Int32? = nil, sheettype: String? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetsResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13002,14 +13112,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetResponse> 
      */
     open class func cellsWorksheetsPutChangeVisibilityWorksheetWithRequestBuilder(name: String, sheetName: String, isVisible: Bool, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/visible"
+        var _path = "/cells/{name}/worksheets/{sheetName}/visible"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13055,14 +13165,14 @@ open class CellsAPI {
      - returns: RequestBuilder<WorksheetResponse> 
      */
     open class func cellsWorksheetsPutProtectWorksheetWithRequestBuilder(name: String, sheetName: String, protectParameter: ProtectSheetParameter? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<WorksheetResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/protection"
+        var _path = "/cells/{name}/worksheets/{sheetName}/protection"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: protectParameter)
 
         var url = URLComponents(string: URLString)
@@ -13110,14 +13220,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPutWorksheetBackgroundWithRequestBuilder(name: String, sheetName: String, png: NSData, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/background"
+        var _path = "/cells/{name}/worksheets/{sheetName}/background"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: png)
 
         var url = URLComponents(string: URLString)
@@ -13164,17 +13274,17 @@ open class CellsAPI {
      - returns: RequestBuilder<CommentResponse> 
      */
     open class func cellsWorksheetsPutWorksheetCommentWithRequestBuilder(name: String, sheetName: String, cellName: String, comment: Comment? = nil, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CommentResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
+        var _path = "/cells/{name}/worksheets/{sheetName}/comments/{cellName}"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
         let cellNamePreEscape = "\(cellName)"
         let cellNamePostEscape = cellNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{cellName}", with: cellNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: comment)
 
         var url = URLComponents(string: URLString)
@@ -13228,14 +13338,14 @@ open class CellsAPI {
      - returns: RequestBuilder<CellsCloudResponse> 
      */
     open class func cellsWorksheetsPutWorksheetFreezePanesWithRequestBuilder(name: String, sheetName: String, row: Int32, column: Int32, freezedRows: Int32, freezedColumns: Int32, folder: String? = nil, storage: String? = nil) -> RequestBuilder<CellsCloudResponse> {
-        var path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
+        var _path = "/cells/{name}/worksheets/{sheetName}/freezepanes"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
         let sheetNamePreEscape = "\(sheetName)"
         let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13287,11 +13397,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func copyFileWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
-        var path = "/cells/storage/file/copy/{srcPath}"
+        var _path = "/cells/storage/file/copy/{srcPath}"
         let srcPathPreEscape = "\(srcPath)"
         let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13339,11 +13449,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func copyFolderWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil) -> RequestBuilder<Void> {
-        var path = "/cells/storage/folder/copy/{srcPath}"
+        var _path = "/cells/storage/folder/copy/{srcPath}"
         let srcPathPreEscape = "\(srcPath)"
         let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13386,11 +13496,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func createFolderWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<Void> {
-        var path2 = "/cells/storage/folder/{path}"
+        var _path = "/cells/storage/folder/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13433,11 +13543,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func deleteFileWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
-        var path2 = "/cells/storage/file/{path}"
+        var _path = "/cells/storage/file/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13481,11 +13591,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func deleteFolderWithRequestBuilder(path: String, storageName: String? = nil, recursive: Bool? = nil) -> RequestBuilder<Void> {
-        var path2 = "/cells/storage/folder/{path}"
+        var _path = "/cells/storage/folder/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13526,11 +13636,11 @@ open class CellsAPI {
      - returns: RequestBuilder<NSData> 
      */
     open class func downloadFileWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<NSData> {
-        var path2 = "/cells/storage/file/{path}"
+        var _path = "/cells/storage/file/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13570,8 +13680,8 @@ open class CellsAPI {
      - returns: RequestBuilder<DiscUsage> 
      */
     open class func getDiscUsageWithRequestBuilder(storageName: String? = nil) -> RequestBuilder<DiscUsage> {
-        let path = "/cells/storage/disc"
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        let _path = "/cells/storage/disc"
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13611,11 +13721,11 @@ open class CellsAPI {
      - returns: RequestBuilder<FileVersions> 
      */
     open class func getFileVersionsWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<FileVersions> {
-        var path2 = "/cells/storage/version/{path}"
+        var _path = "/cells/storage/version/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13667,11 +13777,11 @@ open class CellsAPI {
      - returns: RequestBuilder<FilesList> 
      */
     open class func getFilesListWithRequestBuilder(path: String, storageName: String? = nil) -> RequestBuilder<FilesList> {
-        var path2 = "/cells/storage/folder/{path}"
+        var _path = "/cells/storage/folder/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13718,11 +13828,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func moveFileWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil, versionId: String? = nil) -> RequestBuilder<Void> {
-        var path = "/cells/storage/file/move/{srcPath}"
+        var _path = "/cells/storage/file/move/{srcPath}"
         let srcPathPreEscape = "\(srcPath)"
         let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13770,11 +13880,11 @@ open class CellsAPI {
      - returns: RequestBuilder<Void> 
      */
     open class func moveFolderWithRequestBuilder(srcPath: String, destPath: String, srcStorageName: String? = nil, destStorageName: String? = nil) -> RequestBuilder<Void> {
-        var path = "/cells/storage/folder/move/{srcPath}"
+        var _path = "/cells/storage/folder/move/{srcPath}"
         let srcPathPreEscape = "\(srcPath)"
         let srcPathPostEscape = srcPathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{srcPath}", with: srcPathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13825,8 +13935,8 @@ open class CellsAPI {
      - returns: RequestBuilder<AccessTokenResponse> 
      */
     open class func oAuthPostWithRequestBuilder(grantType: String, clientId: String, clientSecret: String) -> RequestBuilder<AccessTokenResponse> {
-        let path = "/connect/token"
-        let URLString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v3.0", with: "") + path
+        let _path = "/connect/token"
+        let URLString = AsposeCellsCloudAPI.basePath.replacingOccurrences(of: "/v3.0", with: "") + _path
         let formParams: [String:Any?] = [
             "grant_type": grantType,
             "client_id": clientId,
@@ -13873,11 +13983,11 @@ open class CellsAPI {
      - returns: RequestBuilder<ObjectExist> 
      */
     open class func objectExistsWithRequestBuilder(path: String, storageName: String? = nil, versionId: String? = nil) -> RequestBuilder<ObjectExist> {
-        var path2 = "/cells/storage/exist/{path}"
+        var _path = "/cells/storage/exist/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -13916,11 +14026,11 @@ open class CellsAPI {
      - returns: RequestBuilder<StorageExist> 
      */
     open class func storageExistsWithRequestBuilder(storageName: String) -> RequestBuilder<StorageExist> {
-        var path = "/cells/storage/{storageName}/exist"
+        var _path = "/cells/storage/{storageName}/exist"
         let storageNamePreEscape = "\(storageName)"
         let storageNamePostEscape = storageNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path = path.replacingOccurrences(of: "{storageName}", with: storageNamePostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path
+        _path = _path.replacingOccurrences(of: "{storageName}", with: storageNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
@@ -13976,18 +14086,17 @@ open class CellsAPI {
      - returns: RequestBuilder<FilesUploadResult> 
      */
     open class func uploadFileWithRequestBuilder(path: String, file: URL, storageName: String? = nil) -> RequestBuilder<FilesUploadResult> {
-        var path2 = "/cells/storage/file/{path}"
+        var _path = "/cells/storage/file/{path}"
         let pathPreEscape = "\(path)"
         let pathPostEscape = pathPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
-        path2 = path2.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
-        let URLString = AsposeCellsCloudAPI.basePath + path2
-        
+        _path = _path.replacingOccurrences(of: "{path}", with: pathPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
         let formParams: [String:Any?] = [
             "File": file
         ]
+
         let nonNullParameters = APIHelper.rejectNil(formParams)
         let parameters = APIHelper.convertBoolToString(nonNullParameters)
-        
         
         /*
         let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: file)
@@ -14008,8 +14117,6 @@ open class CellsAPI {
         let requestBuilder: RequestBuilder<FilesUploadResult>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true, headers: headers)
-
-        
     }
 
 }

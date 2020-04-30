@@ -596,10 +596,11 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let horizontalResolution:Int32? = 100
 		let verticalResolution:Int32? = 90
 		let folder:String = TEMPFOLDER
+        let outFolder:String? = nil
 		let storage:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorkbookPostWorkbookSplit(name: name, format: format, from: from, to: to, horizontalResolution: horizontalResolution, verticalResolution: verticalResolution, folder: folder, storage: storage)
+            CellsAPI.cellsWorkbookPostWorkbookSplit(name: name, format: format, from: from, to: to, horizontalResolution: horizontalResolution, verticalResolution: verticalResolution, folder: folder, outFolder: outFolder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -810,6 +811,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
         let s1 = dateformatter.string(from: dateNow)
         let name:String = "NewBook\(s1).xlsx" ;
         
+        let isWriteOver:Bool? = false
         let folder:String = TEMPFOLDER
 		let templateFile:String? = "\(TEMPFOLDER)/\(BOOK1)"
 		let dataFile:String? = "\(TEMPFOLDER)/ReportData.xml"
@@ -817,7 +819,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		
         self.uploadFile(name: BOOK1) {
         self.uploadFile(name: "ReportData.xml") {
-			CellsAPI.cellsWorkbookPutWorkbookCreate(name: name, templateFile: templateFile, dataFile: dataFile, folder: folder, storage: storage)
+            CellsAPI.cellsWorkbookPutWorkbookCreate(name: name, templateFile: templateFile, dataFile: dataFile, isWriteOver: isWriteOver, folder: folder, storage: storage)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -862,5 +864,98 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
         self.waitForExpectations(timeout: testTimeout, handler: nil)
     }
     */
+    
+    func testcellsWorkbookPutWorkbookBackground()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookPutWorkbookBackground")
+        let name:String = BOOK1
+        
+        let url1: URL? = getURL("WaterMark.png")
+        let newImage = UIImage(contentsOfFile: url1!.path)
+        let imageData = newImage!.pngData()
+        
+        let folder:String? = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorkbookPutWorkbookBackground(name: name, png: imageData! as NSData, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookPutWorkbookBackground")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsWorkbookDeleteWorkbookBackground()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookDeleteWorkbookBackground")
+        let name:String = BOOK1
+        let folder:String? = TEMPFOLDER
+        let storage:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorkbookDeleteWorkbookBackground(name: name, folder: folder, storage: storage)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookDeleteWorkbookBackground")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsWorkbookPutWorkbookCreateNew()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookPutWorkbookCreateNew")
+        
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "YYYYMMddHHmmss"
+        let dateNow = Date()
+        let s1 = dateformatter.string(from: dateNow)
+        let name:String = "NewBook\(s1).xlsx" ;
+        
+        let isWriteOver:Bool? = true
+        let folder:String = TEMPFOLDER
+        let templateFile:String? = "\(TEMPFOLDER)/\(BOOK1)"
+        let dataFile:String? = "\(TEMPFOLDER)/ReportData.xml"
+        let storage:String? = nil
+        
+        self.uploadFile(name: BOOK1) {
+            self.uploadFile(name: "ReportData.xml") {
+                CellsAPI.cellsWorkbookPutWorkbookCreate(name: name, templateFile: templateFile, dataFile: dataFile, isWriteOver: isWriteOver, folder: folder, storage: storage)
+                {
+                    (response, error) in
+                    guard error == nil else {
+                        XCTFail("error testcellsWorkbookPutWorkbookCreateNew")
+                        return
+                    }
+                    
+                    if let response = response {
+                        XCTAssertEqual(response.code, 200)
+                        expectation.fulfill()
+                    }
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    
 }
 

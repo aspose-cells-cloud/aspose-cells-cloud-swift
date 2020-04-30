@@ -152,4 +152,39 @@ class AsposeCellsCloudTests: XCTestCase {
         }
     }
     
+    internal func deleteFile(name: String, folder: String = "", completion: @escaping ()->Void) {
+        
+        var path = ""
+        if (folder != "")
+        {
+            path = "\(folder)/\(name)"
+        }
+        else
+        {
+            path = name
+        }
+        
+        CellsAPI.deleteFileWithRequestBuilder(path: path).execute { (response, error) -> Void in
+            guard error == nil else {
+                XCTFail("error delete file \(path)")
+                return
+            }
+            if response != nil {
+                completion()
+            } else {
+                XCTFail("error delete file \(name)")
+            }
+        }
+        
+    }
+    
+    internal func GetErrorDataInfo(error: ErrorResponse) -> String?
+    {
+        if case let ErrorResponse.error(_, data, _) = error {
+            let errorinfo = String(data: data!, encoding: String.Encoding.utf8)
+            return errorinfo
+        }
+        return nil
+    }
+    
 }
