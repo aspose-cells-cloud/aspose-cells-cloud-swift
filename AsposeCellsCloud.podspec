@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AsposeCellsCloud"
-  s.version      = "20.4"
+  s.version      = "20.4.1"
   s.summary      = "Aspose.Cells Cloud SDK for Swift."
   s.swift_version = "4.1"
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "This repository contains Aspose.Cells Cloud SDK for swift source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your swift applications quickly and easily."
 
-  s.homepage     = "https://products.aspose.cloud/cells"
+  s.homepage     = "https://products.aspose.cloud/cells/swift"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
