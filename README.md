@@ -47,3 +47,21 @@ DIF, PDF, XPS, TIFF, SVG, MD (Markdown)
 SXC, FODS
 
 [Product Page](https://products.aspose.cloud/cells/swift) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Examples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-swift) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+
+## Getting Started
+
+Please, add the following cocoapods to your project.
+
+You want to add pod `'AsposeCellsCloud', '~> 20.4'` similar to the following to your Podfile:
+
+```console
+target 'MyApp' do
+  pod 'AsposeCellsCloud', '~> 20.4'
+end
+```
+
+Then run a pod install inside your terminal, or from CocoaPods.app.
+
+Alternatively to give it a test run, run the command:
+
+`pod try AsposeCellsCloud`
