@@ -45,10 +45,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let rowCount:Int32? = 3
 		let columnCount:Int32? = 2
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storage: storage)
+			CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -63,7 +63,7 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 			}
             
             namerange = "A1:B3"
-            CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storage: storage)
+            CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {
@@ -78,7 +78,7 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
             }
             
             namerange = "Name_2"
-            CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storage: storage)
+            CellsAPI.cellsRangesGetWorksheetCellsRangeValue(name: name, sheetName: sheetName, namerange: namerange, firstRow: firstRow, firstColumn: firstColumn, rowCount: rowCount, columnCount: columnCount, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {
@@ -104,10 +104,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let value:Double = 10.01
 		let range:AsposeCellsCloud.Range? = AsposeCellsCloud.Range(columnCount: 1, rowHeight: nil, name: nil, firstColumn: 1, columnWidth: 10.1, refersTo: nil, rowCount: 10, firstRow: 1, worksheet: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeColumnWidth(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeColumnWidth(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -131,10 +131,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let range:AsposeCellsCloud.Range? = AsposeCellsCloud.Range(columnCount: 1, rowHeight: nil, name: nil, firstColumn: 1, columnWidth: 10.1, refersTo: nil, rowCount: 10, firstRow: 1, worksheet: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeMerge(name: name, sheetName: sheetName, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeMerge(name: name, sheetName: sheetName, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -160,10 +160,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let destColumn:Int32 = 1
 		let range:AsposeCellsCloud.Range? = AsposeCellsCloud.Range(columnCount: 1, rowHeight: nil, name: nil, firstColumn: 1, columnWidth: 10.1, refersTo: nil, rowCount: 10, firstRow: 1, worksheet: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeMoveTo(name: name, sheetName: sheetName, destRow: destRow, destColumn: destColumn, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeMoveTo(name: name, sheetName: sheetName, destRow: destRow, destColumn: destColumn, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -191,10 +191,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let rangeOperate:RangeSetOutlineBorderRequest? = RangeSetOutlineBorderRequest(borderColor: col, range: range, borderStyle: "Dotted", borderEdge: "LeftBorder")
         
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeOutlineBorder(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeOutlineBorder(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -219,10 +219,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let value:Double = 10.99
 		let range:AsposeCellsCloud.Range? = AsposeCellsCloud.Range(columnCount: 1, rowHeight: nil, name: nil, firstColumn: 1, columnWidth: 10.1, refersTo: nil, rowCount: 10, firstRow: 1, worksheet: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeRowHeight(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeRowHeight(name: name, sheetName: sheetName, value: value, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -251,10 +251,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let rangeOperate:RangeSetStyleRequest? = RangeSetStyleRequest(range: range, style: style)
 		
         let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeStyle(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeStyle(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -278,10 +278,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let range:AsposeCellsCloud.Range? = AsposeCellsCloud.Range(columnCount: 1, rowHeight: nil, name: nil, firstColumn: 1, columnWidth: 10.1, refersTo: nil, rowCount: 10, firstRow: 1, worksheet: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeUnmerge(name: name, sheetName: sheetName, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeUnmerge(name: name, sheetName: sheetName, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -308,10 +308,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let isConverted:Bool? = true
 		let setStyle:Bool? = true
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRangeValue(name: name, sheetName: sheetName, value: value, range: range, isConverted: isConverted, setStyle: setStyle, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRangeValue(name: name, sheetName: sheetName, value: value, range: range, isConverted: isConverted, setStyle: setStyle, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -340,10 +340,10 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		let rangeOperate:RangeCopyRequest? = RangeCopyRequest(source: range, operate: "copydata", target: range2, pasteOptions: pasteOptions)
         
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsRangesPostWorksheetCellsRanges(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storage: storage)
+			CellsAPI.cellsRangesPostWorksheetCellsRanges(name: name, sheetName: sheetName, rangeOperate: rangeOperate, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

@@ -42,10 +42,10 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		let autoshapeNumber:Int32 = 4
 		let format:String? = "PNG"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -77,10 +77,10 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
         let autoshapeNumber:Int32 = 4
         let format:String? = nil
         let folder:String = TEMPFOLDER
-        let storage:String? = nil
+        let storageName:String? = nil
         
         uploadFile(name: name) {
-            CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storage: storage)
+            CellsAPI.cellsAutoshapesGetWorksheetAutoshape(name: name, sheetName: sheetName, autoshapeNumber: autoshapeNumber, format: format, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {
@@ -110,10 +110,10 @@ class CellsAutoshapesAPITests: AsposeCellsCloudTests {
 		let name:String = MYDOC
 		let sheetName:String = SHEET2
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsAutoshapesGetWorksheetAutoshapes(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsAutoshapesGetWorksheetAutoshapes(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

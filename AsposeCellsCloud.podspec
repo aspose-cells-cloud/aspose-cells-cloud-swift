@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AsposeCellsCloud"
-  s.version      = "20.4.1"
+  s.version      = "20.8"
   s.summary      = "Aspose.Cells Cloud SDK for Swift."
   s.swift_version = "4.1"
 

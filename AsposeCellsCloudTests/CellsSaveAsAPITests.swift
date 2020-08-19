@@ -43,10 +43,10 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
 		let isAutoFitRows:Bool? = true
 		let isAutoFitColumns:Bool? = true
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage)
+			CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -74,10 +74,10 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
         let isAutoFitRows:Bool? = true
         let isAutoFitColumns:Bool? = true
         let folder:String = TEMPFOLDER
-        let storage:String? = nil
+        let storageName:String? = nil
         
         uploadFile(name: name) {
-            CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage)
+            CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {
@@ -103,10 +103,10 @@ class CellsSaveAsAPITests: AsposeCellsCloudTests {
         let isAutoFitRows:Bool? = true
         let isAutoFitColumns:Bool? = nil
         let folder:String = TEMPFOLDER
-        let storage:String? = nil
+        let storageName:String? = nil
         
         uploadFile(name: name) {
-            CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storage: storage)
+            CellsAPI.cellsSaveAsPostDocumentSaveAs(name: name, saveOptions: saveOptions, newfilename: newfilename, isAutoFitRows: isAutoFitRows, isAutoFitColumns: isAutoFitColumns, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {

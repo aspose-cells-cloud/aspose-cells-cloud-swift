@@ -41,10 +41,10 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET6
 		let oleObjectIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsOleObjectsDeleteWorksheetOleObject(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, folder: folder, storage: storage)
+			CellsAPI.cellsOleObjectsDeleteWorksheetOleObject(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -67,10 +67,10 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET6
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsOleObjectsDeleteWorksheetOleObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsOleObjectsDeleteWorksheetOleObjects(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -95,10 +95,10 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let objectNumber:Int32 = 0
 		let format:String? = nil
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsOleObjectsGetWorksheetOleObject(name: name, sheetName: sheetName, objectNumber: objectNumber, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsOleObjectsGetWorksheetOleObject(name: name, sheetName: sheetName, objectNumber: objectNumber, format: format, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -128,10 +128,10 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET6
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsOleObjectsGetWorksheetOleObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsOleObjectsGetWorksheetOleObjects(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -156,10 +156,10 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let oleObjectIndex:Int32 = 0
 		let ole:OleObject? = OleObject(alternativeText: nil, bottom: nil, top: nil, width: 78, htmlText: nil, textVerticalAlignment: nil, autoShapeType: nil, isPrintable: nil, upperLeftColumn: nil, isLockAspectRatio: nil, isGroup: nil, rotationAngle: nil, zOrderPosition: nil, textHorizontalOverflow: nil, msoDrawingType: nil, textOrientationType: nil, placement: nil, name: nil, isWordArt: nil, linkedCell: nil, upperLeftRow: nil, isLocked: nil, lowerRightRow: nil, isTextWrapped: nil, Y: nil, X: nil, isHidden: nil, _left: 10, _right: 10, text: nil, lowerRightColumn: nil, height: 90, textHorizontalAlignment: nil, textVerticalOverflow: nil, link: nil, displayAsIcon: nil, fileFormatType: nil, sourceFullName: nil, isAutoSize: nil, imageSourceFullName: nil, progID: nil, isLink: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsOleObjectsPostUpdateWorksheetOleObject(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, ole: ole, folder: folder, storage: storage)
+			CellsAPI.cellsOleObjectsPostUpdateWorksheetOleObject(name: name, sheetName: sheetName, oleObjectIndex: oleObjectIndex, ole: ole, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -186,7 +186,7 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
 		let height:Int32? = 100
 		let width:Int32? = 80
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
         let oleFile:String? = "\(folder)/OLEDoc.docx"
         let imageFile:String? = "\(folder)/word.jpg"
         let oleObject:OleObject? = nil/*OleObject(alternativeText: nil, bottom: nil, top: nil, width: 80, htmlText: nil, textVerticalAlignment: nil, autoShapeType: nil, isPrintable: nil, upperLeftColumn: 1, isLockAspectRatio: nil, isGroup: nil, rotationAngle: nil, zOrderPosition: nil, textHorizontalOverflow: nil, msoDrawingType: nil, textOrientationType: nil, placement: nil, name: nil, isWordArt: nil, linkedCell: nil, upperLeftRow: 1, isLocked: nil, lowerRightRow: nil, isTextWrapped: nil, Y: nil, X: nil, isHidden: nil, _left: nil, _right: nil, text: nil, lowerRightColumn: nil, height: 100, textHorizontalAlignment: nil, textVerticalOverflow: nil, link: nil, displayAsIcon: nil, fileFormatType: nil, sourceFullName: oleFile, isAutoSize: nil, imageSourceFullName: imageFile, progID: nil, isLink: nil)*/
@@ -194,7 +194,7 @@ class CellsOleObjectsAPITests: AsposeCellsCloudTests {
         uploadFile(name: name) {
             self.uploadFile(name: "OLEDoc.docx") {
                 self.uploadFile(name: "word.jpg") {
-                    CellsAPI.cellsOleObjectsPutWorksheetOleObject(name: name, sheetName: sheetName, oleObject: oleObject, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, height: height, width: width, oleFile: oleFile, imageFile: imageFile, folder: folder, storage: storage)
+                    CellsAPI.cellsOleObjectsPutWorksheetOleObject(name: name, sheetName: sheetName, oleObject: oleObject, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, height: height, width: width, oleFile: oleFile, imageFile: imageFile, folder: folder, storageName: storageName)
                     {
                         (response, error) in
                         guard error == nil else {

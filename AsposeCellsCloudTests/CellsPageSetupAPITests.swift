@@ -40,10 +40,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupDeleteHeaderFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupDeleteHeaderFooter(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -66,10 +66,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupGetFooter(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetFooter(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -92,10 +92,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupGetHeader(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetHeader(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -118,10 +118,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupGetPageSetup(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupGetPageSetup(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -147,10 +147,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let script:String = "test"
 		let isFirstPage:Bool = true
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupPostFooter(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostFooter(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -176,10 +176,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let script:String = "trst"
 		let isFirstPage:Bool = false
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupPostHeader(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostHeader(name: name, sheetName: sheetName, section: section, script: script, isFirstPage: isFirstPage, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -203,10 +203,10 @@ class CellsPageSetupAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let pageSetup:PageSetup? = PageSetup(link: nil, isHFDiffFirst: nil, fitToPagesWide: nil, printQuality: nil, printDraft: nil, firstPageNumber: nil, paperSize: nil, printComments: nil, printErrors: nil, centerVertically: nil, isPercentScale: nil, blackAndWhite: true, printTitleColumns: nil, isHFAlignMargins: nil, printArea: nil, footerMargin: nil, leftMargin: nil, centerHorizontally: nil, headerMargin: nil, topMargin: nil, footer: nil, fitToPagesTall: nil, isHFScaleWithDoc: nil, printHeadings: nil, zoom: nil, printTitleRows: nil, order: nil, printCopies: nil, orientation: nil, rightMargin: nil, printGridlines: nil, isAutoFirstPageNumber: nil, header: nil, isHFDiffOddEven: nil, bottomMargin: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageSetupPostPageSetup(name: name, sheetName: sheetName, pageSetup: pageSetup, folder: folder, storage: storage)
+			CellsAPI.cellsPageSetupPostPageSetup(name: name, sheetName: sheetName, pageSetup: pageSetup, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

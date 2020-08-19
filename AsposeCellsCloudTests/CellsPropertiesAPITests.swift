@@ -39,10 +39,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPropertiesDeleteDocumentProperties")
 		let name:String = BOOK1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPropertiesDeleteDocumentProperties(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesDeleteDocumentProperties(name: name, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -65,10 +65,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let propertyName:String = "Author"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPropertiesDeleteDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesDeleteDocumentProperty(name: name, propertyName: propertyName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -90,10 +90,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPropertiesGetDocumentProperties")
 		let name:String = BOOK1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPropertiesGetDocumentProperties(name: name, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesGetDocumentProperties(name: name, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -116,10 +116,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let propertyName:String = "Author"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPropertiesGetDocumentProperty(name: name, propertyName: propertyName, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesGetDocumentProperty(name: name, propertyName: propertyName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -143,10 +143,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let propertyName:String = "Name"
 		let property:CellsDocumentProperty? = CellsDocumentProperty(link: nil, builtIn: nil, name: "Author", value: "Val")
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPropertiesPutDocumentProperty(name: name, propertyName: propertyName, property: property, folder: folder, storage: storage)
+			CellsAPI.cellsPropertiesPutDocumentProperty(name: name, propertyName: propertyName, property: property, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

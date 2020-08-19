@@ -11,20 +11,14 @@ import Foundation
 
 public struct SaveResult: Codable {
 
-    public var sourceDocument: Link?
-    public var destDocument: Link?
-    public var additionalItems: [Link]?
+    public var documents: [CellsCloudFileInfo]?
 
 public enum CodingKeys: String, CodingKey { 
-        case sourceDocument = "SourceDocument"
-        case destDocument = "DestDocument"
-        case additionalItems = "AdditionalItems"
+        case documents = "Documents"
     }
 
-    public init(sourceDocument: Link?, destDocument: Link?, additionalItems: [Link]?) {
-        self.sourceDocument = sourceDocument
-        self.destDocument = destDocument
-        self.additionalItems = additionalItems
+    public init(documents: [CellsCloudFileInfo]?) {
+        self.documents = documents
     }
 
 

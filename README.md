@@ -18,17 +18,20 @@ This Cloud SDK enhances your Swift cloud-based apps to [process & manipulate Mic
 - Cloud SDK to Read & Process Excel Worksheets.
 - Leverage the Power of Pivot Tables & Ranges.
 
-## New Features in Version 20.4
+## New Features in Version 20.8
 
-- Supports to add workbook background.
-- Supports to delete workbook background.
+- Support to add text water marker.
+- Aspose.Cells Cloud API calls are not working with explicit storage name but only default storage.
+- Get output file size without downloading during conversion.
 
-## Enhancements in Version 20.4
+## Enhancements in Version 20.8
 
-- Support for splitting workbook.
-- Support for creating workbook.
+- Enhancement for workbook convert images in get workbook API.
+- Enhancement for Cells object operating in Task API.
+- Enhancement for CellsApi constructor.
+- Enhancement for CellsShapesPutWorksheetShape API.
 
-For the detailed notes, please visit [Aspose.Cells Cloud 20.4 Release Notes](https://docs.aspose.cloud/display/cellscloud/Aspose.Cells+Cloud+20.4+Release+Notes).
+For the detailed notes, please visit [Aspose.Cells Cloud 20.8 Release Notes](https://github.com/aspose-cells-cloud/aspose-cells-cloud-swift/releases/tag/20.8).
 
 ## Read & Write Spreadsheet Formats
 
@@ -52,11 +55,11 @@ SXC, FODS
 
 Please, add the following cocoapods to your project.
 
-You want to add pod `'AsposeCellsCloud', '~> 20.4'` similar to the following to your Podfile:
+You want to add pod `'AsposeCellsCloud', '~> 20.8'` similar to the following to your Podfile:
 
 ```console
 target 'MyApp' do
-  pod 'AsposeCellsCloud', '~> 20.4'
+  pod 'AsposeCellsCloud', '~> 20.8'
 end
 ```
 

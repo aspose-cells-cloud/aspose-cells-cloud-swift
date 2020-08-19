@@ -41,10 +41,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsDeleteWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -68,10 +68,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsDeleteWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -94,10 +94,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let name:String = MYDOC
 		let sheetName:String = SHEET3
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsDeleteWorksheetClearCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetClearCharts(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -121,10 +121,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsDeleteWorksheetDeleteChart(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsDeleteWorksheetDeleteChart(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -149,10 +149,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let chartNumber:Int32 = 0
 		let format:String? = "png"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsGetWorksheetChart(name: name, sheetName: sheetName, chartNumber: chartNumber, format: format, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChart(name: name, sheetName: sheetName, chartNumber: chartNumber, format: format, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -182,10 +182,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsGetWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -209,10 +209,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET4
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsGetWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -235,10 +235,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let name:String = MYDOC
 		let sheetName:String = SHEET3
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsGetWorksheetCharts(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsChartsGetWorksheetCharts(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -263,10 +263,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let chartIndex:Int32 = 0
 		let chart:Chart? = Chart(link: nil, firstSliceAngle: nil, floor: nil, plotEmptyCellsType: nil, autoScaling: true, style: nil, seriesAxis: nil, valueAxis: nil, showDataTable: nil, is3D: nil, chartArea: nil, elevation: nil, sideWall: nil, type: nil, title: nil, walls: nil, backWall: nil, chartDataTable: nil, heightPercent: nil, gapWidth: nil, legend: nil, chartObject: nil, isRectangularCornered: nil, secondCategoryAxis: nil, secondValueAxis: nil, placement: nil, name: nil, sizeWithWindow: nil, rightAngleAxes: nil, plotVisibleCells: nil, showLegend: nil, pivotSource: nil, depthPercent: nil, printSize: nil, gapDepth: nil, shapes: nil, wallsAndGridlines2D: nil, nSeries: nil, rotationAngle: nil, plotArea: nil, categoryAxis: nil, perspective: nil, hidePivotFieldButtons: nil, pageSetup: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPostWorksheetChart(name: name, sheetName: sheetName, chartIndex: chartIndex, chart: chart, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChart(name: name, sheetName: sheetName, chartIndex: chartIndex, chart: chart, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -291,10 +291,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let chartIndex:Int32 = 0
 		let legend:Legend? = Legend(isInnerMode: nil, shapeProperties: nil, autoScaleFont: nil, area: nil, height: nil, width: 10, backgroundMode: nil, isAutomaticSize: nil, Y: nil, X: nil, shadow: nil, font: nil, border: nil, link: nil, legendEntries: nil, position: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPostWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, legend: legend, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, legend: legend, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -319,10 +319,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let chartIndex:Int32 = 0
 		let title:Title? = Title(isInnerMode: nil, shapeProperties: nil, autoScaleFont: nil, area: nil, height: nil, width: nil, backgroundMode: nil, isAutomaticSize: nil, Y: nil, X: nil, shadow: nil, font: nil, border: nil, link: nil, linkedSource: nil, text: "Post title", isVisible: nil, textDirection: nil, rotationAngle: nil, textVerticalAlignment: nil, textHorizontalAlignment: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPostWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPostWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -355,10 +355,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let isAutoGetSerialName:Bool? = nil
 		let title:String? = nil
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -382,10 +382,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPutWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetChartLegend(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -410,10 +410,10 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let chartIndex:Int32 = 0
 		let title:Title? = Title(isInnerMode: nil, shapeProperties: nil, autoScaleFont: nil, area: nil, height: nil, width: nil, backgroundMode: nil, isAutomaticSize: nil, Y: nil, X: nil, shadow: nil, font: nil, border: nil, link: nil, linkedSource: nil, text: "New title", isVisible: nil, textDirection: nil, rotationAngle: nil, textVerticalAlignment: nil, textHorizontalAlignment: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPutWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storage: storage)
+			CellsAPI.cellsChartsPutWorksheetChartTitle(name: name, sheetName: sheetName, chartIndex: chartIndex, title: title, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

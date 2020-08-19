@@ -41,10 +41,10 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let validationIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorksheetValidationsDeleteWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetValidationsDeleteWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -67,10 +67,10 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
         let name:String = BOOK1
         let sheetName:String = SHEET1
         let folder:String? = TEMPFOLDER
-        let storage:String? = nil
+        let storageName:String? = nil
         
         uploadFile(name: name) {
-            CellsAPI.cellsWorksheetValidationsDeleteWorksheetValidations(name: name, sheetName: sheetName, folder: folder, storage: storage)
+            CellsAPI.cellsWorksheetValidationsDeleteWorksheetValidations(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
             {
                 (response, error) in
                 guard error == nil else {
@@ -94,10 +94,10 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let validationIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorksheetValidationsGetWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetValidationsGetWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -120,10 +120,10 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorksheetValidationsGetWorksheetValidations(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetValidationsGetWorksheetValidations(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -152,11 +152,11 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		let validation:Validation? = Validation(link: nil, formula2: nil, formula1: "=(OR(A1=\"Yes\",A1=\"No\"))", showError: nil, errorMessage: nil, inCellDropDown: nil, showInput: nil, alertStyle: nil, inputTitle: nil, ignoreBlank: true, value2: nil, value1: nil, _operator: nil, errorTitle: nil, type: "Custom", inputMessage: nil, areaList: areaList)
         
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
         uploadFile(name: BOOK1) {
 		self.uploadFile(name: name) {
-			CellsAPI.cellsWorksheetValidationsPostWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, validation: validation, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetValidationsPostWorksheetValidation(name: name, sheetName: sheetName, validationIndex: validationIndex, validation: validation, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -181,10 +181,10 @@ class CellsWorksheetValidationsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let range:String? = RANGE
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsWorksheetValidationsPutWorksheetValidation(name: name, sheetName: sheetName, range: range, folder: folder, storage: storage)
+			CellsAPI.cellsWorksheetValidationsPutWorksheetValidation(name: name, sheetName: sheetName, range: range, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

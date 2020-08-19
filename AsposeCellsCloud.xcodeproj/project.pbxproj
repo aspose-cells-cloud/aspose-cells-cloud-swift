@@ -251,6 +251,8 @@
 		6B4056DC22FC151600048C14 /* AsposeCellsCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DB22FC151500048C14 /* AsposeCellsCloudTests.swift */; };
 		6B4056DE22FC152B00048C14 /* OAuthAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */; };
 		6B4056E022FC169900048C14 /* CellsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DF22FC169900048C14 /* CellsAPITests.swift */; };
+		6B45767C24EA6F8B00048E17 /* CellsCloudFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45767A24EA6F8B00048E17 /* CellsCloudFileInfo.swift */; };
+		6B45767D24EA6F8B00048E17 /* TextWaterMarkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45767B24EA6F8B00048E17 /* TextWaterMarkerRequest.swift */; };
 		6B495634231E56E700E78883 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B495629231E56E700E78883 /* FilesList.swift */; };
 		6B495635231E56E700E78883 /* CellsCloudResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49562A231E56E700E78883 /* CellsCloudResponse.swift */; };
 		6B495636231E56E700E78883 /* FileVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B49562B231E56E700E78883 /* FileVersions.swift */; };
@@ -553,6 +555,8 @@
 		6B4056DB22FC151500048C14 /* AsposeCellsCloudTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsposeCellsCloudTests.swift; sourceTree = "<group>"; };
 		6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPITests.swift; sourceTree = "<group>"; };
 		6B4056DF22FC169900048C14 /* CellsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAPITests.swift; sourceTree = "<group>"; };
+		6B45767A24EA6F8B00048E17 /* CellsCloudFileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsCloudFileInfo.swift; sourceTree = "<group>"; };
+		6B45767B24EA6F8B00048E17 /* TextWaterMarkerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextWaterMarkerRequest.swift; sourceTree = "<group>"; };
 		6B495629231E56E700E78883 /* FilesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
 		6B49562A231E56E700E78883 /* CellsCloudResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsCloudResponse.swift; sourceTree = "<group>"; };
 		6B49562B231E56E700E78883 /* FileVersions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileVersions.swift; sourceTree = "<group>"; };
@@ -689,6 +693,7 @@
 				6B133C9F22C201B500B51B0D /* CellArea.swift */,
 				6B133BDA22C201B400B51B0D /* CellResponse.swift */,
 				6B133BC822C201B400B51B0D /* Cells.swift */,
+				6B45767A24EA6F8B00048E17 /* CellsCloudFileInfo.swift */,
 				6B49562A231E56E700E78883 /* CellsCloudResponse.swift */,
 				6B133BE722C201B400B51B0D /* CellsColor.swift */,
 				6B133C2A22C201B500B51B0D /* CellsDocumentProperties.swift */,
@@ -878,6 +883,7 @@
 				6B133C0D22C201B500B51B0D /* TextItemsResponse.swift */,
 				6B133C3522C201B500B51B0D /* TextOptions.swift */,
 				6B133C6F22C201B500B51B0D /* TextureFill.swift */,
+				6B45767B24EA6F8B00048E17 /* TextWaterMarkerRequest.swift */,
 				6B133C7122C201B500B51B0D /* ThemeColor.swift */,
 				6B133C3022C201B500B51B0D /* TilePicOption.swift */,
 				6B133C3F22C201B500B51B0D /* Title.swift */,
@@ -1277,6 +1283,7 @@
 				6B133CE622C201B500B51B0D /* GradientFillStop.swift in Sources */,
 				6B133CB022C201B500B51B0D /* AlamofireImplementations.swift in Sources */,
 				6B133D7322C201B500B51B0D /* StyleResponse.swift in Sources */,
+				6B45767C24EA6F8B00048E17 /* CellsCloudFileInfo.swift in Sources */,
 				6B133CE922C201B500B51B0D /* SingleValueResponse.swift in Sources */,
 				6B133D3F22C201B500B51B0D /* Title.swift in Sources */,
 				6B133D2122C201B500B51B0D /* PasswordRequest.swift in Sources */,
@@ -1404,6 +1411,7 @@
 				6B133CFD22C201B500B51B0D /* MergedCellsResponse.swift in Sources */,
 				6B133D5D22C201B500B51B0D /* HorizontalPageBreakResponse.swift in Sources */,
 				6B133D8D22C201B500B51B0D /* Shapes.swift in Sources */,
+				6B45767D24EA6F8B00048E17 /* TextWaterMarkerRequest.swift in Sources */,
 				6B133D6B22C201B500B51B0D /* ImportCSVDataOption.swift in Sources */,
 				6B133CC822C201B500B51B0D /* Cells.swift in Sources */,
 				6B133D8422C201B500B51B0D /* Comments.swift in Sources */,

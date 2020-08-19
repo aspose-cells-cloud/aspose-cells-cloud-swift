@@ -41,10 +41,10 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartAreaGetChartArea(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartArea(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -68,10 +68,10 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartAreaGetChartAreaBorder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartAreaBorder(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -95,10 +95,10 @@ class CellsChartAreaAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET3
 		let chartIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsChartAreaGetChartAreaFillFormat(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storage: storage)
+			CellsAPI.cellsChartAreaGetChartAreaFillFormat(name: name, sheetName: sheetName, chartIndex: chartIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

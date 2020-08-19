@@ -41,10 +41,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET7
 		let listObjectIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsDeleteWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsDeleteWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -67,10 +67,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET7
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsDeleteWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsDeleteWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -94,10 +94,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET7
 		let listobjectindex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsGetWorksheetListObject(name: name, sheetName: sheetName, listobjectindex: listobjectindex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsGetWorksheetListObject(name: name, sheetName: sheetName, listobjectindex: listobjectindex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -120,10 +120,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET7
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsGetWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsGetWorksheetListObjects(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -148,10 +148,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let listObjectIndex:Int32 = 0
 		let listObject:ListObject? = ListObject(link: nil, showTotals: nil, tableStyleType: nil, displayName: nil, showHeaderRow: true, startColumn: nil, showTableStyleLastColumn: nil, showTableStyleColumnStripes: nil, showTableStyleFirstColumn: nil, startRow: nil, autoFilter: nil, showTableStyleRowStripes: nil, endColumn: nil, tableStyleName: nil, listColumns: nil, endRow: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsPostWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, listObject: listObject, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObject(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, listObject: listObject, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -175,10 +175,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET7
 		let listObjectIndex:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsPostWorksheetListObjectConvertToRange(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectConvertToRange(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -203,10 +203,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let listObjectIndex:Int32 = 0
 		let dataSorter:DataSorter? = DataSorter(caseSensitive: true, keyList: nil, hasHeaders: nil, sortLeftToRight: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsPostWorksheetListObjectSortTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, dataSorter: dataSorter, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectSortTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, dataSorter: dataSorter, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -237,10 +237,10 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let request:CreatePivotTableRequest? = CreatePivotTableRequest(pivotFieldColumns: ia1, name: "testp", useSameSource: true, pivotFieldData: ia2, pivotFieldRows: ia3, destCellName: "C1", sourceData: "=Sheet2!A1:E8")
         
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, destsheetName: destsheetName, request: request, folder: folder, storage: storage)
+			CellsAPI.cellsListObjectsPostWorksheetListObjectSummarizeWithPivotTable(name: name, sheetName: sheetName, listObjectIndex: listObjectIndex, destsheetName: destsheetName, request: request, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -267,11 +267,11 @@ class CellsListObjectsAPITests: AsposeCellsCloudTests {
 		let endRow:Int32 = 6
 		let endColumn:Int32 = 6
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		let hasHeaders:Bool? = nil
 		
 		uploadFile(name: name) {
-            CellsAPI.cellsListObjectsPutWorksheetListObject(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, hasHeaders: hasHeaders, listObject: nil, folder: folder, storage: storage)
+            CellsAPI.cellsListObjectsPutWorksheetListObject(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, endRow: endRow, endColumn: endColumn, hasHeaders: hasHeaders, listObject: nil, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

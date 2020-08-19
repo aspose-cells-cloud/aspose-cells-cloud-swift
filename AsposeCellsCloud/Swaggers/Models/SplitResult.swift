@@ -11,13 +11,13 @@ import Foundation
 
 public struct SplitResult: Codable {
 
-    public var documents: [SplitResultDocument]?
+    public var documents: [CellsCloudFileInfo]?
 
 public enum CodingKeys: String, CodingKey { 
         case documents = "Documents"
     }
 
-    public init(documents: [SplitResultDocument]?) {
+    public init(documents: [CellsCloudFileInfo]?) {
         self.documents = documents
     }
 

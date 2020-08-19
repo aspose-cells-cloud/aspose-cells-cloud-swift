@@ -41,10 +41,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -71,10 +71,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let totalRows:Int32 = 4
 		let totalColumns:Int32 = 6
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattingArea(name: name, sheetName: sheetName, startRow: startRow, startColumn: startColumn, totalRows: totalRows, totalColumns: totalColumns, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -97,10 +97,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsDeleteWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -124,10 +124,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormatting(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -150,10 +150,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsGetWorksheetConditionalFormattings(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -178,10 +178,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let cellArea:String = CELLAREA
 		let formatcondition:FormatCondition? = FormatCondition(link: nil, aboveAverage: nil, formula2: "v2", style: nil, formula1: "v1", colorScale: nil, dataBar: nil, text: nil, stopIfTrue: nil, priority: nil, top10: nil, _operator: "Between", iconSet: nil, type: "CellValue", timePeriod: nil)
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-            CellsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatCondition: formatcondition, folder: folder, storage: storage)
+            CellsAPI.cellsConditionalFormattingsPutWorksheetConditionalFormatting(name: name, sheetName: sheetName, cellArea: cellArea, formatCondition: formatcondition, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -210,10 +210,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let formula1:String = "v1"
 		let formula2:String = "v2"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatCondition(name: name, sheetName: sheetName, index: index, cellArea: cellArea, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatCondition(name: name, sheetName: sheetName, index: index, cellArea: cellArea, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -238,10 +238,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let index:Int32 = 0
 		let cellArea:String = CELLAREA
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name: name, sheetName: sheetName, index: index, cellArea: cellArea, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionArea(name: name, sheetName: sheetName, index: index, cellArea: cellArea, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -269,10 +269,10 @@ class CellsConditionalFormattingsAPITests: AsposeCellsCloudTests {
 		let formula1:String = "v1"
 		let formula2:String = "v2"
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name: name, sheetName: sheetName, index: index, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storage: storage)
+			CellsAPI.cellsConditionalFormattingsPutWorksheetFormatConditionCondition(name: name, sheetName: sheetName, index: index, type: type, operatorType: operatorType, formula1: formula1, formula2: formula2, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {

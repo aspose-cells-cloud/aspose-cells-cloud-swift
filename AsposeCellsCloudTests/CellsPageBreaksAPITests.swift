@@ -41,10 +41,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksDeleteHorizontalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksDeleteHorizontalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -66,15 +66,17 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPageBreaksDeleteHorizontalPageBreaks")
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
-		let row:Int32? = 1
+		let row:Int32? = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksDeleteHorizontalPageBreaks(name: name, sheetName: sheetName, row: row, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksDeleteHorizontalPageBreaks(name: name, sheetName: sheetName, row: row, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsPageBreaksDeleteHorizontalPageBreaks")
 					return
 				}
@@ -95,10 +97,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksDeleteVerticalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksDeleteVerticalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -120,15 +122,17 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPageBreaksDeleteVerticalPageBreaks")
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
-		let column:Int32? = 1
+		let column:Int32? = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksDeleteVerticalPageBreaks(name: name, sheetName: sheetName, column: column, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksDeleteVerticalPageBreaks(name: name, sheetName: sheetName, column: column, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsPageBreaksDeleteVerticalPageBreaks")
 					return
 				}
@@ -149,10 +153,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksGetHorizontalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksGetHorizontalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -175,10 +179,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksGetHorizontalPageBreaks(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksGetHorizontalPageBreaks(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -202,10 +206,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let sheetName:String = SHEET1
 		let index:Int32 = 0
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksGetVerticalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksGetVerticalPageBreak(name: name, sheetName: sheetName, index: index, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -228,10 +232,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksGetVerticalPageBreaks(name: name, sheetName: sheetName, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksGetVerticalPageBreaks(name: name, sheetName: sheetName, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -259,10 +263,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let startColumn:Int32 = 1
 		let endColumn:Int32? = 1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksPutHorizontalPageBreak(name: name, sheetName: sheetName, cellname: cellname, row: row, column: column, startColumn: startColumn, endColumn: endColumn, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksPutHorizontalPageBreak(name: name, sheetName: sheetName, cellname: cellname, row: row, column: column, startColumn: startColumn, endColumn: endColumn, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
@@ -290,10 +294,10 @@ class CellsPageBreaksAPITests: AsposeCellsCloudTests {
 		let startRow:Int32 = 1
 		let endRow:Int32? = 1
 		let folder:String = TEMPFOLDER
-		let storage:String? = nil
+		let storageName:String? = nil
 		
 		uploadFile(name: name) {
-			CellsAPI.cellsPageBreaksPutVerticalPageBreak(name: name, sheetName: sheetName, cellname: cellname, column: column, row: row, startRow: startRow, endRow: endRow, folder: folder, storage: storage)
+			CellsAPI.cellsPageBreaksPutVerticalPageBreak(name: name, sheetName: sheetName, cellname: cellname, column: column, row: row, startRow: startRow, endRow: endRow, folder: folder, storageName: storageName)
 			{
 				(response, error) in
 				guard error == nil else {
