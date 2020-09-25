@@ -356,9 +356,13 @@ class CellsChartsAPITests: AsposeCellsCloudTests {
 		let title:String? = nil
 		let folder:String = TEMPFOLDER
 		let storageName:String? = nil
-		
+        let dataLabels:Bool? = nil
+        let dataLabelsPosition:String? = nil
+        let pivotTableSheet:String? = nil
+        let pivotTableName:String? = nil
+        
 		uploadFile(name: name) {
-			CellsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storageName: storageName)
+			CellsAPI.cellsChartsPutWorksheetAddChart(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storageName: storageName, dataLabels: dataLabels, dataLabelsPosition: dataLabelsPosition, pivotTableSheet: pivotTableSheet, pivotTableName: pivotTableName)
 			{
 				(response, error) in
 				guard error == nil else {

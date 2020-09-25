@@ -31,10 +31,8 @@ class AsposeCellsCloudTests: XCTestCase {
     internal let CELLAREA = "A1:C10"
     internal let RANGE = "A1:C10"
     //This is only for test, please set your licence here
-    //internal let _appSid = "cells.cloud"
-    //internal let _appKey = "cells.cloud"
-    internal let _appSid = "8ef344fd-89ac-4684-bc11-b96a9b1f4cd9"
-    internal let _appKey = "d346c2fd569538e14241e096ae30a988"
+    internal let _appSid = "11111X11-111X-1111-11X1-111111111XX1"
+    internal let _appKey = "111x11111111xx1111xxxx11xx1x1111"
     
     override func setUp() {
         super.setUp()

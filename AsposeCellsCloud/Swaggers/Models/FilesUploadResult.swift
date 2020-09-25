@@ -15,14 +15,14 @@ public struct FilesUploadResult: Codable {
     /** List of uploaded file names */
     public var uploaded: [String]?
     /** List of errors. */
-    public var errors: [ErrorInfo]?
+    public var errors: [CellsError]?
 
 public enum CodingKeys: String, CodingKey { 
         case uploaded = "Uploaded"
         case errors = "Errors"
     }
 
-    public init(uploaded: [String]?, errors: [ErrorInfo]?) {
+    public init(uploaded: [String]?, errors: [CellsError]?) {
         self.uploaded = uploaded
         self.errors = errors
     }

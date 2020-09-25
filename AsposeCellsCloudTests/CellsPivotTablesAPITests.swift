@@ -483,6 +483,67 @@ class CellsPivotTablesAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsPivotTablesPostPivotTableUpdatePivotField()
+    {
+        let expectation = self.expectation(description: "testcellsPivotTablesPostPivotTableUpdatePivotField")
+        let name:String = PivTestFile
+        let sheetName:String = SHEET4
+        let pivotTableIndex:Int32 = 0
+        let pivotFieldIndex:Int32 = 0
+        let pivotFieldType:String = "Row"
+        let pivotField:PivotField = PivotField(pivotItems: nil, displayName: nil, numberFormat: nil, dragToColumn: nil, isAutoShow: nil, isRepeatItemLabels: nil, dragToRow: nil, isAutoSort: nil, insertBlankRow: nil, showSubtotalAtTop: nil, showCompact: true, function: nil, isMultipleItemSelectionAllowed: nil, dataDisplayFormat: nil, baseItemPosition: nil, isInsertPageBreaksBetweenItems: nil, showAllItems: nil, baseItem: nil, itemCount: nil, name: nil, showInOutlineForm: nil, items: nil, autoShowField: nil, isAutoSubtotals: nil, isIncludeNewItemsInFilter: nil, currentPageItem: nil, position: nil, isAscendSort: nil, isAscendShow: nil, baseField: nil, autoSortField: nil, autoShowCount: nil, number: nil, dragToPage: nil, dragToData: nil, baseIndex: nil, originalItems: nil, dragToHide: nil, isCalculatedField: nil)
+        let needReCalculate:Bool? = nil
+        let folder:String? = TEMPFOLDER
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsPivotTablesPostPivotTableUpdatePivotField(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldIndex: pivotFieldIndex, pivotFieldType: pivotFieldType, pivotField: pivotField, needReCalculate: needReCalculate, folder: folder)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsPivotTablesPostPivotTableUpdatePivotField")
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsPivotTablesPostPivotTableUpdatePivotFields()
+    {
+        let expectation = self.expectation(description: "testcellsPivotTablesPostPivotTableUpdatePivotFields")
+        let name:String = PivTestFile
+        let sheetName:String = SHEET4
+        let pivotTableIndex:Int32 = 0
+        let pivotFieldType:String = "Row"
+        let pivotField:PivotField = PivotField(pivotItems: nil, displayName: nil, numberFormat: nil, dragToColumn: nil, isAutoShow: nil, isRepeatItemLabels: nil, dragToRow: nil, isAutoSort: nil, insertBlankRow: nil, showSubtotalAtTop: nil, showCompact: true, function: nil, isMultipleItemSelectionAllowed: nil, dataDisplayFormat: nil, baseItemPosition: nil, isInsertPageBreaksBetweenItems: nil, showAllItems: nil, baseItem: nil, itemCount: nil, name: nil, showInOutlineForm: nil, items: nil, autoShowField: nil, isAutoSubtotals: nil, isIncludeNewItemsInFilter: nil, currentPageItem: nil, position: nil, isAscendSort: nil, isAscendShow: nil, baseField: nil, autoSortField: nil, autoShowCount: nil, number: nil, dragToPage: nil, dragToData: nil, baseIndex: nil, originalItems: nil, dragToHide: nil, isCalculatedField: nil)
+        let needReCalculate:Bool? = nil
+        let folder:String? = TEMPFOLDER
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsPivotTablesPostPivotTableUpdatePivotFields(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, pivotField: pivotField, needReCalculate: needReCalculate, folder: folder)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsPivotTablesPostPivotTableUpdatePivotFields")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsPivotTablesPostWorksheetPivotTableCalculate() 
 	{

@@ -1776,10 +1776,14 @@ open class CellsAPI {
      - parameter title: (query) Specifies chart title name. (optional)
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storageName: (query) storage name. (optional)
+     - parameter dataLabels: (query)  (optional, default to true)
+     - parameter dataLabelsPosition: (query)  (optional, default to Above)
+     - parameter pivotTableSheet: (query)  (optional)
+     - parameter pivotTableName: (query)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    open class func cellsChartsPutWorksheetAddChart(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: ChartsResponse?,_ error: Error?) -> Void)) {
-        cellsChartsPutWorksheetAddChartWithRequestBuilder(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+    open class func cellsChartsPutWorksheetAddChart(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storageName: String? = nil, dataLabels: Bool? = nil, dataLabelsPosition: String? = nil, pivotTableSheet: String? = nil, pivotTableName: String? = nil, completion: @escaping ((_ data: ChartsResponse?,_ error: Error?) -> Void)) {
+        cellsChartsPutWorksheetAddChartWithRequestBuilder(name: name, sheetName: sheetName, chartType: chartType, upperLeftRow: upperLeftRow, upperLeftColumn: upperLeftColumn, lowerRightRow: lowerRightRow, lowerRightColumn: lowerRightColumn, area: area, isVertical: isVertical, categoryData: categoryData, isAutoGetSerialName: isAutoGetSerialName, title: title, folder: folder, storageName: storageName, dataLabels: dataLabels, dataLabelsPosition: dataLabelsPosition, pivotTableSheet: pivotTableSheet, pivotTableName: pivotTableName).execute { (response, error) -> Void in
             completion(response?.body, error)
         }
     }
@@ -1804,10 +1808,14 @@ open class CellsAPI {
      - parameter title: (query) Specifies chart title name. (optional)
      - parameter folder: (query) The workbook folder. (optional)
      - parameter storageName: (query) storage name. (optional)
+     - parameter dataLabels: (query)  (optional, default to true)
+     - parameter dataLabelsPosition: (query)  (optional, default to Above)
+     - parameter pivotTableSheet: (query)  (optional)
+     - parameter pivotTableName: (query)  (optional)
 
      - returns: RequestBuilder<ChartsResponse> 
      */
-    open class func cellsChartsPutWorksheetAddChartWithRequestBuilder(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<ChartsResponse> {
+    open class func cellsChartsPutWorksheetAddChartWithRequestBuilder(name: String, sheetName: String, chartType: String, upperLeftRow: Int32? = nil, upperLeftColumn: Int32? = nil, lowerRightRow: Int32? = nil, lowerRightColumn: Int32? = nil, area: String? = nil, isVertical: Bool? = nil, categoryData: String? = nil, isAutoGetSerialName: Bool? = nil, title: String? = nil, folder: String? = nil, storageName: String? = nil, dataLabels: Bool? = nil, dataLabelsPosition: String? = nil, pivotTableSheet: String? = nil, pivotTableName: String? = nil) -> RequestBuilder<ChartsResponse> {
         var _path = "/cells/{name}/worksheets/{sheetName}/charts"
         let namePreEscape = "\(name)"
         let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -1831,7 +1839,11 @@ open class CellsAPI {
             "isAutoGetSerialName": isAutoGetSerialName, 
             "title": title, 
             "folder": folder, 
-            "storageName": storageName
+            "storageName": storageName, 
+            "dataLabels": dataLabels, 
+            "dataLabelsPosition": dataLabelsPosition, 
+            "pivotTableSheet": pivotTableSheet, 
+            "pivotTableName": pivotTableName
         ])
 
         let requestBuilder: RequestBuilder<ChartsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
@@ -6440,6 +6452,133 @@ open class CellsAPI {
     }
 
     /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter pivotField: (body)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableUpdatePivotField(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldIndex: Int32, pivotFieldType: String, pivotField: PivotField, needReCalculate: Bool? = nil, folder: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableUpdatePivotFieldWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldIndex: pivotFieldIndex, pivotFieldType: pivotFieldType, pivotField: pivotField, needReCalculate: needReCalculate, folder: folder).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter pivotField: (body)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableUpdatePivotFieldWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldIndex: Int32, pivotFieldType: String, pivotField: PivotField, needReCalculate: Bool? = nil, folder: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields/{pivotFieldIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let pivotFieldIndexPreEscape = "\(pivotFieldIndex)"
+        let pivotFieldIndexPostEscape = pivotFieldIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{pivotFieldIndex}", with: pivotFieldIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: pivotField)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldType": pivotFieldType, 
+            "needReCalculate": needReCalculate, 
+            "folder": folder
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter pivotField: (body)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsPivotTablesPostPivotTableUpdatePivotFields(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, pivotField: PivotField, needReCalculate: Bool? = nil, folder: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsPivotTablesPostPivotTableUpdatePivotFieldsWithRequestBuilder(name: name, sheetName: sheetName, pivotTableIndex: pivotTableIndex, pivotFieldType: pivotFieldType, pivotField: pivotField, needReCalculate: needReCalculate, folder: folder).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter pivotTableIndex: (path)  
+     - parameter pivotFieldType: (query)  
+     - parameter pivotField: (body)  
+     - parameter needReCalculate: (query)  (optional, default to false)
+     - parameter folder: (query)  (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsPivotTablesPostPivotTableUpdatePivotFieldsWithRequestBuilder(name: String, sheetName: String, pivotTableIndex: Int32, pivotFieldType: String, pivotField: PivotField, needReCalculate: Bool? = nil, folder: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/pivottables/{pivotTableIndex}/PivotFields"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let pivotTableIndexPreEscape = "\(pivotTableIndex)"
+        let pivotTableIndexPostEscape = pivotTableIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{pivotTableIndex}", with: pivotTableIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: pivotField)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "pivotFieldType": pivotFieldType, 
+            "needReCalculate": needReCalculate, 
+            "folder": folder
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
      Calculates pivottable's data to cells.
      
      - parameter name: (path) Document name. 
@@ -9766,6 +9905,337 @@ open class CellsAPI {
         let requestBuilder: RequestBuilder<ShapeResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsDeleteWorksheetSparklineGroup(name: String, sheetName: String, sparklineGroupIndex: Int32, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsDeleteWorksheetSparklineGroupWithRequestBuilder(name: name, sheetName: sheetName, sparklineGroupIndex: sparklineGroupIndex, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsSparklineGroupsDeleteWorksheetSparklineGroupWithRequestBuilder(name: String, sheetName: String, sparklineGroupIndex: Int32, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let sparklineGroupIndexPreEscape = "\(sparklineGroupIndex)"
+        let sparklineGroupIndexPostEscape = sparklineGroupIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sparklineGroupIndex}", with: sparklineGroupIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsDeleteWorksheetSparklineGroups(name: String, sheetName: String, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - DELETE /cells/{name}/worksheets/{sheetName}/sparklinegroups
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsSparklineGroupsDeleteWorksheetSparklineGroupsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsGetWorksheetSparklineGroup(name: String, sheetName: String, sparklineGroupIndex: Int32, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: SparklineGroupResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsGetWorksheetSparklineGroupWithRequestBuilder(name: name, sheetName: sheetName, sparklineGroupIndex: sparklineGroupIndex, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - GET /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<SparklineGroupResponse> 
+     */
+    open class func cellsSparklineGroupsGetWorksheetSparklineGroupWithRequestBuilder(name: String, sheetName: String, sparklineGroupIndex: Int32, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<SparklineGroupResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let sparklineGroupIndexPreEscape = "\(sparklineGroupIndex)"
+        let sparklineGroupIndexPostEscape = sparklineGroupIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sparklineGroupIndex}", with: sparklineGroupIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<SparklineGroupResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+     Get worksheet charts description.
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsGetWorksheetSparklineGroups(name: String, sheetName: String, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: SparklineGroupsResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsGetWorksheetSparklineGroupsWithRequestBuilder(name: name, sheetName: sheetName, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     Get worksheet charts description.
+     - GET /cells/{name}/worksheets/{sheetName}/sparklinegroups
+     - examples: [{contentType=application/json, example=""}]
+     
+     - parameter name: (path) Document name. 
+     - parameter sheetName: (path) The worksheet name. 
+     - parameter folder: (query) Document&#39;s folder. (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<SparklineGroupsResponse> 
+     */
+    open class func cellsSparklineGroupsGetWorksheetSparklineGroupsWithRequestBuilder(name: String, sheetName: String, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<SparklineGroupsResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<SparklineGroupsResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)
+     - parameter sparklineGroup: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsPostWorksheetSparklineGroup(name: String, sheetName: String, sparklineGroupIndex: Int32, sparklineGroup: SparklineGroup, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsPostWorksheetSparklineGroupWithRequestBuilder(name: name, sheetName: sheetName, sparklineGroupIndex: sparklineGroupIndex, sparklineGroup: sparklineGroup, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - POST /cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter sparklineGroupIndex: (path)
+     - parameter sparklineGroup: (body)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsSparklineGroupsPostWorksheetSparklineGroupWithRequestBuilder(name: String, sheetName: String, sparklineGroupIndex: Int32, sparklineGroup: SparklineGroup, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups/{sparklineGroupIndex}"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let sparklineGroupIndexPreEscape = "\(sparklineGroupIndex)"
+        let sparklineGroupIndexPostEscape = sparklineGroupIndexPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sparklineGroupIndex}", with: sparklineGroupIndexPostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters = JSONEncodingHelper.encodingParameters(forEncodableObject: sparklineGroup)
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: true)
+    }
+
+    /**
+
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter type: (query)  
+     - parameter dataRange: (query)  
+     - parameter isVertical: (query)  
+     - parameter locationRange: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    open class func cellsSparklineGroupsPutWorksheetSparklineGroup(name: String, sheetName: String, type: String, dataRange: String, isVertical: Bool, locationRange: String, folder: String? = nil, storageName: String? = nil, completion: @escaping ((_ data: CellsCloudResponse?,_ error: Error?) -> Void)) {
+        cellsSparklineGroupsPutWorksheetSparklineGroupWithRequestBuilder(name: name, sheetName: sheetName, type: type, dataRange: dataRange, isVertical: isVertical, locationRange: locationRange, folder: folder, storageName: storageName).execute { (response, error) -> Void in
+            completion(response?.body, error)
+        }
+    }
+
+
+    /**
+     - PUT /cells/{name}/worksheets/{sheetName}/sparklinegroups
+     - examples: [{contentType=application/json, example={
+  "Status" : "Status",
+  "Code" : 0
+}}]
+     
+     - parameter name: (path)  
+     - parameter sheetName: (path)  
+     - parameter type: (query)  
+     - parameter dataRange: (query)  
+     - parameter isVertical: (query)  
+     - parameter locationRange: (query)  
+     - parameter folder: (query)  (optional)
+     - parameter storageName: (query) storage name. (optional)
+
+     - returns: RequestBuilder<CellsCloudResponse> 
+     */
+    open class func cellsSparklineGroupsPutWorksheetSparklineGroupWithRequestBuilder(name: String, sheetName: String, type: String, dataRange: String, isVertical: Bool, locationRange: String, folder: String? = nil, storageName: String? = nil) -> RequestBuilder<CellsCloudResponse> {
+        var _path = "/cells/{name}/worksheets/{sheetName}/sparklinegroups"
+        let namePreEscape = "\(name)"
+        let namePostEscape = namePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{name}", with: namePostEscape, options: .literal, range: nil)
+        let sheetNamePreEscape = "\(sheetName)"
+        let sheetNamePostEscape = sheetNamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+        _path = _path.replacingOccurrences(of: "{sheetName}", with: sheetNamePostEscape, options: .literal, range: nil)
+        let URLString = AsposeCellsCloudAPI.basePath + _path
+        let parameters: [String:Any]? = nil
+        
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "type": type, 
+            "dataRange": dataRange, 
+            "isVertical": isVertical, 
+            "locationRange": locationRange, 
+            "folder": folder, 
+            "storageName": storageName
+        ])
+
+        let requestBuilder: RequestBuilder<CellsCloudResponse>.Type = AsposeCellsCloudAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "PUT", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
     /**
