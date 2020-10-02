@@ -45,7 +45,7 @@ DIF, PDF, XPS, TIFF, SVG, MD (Markdown)
 
 SXC, FODS
 
-[Product Page](https://products.aspose.cloud/cells/swift) | [Documentation](https://docs.aspose.cloud/display/cellscloud/Home) | [Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Examples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-swift) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
+[Product Page](https://products.aspose.cloud/cells/swift) | [Documentation](https://docs.aspose.cloud/cells/) | [Demo](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.cloud/cells/) | [Examples](https://github.com/aspose-cells-cloud/aspose-cells-cloud-swift) | [Blog](https://blog.aspose.cloud/category/cells/) | [Free Support](https://forum.aspose.cloud/c/cells) | [Free Trial](https://dashboard.aspose.cloud/#/apps)
 
 ## Getting Started
 
