@@ -4,6 +4,8 @@
 
 Swift Cloud SDK wraps Aspose.Cells Cloud API. The SDK enhances your Android apps to [process & manipulate Microsoft Excel spreadsheets](https://products.aspose.cloud/cells/swift) in the cloud, without requiring Microsoft Office®.
 
+## Excel File Manipulation in the Cloud
+
 - Create Excel files from scratch via API or [Smart Markers](https://docs.aspose.cloud/cells/create-excel-workbook-from-a-smartmarker-template/).
 - Load, process & [convert Excel files](https://docs.aspose.cloud/cells/convert-excel-workbook-to-different-file-formats/) via Cloud SDK.
 - Add, update or delete worksheet, charts, pictures, shapes, hyperlinks & validations.
