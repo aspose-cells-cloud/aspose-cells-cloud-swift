@@ -20,10 +20,8 @@ Swift Cloud SDK wraps Aspose.Cells Cloud API. The SDK enhances your Android apps
 - Fetch the required shape from worksheet.
 - Leverage the power of named ranges.
 
-## New Features & Enhancements in Version 20.9
-- Supported sparkline groups.
-- Added API to update Pivot Fields.
-- Enhanced chart API.
+## New Features & Enhancements in Version 20.12
+- Aspose.Cells Cloud for Docker.
 
 ## Read & Write Spreadsheet Formats
 
@@ -51,11 +49,11 @@ SXC, FODS
 
 ## Get Started with Aspose.Cells Cloud SDK for Swift
 
-First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information. Then, add pod `'AsposeCellsCloud', '~> 20.9'` similar to the following:
+First, create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and get your application information. Then, add pod `'AsposeCellsCloud', '~> 20.12'` similar to the following:
 
 ```console
 target 'MyApp' do
-  pod 'AsposeCellsCloud', '~> 20.9'
+  pod 'AsposeCellsCloud', '~> 20.12'
 end
 ```
 

@@ -173,7 +173,7 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsShapesPutWorksheetShape")
 		let name:String = BOOK1
 		let sheetName:String = SHEET1
-        let shapeDTO:Shape? = nil
+        let shapeDTO:Shape? = Shape(link: nil, alternativeText: nil, bottom: nil, top: nil, width: nil, htmlText: nil, textVerticalAlignment: nil, autoShapeType: nil, isPrintable: nil, upperLeftColumn: nil, isLockAspectRatio: nil, isGroup: nil, rotationAngle: nil, zOrderPosition: nil, textHorizontalOverflow: nil, msoDrawingType: nil, textOrientationType: nil, placement: nil, name: nil, isWordArt: nil, linkedCell: nil, upperLeftRow: nil, isLocked: nil, lowerRightRow: nil, isTextWrapped: nil, Y: nil, X: nil, isHidden: nil, _left: nil, _right: nil, text: nil, lowerRightColumn: 10, height: nil, textHorizontalAlignment: nil, textVerticalOverflow: nil)
 		let drawingType:String = "button"
 		let upperLeftRow:Int32 = 1
 		let upperLeftColumn:Int32 = 1
@@ -189,6 +189,8 @@ class CellsShapesAPITests: AsposeCellsCloudTests {
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsShapesPutWorksheetShape")
 					return
 				}

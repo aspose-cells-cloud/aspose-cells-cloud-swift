@@ -31,8 +31,9 @@ class AsposeCellsCloudTests: XCTestCase {
     internal let CELLAREA = "A1:C10"
     internal let RANGE = "A1:C10"
     //This is only for test, please set your licence here
-    internal let _appSid = "11111X11-111X-1111-11X1-111111111XX1"
-    internal let _appKey = "111x11111111xx1111xxxx11xx1x1111"
+    internal let _clientId = "11111X11-111X-1111-11X1-111111111XX1"
+    internal let _clientSecret = "111x11111111xx1111xxxx11xx1x1111"
+    internal let _basePath = "http://192.168.0.1/v3.0"
     
     override func setUp() {
         super.setUp()
@@ -48,9 +49,15 @@ class AsposeCellsCloudTests: XCTestCase {
     
     private func readSettings() {
         
-        //This is only for test, please set your licence here
-        AsposeCellsCloudAPI.appSid = self._appSid
-        AsposeCellsCloudAPI.appKey = self._appKey
+        //This is only for test, please set your licence or basePath
+        //Choose Mode A or Mode B, just one of them will be OK.
+        
+        //Mode A: Set clientId, clientSecret
+        //AsposeCellsCloudAPI.clientId = self._clientId
+        //AsposeCellsCloudAPI.clientSecret = self._clientSecret
+        
+        //Mode B: Set your own basePath
+        AsposeCellsCloudAPI.basePath = self._basePath
                     
     }
     
@@ -75,12 +82,16 @@ class AsposeCellsCloudTests: XCTestCase {
         self.putCreate(path: path, file: url!, versionId: nil, storageName: storageName) {
             (response, error) in
             guard error == nil else {
+                let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                print("error info: \(errorinfo!)")
                 XCTFail("error uploading file \(path)")
                 return
             }
             if let response = response, response.uploaded!.count > 0 {
                 completion()
             } else {
+                let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                print("error info: \(errorinfo!)")
                 XCTFail("error uploading file \(name)")
             }
             

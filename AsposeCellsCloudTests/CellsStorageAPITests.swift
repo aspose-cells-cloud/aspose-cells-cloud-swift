@@ -221,6 +221,8 @@ class CellsStorageAPITests: AsposeCellsCloudTests {
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testgetFileVersions")
 					return
 				}

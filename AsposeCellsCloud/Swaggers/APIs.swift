@@ -8,8 +8,8 @@ import Foundation
 
 open class AsposeCellsCloudAPI {
     public static var basePath = "https://api.aspose.cloud/v3.0"
-    public static var appSid: String?
-    public static var appKey: String?
+    public static var clientId: String?
+    public static var clientSecret: String?
     public static var credential: URLCredential?
     //public static var customHeaders: [String:String] = ["Authorization":""]
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()

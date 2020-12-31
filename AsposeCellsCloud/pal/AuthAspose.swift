@@ -26,15 +26,21 @@ public class AuthAspose {
     
     public class func checkAuth(completion: @escaping ((_ error: AuthError?) -> Void )) {
         
+        if (AsposeCellsCloudAPI.clientId == nil && AsposeCellsCloudAPI.clientSecret == nil)
+        {
+            completion(nil)
+            return
+        }
+        
         if (AsposeCellsCloudAPI.accessToken == nil) {
-            
-            guard let appSid = AsposeCellsCloudAPI.appSid, let appKey = AsposeCellsCloudAPI.appKey else {
+
+            guard let clientId = AsposeCellsCloudAPI.clientId, let clientSecret = AsposeCellsCloudAPI.clientSecret else {
                 completion(AuthError.credentialsNotSetError)
                 return
             }
             
             let grantType:String = "client_credentials"
-            CellsAPI.oAuthPost(grantType: grantType, clientId: appSid, clientSecret: appKey)
+            CellsAPI.oAuthPost(grantType: grantType, clientId: clientId, clientSecret: clientSecret)
             {
                 (response, error) in
                 guard error == nil else {
@@ -48,6 +54,8 @@ public class AuthAspose {
                     completion(nil)
                 }
             }
+            
+            
  
         }
         else

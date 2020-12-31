@@ -26,9 +26,10 @@ class OAuthAPITests: AsposeCellsCloudTests {
 	func testoAuthPost() 
 	{
 		let expectation = self.expectation(description: "testoAuthPost")
+        /*
         let grantType:String = "client_credentials"
-        let clientId:String = AsposeCellsCloudAPI.appSid!
-        let clientSecret:String = AsposeCellsCloudAPI.appKey!
+        let clientId:String = AsposeCellsCloudAPI.clientId!
+        let clientSecret:String = AsposeCellsCloudAPI.clientSecret!
 		
         CellsAPI.oAuthPost(grantType: grantType, clientId: clientId, clientSecret: clientSecret)
         {
@@ -43,6 +44,16 @@ class OAuthAPITests: AsposeCellsCloudTests {
                 AsposeCellsCloudAPI.refreshToken = response.refreshToken
                 expectation.fulfill()
             }
+        }
+        */
+        AuthAspose.checkAuth()
+        {
+            (authError) in
+            guard authError == nil else {
+                XCTFail("error testoAuthPost")
+                return
+            }
+            expectation.fulfill()
         }
 		
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
