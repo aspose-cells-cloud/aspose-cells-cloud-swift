@@ -392,7 +392,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 	{
 		let expectation = self.expectation(description: "testcellsWorkbookPostAutofitWorkbookRows")
 		let name:String = BOOK1
-		let autoFitterOptions:AutoFitterOptions? = nil
+		let autoFitterOptions:AutoFitterOptions? = AutoFitterOptions(ignoreHidden: false, onlyAuto: false, autoFitMergedCells: false)
 		let startRow:Int32 = 1
 		let endRow:Int32? = 100
 		let onlyAuto:Bool? = true
@@ -416,6 +416,34 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsWorkbookPostAutofitWorkbookColumns()
+    {
+        let expectation = self.expectation(description: "testcellsWorkbookPostAutofitWorkbookColumns")
+        let name:String = BOOK1
+        let autoFitterOptions:AutoFitterOptions? = AutoFitterOptions(ignoreHidden: false, onlyAuto: false, autoFitMergedCells: false)
+        let startColumn:Int32? = 1
+        let endColumn:Int32? = 100
+        let folder:String? = TEMPFOLDER
+        let storageName:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsWorkbookPostAutofitWorkbookColumns(name: name, autoFitterOptions: autoFitterOptions, startColumn: startColumn, endColumn: endColumn, folder: folder, storageName: storageName)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsWorkbookPostAutofitWorkbookColumns")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 	func testcellsWorkbookPostEncryptDocument() 
 	{
@@ -714,10 +742,12 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
 		let outPath:String? = nil
 		
 		uploadFile(name: workbook) {
-            CellsAPI.cellsWorkbookPutConvertWorkbook(workbook: filedata!, format: format, password: password, outPath: outPath)
+            CellsAPI.cellsWorkbookPutConvertWorkbook(file: url1!, format: format, password: password, outPath: outPath)
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsWorkbookPutConvertWorkbook")
 					return
 				}
@@ -751,7 +781,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
         let outPath:String? = nil
         
         uploadFile(name: workbook) {
-            CellsAPI.cellsWorkbookPutConvertWorkbook(workbook: filedata!, format: format, password: password, outPath: outPath)
+            CellsAPI.cellsWorkbookPutConvertWorkbook(file: url1!, format: format, password: password, outPath: outPath)
             {
                 (response, error) in
                 guard error == nil else {
@@ -836,7 +866,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
         }
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
-
+/*
     //Only test for DropBox Storage
     func testcellsWorkbookPostWorkbooksTextSearchTestForDropBox()
     {
@@ -889,7 +919,7 @@ class CellsWorkbookAPITests: AsposeCellsCloudTests {
         }
         self.waitForExpectations(timeout: testTimeout, handler: nil)
     }
-    
+    */
     func testcellsWorkbookPutWorkbookBackground()
     {
         let expectation = self.expectation(description: "testcellsWorkbookPutWorkbookBackground")

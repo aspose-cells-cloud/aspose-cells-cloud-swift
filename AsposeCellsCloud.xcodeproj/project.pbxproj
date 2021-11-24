@@ -249,9 +249,22 @@
 		6B133DAD22C201B500B51B0D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B133CAD22C201B500B51B0D /* Extensions.swift */; };
 		6B133DAE22C201B500B51B0D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B133CAE22C201B500B51B0D /* Models.swift */; };
 		6B2D960222FAB1FF00F2DEC6 /* CellsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2D960122FAB1FF00F2DEC6 /* CellsAPI.swift */; };
+		6B35B7B5274CCBB20092A6C9 /* Lite_ProtectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35B7B4274CCBB20092A6C9 /* Lite_ProtectTests.swift */; };
+		6B35B7B7274CCDCB0092A6C9 /* Lite_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35B7B6274CCDCB0092A6C9 /* Lite_SearchTests.swift */; };
+		6B35B7B9274CDFDD0092A6C9 /* Lite_SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35B7B8274CDFDD0092A6C9 /* Lite_SplitTests.swift */; };
+		6B35B7BD274CE1E50092A6C9 /* Lite_UnlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35B7BC274CE1E50092A6C9 /* Lite_UnlockTests.swift */; };
+		6B35B7BF274CE5FD0092A6C9 /* Lite_WatermarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B35B7BE274CE5FD0092A6C9 /* Lite_WatermarkTests.swift */; };
+		6B35B7C2274CEC350092A6C9 /* NeedUnlock2.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B35B7C0274CEC350092A6C9 /* NeedUnlock2.xlsx */; };
+		6B35B7C3274CEC350092A6C9 /* NeedUnlock.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6B35B7C1274CEC350092A6C9 /* NeedUnlock.xlsx */; };
+		6B3A197127449E1100A85F87 /* Lite_MetadataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3A197027449E1100A85F87 /* Lite_MetadataTests.swift */; };
 		6B4056DC22FC151600048C14 /* AsposeCellsCloudTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DB22FC151500048C14 /* AsposeCellsCloudTests.swift */; };
 		6B4056DE22FC152B00048C14 /* OAuthAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */; };
 		6B4056E022FC169900048C14 /* CellsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4056DF22FC169900048C14 /* CellsAPITests.swift */; };
+		6B43E45426A55B20003488E8 /* FileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43E45226A55B20003488E8 /* FileInfo.swift */; };
+		6B43E45526A55B20003488E8 /* FilesResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43E45326A55B20003488E8 /* FilesResult.swift */; };
+		6B43E45726A55B2C003488E8 /* WorksheetOperateParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43E45626A55B2C003488E8 /* WorksheetOperateParameter.swift */; };
+		6B43E45926A55B44003488E8 /* ConvertWorksheetTaskParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43E45826A55B44003488E8 /* ConvertWorksheetTaskParameter.swift */; };
+		6B43E45B26A55B54003488E8 /* LiteCellsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B43E45A26A55B54003488E8 /* LiteCellsAPI.swift */; };
 		6B45767C24EA6F8B00048E17 /* CellsCloudFileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45767A24EA6F8B00048E17 /* CellsCloudFileInfo.swift */; };
 		6B45767D24EA6F8B00048E17 /* TextWaterMarkerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45767B24EA6F8B00048E17 /* TextWaterMarkerRequest.swift */; };
 		6B495634231E56E700E78883 /* FilesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B495629231E56E700E78883 /* FilesList.swift */; };
@@ -274,6 +287,11 @@
 		6B4A17CB232A395E00C47EAB /* word.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A17C2232A395D00C47EAB /* word.jpg */; };
 		6B4A17CC232A395E00C47EAB /* ReportData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A17C3232A395D00C47EAB /* ReportData.xml */; };
 		6B5D9451233C954C00C573EE /* CellsStorageAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */; };
+		6B67715926A6B1700067EF0C /* Lite_AssembleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67715826A6B1700067EF0C /* Lite_AssembleTests.swift */; };
+		6B7140A027438ECB00E0ABBE /* Lite_ClearObjectsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71409F27438ECB00E0ABBE /* Lite_ClearObjectsTests.swift */; };
+		6B7140A22743A92C00E0ABBE /* Lite_ExportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7140A12743A92C00E0ABBE /* Lite_ExportTests.swift */; };
+		6B7140A42743B17300E0ABBE /* Lite_ImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7140A32743B17300E0ABBE /* Lite_ImportTests.swift */; };
+		6B7140A62743B57F00E0ABBE /* Lite_MergeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7140A52743B57F00E0ABBE /* Lite_MergeTests.swift */; };
 		6B78DAD922FD1DA300796FC8 /* CellsChartAreaAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78DAD622FD1DA300796FC8 /* CellsChartAreaAPITests.swift */; };
 		6B78DADA22FD1DA300796FC8 /* CellsAutoFilterAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78DAD722FD1DA300796FC8 /* CellsAutoFilterAPITests.swift */; };
 		6B78DADB22FD1DA300796FC8 /* CellsAutoshapesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B78DAD822FD1DA300796FC8 /* CellsAutoshapesAPITests.swift */; };
@@ -302,6 +320,10 @@
 		6BCCCF97230143FE00203711 /* CellsWorksheetsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */; };
 		6BCCCF98230143FE00203711 /* CellsWorkbookAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */; };
 		6BCCCF99230143FE00203711 /* CellsWorksheetValidationsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */; };
+		6BFD7983272BF99D002FB2D8 /* assemblytest.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD7981272BF99D002FB2D8 /* assemblytest.xlsx */; };
+		6BFD7984272BF99D002FB2D8 /* assemblytest.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD7981272BF99D002FB2D8 /* assemblytest.xlsx */; };
+		6BFD7985272BF99D002FB2D8 /* datasource.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD7982272BF99D002FB2D8 /* datasource.xlsx */; };
+		6BFD7986272BF99D002FB2D8 /* datasource.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD7982272BF99D002FB2D8 /* datasource.xlsx */; };
 		F0EC2893B188F7E629721733 /* Pods_AsposeCellsCloudTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3080DDADA072C4B7832441AD /* Pods_AsposeCellsCloudTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -559,9 +581,22 @@
 		6B133CAD22C201B500B51B0D /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		6B133CAE22C201B500B51B0D /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		6B2D960122FAB1FF00F2DEC6 /* CellsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAPI.swift; sourceTree = "<group>"; };
+		6B35B7B4274CCBB20092A6C9 /* Lite_ProtectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_ProtectTests.swift; sourceTree = "<group>"; };
+		6B35B7B6274CCDCB0092A6C9 /* Lite_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_SearchTests.swift; sourceTree = "<group>"; };
+		6B35B7B8274CDFDD0092A6C9 /* Lite_SplitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_SplitTests.swift; sourceTree = "<group>"; };
+		6B35B7BC274CE1E50092A6C9 /* Lite_UnlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_UnlockTests.swift; sourceTree = "<group>"; };
+		6B35B7BE274CE5FD0092A6C9 /* Lite_WatermarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_WatermarkTests.swift; sourceTree = "<group>"; };
+		6B35B7C0274CEC350092A6C9 /* NeedUnlock2.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeedUnlock2.xlsx; sourceTree = "<group>"; };
+		6B35B7C1274CEC350092A6C9 /* NeedUnlock.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = NeedUnlock.xlsx; sourceTree = "<group>"; };
+		6B3A197027449E1100A85F87 /* Lite_MetadataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_MetadataTests.swift; sourceTree = "<group>"; };
 		6B4056DB22FC151500048C14 /* AsposeCellsCloudTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsposeCellsCloudTests.swift; sourceTree = "<group>"; };
 		6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthAPITests.swift; sourceTree = "<group>"; };
 		6B4056DF22FC169900048C14 /* CellsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAPITests.swift; sourceTree = "<group>"; };
+		6B43E45226A55B20003488E8 /* FileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileInfo.swift; sourceTree = "<group>"; };
+		6B43E45326A55B20003488E8 /* FilesResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesResult.swift; sourceTree = "<group>"; };
+		6B43E45626A55B2C003488E8 /* WorksheetOperateParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksheetOperateParameter.swift; sourceTree = "<group>"; };
+		6B43E45826A55B44003488E8 /* ConvertWorksheetTaskParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertWorksheetTaskParameter.swift; sourceTree = "<group>"; };
+		6B43E45A26A55B54003488E8 /* LiteCellsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiteCellsAPI.swift; sourceTree = "<group>"; };
 		6B45767A24EA6F8B00048E17 /* CellsCloudFileInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsCloudFileInfo.swift; sourceTree = "<group>"; };
 		6B45767B24EA6F8B00048E17 /* TextWaterMarkerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextWaterMarkerRequest.swift; sourceTree = "<group>"; };
 		6B495629231E56E700E78883 /* FilesList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesList.swift; sourceTree = "<group>"; };
@@ -584,6 +619,11 @@
 		6B4A17C2232A395D00C47EAB /* word.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = word.jpg; sourceTree = "<group>"; };
 		6B4A17C3232A395D00C47EAB /* ReportData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ReportData.xml; sourceTree = "<group>"; };
 		6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsStorageAPITests.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		6B67715826A6B1700067EF0C /* Lite_AssembleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_AssembleTests.swift; sourceTree = "<group>"; };
+		6B71409F27438ECB00E0ABBE /* Lite_ClearObjectsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_ClearObjectsTests.swift; sourceTree = "<group>"; };
+		6B7140A12743A92C00E0ABBE /* Lite_ExportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_ExportTests.swift; sourceTree = "<group>"; };
+		6B7140A32743B17300E0ABBE /* Lite_ImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_ImportTests.swift; sourceTree = "<group>"; };
+		6B7140A52743B57F00E0ABBE /* Lite_MergeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lite_MergeTests.swift; sourceTree = "<group>"; };
 		6B78DAD622FD1DA300796FC8 /* CellsChartAreaAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsChartAreaAPITests.swift; sourceTree = "<group>"; };
 		6B78DAD722FD1DA300796FC8 /* CellsAutoFilterAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoFilterAPITests.swift; sourceTree = "<group>"; };
 		6B78DAD822FD1DA300796FC8 /* CellsAutoshapesAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsAutoshapesAPITests.swift; sourceTree = "<group>"; };
@@ -615,6 +655,8 @@
 		6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetsAPITests.swift; sourceTree = "<group>"; };
 		6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorkbookAPITests.swift; sourceTree = "<group>"; };
 		6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellsWorksheetValidationsAPITests.swift; sourceTree = "<group>"; };
+		6BFD7981272BF99D002FB2D8 /* assemblytest.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = assemblytest.xlsx; sourceTree = "<group>"; };
+		6BFD7982272BF99D002FB2D8 /* datasource.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = datasource.xlsx; sourceTree = "<group>"; };
 		8169D4BAD2478B1E2E279F60 /* Pods_AsposeCellsCloud.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AsposeCellsCloud.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE02537F036BA0159747D535 /* Pods-AsposeCellsCloud.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloud.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloud/Pods-AsposeCellsCloud.release.xcconfig"; sourceTree = "<group>"; };
 		D3DF103EEDAE6A794F76D64A /* Pods-AsposeCellsCloudTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsposeCellsCloudTests.release.xcconfig"; path = "Target Support Files/Pods-AsposeCellsCloudTests/Pods-AsposeCellsCloudTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -682,6 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				6B2D960122FAB1FF00F2DEC6 /* CellsAPI.swift */,
+				6B43E45A26A55B54003488E8 /* LiteCellsAPI.swift */,
 			);
 			path = APIs;
 			sourceTree = "<group>";
@@ -742,6 +785,7 @@
 				6B133C0F22C201B500B51B0D /* ConditionalFormattingsResponse.swift */,
 				6B133C6C22C201B500B51B0D /* ConditionalFormattingValue.swift */,
 				6B133C1C22C201B500B51B0D /* ConvertTaskParameter.swift */,
+				6B43E45826A55B44003488E8 /* ConvertWorksheetTaskParameter.swift */,
 				6B133BE022C201B400B51B0D /* CopyOptions.swift */,
 				6B133BD222C201B400B51B0D /* CreatePivotTableRequest.swift */,
 				6B133BD722C201B400B51B0D /* CustomFilter.swift */,
@@ -753,8 +797,10 @@
 				6B495630231E56E700E78883 /* DiscUsage.swift */,
 				6B133C0A22C201B500B51B0D /* DynamicFilter.swift */,
 				6B495631231E56E700E78883 /* ErrorDetails.swift */,
+				6B43E45226A55B20003488E8 /* FileInfo.swift */,
 				6B495629231E56E700E78883 /* FilesList.swift */,
 				6B133CA422C201B500B51B0D /* FileSource.swift */,
+				6B43E45326A55B20003488E8 /* FilesResult.swift */,
 				6B49562F231E56E700E78883 /* FilesUploadResult.swift */,
 				6B495632231E56E700E78883 /* FileVersion.swift */,
 				6B49562B231E56E700E78883 /* FileVersions.swift */,
@@ -928,6 +974,7 @@
 				6B133C5222C201B500B51B0D /* WorkbookSettingsResponse.swift */,
 				6B133C1D22C201B500B51B0D /* Worksheet.swift */,
 				6B133C3922C201B500B51B0D /* WorksheetMovingRequest.swift */,
+				6B43E45626A55B2C003488E8 /* WorksheetOperateParameter.swift */,
 				6B133BED22C201B400B51B0D /* WorksheetReplaceResponse.swift */,
 				6B133BEA22C201B400B51B0D /* WorksheetResponse.swift */,
 				6B133C4F22C201B500B51B0D /* Worksheets.swift */,
@@ -939,18 +986,71 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6B43E45C26A57827003488E8 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				6B4056DF22FC169900048C14 /* CellsAPITests.swift */,
+				6B78DAD722FD1DA300796FC8 /* CellsAutoFilterAPITests.swift */,
+				6B78DAD822FD1DA300796FC8 /* CellsAutoshapesAPITests.swift */,
+				6B78DAD622FD1DA300796FC8 /* CellsChartAreaAPITests.swift */,
+				6B78DADC22FD452300796FC8 /* CellsChartsAPITests.swift */,
+				6B78DADD22FD452300796FC8 /* CellsConditionalFormattingsAPITests.swift */,
+				6B78DADE22FD452300796FC8 /* CellsHypelinksAPITests.swift */,
+				6B78DAE422FD4DBE00796FC8 /* CellsListObjectsAPITests.swift */,
+				6B78DAE222FD4DBE00796FC8 /* CellsOleObjectsAPITests.swift */,
+				6B78DAE322FD4DBE00796FC8 /* CellsPageBreaksAPITests.swift */,
+				6B78DAE522FD4DBE00796FC8 /* CellsPageSetupAPITests.swift */,
+				6B78DAEB22FD547C00796FC8 /* CellsPicturesAPITests.swift */,
+				6B78DAEA22FD547C00796FC8 /* CellsPivotTablesAPITests.swift */,
+				6B78DAEC22FD547C00796FC8 /* CellsPropertiesAPITests.swift */,
+				6B78DAF022FD567100796FC8 /* CellsRangesAPITests.swift */,
+				6BCCCF90230141DE00203711 /* CellsSaveAsAPITests.swift */,
+				6BCCCF8E230141DE00203711 /* CellsShapesAPITests.swift */,
+				6B122235251C48C90094FF97 /* CellsSparklineGroupsAPITests.swift */,
+				6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */,
+				6BCCCF8F230141DE00203711 /* CellsTaskAPITests.swift */,
+				6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */,
+				6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */,
+				6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */,
+				6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		6B43E45D26A57864003488E8 /* LiteApi */ = {
+			isa = PBXGroup;
+			children = (
+				6B67715826A6B1700067EF0C /* Lite_AssembleTests.swift */,
+				6B71409F27438ECB00E0ABBE /* Lite_ClearObjectsTests.swift */,
+				6B7140A12743A92C00E0ABBE /* Lite_ExportTests.swift */,
+				6B7140A32743B17300E0ABBE /* Lite_ImportTests.swift */,
+				6B7140A52743B57F00E0ABBE /* Lite_MergeTests.swift */,
+				6B3A197027449E1100A85F87 /* Lite_MetadataTests.swift */,
+				6B35B7B4274CCBB20092A6C9 /* Lite_ProtectTests.swift */,
+				6B35B7B6274CCDCB0092A6C9 /* Lite_SearchTests.swift */,
+				6B35B7B8274CDFDD0092A6C9 /* Lite_SplitTests.swift */,
+				6B35B7BC274CE1E50092A6C9 /* Lite_UnlockTests.swift */,
+				6B35B7BE274CE5FD0092A6C9 /* Lite_WatermarkTests.swift */,
+			);
+			path = LiteApi;
+			sourceTree = "<group>";
+		};
 		6B4A17BA232A395D00C47EAB /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				6B4A17BB232A395D00C47EAB /* WaterMark.png */,
-				6B4A17BC232A395D00C47EAB /* OLEDoc.docx */,
-				6B4A17BD232A395D00C47EAB /* myDocument.xlsx */,
+				6B35B7C1274CEC350092A6C9 /* NeedUnlock.xlsx */,
+				6B35B7C0274CEC350092A6C9 /* NeedUnlock2.xlsx */,
+				6BFD7981272BF99D002FB2D8 /* assemblytest.xlsx */,
+				6BFD7982272BF99D002FB2D8 /* datasource.xlsx */,
 				6B4A17BE232A395D00C47EAB /* Book1.xlsx */,
-				6B4A17BF232A395D00C47EAB /* PivTestFile2.xlsx */,
+				6B4A17BD232A395D00C47EAB /* myDocument.xlsx */,
 				6B4A17C0232A395D00C47EAB /* NewCopy.xlsx */,
-				6B4A17C1232A395D00C47EAB /* TestCase.xlsx */,
-				6B4A17C2232A395D00C47EAB /* word.jpg */,
+				6B4A17BC232A395D00C47EAB /* OLEDoc.docx */,
+				6B4A17BF232A395D00C47EAB /* PivTestFile2.xlsx */,
 				6B4A17C3232A395D00C47EAB /* ReportData.xml */,
+				6B4A17C1232A395D00C47EAB /* TestCase.xlsx */,
+				6B4A17BB232A395D00C47EAB /* WaterMark.png */,
+				6B4A17C2232A395D00C47EAB /* word.jpg */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -990,32 +1090,10 @@
 		6BAF465722C1F93E009FEAFE /* AsposeCellsCloudTests */ = {
 			isa = PBXGroup;
 			children = (
+				6B43E45D26A57864003488E8 /* LiteApi */,
+				6B43E45C26A57827003488E8 /* Api */,
 				6B4056DB22FC151500048C14 /* AsposeCellsCloudTests.swift */,
-				6B4056DF22FC169900048C14 /* CellsAPITests.swift */,
-				6B78DAD722FD1DA300796FC8 /* CellsAutoFilterAPITests.swift */,
-				6B78DAD822FD1DA300796FC8 /* CellsAutoshapesAPITests.swift */,
-				6B78DAD622FD1DA300796FC8 /* CellsChartAreaAPITests.swift */,
-				6B78DADC22FD452300796FC8 /* CellsChartsAPITests.swift */,
-				6B78DADD22FD452300796FC8 /* CellsConditionalFormattingsAPITests.swift */,
-				6B78DADE22FD452300796FC8 /* CellsHypelinksAPITests.swift */,
-				6B78DAE422FD4DBE00796FC8 /* CellsListObjectsAPITests.swift */,
-				6B78DAE222FD4DBE00796FC8 /* CellsOleObjectsAPITests.swift */,
-				6B78DAE322FD4DBE00796FC8 /* CellsPageBreaksAPITests.swift */,
-				6B78DAE522FD4DBE00796FC8 /* CellsPageSetupAPITests.swift */,
-				6B78DAEB22FD547C00796FC8 /* CellsPicturesAPITests.swift */,
-				6B78DAEA22FD547C00796FC8 /* CellsPivotTablesAPITests.swift */,
-				6B78DAEC22FD547C00796FC8 /* CellsPropertiesAPITests.swift */,
-				6B78DAF022FD567100796FC8 /* CellsRangesAPITests.swift */,
-				6BCCCF90230141DE00203711 /* CellsSaveAsAPITests.swift */,
-				6BCCCF8E230141DE00203711 /* CellsShapesAPITests.swift */,
-				6B122235251C48C90094FF97 /* CellsSparklineGroupsAPITests.swift */,
-				6B5D9450233C954C00C573EE /* CellsStorageAPITests.swift */,
-				6BCCCF8F230141DE00203711 /* CellsTaskAPITests.swift */,
-				6BCCCF95230143FD00203711 /* CellsWorkbookAPITests.swift */,
-				6BCCCF94230143FD00203711 /* CellsWorksheetsAPITests.swift */,
-				6BCCCF96230143FE00203711 /* CellsWorksheetValidationsAPITests.swift */,
 				6BAF465A22C1F93E009FEAFE /* Info.plist */,
-				6B4056DD22FC152A00048C14 /* OAuthAPITests.swift */,
 			);
 			path = AsposeCellsCloudTests;
 			sourceTree = "<group>";
@@ -1126,6 +1204,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFD7983272BF99D002FB2D8 /* assemblytest.xlsx in Resources */,
+				6BFD7985272BF99D002FB2D8 /* datasource.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,15 +1213,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BFD7984272BF99D002FB2D8 /* assemblytest.xlsx in Resources */,
 				6B4A17C9232A395E00C47EAB /* NewCopy.xlsx in Resources */,
+				6BFD7986272BF99D002FB2D8 /* datasource.xlsx in Resources */,
 				6B4A17CC232A395E00C47EAB /* ReportData.xml in Resources */,
 				6B4A17C8232A395E00C47EAB /* PivTestFile2.xlsx in Resources */,
 				6B4A17C4232A395E00C47EAB /* WaterMark.png in Resources */,
 				6B4A17CB232A395E00C47EAB /* word.jpg in Resources */,
+				6B35B7C2274CEC350092A6C9 /* NeedUnlock2.xlsx in Resources */,
 				6B4A17CA232A395E00C47EAB /* TestCase.xlsx in Resources */,
 				6B4A17C5232A395E00C47EAB /* OLEDoc.docx in Resources */,
 				6B4A17C6232A395E00C47EAB /* myDocument.xlsx in Resources */,
 				6B4A17C7232A395E00C47EAB /* Book1.xlsx in Resources */,
+				6B35B7C3274CEC350092A6C9 /* NeedUnlock.xlsx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,6 +1335,7 @@
 				6B133D6F22C201B500B51B0D /* TextureFill.swift in Sources */,
 				6B133D3622C201B500B51B0D /* WorkbookOperateParameter.swift in Sources */,
 				6B133DA822C201B500B51B0D /* XpsSaveOptions.swift in Sources */,
+				6B43E45926A55B44003488E8 /* ConvertWorksheetTaskParameter.swift in Sources */,
 				6B133D8722C201B500B51B0D /* SplitResultResponse.swift in Sources */,
 				6B133CCB22C201B500B51B0D /* OleObjectsResponse.swift in Sources */,
 				6B133DA222C201B500B51B0D /* NegativeBarFormat.swift in Sources */,
@@ -1261,6 +1346,7 @@
 				6B133DA422C201B500B51B0D /* FileSource.swift in Sources */,
 				6B133D1D22C201B500B51B0D /* Worksheet.swift in Sources */,
 				6B133CF522C201B500B51B0D /* ChartsResponse.swift in Sources */,
+				6B43E45426A55B20003488E8 /* FileInfo.swift in Sources */,
 				6B133DA122C201B500B51B0D /* TextItem.swift in Sources */,
 				6B133D6722C201B500B51B0D /* TaskData.swift in Sources */,
 				6B133D1822C201B500B51B0D /* Top10Filter.swift in Sources */,
@@ -1317,6 +1403,7 @@
 				6B133CCE22C201B500B51B0D /* RowsResponse.swift in Sources */,
 				6B133CE822C201B500B51B0D /* ShapeOperateParameter.swift in Sources */,
 				6B133D9822C201B500B51B0D /* AutoFilterResponse.swift in Sources */,
+				6B43E45726A55B2C003488E8 /* WorksheetOperateParameter.swift in Sources */,
 				6B133D1322C201B500B51B0D /* CellsDocumentPropertiesResponse.swift in Sources */,
 				6B133D6C22C201B500B51B0D /* ConditionalFormattingValue.swift in Sources */,
 				6B49563A231E56E700E78883 /* FilesUploadResult.swift in Sources */,
@@ -1380,6 +1467,7 @@
 				6B133CD722C201B500B51B0D /* CustomFilter.swift in Sources */,
 				6B133D2222C201B500B51B0D /* PdfSaveOptions.swift in Sources */,
 				6B133D9622C201B500B51B0D /* PageSetupOperateParameter.swift in Sources */,
+				6B43E45B26A55B54003488E8 /* LiteCellsAPI.swift in Sources */,
 				6B133D3B22C201B500B51B0D /* Column.swift in Sources */,
 				6B133CEF22C201B500B51B0D /* SaveResponse.swift in Sources */,
 				6B133DAE22C201B500B51B0D /* Models.swift in Sources */,
@@ -1405,6 +1493,7 @@
 				6B133CF922C201B500B51B0D /* PivotField.swift in Sources */,
 				6B495638231E56E700E78883 /* StorageFile.swift in Sources */,
 				6B133D5F22C201B500B51B0D /* ImportIntArrayOption.swift in Sources */,
+				6B43E45526A55B20003488E8 /* FilesResult.swift in Sources */,
 				6B133D7522C201B500B51B0D /* CalculationOptions.swift in Sources */,
 				6B133D7E22C201B500B51B0D /* PatternFill.swift in Sources */,
 				6B133CFC22C201B500B51B0D /* CellsResponse.swift in Sources */,
@@ -1484,7 +1573,9 @@
 				6B4056DE22FC152B00048C14 /* OAuthAPITests.swift in Sources */,
 				6B78DAF122FD567100796FC8 /* CellsRangesAPITests.swift in Sources */,
 				6BCCCF98230143FE00203711 /* CellsWorkbookAPITests.swift in Sources */,
+				6B3A197127449E1100A85F87 /* Lite_MetadataTests.swift in Sources */,
 				6BCCCF91230141DE00203711 /* CellsShapesAPITests.swift in Sources */,
+				6B7140A42743B17300E0ABBE /* Lite_ImportTests.swift in Sources */,
 				6B78DAE922FD4DBF00796FC8 /* CellsPageSetupAPITests.swift in Sources */,
 				6B122236251C48C90094FF97 /* CellsSparklineGroupsAPITests.swift in Sources */,
 				6B78DADF22FD452300796FC8 /* CellsChartsAPITests.swift in Sources */,
@@ -1496,16 +1587,25 @@
 				6BCCCF97230143FE00203711 /* CellsWorksheetsAPITests.swift in Sources */,
 				6B78DAEF22FD547C00796FC8 /* CellsPropertiesAPITests.swift in Sources */,
 				6B78DAE122FD452300796FC8 /* CellsHypelinksAPITests.swift in Sources */,
+				6B35B7BD274CE1E50092A6C9 /* Lite_UnlockTests.swift in Sources */,
+				6B35B7BF274CE5FD0092A6C9 /* Lite_WatermarkTests.swift in Sources */,
 				6B78DAED22FD547C00796FC8 /* CellsPivotTablesAPITests.swift in Sources */,
+				6B35B7B7274CCDCB0092A6C9 /* Lite_SearchTests.swift in Sources */,
+				6B7140A027438ECB00E0ABBE /* Lite_ClearObjectsTests.swift in Sources */,
+				6B35B7B9274CDFDD0092A6C9 /* Lite_SplitTests.swift in Sources */,
+				6B35B7B5274CCBB20092A6C9 /* Lite_ProtectTests.swift in Sources */,
 				6B78DAE622FD4DBF00796FC8 /* CellsOleObjectsAPITests.swift in Sources */,
 				6B78DAD922FD1DA300796FC8 /* CellsChartAreaAPITests.swift in Sources */,
 				6B78DAE822FD4DBF00796FC8 /* CellsListObjectsAPITests.swift in Sources */,
 				6B4056DC22FC151600048C14 /* AsposeCellsCloudTests.swift in Sources */,
 				6B78DAEE22FD547C00796FC8 /* CellsPicturesAPITests.swift in Sources */,
+				6B67715926A6B1700067EF0C /* Lite_AssembleTests.swift in Sources */,
+				6B7140A62743B57F00E0ABBE /* Lite_MergeTests.swift in Sources */,
 				6B78DADA22FD1DA300796FC8 /* CellsAutoFilterAPITests.swift in Sources */,
 				6BCCCF99230143FE00203711 /* CellsWorksheetValidationsAPITests.swift in Sources */,
 				6B78DAE022FD452300796FC8 /* CellsConditionalFormattingsAPITests.swift in Sources */,
 				6B78DADB22FD1DA300796FC8 /* CellsAutoshapesAPITests.swift in Sources */,
+				6B7140A22743A92C00E0ABBE /* Lite_ExportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

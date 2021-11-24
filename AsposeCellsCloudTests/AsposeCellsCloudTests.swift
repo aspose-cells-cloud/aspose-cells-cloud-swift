@@ -15,9 +15,12 @@ class AsposeCellsCloudTests: XCTestCase {
     internal let TEMPFOLDER = "Temp"
     internal let testDataFolder = "TestData"
     internal let BOOK1 = "Book1.xlsx"
+    internal let DataSource = "datasource.xlsx"
+    internal let AssemblyTest = "assemblytest.xlsx"
     internal let MYDOC = "myDocument.xlsx"
     internal let PivTestFile = "TestCase.xlsx"
     internal let PivTestFile2 = "PivTestFile2.xlsx"
+    internal let NEEDUNLOCK = "NeedUnlock.xlsx";
     internal let SHEET1 = "Sheet1"
     internal let SHEET2 = "Sheet2"
     internal let SHEET3 = "Sheet3"
@@ -30,7 +33,7 @@ class AsposeCellsCloudTests: XCTestCase {
     internal let testTimeout: TimeInterval = 60.0
     internal let CELLAREA = "A1:C10"
     internal let RANGE = "A1:C10"
-    //This is only for test, please set your licence here
+    //This is only for test, please set your own licence or basePath here
     internal let _clientId = "11111X11-111X-1111-11X1-111111111XX1"
     internal let _clientSecret = "111x11111111xx1111xxxx11xx1x1111"
     internal let _basePath = "http://192.168.0.1/v3.0"

@@ -12,22 +12,37 @@ import Foundation
 public struct CellsDocumentProperty: Codable {
 
     public var link: Link?
-    public var builtIn: String?
+    /** Returns the name of the property.              */
     public var name: String?
+    /** Gets or sets the value of the property. */
     public var value: String?
+    /** Indicates whether this property is linked to content */
+    public var isLinkedToContent: String?
+    /** The linked content source. */
+    public var source: String?
+    /** Gets the data type of the property.              */
+    public var type: String?
+    /** Returns true if this property does not have a name in the OLE2 storage and a   unique name was generated only for the public API.              */
+    public var isGeneratedName: String?
 
 public enum CodingKeys: String, CodingKey { 
         case link = "link"
-        case builtIn = "BuiltIn"
         case name = "Name"
         case value = "Value"
+        case isLinkedToContent = "IsLinkedToContent"
+        case source = "Source"
+        case type = "Type"
+        case isGeneratedName = "IsGeneratedName"
     }
 
-    public init(link: Link?, builtIn: String?, name: String?, value: String?) {
+    public init(link: Link?, name: String?, value: String?, isLinkedToContent: String?, source: String?, type: String?, isGeneratedName: String?) {
         self.link = link
-        self.builtIn = builtIn
         self.name = name
         self.value = value
+        self.isLinkedToContent = isLinkedToContent
+        self.source = source
+        self.type = type
+        self.isGeneratedName = isGeneratedName
     }
 
 

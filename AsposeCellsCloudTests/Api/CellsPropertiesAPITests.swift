@@ -141,7 +141,10 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 		let expectation = self.expectation(description: "testcellsPropertiesPutDocumentProperty")
 		let name:String = BOOK1
 		let propertyName:String = "Name"
-		let property:CellsDocumentProperty? = CellsDocumentProperty(link: nil, builtIn: nil, name: "Author", value: "Val")
+        let property:CellsDocumentProperty? = CellsDocumentProperty(link: nil, name: "Author", value: "Val", isLinkedToContent: nil, source: nil, type: nil, isGeneratedName: nil)
+		//let property:CellsDocumentProperty? = CellsDocumentProperty(link: nil, builtIn: nil, name: "Author", value: "Val")
+        
+        
 		let folder:String = TEMPFOLDER
 		let storageName:String? = nil
 		
@@ -150,12 +153,14 @@ class CellsPropertiesAPITests: AsposeCellsCloudTests {
 			{
 				(response, error) in
 				guard error == nil else {
+                    let errorinfo = self.GetErrorDataInfo(error: error as! ErrorResponse)
+                    print("error info: \(errorinfo!)")
 					XCTFail("error testcellsPropertiesPutDocumentProperty")
 					return
 				}
 	
 				if let response = response {
-					XCTAssertEqual(response.code, 201)
+					XCTAssertEqual(response.code, 200)
 					expectation.fulfill()
 				}
 			}

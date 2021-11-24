@@ -16,17 +16,21 @@ public struct PivotItem: Codable {
     public var isHidden: Bool?
     /** Gets the name */
     public var name: String?
+    /** Gets the value of the specified item. */
+    public var value: String?
 
 public enum CodingKeys: String, CodingKey { 
         case index = "Index"
         case isHidden = "IsHidden"
         case name = "Name"
+        case value = "Value"
     }
 
-    public init(index: Int32?, isHidden: Bool?, name: String?) {
+    public init(index: Int32?, isHidden: Bool?, name: String?, value: String?) {
         self.index = index
         self.isHidden = isHidden
         self.name = name
+        self.value = value
     }
 
 

@@ -359,6 +359,62 @@ class CellsRangesAPITests: AsposeCellsCloudTests {
 		}
 		self.waitForExpectations(timeout: testTimeout, handler: nil)		
 	}
+    
+    func testcellsRangesDeleteWorksheetCellsRange()
+    {
+        let expectation = self.expectation(description: "testcellsRangesDeleteWorksheetCellsRange")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let range:String = "A1:C6"
+        let shift:String = "Up"
+        let folder:String? = TEMPFOLDER
+        let storageName:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsRangesDeleteWorksheetCellsRange(name: name, sheetName: sheetName, range: range, shift: shift, folder: folder, storageName: storageName)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsRangesDeleteWorksheetCellsRange")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
+    
+    func testcellsRangesPutWorksheetCellsRange()
+    {
+        let expectation = self.expectation(description: "testcellsRangesPutWorksheetCellsRange")
+        let name:String = BOOK1
+        let sheetName:String = SHEET1
+        let range:String = "A1:C6"
+        let shift:String = "Down"
+        let folder:String? = TEMPFOLDER
+        let storageName:String? = nil
+        
+        uploadFile(name: name) {
+            CellsAPI.cellsRangesPutWorksheetCellsRange(name: name, sheetName: sheetName, range: range, shift: shift, folder: folder, storageName: storageName)
+            {
+                (response, error) in
+                guard error == nil else {
+                    XCTFail("error testcellsRangesPutWorksheetCellsRange")
+                    return
+                }
+                
+                if let response = response {
+                    XCTAssertEqual(response.code, 200)
+                    expectation.fulfill()
+                }
+            }
+        }
+        self.waitForExpectations(timeout: testTimeout, handler: nil)
+    }
 
 }
 

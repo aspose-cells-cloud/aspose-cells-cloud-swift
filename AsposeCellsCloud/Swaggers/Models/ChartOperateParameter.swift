@@ -11,7 +11,7 @@ import Foundation
 
 public class ChartOperateParameter: OperateParameter {
 
-    public var string: String?
+    public var title: String?
     public var area: String?
     public var categoryData: String?
     public var upperLeftRow: Int32?
@@ -22,7 +22,7 @@ public class ChartOperateParameter: OperateParameter {
     public var isVertical: Bool?
 
 public enum CodingKeys: String, CodingKey {
-        case string = "string"
+        case title = "Title"
         case area = "Area"
         case categoryData = "CategoryData"
         case upperLeftRow = "UpperLeftRow"
@@ -33,8 +33,8 @@ public enum CodingKeys: String, CodingKey {
         case isVertical = "IsVertical"
     }
 
-    public init(operateType: String?, string: String?, area: String?, categoryData: String?, upperLeftRow: Int32?, lowerRightColumn: Int32?, lowerRightRow: Int32?, isAutoGetSerialName: Bool?, chartType: String?, isVertical: Bool?) {
-        self.string = string
+    public init(operateType: String?, title: String?, area: String?, categoryData: String?, upperLeftRow: Int32?, lowerRightColumn: Int32?, lowerRightRow: Int32?, isAutoGetSerialName: Bool?, chartType: String?, isVertical: Bool?) {
+        self.title = title
         self.area = area
         self.categoryData = categoryData
         self.upperLeftRow = upperLeftRow
@@ -45,13 +45,14 @@ public enum CodingKeys: String, CodingKey {
         self.isVertical = isVertical
         super.init(operateType: operateType)
     }
-
+    
     // Encodable protocol methods
+    
     public override func encode(to encoder: Encoder) throws {
         
         var container = encoder.container(keyedBy: String.self)
         
-        try container.encodeIfPresent(string, forKey: "string")
+        try container.encodeIfPresent(title, forKey: "Title")
         try container.encodeIfPresent(area, forKey: "Area")
         try container.encodeIfPresent(categoryData, forKey: "CategoryData")
         try container.encodeIfPresent(upperLeftRow, forKey: "UpperLeftRow")
@@ -60,17 +61,16 @@ public enum CodingKeys: String, CodingKey {
         try container.encodeIfPresent(lowerRightRow, forKey: "LowerRightRow")
         try container.encodeIfPresent(isAutoGetSerialName, forKey: "IsAutoGetSerialName")
         try container.encodeIfPresent(chartType, forKey: "ChartType")
-        
         try container.encodeIfPresent(isVertical, forKey: "IsVertical")
         try super.encode(to: encoder)
     }
-
+    
     // Decodable protocol methods
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: String.self)
         
-        string = try container.decodeIfPresent(String.self, forKey: "string")
+        title = try container.decodeIfPresent(String.self, forKey: "Title")
         area = try container.decodeIfPresent(String.self, forKey: "Area")
         categoryData = try container.decodeIfPresent(String.self, forKey: "CategoryData")
         upperLeftRow = try container.decodeIfPresent(Int32.self, forKey: "UpperLeftRow")
@@ -79,10 +79,10 @@ public enum CodingKeys: String, CodingKey {
         lowerRightRow = try container.decodeIfPresent(Int32.self, forKey: "LowerRightRow")
         isAutoGetSerialName = try container.decodeIfPresent(Bool.self, forKey: "IsAutoGetSerialName")
         chartType = try container.decodeIfPresent(String.self, forKey: "ChartType")
-        
         isVertical = try container.decodeIfPresent(Bool.self, forKey: "IsVertical")
         try super.init(from: decoder)
     }
+
 
 }
 
